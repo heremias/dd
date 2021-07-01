@@ -1,1 +1,1 @@
-# dd test for build and push Github package and deploy to Digital Ocean
+# dd Build and Push Drupal Container to Github Packages and Deploy to Digital Ocean
