@@ -79,7 +79,7 @@ services:
         - composer global require consolidation/cgr
         #- composer global require drush/drush:dev-master
         - export PATH="$HOME/.composer/vendor/bin:$PATH"
-        - source .bashrc
+        - source ~/.profile
         - cgr drush/drush
         - composer install --optimize-autoloader
        
