@@ -76,14 +76,14 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
-        - composer global require consolidation/cgr
-        #- composer global require drush/drush:dev-master
+        #- composer global require consolidation/cgr
+        - composer require drush/drush
         - export PATH="$HOME/.composer/vendor/bin:$PATH"
         #- source ~/.profile
-        - cgr drush/drush
-        - wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
-        - chmod +x drush.phar
-        - sudo mv drush.phar /usr/local/bin/drush
+        #- cgr drush/drush
+        #- wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
+        #- chmod +x drush.phar
+        #- sudo mv drush.phar /usr/local/bin/drush
         - composer install --optimize-autoloader
        
         #- composer global update
