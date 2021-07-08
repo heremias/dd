@@ -60,7 +60,7 @@ services:
         # syncing the entire files directory into the Tugboat Preview.
         # This results in smaller previews and reduces the build time.
         - composer require --dev drupal/stage_file_proxy
-        
+        - composer require --dev drush/drush
         - vendor/bin/drush pm:enable --yes stage_file_proxy
         - vendor/bin/drush config:set --yes stage_file_proxy.settings origin "http://www.example.com"
 
