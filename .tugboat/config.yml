@@ -52,7 +52,7 @@ services:
         # Copy Drupal's public files directory from an external server. The
         # public SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use rsync over SSH.
-        - rsync -av --delete user@example.com:/path/to/files/ "${DOCROOT}/sites/default/files/"
+        #- rsync -av --delete user@example.com:/path/to/files/ "${DOCROOT}/sites/default/files/"
 
         # Alternatively, another common practice is to use the
         # stage_file_proxy Drupal module. This module lets Drupal serve
@@ -60,6 +60,7 @@ services:
         # syncing the entire files directory into the Tugboat Preview.
         # This results in smaller previews and reduces the build time.
         - composer require --dev drupal/stage_file_proxy
+        - composer require --dev drush/drush
         - vendor/bin/drush pm:enable --yes stage_file_proxy
         - vendor/bin/drush config:set --yes stage_file_proxy.settings origin "http://www.example.com"
 
@@ -76,6 +77,7 @@ services:
       # from the base preview.
       build:
         - composer install --optimize-autoloader
+        - composer require --dev drush/drush
         - vendor/bin/drush cache:rebuild
         - vendor/bin/drush config:import -y
         - vendor/bin/drush updatedb -y
@@ -96,6 +98,6 @@ services:
         # Copy a database dump from an external server. The public
         # SSH key found in the Tugboat Repository configuration must be
         # copied to the external server in order to use scp.
-        - scp user@example.com:database.sql.gz /tmp/database.sql.gz
-        - zcat /tmp/database.sql.gz | mysql tugboat
-        - rm /tmp/database.sql.gz
+        #- scp user@example.com:database.sql.gz /tmp/database.sql.gz
+        #- zcat /tmp/database.sql.gz | mysql tugboat
+        #- rm /tmp/database.sql.gz
