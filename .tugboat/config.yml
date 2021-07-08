@@ -1,4 +1,3 @@
-
 services:
   php:
     image: tugboatqa/php:7-apache
