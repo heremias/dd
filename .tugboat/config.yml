@@ -87,7 +87,7 @@ services:
         - composer install --optimize-autoloader
        
         #- composer global update
-        #- vendor/bin/drush cache:rebuild
+        - vendor/bin/drush cache:rebuild
         #- vendor/bin/drush config:import -y
         #- vendor/bin/drush updatedb -y
         #- vendor/bin/drush cache:rebuild
