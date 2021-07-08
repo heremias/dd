@@ -62,7 +62,7 @@ services:
         - composer require --dev drupal/stage_file_proxy
         - composer require --dev drush/drush
         - vendor/bin/drush pm:enable --yes stage_file_proxy
-        - vendor/bin/drush config:set --yes stage_file_proxy.settings origin "http://www.example.com"
+        - vendor/bin/drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
 
         # Set file permissions such that Drupal will not complain.
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
