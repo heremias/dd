@@ -76,11 +76,13 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
-        - composer install --optimize-autoloader
         - composer global require consolidation/cgr
         #- composer global require drush/drush:dev-master
         - export PATH="$HOME/.composer/vendor/bin:$PATH"
+        - source .bashrc
         - cgr drush/drush
+        - composer install --optimize-autoloader
+       
         #- composer global update
         #- vendor/bin/drush cache:rebuild
         #- vendor/bin/drush config:import -y
