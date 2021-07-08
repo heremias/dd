@@ -10,7 +10,8 @@ services:
     #   3. Routes requests to the preview URL to this service
     default: true
 
-    # Wait until the mysql service is done building
+    # Wait until the
+
     depends: mysql
 
     # A set of commands to run while building this service
