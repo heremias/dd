@@ -77,8 +77,9 @@ services:
       # from the base preview.
       build:
         - composer install --optimize-autoloader
+        - composer global require drush/drush:dev-master
         - export PATH="$HOME/.composer/vendor/bin:$PATH"
-        - composer global require drush/drush
+        - composer global update
         - vendor/bin/drush cache:rebuild
         - vendor/bin/drush config:import -y
         - vendor/bin/drush updatedb -y
