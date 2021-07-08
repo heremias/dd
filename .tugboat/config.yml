@@ -1,0 +1,13 @@
+
+services:
+  php:
+    image: tugboatqa/php:7-apache
+    depends: mysql
+    
+    commands:
+      init:
+        - a2enmod headers rewrite
+        - composer create-project drupal-composer/drupal-project:8.x some-dir --stability dev --no-interaction
+    
+  mysql:
+    image: tugboatqa/mysql:5
