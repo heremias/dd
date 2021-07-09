@@ -1,0 +1,72 @@
+uuid: 5917e43b-a76b-49f3-9166-323407926134
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.campus_directory.feeds_item
+    - field.field.node.campus_directory.field_administrative_department
+    - field.field.node.campus_directory.field_biography
+    - field.field.node.campus_directory.field_campus
+    - field.field.node.campus_directory.field_curriculum_vitae
+    - field.field.node.campus_directory.field_domain_source
+    - field.field.node.campus_directory.field_education
+    - field.field.node.campus_directory.field_email
+    - field.field.node.campus_directory.field_email_override
+    - field.field.node.campus_directory.field_firstname
+    - field.field.node.campus_directory.field_headshot_1
+    - field.field.node.campus_directory.field_last_name
+    - field.field.node.campus_directory.field_linkedin
+    - field.field.node.campus_directory.field_meta_tags
+    - field.field.node.campus_directory.field_office_location
+    - field.field.node.campus_directory.field_office_location_2
+    - field.field.node.campus_directory.field_phone_number
+    - field.field.node.campus_directory.field_phone_number_override
+    - field.field.node.campus_directory.field_professional_title
+    - field.field.node.campus_directory.field_professional_title_2
+    - field.field.node.campus_directory.field_professional_title_3
+    - field.field.node.campus_directory.field_research_focus
+    - field.field.node.campus_directory.field_school
+    - field.field.node.campus_directory.field_teaching_interests
+    - field.field.node.campus_directory.field_website
+    - field.field.node.campus_directory.field_yoast_seo
+    - node.type.campus_directory
+  module:
+    - user
+id: node.campus_directory.teaser
+targetEntityType: node
+bundle: campus_directory
+mode: teaser
+content: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  feeds_item: true
+  field_administrative_department: true
+  field_biography: true
+  field_campus: true
+  field_curriculum_vitae: true
+  field_domain_source: true
+  field_education: true
+  field_email: true
+  field_email_override: true
+  field_firstname: true
+  field_headshot_1: true
+  field_last_name: true
+  field_linkedin: true
+  field_meta_tags: true
+  field_office_location: true
+  field_office_location_2: true
+  field_phone_number: true
+  field_phone_number_override: true
+  field_professional_title: true
+  field_professional_title_2: true
+  field_professional_title_3: true
+  field_research_focus: true
+  field_school: true
+  field_teaching_interests: true
+  field_website: true
+  field_yoast_seo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

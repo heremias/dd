@@ -1,0 +1,8 @@
+uuid: 4973ce61-0d17-461b-82ff-819e6cc67551
+langcode: en
+status: true
+dependencies: {  }
+id: loans
+label: Loans
+description: ''
+locked: false

@@ -1,0 +1,8 @@
+uuid: e81cdafe-9124-4e81-95d6-b5b3c9c2858c
+langcode: en
+status: true
+dependencies: {  }
+id: summer-sessions
+label: 'Summer Sessions'
+description: ''
+locked: false

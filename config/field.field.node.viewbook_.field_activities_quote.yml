@@ -1,0 +1,21 @@
+uuid: d7612062-a509-4e45-86be-2744e149fc42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activities_quote
+    - node.type.viewbook_
+  module:
+    - text
+id: node.viewbook_.field_activities_quote
+field_name: field_activities_quote
+entity_type: node
+bundle: viewbook_
+label: 'Activities Quote'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,36 @@
+uuid: c61bdfd0-8b26-4595-b801-600d4af04a85
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-mcgeorge
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitymcgeorge
+theme: u_pacific
+region: tools
+weight: 0
+provider: null
+plugin: 'menu_block:utility-mcgeorge'
+settings:
+  id: 'menu_block:utility-mcgeorge'
+  label: 'Utility Mobile - McGeorge'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-mcgeorge:'
+  suggestion: utility_mcgeorge
+visibility:
+  domain:
+    id: domain
+    domains:
+      law_dev_pacific_edu: law_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

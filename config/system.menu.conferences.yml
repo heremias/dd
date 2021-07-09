@@ -1,0 +1,8 @@
+uuid: 2045509d-1625-47a6-8338-8ee18852ac8c
+langcode: en
+status: true
+dependencies: {  }
+id: conferences
+label: Conferences
+description: ''
+locked: false

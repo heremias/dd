@@ -1,0 +1,8 @@
+uuid: f47ee86a-339c-47fb-97a6-6db650aeb556
+langcode: en
+status: true
+dependencies: {  }
+id: global-journal
+label: 'Global Journal'
+description: ''
+locked: false

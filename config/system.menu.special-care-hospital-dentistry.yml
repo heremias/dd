@@ -1,0 +1,8 @@
+uuid: 196984e6-2457-49bc-bc16-a28c24809658
+langcode: en
+status: true
+dependencies: {  }
+id: special-care-hospital-dentistry
+label: 'Special Care/Hospital Dentistry'
+description: ''
+locked: false

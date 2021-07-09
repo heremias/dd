@@ -1,0 +1,9 @@
+uuid: 1b9e5133-8516-4b9a-8c1c-3d4d3c1dcf8a
+langcode: en
+status: true
+dependencies: {  }
+id: dental_test_pacific_edu
+domain_id: dev_dental_pacific_edu
+pattern: dental.test.pacific.edu
+redirect: 0
+environment: testing

@@ -1,0 +1,9 @@
+uuid: 89414ff4-40c5-4316-bf90-b56ef60641ea
+langcode: en
+status: true
+dependencies: {  }
+id: test_pacific_edu
+domain_id: www_dev_pacific_edu
+pattern: test.pacific.edu
+redirect: 0
+environment: testing

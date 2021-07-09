@@ -1,0 +1,269 @@
+uuid: 096172f5-5502-43d2-a88a-9f808832e710
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.college_school_landing_page.body
+    - field.field.node.college_school_landing_page.field_attachement
+    - field.field.node.college_school_landing_page.field_contact_email
+    - field.field.node.college_school_landing_page.field_contact_link
+    - field.field.node.college_school_landing_page.field_contact_location
+    - field.field.node.college_school_landing_page.field_contact_person
+    - field.field.node.college_school_landing_page.field_contact_phone_number
+    - field.field.node.college_school_landing_page.field_domain_source
+    - field.field.node.college_school_landing_page.field_hide_section_menu
+    - field.field.node.college_school_landing_page.field_image
+    - field.field.node.college_school_landing_page.field_menu_below_intro_field
+    - field.field.node.college_school_landing_page.field_page_builder_components_
+    - field.field.node.college_school_landing_page.field_school_college_department
+    - image.style.thumbnail
+    - node.type.college_school_landing_page
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - field_group
+    - file
+    - image_widget_crop
+    - imce
+    - link_attributes
+    - paragraphs
+    - path
+    - shs
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_contact_information1:
+      children:
+        - field_contact_phone_number
+        - field_contact_email
+        - field_contact_location
+        - field_contact_person
+        - field_contact_link
+      parent_name: ''
+      weight: 15
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+        description: ''
+        direction: vertical
+        open: false
+      label: 'Contact Information'
+    group_pag:
+      children:
+        - field_attachement
+      parent_name: ''
+      weight: 6
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: 'Page Attachments'
+id: node.college_school_landing_page.default
+targetEntityType: node
+bundle: college_school_landing_page
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_attachement:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_contact_email:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_contact_link:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_contact_location:
+    weight: 6
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_contact_person:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_contact_phone_number:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_domain_source:
+    type: options_select
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hide_section_menu:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_image:
+    type: image_widget_crop
+    weight: 1
+    region: content
+    settings:
+      show_default_crop: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - mobile_header_image
+        - small_header_image
+      progress_indicator: throbber
+      crop_types_required: {  }
+      show_crop_area: false
+      warn_multiple_usages: false
+    third_party_settings:
+      imce:
+        enabled: false
+  field_page_builder_components_:
+    type: paragraphs
+    weight: 5
+    settings:
+      title: Component
+      title_plural: Components
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+  field_school_college_department:
+    weight: 3
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
+    third_party_settings: {  }
+    type: options_shs
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 13
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 14
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_menu_below_intro_field: true

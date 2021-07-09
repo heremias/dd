@@ -1,0 +1,8 @@
+uuid: 3d2b349d-7cf2-4777-9684-7ed43e255fad
+langcode: en
+status: true
+dependencies: {  }
+id: university-college
+label: 'University College'
+description: ''
+locked: false

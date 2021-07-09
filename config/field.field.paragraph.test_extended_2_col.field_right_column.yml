@@ -1,0 +1,185 @@
+uuid: d1921950-532f-44ad-9bd2-43c89b3ded58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_right_column
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.accordion_content
+    - paragraphs.paragraphs_type.burning_glass_panel
+    - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.content_accordions
+    - paragraphs.paragraphs_type.directory_listing
+    - paragraphs.paragraphs_type.from_library
+    - paragraphs.paragraphs_type.headline_call_to_action
+    - paragraphs.paragraphs_type.image_button
+    - paragraphs.paragraphs_type.image_with_caption
+    - paragraphs.paragraphs_type.images
+    - paragraphs.paragraphs_type.large_image_callout
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.link_list_2_columns_
+    - paragraphs.paragraphs_type.multi_colu_mn_text_grid
+    - paragraphs.paragraphs_type.nested_paragraph
+    - paragraphs.paragraphs_type.pulled_quote
+    - paragraphs.paragraphs_type.rotator
+    - paragraphs.paragraphs_type.simple_wysiwyg
+    - paragraphs.paragraphs_type.slide
+    - paragraphs.paragraphs_type.spacer
+    - paragraphs.paragraphs_type.stat_block
+    - paragraphs.paragraphs_type.stat_grid
+    - paragraphs.paragraphs_type.test_extended_2_col
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_column
+    - paragraphs.paragraphs_type.title_text_links_3_columns_
+    - paragraphs.paragraphs_type.two_column_one_column_text_one_c
+    - paragraphs.paragraphs_type.user
+    - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.video_block
+    - paragraphs.paragraphs_type.yellow_links
+  module:
+    - entity_reference_revisions
+id: paragraph.test_extended_2_col.field_right_column
+field_name: field_right_column
+entity_type: paragraph
+bundle: test_extended_2_col
+label: 'Right Column'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion: accordion
+      accordion_content: accordion_content
+      burning_glass_panel: burning_glass_panel
+      carousel: carousel
+      content_accordions: content_accordions
+      directory_listing: directory_listing
+      from_library: from_library
+      headline_call_to_action: headline_call_to_action
+      images: images
+      image_button: image_button
+      image_with_caption: image_with_caption
+      large_image_callout: large_image_callout
+      link: link
+      link_list_2_columns_: link_list_2_columns_
+      multi_colu_mn_text_grid: multi_colu_mn_text_grid
+      nested_paragraph: nested_paragraph
+      pulled_quote: pulled_quote
+      rotator: rotator
+      simple_wysiwyg: simple_wysiwyg
+      slide: slide
+      spacer: spacer
+      stat_block: stat_block
+      stat_grid: stat_grid
+      test_extended_2_col: test_extended_2_col
+      text: text
+      text_column: text_column
+      title_text_links_3_columns_: title_text_links_3_columns_
+      two_column_one_column_text_one_c: two_column_one_column_text_one_c
+      user: user
+      video: video
+      video_block: video_block
+      yellow_links: yellow_links
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: 33
+      accordion_content:
+        enabled: true
+        weight: 34
+      burning_glass_panel:
+        enabled: true
+        weight: 35
+      carousel:
+        enabled: true
+        weight: 36
+      content_accordions:
+        enabled: true
+        weight: 37
+      directory_listing:
+        enabled: true
+        weight: 38
+      from_library:
+        enabled: true
+        weight: 39
+      headline_call_to_action:
+        enabled: true
+        weight: 40
+      image_button:
+        enabled: true
+        weight: 42
+      image_with_caption:
+        enabled: true
+        weight: 43
+      images:
+        enabled: true
+        weight: 41
+      large_image_callout:
+        enabled: true
+        weight: 44
+      link:
+        enabled: true
+        weight: 45
+      link_list_2_columns_:
+        enabled: true
+        weight: 46
+      multi_colu_mn_text_grid:
+        enabled: true
+        weight: 47
+      nested_paragraph:
+        enabled: true
+        weight: 48
+      pulled_quote:
+        enabled: true
+        weight: 49
+      rotator:
+        enabled: true
+        weight: 50
+      simple_wysiwyg:
+        enabled: true
+        weight: 51
+      slide:
+        enabled: true
+        weight: 52
+      spacer:
+        enabled: true
+        weight: 53
+      stat_block:
+        enabled: true
+        weight: 54
+      stat_grid:
+        enabled: true
+        weight: 55
+      test_extended_2_col:
+        enabled: true
+        weight: 56
+      text:
+        enabled: true
+        weight: 57
+      text_column:
+        enabled: true
+        weight: 58
+      title_text_links_3_columns_:
+        enabled: true
+        weight: 59
+      two_column_one_column_text_one_c:
+        enabled: true
+        weight: 60
+      user:
+        enabled: true
+        weight: 61
+      video:
+        enabled: true
+        weight: 62
+      video_block:
+        enabled: true
+        weight: 63
+      yellow_links:
+        enabled: true
+        weight: 64
+field_type: entity_reference_revisions

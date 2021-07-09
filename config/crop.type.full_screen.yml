@@ -1,0 +1,12 @@
+uuid: de194cff-3b8f-49d0-96aa-45ccbe5430c4
+langcode: en
+status: true
+dependencies: {  }
+id: full_screen
+label: 'Full Screen'
+description: ''
+aspect_ratio: '1920:1080'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

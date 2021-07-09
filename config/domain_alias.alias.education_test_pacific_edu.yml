@@ -1,0 +1,9 @@
+uuid: 00f5c82e-136e-4a8b-82c3-25e5dd12e557
+langcode: en
+status: true
+dependencies: {  }
+id: education_test_pacific_edu
+domain_id: education_dev_pacific_edu
+pattern: education.test.pacific.edu
+redirect: 0
+environment: testing

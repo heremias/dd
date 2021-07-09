@@ -1,0 +1,8 @@
+uuid: 51240ca8-2e20-4f3d-a2c8-77c660f9ee84
+langcode: en
+status: true
+dependencies: {  }
+id: econ-other
+label: 'Econ Other'
+description: ''
+locked: false

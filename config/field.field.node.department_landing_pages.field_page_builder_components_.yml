@@ -1,0 +1,160 @@
+uuid: 3bc2fba5-fe2a-4c4a-92ea-f2bfe38fab13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_builder_components_
+    - node.type.department_landing_pages
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.burning_glass_panel
+    - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.content_accordions
+    - paragraphs.paragraphs_type.headline_call_to_action
+    - paragraphs.paragraphs_type.large_image_callout
+    - paragraphs.paragraphs_type.link_list_2_columns_
+    - paragraphs.paragraphs_type.localist_events_
+    - paragraphs.paragraphs_type.multi_colu_mn_text_grid
+    - paragraphs.paragraphs_type.nested_paragraph
+    - paragraphs.paragraphs_type.simple_wysiwyg
+    - paragraphs.paragraphs_type.spacer
+    - paragraphs.paragraphs_type.stat_grid
+    - paragraphs.paragraphs_type.title_text_links_3_columns_
+    - paragraphs.paragraphs_type.two_column_one_column_text_one_c
+    - paragraphs.paragraphs_type.video_block
+  module:
+    - entity_reference_revisions
+id: node.department_landing_pages.field_page_builder_components_
+field_name: field_page_builder_components_
+entity_type: node
+bundle: department_landing_pages
+label: 'Page Builder Components '
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion: accordion
+      burning_glass_panel: burning_glass_panel
+      carousel: carousel
+      content_accordions: content_accordions
+      headline_call_to_action: headline_call_to_action
+      large_image_callout: large_image_callout
+      link_list_2_columns_: link_list_2_columns_
+      multi_colu_mn_text_grid: multi_colu_mn_text_grid
+      nested_paragraph: nested_paragraph
+      simple_wysiwyg: simple_wysiwyg
+      localist_events_: localist_events_
+      spacer: spacer
+      stat_grid: stat_grid
+      title_text_links_3_columns_: title_text_links_3_columns_
+      two_column_one_column_text_one_c: two_column_one_column_text_one_c
+      video_block: video_block
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: 31
+      accordion_content:
+        weight: 32
+        enabled: false
+      advanced_acco:
+        weight: 37
+        enabled: false
+      burning_glass_panel:
+        enabled: true
+        weight: 33
+      carousel:
+        enabled: true
+        weight: 34
+      content_accordions:
+        enabled: true
+        weight: 35
+      directory_listing:
+        weight: 41
+        enabled: false
+      from_library:
+        weight: 36
+        enabled: false
+      headline_call_to_action:
+        enabled: true
+        weight: 37
+      image_button:
+        weight: 39
+        enabled: false
+      image_with_caption:
+        weight: 40
+        enabled: false
+      images:
+        weight: 38
+        enabled: false
+      large_image_callout:
+        enabled: true
+        weight: 41
+      link:
+        weight: 42
+        enabled: false
+      link_list_2_columns_:
+        enabled: true
+        weight: 43
+      localist_events_:
+        enabled: true
+        weight: 50
+      multi_colu_mn_text_grid:
+        enabled: true
+        weight: 44
+      nested_paragraph:
+        enabled: true
+        weight: 45
+      pulled_quote:
+        weight: 46
+        enabled: false
+      rotator:
+        weight: 47
+        enabled: false
+      simple_wysiwyg:
+        enabled: true
+        weight: 48
+      slide:
+        weight: 49
+        enabled: false
+      spacer:
+        enabled: true
+        weight: 50
+      stat_block:
+        weight: 51
+        enabled: false
+      stat_grid:
+        enabled: true
+        weight: 52
+      test_extended_2_col:
+        weight: 60
+        enabled: false
+      text:
+        weight: 53
+        enabled: false
+      text_column:
+        weight: 54
+        enabled: false
+      title_text_links_3_columns_:
+        enabled: true
+        weight: 55
+      two_column_one_column_text_one_c:
+        enabled: true
+        weight: 56
+      user:
+        weight: 57
+        enabled: false
+      video:
+        weight: 58
+        enabled: false
+      video_block:
+        enabled: true
+        weight: 59
+      yellow_links:
+        weight: 60
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,11 @@
+uuid: df4125a9-36fb-4121-a00d-a7d4c84f57a8
+langcode: en
+status: true
+dependencies: {  }
+id: grad_dev_pacific_edu
+domain_id: 6843122
+hostname: grad.pacific.edu
+name: grad.pacific.edu
+scheme: https
+weight: 6
+is_default: false

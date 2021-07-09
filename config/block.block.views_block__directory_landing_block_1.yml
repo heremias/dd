@@ -1,0 +1,37 @@
+uuid: 1226bd6c-a86a-4d16-a9ee-c9924b339bd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.directory_landing
+  module:
+    - domain
+    - system
+    - views
+  theme:
+    - u_pacific
+id: views_block__directory_landing_block_1
+theme: u_pacific
+region: content
+weight: -15
+provider: null
+plugin: 'views_block:directory_landing-block_1'
+settings:
+  id: 'views_block:directory_landing-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /campus/directory/test-landing
+    negate: false
+    context_mapping: {  }

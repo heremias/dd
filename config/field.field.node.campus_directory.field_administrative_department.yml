@@ -1,0 +1,27 @@
+uuid: d630c9aa-1423-444e-86c2-d125b082c461
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_administrative_department
+    - node.type.campus_directory
+id: node.campus_directory.field_administrative_department
+field_name: field_administrative_department
+entity_type: node
+bundle: campus_directory
+label: 'Administrative Department'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

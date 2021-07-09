@@ -1,0 +1,11 @@
+uuid: 7f38ee99-3851-4d21-8b90-e00c75b7501c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.department_landing_pages
+id: node.department_landing_pages
+target_entity_type_id: node
+target_bundle: department_landing_pages
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,9 @@
+uuid: aa1729e1-ac06-41c6-88b1-d5f8d1b96917
+langcode: en
+status: true
+dependencies: {  }
+id: dental_dev_pacific_edu
+domain_id: dev_dental_pacific_edu
+pattern: dental.dev.pacific.edu
+redirect: 0
+environment: development

@@ -1,0 +1,9 @@
+uuid: 51d6eb9c-da26-4a16-a15b-8c3b7359c047
+langcode: en
+status: true
+dependencies: {  }
+id: law_live_pacific_edu
+domain_id: law_dev_pacific_edu
+pattern: law.live.pacific.edu
+redirect: 0
+environment: staging

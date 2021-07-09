@@ -1,0 +1,25 @@
+uuid: 00481f39-8e06-427a-9cba-1a64808fbb81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.advanced_acco.field_drawer
+    - paragraphs.paragraphs_type.advanced_acco
+  module:
+    - entity_reference_revisions
+id: paragraph.advanced_acco.default
+targetEntityType: paragraph
+bundle: advanced_acco
+mode: default
+content:
+  field_drawer:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

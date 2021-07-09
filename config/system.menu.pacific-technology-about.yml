@@ -1,0 +1,8 @@
+uuid: aa238795-67b1-41f5-9943-8d8254d424e8
+langcode: en
+status: true
+dependencies: {  }
+id: pacific-technology-about
+label: 'Pacific Technology About'
+description: ''
+locked: false

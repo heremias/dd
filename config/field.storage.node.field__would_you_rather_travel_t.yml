@@ -1,0 +1,27 @@
+uuid: 17c930a3-6297-44ee-8f84-cf3a748112cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field__would_you_rather_travel_t
+field_name: field__would_you_rather_travel_t
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: new_place
+      label: travel
+    -
+      value: new_restaurant
+      label: restaurant
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

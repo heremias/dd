@@ -1,0 +1,11 @@
+uuid: df4bd011-cd69-4fb2-ac90-f47067c80263
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.viewbook_
+id: node.viewbook_
+target_entity_type_id: node
+target_bundle: viewbook_
+default_langcode: site_default
+language_alterable: false

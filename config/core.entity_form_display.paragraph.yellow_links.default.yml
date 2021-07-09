@@ -1,0 +1,34 @@
+uuid: e466fb34-4f66-4421-a313-fe002e07ec0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.yellow_links.field_link_list
+    - paragraphs.paragraphs_type.yellow_links
+  module:
+    - link_attributes
+id: paragraph.yellow_links.default
+targetEntityType: paragraph
+bundle: yellow_links
+mode: default
+content:
+  field_link_list:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+hidden:
+  created: true
+  status: true

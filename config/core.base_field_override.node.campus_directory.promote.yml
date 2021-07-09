@@ -1,0 +1,22 @@
+uuid: ae22cd6c-31e6-4abd-a7c0-6515b0de51b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.campus_directory
+id: node.campus_directory.promote
+field_name: promote
+entity_type: node
+bundle: campus_directory
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,8 @@
+uuid: dfdd07d7-6dca-41f6-a31d-b340aa8d86b8
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-faculty-and-research
+label: 'Dugoni Faculty & Research'
+description: ''
+locked: false

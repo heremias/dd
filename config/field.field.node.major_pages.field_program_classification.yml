@@ -1,0 +1,29 @@
+uuid: 564733e8-f2f2-47a5-bdee-315b70bb844f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_classification
+    - node.type.major_pages
+    - taxonomy.vocabulary.program_classification
+id: node.major_pages.field_program_classification
+field_name: field_program_classification
+entity_type: node
+bundle: major_pages
+label: 'Program Classification'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      program_classification: program_classification
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

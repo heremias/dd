@@ -1,0 +1,8 @@
+uuid: 3d35e1a5-14e3-4117-9ef5-4e429f66df0c
+langcode: en
+status: true
+dependencies: {  }
+id: articulation-agreements
+label: 'Articulation Agreements'
+description: ''
+locked: false

@@ -1,0 +1,20 @@
+uuid: 05383081-0574-4d81-923e-e2315bee59f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - feeds
+    - metatag
+id: feeds_feed.field_description
+field_name: field_description
+entity_type: feeds_feed
+type: entity_reference
+settings:
+  target_type: metatag_defaults
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

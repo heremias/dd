@@ -1,0 +1,8 @@
+uuid: 88374272-4af9-4556-bffe-86c5b4fbc602
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-art-and-graphic-de
+label: 'Department of Art, Media, Performance and Design'
+description: 'Section Menu for Department of Art, Media, Performance and Design'
+locked: false

@@ -1,0 +1,19 @@
+uuid: f89ba6c4-e8e0-44fe-ada1-f4cd5a59d230
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_email
+    - node.type.college_school_landing_page
+id: node.college_school_landing_page.field_contact_email
+field_name: field_contact_email
+entity_type: node
+bundle: college_school_landing_page
+label: 'Contact Email'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

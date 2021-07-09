@@ -1,0 +1,8 @@
+uuid: 9730aad4-b609-4d93-99cb-9a86955b75a9
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-academic-programs
+label: 'Dugoni Academic Programs'
+description: ''
+locked: false

@@ -1,0 +1,26 @@
+uuid: e9254a51-67db-4c6f-a726-128ee03d5fea
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.full_screen
+  module:
+    - crop
+name: full_screen
+label: 'Full Screen'
+effects:
+  b2a48181-7538-4d7f-afea-885e781933e5:
+    uuid: b2a48181-7538-4d7f-afea-885e781933e5
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1920
+      height: 1080
+      anchor: center-center
+  73c6d9e0-e81d-4a22-9d4a-3631cc2add2e:
+    uuid: 73c6d9e0-e81d-4a22-9d4a-3631cc2add2e
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: full_screen
+pipeline: __default__

@@ -1,0 +1,79 @@
+uuid: d3835f47-9952-4502-a595-46d4954cd618
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.department_landing_pages.body
+    - field.field.node.department_landing_pages.feeds_item
+    - field.field.node.department_landing_pages.field_additional_text
+    - field.field.node.department_landing_pages.field_attachement
+    - field.field.node.department_landing_pages.field_contact_email
+    - field.field.node.department_landing_pages.field_contact_link
+    - field.field.node.department_landing_pages.field_contact_location
+    - field.field.node.department_landing_pages.field_contact_person
+    - field.field.node.department_landing_pages.field_contact_phone_number
+    - field.field.node.department_landing_pages.field_domain_source
+    - field.field.node.department_landing_pages.field_header_type
+    - field.field.node.department_landing_pages.field_hide_section_menu
+    - field.field.node.department_landing_pages.field_image
+    - field.field.node.department_landing_pages.field_menu_below_intro_field
+    - field.field.node.department_landing_pages.field_page_builder_components_
+    - field.field.node.department_landing_pages.field_school_college_department
+    - field.field.node.department_landing_pages.field_temp_domain_source
+    - node.type.department_landing_pages
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.department_landing_pages.default
+targetEntityType: node
+bundle: department_landing_pages
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_additional_text:
+    type: text_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_page_builder_components_:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  feeds_item: true
+  field_attachement: true
+  field_contact_email: true
+  field_contact_link: true
+  field_contact_location: true
+  field_contact_person: true
+  field_contact_phone_number: true
+  field_domain_source: true
+  field_header_type: true
+  field_hide_section_menu: true
+  field_image: true
+  field_menu_below_intro_field: true
+  field_school_college_department: true
+  field_temp_domain_source: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,23 @@
+uuid: fcc47f6f-e1db-47ae-9802-12d9be4e9e7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.localist_events_.field_embed_code1
+    - paragraphs.paragraphs_type.localist_events_
+  module:
+    - text
+id: paragraph.localist_events_.default
+targetEntityType: paragraph
+bundle: localist_events_
+mode: default
+content:
+  field_embed_code1:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true

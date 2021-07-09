@@ -1,0 +1,13 @@
+modules:
+  sendgrid_integration:
+    SG:
+      '-CJftZj6RJyN8L_EjxxYVg':
+        wlkNOkoE3iTnhyQLdxN26V2QIQLFQEDf-LeBgCLg9lo:
+          formatter: sendgrid_integration
+          sender: sendgrid_integration
+      formatter: sendgrid_integration
+      sender: sendgrid_integration
+defaults:
+  formatter: php_mail
+  sender: sendgrid_integration
+theme: default

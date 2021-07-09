@@ -1,0 +1,8 @@
+uuid: bbbdf3a9-3b87-4d1a-870a-9105ea78cb32
+langcode: en
+status: true
+dependencies: {  }
+id: comm-academics
+label: 'Comm Academics'
+description: ''
+locked: false

@@ -1,0 +1,8 @@
+uuid: 4f72f5dc-d282-4c47-a5ce-1e65b6dd529f
+langcode: en
+status: true
+dependencies: {  }
+id: activities-and-programs
+label: 'Activities and Programs'
+description: 'Section Menu for Activities and Programs'
+locked: false

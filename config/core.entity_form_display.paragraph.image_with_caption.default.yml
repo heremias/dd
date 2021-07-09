@@ -1,0 +1,43 @@
+uuid: 0489168c-7e1a-4cec-a9a8-267a68bc7b24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_with_caption.field_image
+    - field.field.paragraph.image_with_caption.field_image_caption
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.image_with_caption
+  module:
+    - image_widget_crop
+    - text
+id: paragraph.image_with_caption.default
+targetEntityType: paragraph
+bundle: image_with_caption
+mode: default
+content:
+  field_image:
+    weight: 0
+    settings:
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - news_image
+      progress_indicator: throbber
+      crop_types_required: {  }
+      show_crop_area: false
+    third_party_settings: {  }
+    type: image_widget_crop
+    region: content
+  field_image_caption:
+    weight: 1
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

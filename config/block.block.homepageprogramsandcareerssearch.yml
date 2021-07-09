@@ -1,0 +1,37 @@
+uuid: f2a6417a-5ce0-431e-9d96-015e5ebf22b0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:programs_and_careers:b3a31a04-67ad-49b7-aebb-87942b7335e3'
+  module:
+    - block_content
+    - domain
+    - system
+  theme:
+    - u_pacific
+id: homepageprogramsandcareerssearch
+theme: u_pacific
+region: content
+weight: -14
+provider: null
+plugin: 'block_content:b3a31a04-67ad-49b7-aebb-87942b7335e3'
+settings:
+  id: 'block_content:b3a31a04-67ad-49b7-aebb-87942b7335e3'
+  label: 'Homepage/Academics Programs and Careers Search'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/home\r\n/node/648"
+    negate: false
+    context_mapping: {  }
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

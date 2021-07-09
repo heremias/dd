@@ -1,0 +1,12 @@
+uuid: c5295b14-0c24-4e22-ae7c-8596a6a6aa76
+langcode: en
+status: true
+dependencies: {  }
+id: link_button
+label: 'Contact Profile Image'
+description: ''
+aspect_ratio: '235:167'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

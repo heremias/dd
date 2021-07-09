@@ -1,0 +1,18 @@
+uuid: 59da3f8e-1422-41c6-9474-82dc1b17e58f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.campus_directory
+id: node.campus_directory.title
+field_name: title
+entity_type: node
+bundle: campus_directory
+label: 'Search Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

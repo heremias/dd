@@ -1,0 +1,11 @@
+uuid: fb0808e0-0712-47f5-852d-b9d2ddee6ca7
+langcode: en
+status: true
+dependencies: {  }
+id: www_dev_pacific_edu
+domain_id: 7475608
+hostname: www.pacific.edu
+name: 'WWW Pacific'
+scheme: https
+weight: -5
+is_default: true

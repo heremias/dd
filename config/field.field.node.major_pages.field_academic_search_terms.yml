@@ -1,0 +1,29 @@
+uuid: a7eb4c52-040e-4b92-99c3-f03e1ad4b778
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_academic_search_terms
+    - node.type.major_pages
+    - taxonomy.vocabulary.academic_search_terms
+id: node.major_pages.field_academic_search_terms
+field_name: field_academic_search_terms
+entity_type: node
+bundle: major_pages
+label: 'Academic Search Terms'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      academic_search_terms: academic_search_terms
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

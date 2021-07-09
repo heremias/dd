@@ -1,0 +1,8 @@
+uuid: 6835fedb-0a66-4c7f-b99f-83293994894b
+langcode: en
+status: true
+dependencies: {  }
+id: life-at-mcgeorge
+label: 'Life at McGeorge'
+description: ''
+locked: false

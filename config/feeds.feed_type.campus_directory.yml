@@ -1,0 +1,140 @@
+uuid: 44151faf-4378-4724-ace0-6bb26e4103a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.campus_directory.title
+    - field.field.node.campus_directory.field_campus
+    - field.field.node.campus_directory.field_email
+    - field.field.node.campus_directory.field_firstname
+    - field.field.node.campus_directory.field_last_name
+    - field.field.node.campus_directory.field_phone_number
+    - field.field.node.campus_directory.field_professional_title
+    - field.field.node.campus_directory.field_school
+    - node.type.campus_directory
+  module:
+    - node
+id: campus_directory
+label: 'Campus Directory'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 1
+  update_non_existent: _delete
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: campus_directory
+custom_sources:
+  search_term:
+    label: Search_Term
+    value: Search_Term
+    machine_name: search_term
+  first_name:
+    label: First_Name
+    value: First_Name
+    machine_name: first_name
+  last_name:
+    label: Last_Name
+    value: Last_Name
+    machine_name: last_name
+  email_address:
+    label: Email_Address
+    value: Email_Address
+    machine_name: email_address
+  phone_number:
+    label: Phone_Number
+    value: Phone_Number
+    machine_name: phone_number
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  department:
+    label: Department
+    value: Department
+    machine_name: department
+  campus:
+    label: Campus
+    value: Campus
+    machine_name: campus
+  division:
+    label: Division
+    value: Division
+    machine_name: division
+mappings:
+  -
+    target: title
+    map:
+      value: search_term
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_firstname
+    map:
+      value: first_name
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_last_name
+    map:
+      value: last_name
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_email
+    map:
+      value: email_address
+    unique: {  }
+    settings:
+      language: null
+      defuse: false
+  -
+    target: field_phone_number
+    map:
+      value: phone_number
+    settings:
+      language: null
+  -
+    target: field_professional_title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_school
+    map:
+      target_id: division
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_campus
+    map:
+      target_id: campus
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false

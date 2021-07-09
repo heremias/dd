@@ -1,0 +1,23 @@
+uuid: 19845455-7158-4318-8db6-d86758123272
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_link
+    - node.type.college_school_landing_page
+  module:
+    - link
+id: node.college_school_landing_page.field_contact_link
+field_name: field_contact_link
+entity_type: node
+bundle: college_school_landing_page
+label: 'Contact Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

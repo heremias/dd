@@ -1,0 +1,9 @@
+uuid: 0a3d7bd6-3b3b-4015-8261-c664b6194d11
+langcode: en
+status: true
+dependencies: {  }
+id: engineering_test_pacific_edu
+domain_id: engineering_dev_pacific_edu
+pattern: engineering.test.pacific.edu
+redirect: 0
+environment: testing

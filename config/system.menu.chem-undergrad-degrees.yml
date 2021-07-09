@@ -1,0 +1,8 @@
+uuid: b37b4c20-3a94-4244-8aa5-57cc75fff482
+langcode: en
+status: true
+dependencies: {  }
+id: chem-undergrad-degrees
+label: 'Chem Undergrad Degrees'
+description: ''
+locked: false

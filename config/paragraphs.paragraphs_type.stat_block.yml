@@ -1,0 +1,10 @@
+uuid: a5cb5ef4-bcd8-4526-9203-1effb4314301
+langcode: en
+status: true
+dependencies: {  }
+id: stat_block
+label: 'Stat Block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

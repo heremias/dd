@@ -1,0 +1,29 @@
+uuid: c110d0f7-34fa-4942-a368-01f2e982d436
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - seven
+id: seven_mainnavigation_3
+theme: seven
+region: header
+weight: -7
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Mobile Menu - Academics'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: true
+  parent: 'main:menu_link_content:39c36bcd-a9a0-42de-9acc-5152605ef827'
+  suggestion: main
+visibility: {  }

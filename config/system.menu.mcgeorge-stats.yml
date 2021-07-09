@@ -1,0 +1,8 @@
+uuid: a646848a-d882-4b88-bbc8-fbb22a0902d6
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-stats
+label: 'McGeorge Stats'
+description: ''
+locked: false

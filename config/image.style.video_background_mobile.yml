@@ -1,0 +1,26 @@
+uuid: 022dda54-8b1f-4255-9836-5e78d2c2646a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.video_background
+  module:
+    - crop
+name: video_background_mobile
+label: 'Video Background Mobile'
+effects:
+  b77a7097-efaa-4543-b44f-2d1c602625f4:
+    uuid: b77a7097-efaa-4543-b44f-2d1c602625f4
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: video_background
+  7462386b-aeae-496c-9b81-9849dc282afa:
+    uuid: 7462386b-aeae-496c-9b81-9849dc282afa
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 768
+      height: 382
+      anchor: center-center
+pipeline: __default__

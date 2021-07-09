@@ -1,0 +1,8 @@
+uuid: 7002b770-03e0-42d0-981a-296695595eec
+langcode: en
+status: true
+dependencies: {  }
+id: housing-options
+label: 'Housing Options'
+description: ''
+locked: false

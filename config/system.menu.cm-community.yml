@@ -1,0 +1,8 @@
+uuid: c8a54e11-765c-4236-b7f4-b6c43b4a4297
+langcode: en
+status: true
+dependencies: {  }
+id: cm-community
+label: 'CM Community'
+description: ''
+locked: false

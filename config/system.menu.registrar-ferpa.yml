@@ -1,0 +1,8 @@
+uuid: 6d4888be-6c00-4eb0-a858-ee356f97e345
+langcode: en
+status: true
+dependencies: {  }
+id: registrar-ferpa
+label: 'Registrar FERPA'
+description: ''
+locked: false

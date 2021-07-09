@@ -1,0 +1,8 @@
+uuid: 0e520676-c42e-4d38-8d8b-ae8b3732d8f3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Majors & Minors'
+vid: majors_programs
+description: ''
+weight: 0

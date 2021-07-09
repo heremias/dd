@@ -1,0 +1,8 @@
+uuid: 419ebacd-426e-46a5-ae63-a7fe99856fd4
+langcode: en
+status: true
+dependencies: {  }
+id: school-of-international-study
+label: 'School of International Studies'
+description: 'Section Menu for the School of International Studies'
+locked: false

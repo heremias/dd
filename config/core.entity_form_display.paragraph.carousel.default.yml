@@ -1,0 +1,43 @@
+uuid: 6febb1a3-9629-4b17-9a8c-b203fa775b3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.carousel.field_image_alignment
+    - field.field.paragraph.carousel.field_slides
+    - paragraphs.paragraphs_type.carousel
+  module:
+    - paragraphs
+id: paragraph.carousel.default
+targetEntityType: paragraph
+bundle: carousel
+mode: default
+content:
+  field_image_alignment:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_slides:
+    type: paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: slide
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

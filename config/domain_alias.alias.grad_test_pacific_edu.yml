@@ -1,0 +1,9 @@
+uuid: 89fe4796-38ff-459f-9b87-39e7ee52a271
+langcode: en
+status: true
+dependencies: {  }
+id: grad_test_pacific_edu
+domain_id: grad_dev_pacific_edu
+pattern: grad.test.pacific.edu
+redirect: 0
+environment: testing

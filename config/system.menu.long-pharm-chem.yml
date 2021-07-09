@@ -1,0 +1,8 @@
+uuid: 661df42d-6761-4a06-b3b0-821ad4c71521
+langcode: en
+status: true
+dependencies: {  }
+id: long-pharm-chem
+label: 'Long Pharm Chem EMPTY'
+description: ''
+locked: false

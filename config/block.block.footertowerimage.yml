@@ -1,0 +1,37 @@
+uuid: 8f6dbd82-553e-418a-884f-f7d8ad4b5f29
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4060ed98-4067-42b6-8f21-fe7eb6011a8c'
+  module:
+    - block_content
+    - domain
+    - system
+  theme:
+    - u_pacific
+id: footertowerimage
+theme: u_pacific
+region: footer_tower
+weight: -16
+provider: null
+plugin: 'block_content:4060ed98-4067-42b6-8f21-fe7eb6011a8c'
+settings:
+  id: 'block_content:4060ed98-4067-42b6-8f21-fe7eb6011a8c'
+  label: 'Footer Tower Image'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '/viewbook*'
+    negate: true
+    context_mapping: {  }

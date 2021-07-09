@@ -1,0 +1,60 @@
+uuid: 8a237f92-cff8-4bc8-8339-a49c59b5aaaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.programs_and_careers
+    - field.field.block_content.programs_and_careers.field_graduate_trending_searches
+    - field.field.block_content.programs_and_careers.field_professional_trending_sear
+    - field.field.block_content.programs_and_careers.field_undergraduate_trending_sea
+id: block_content.programs_and_careers.default
+targetEntityType: block_content
+bundle: programs_and_careers
+mode: default
+content:
+  field_graduate_trending_searches:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_professional_trending_sear:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_undergraduate_trending_sea:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

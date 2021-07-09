@@ -1,0 +1,26 @@
+uuid: 5d8e8a4f-e32e-43dd-9549-82a68522bfa9
+langcode: en
+status: true
+dependencies:
+  module:
+    - domain
+    - emergency_alerts
+  theme:
+    - u_pacific
+id: emergencyalert
+theme: u_pacific
+region: emergency
+weight: -16
+provider: null
+plugin: emergency_alert
+settings:
+  id: emergency_alert
+  label: 'Emergency Alert'
+  provider: emergency_alerts
+  label_display: '0'
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

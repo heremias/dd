@@ -1,0 +1,9 @@
+uuid: c6324491-ebe5-4eb4-a0c1-de67be07412b
+langcode: en
+status: true
+dependencies: {  }
+id: engineering_dev_pacific_edu
+domain_id: engineering_dev_pacific_edu
+pattern: engineering.dev.pacific.edu
+redirect: 0
+environment: development

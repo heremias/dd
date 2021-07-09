@@ -1,0 +1,8 @@
+uuid: d6abf014-aca4-4044-bc72-80525745541c
+langcode: en
+status: true
+dependencies: {  }
+id: medicare-part-d-clinics
+label: 'Medicare Part D clinics'
+description: ''
+locked: false

@@ -1,0 +1,11 @@
+uuid: 6475dc7c-4f9e-40c7-8a3a-bf873d734893
+langcode: en
+status: true
+dependencies: {  }
+id: music_dev_pacific_edu
+domain_id: 11123467
+hostname: music.pacific.edu
+name: music.pacific.edu
+scheme: https
+weight: 10
+is_default: false

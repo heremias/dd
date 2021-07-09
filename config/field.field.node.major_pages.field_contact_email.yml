@@ -1,0 +1,19 @@
+uuid: e6568799-e10a-4a39-b089-8efe01c25c39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_email
+    - node.type.major_pages
+id: node.major_pages.field_contact_email
+field_name: field_contact_email
+entity_type: node
+bundle: major_pages
+label: 'Contact Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

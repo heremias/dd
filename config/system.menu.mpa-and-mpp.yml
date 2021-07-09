@@ -1,0 +1,8 @@
+uuid: 3edf2a49-0015-4850-911d-723fc53d0618
+langcode: en
+status: true
+dependencies: {  }
+id: mpa-and-mpp
+label: 'McGeorge MPA & MPP Programs'
+description: 'Section Menu for the McGeorge MPA & MPP Programs'
+locked: false

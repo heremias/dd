@@ -1,0 +1,33 @@
+uuid: 75fefc3c-b0c2-49dc-9d3c-772a2e7e0095
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_school_college_department
+    - node.type.article
+    - taxonomy.vocabulary.colleges
+  content:
+    - 'taxonomy_term:colleges:64e2c429-9dea-4be8-89ae-9262d23436cb'
+id: node.article.field_school_college_department
+field_name: field_school_college_department
+entity_type: node
+bundle: article
+label: Syndication
+description: 'You can syndicate news to college and academic department landing pages.'
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 64e2c429-9dea-4be8-89ae-9262d23436cb
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      colleges: colleges
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

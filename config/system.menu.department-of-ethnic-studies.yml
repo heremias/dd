@@ -1,0 +1,8 @@
+uuid: 331ec1fb-a651-4c8b-abb9-96c1d4faa5f8
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-ethnic-studies
+label: 'Ethnic Studies Program'
+description: ''
+locked: false

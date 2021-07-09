@@ -1,0 +1,8 @@
+uuid: 4fa21351-2b8b-4326-bee6-2198bc4b4b93
+langcode: en
+status: true
+dependencies: {  }
+id: nursing
+label: Nursing
+description: ''
+locked: false

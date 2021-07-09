@@ -1,0 +1,19 @@
+uuid: 7547993a-dc67-47d8-8828-721d933cb9ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_major_minor
+    - node.type.viewbook_
+id: node.viewbook_.field_major_minor
+field_name: field_major_minor
+entity_type: node
+bundle: viewbook_
+label: Major/Minor
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

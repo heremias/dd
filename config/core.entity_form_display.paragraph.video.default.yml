@@ -1,0 +1,42 @@
+uuid: 48ecf7aa-569d-4eb6-8ff9-e6eec2006e05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video.field_image
+    - field.field.paragraph.video.field_youtube_video
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.video
+  module:
+    - image_widget_crop
+    - youtube
+id: paragraph.video.default
+targetEntityType: paragraph
+bundle: video
+mode: default
+content:
+  field_image:
+    weight: 1
+    settings:
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - video_background
+      progress_indicator: throbber
+      crop_types_required: {  }
+      show_crop_area: false
+    third_party_settings: {  }
+    type: image_widget_crop
+    region: content
+  field_youtube_video:
+    weight: 0
+    settings:
+      placeholder_url: ''
+    third_party_settings: {  }
+    type: youtube
+    region: content
+hidden:
+  created: true
+  status: true

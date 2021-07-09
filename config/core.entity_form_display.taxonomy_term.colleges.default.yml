@@ -1,0 +1,95 @@
+uuid: 261edbcc-ef58-4461-9a1e-7d8e2774c75b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.colleges.feeds_item
+    - field.field.taxonomy_term.colleges.field_contact_image
+    - field.field.taxonomy_term.colleges.field_directory_url
+    - field.field.taxonomy_term.colleges.field_image
+    - field.field.taxonomy_term.colleges.field_menu
+    - field.field.taxonomy_term.colleges.gathercontent_option_ids
+    - image.style.thumbnail
+    - taxonomy.vocabulary.colleges
+  module:
+    - image
+    - image_widget_crop
+    - path
+id: taxonomy_term.colleges.default
+targetEntityType: taxonomy_term
+bundle: colleges
+mode: default
+content:
+  field_contact_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_directory_url:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_image:
+    weight: 1
+    settings:
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - two_column_header_image
+      progress_indicator: throbber
+      crop_types_required: {  }
+      show_crop_area: false
+    third_party_settings: {  }
+    type: image_widget_crop
+    region: content
+  field_menu:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+hidden:
+  description: true
+  feeds_item: true
+  gathercontent_option_ids: true

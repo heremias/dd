@@ -1,0 +1,22 @@
+uuid: 79e2b317-8cd8-43a6-a165-d45c1dbf0de4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.burning_glass_panel.field_program_code
+    - paragraphs.paragraphs_type.burning_glass_panel
+id: paragraph.burning_glass_panel.default
+targetEntityType: paragraph
+bundle: burning_glass_panel
+mode: default
+content:
+  field_program_code:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

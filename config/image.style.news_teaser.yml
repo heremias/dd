@@ -1,0 +1,26 @@
+uuid: 14db4c52-6f9b-41df-b151-ffe647f60427
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.news_teaser
+  module:
+    - crop
+name: news_teaser
+label: 'News Teaser'
+effects:
+  3d773ad4-51cd-4756-8cff-767e625a2292:
+    uuid: 3d773ad4-51cd-4756-8cff-767e625a2292
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: news_teaser
+  f69a472f-d13c-45d6-a15d-05beb41d44da:
+    uuid: f69a472f-d13c-45d6-a15d-05beb41d44da
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 794
+      height: 536
+      anchor: center-center
+pipeline: __default__

@@ -1,0 +1,8 @@
+uuid: e6167706-05e6-4f04-9f0c-56c9de409548
+langcode: en
+status: true
+dependencies: {  }
+id: equity-and-inclusion
+label: 'Equity and Inclusion'
+description: ''
+locked: false

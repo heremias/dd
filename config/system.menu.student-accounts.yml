@@ -1,0 +1,8 @@
+uuid: b0efe9b6-d50f-4e44-826a-e9892e7aefbe
+langcode: en
+status: true
+dependencies: {  }
+id: student-accounts
+label: 'Student Accounts'
+description: ''
+locked: false

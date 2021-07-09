@@ -1,0 +1,27 @@
+uuid: 936a1020-986a-4fa8-bf9f-0abe89b21a34
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_are_you_more_comfortable_b
+field_name: field_are_you_more_comfortable_b
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: in_front
+      label: 'in-front of people'
+    -
+      value: behind_scenes
+      label: behind-the-scenes
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

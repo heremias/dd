@@ -1,0 +1,8 @@
+uuid: b68aa233-0868-46d4-af77-cf4c2357a2a8
+langcode: en
+status: true
+dependencies: {  }
+id: law-mag
+label: 'Law Mag'
+description: ''
+locked: false

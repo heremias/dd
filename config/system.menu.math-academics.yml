@@ -1,0 +1,8 @@
+uuid: 4dfe3629-a5c6-4c79-aa0e-459cefdb3559
+langcode: en
+status: true
+dependencies: {  }
+id: math-academics
+label: 'Math Academics'
+description: ''
+locked: false

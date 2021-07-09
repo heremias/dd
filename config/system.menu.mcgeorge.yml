@@ -1,0 +1,8 @@
+uuid: a7bbf984-5a24-4982-84b5-04c0c4e91c98
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge
+label: 'McGeorge School of Law'
+description: 'Section menu for the entry page of McGeorge School of Law'
+locked: false

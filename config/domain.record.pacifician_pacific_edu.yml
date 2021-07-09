@@ -1,0 +1,11 @@
+uuid: 6f388640-cf9e-43d6-be6b-66402bfc9579
+langcode: en
+status: true
+dependencies: {  }
+id: pacifician_pacific_edu
+domain_id: 2764002
+hostname: pacifician.pacific.edu
+name: pacifician.pacific.edu
+scheme: https
+weight: 12
+is_default: false

@@ -1,0 +1,26 @@
+uuid: bbd631db-75ce-4e50-b77b-41794f130378
+langcode: en
+status: true
+dependencies:
+  module:
+    - domain
+    - masquerade
+  theme:
+    - claro
+id: masquerade_2
+theme: claro
+region: content
+weight: -1
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  provider: masquerade
+  label_display: visible
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

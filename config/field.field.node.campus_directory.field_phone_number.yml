@@ -1,0 +1,21 @@
+uuid: 8f2bc775-4b3f-4b2b-a099-7b3281effc02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_number
+    - node.type.campus_directory
+  module:
+    - telephone
+id: node.campus_directory.field_phone_number
+field_name: field_phone_number
+entity_type: node
+bundle: campus_directory
+label: 'Phone Number'
+description: '(209) 555-5555'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

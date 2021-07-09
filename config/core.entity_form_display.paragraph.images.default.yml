@@ -1,0 +1,41 @@
+uuid: 077aa2c8-3de6-4d9b-9664-d82d79da23cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.images.field_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.images
+  module:
+    - image_widget_crop
+_core:
+  default_config_hash: TA7u8Bk8lE1ziJY1nxAwbr-W66WoS8s0k0bLSMKCZfc
+id: paragraph.images.default
+targetEntityType: paragraph
+bundle: images
+mode: default
+content:
+  field_image:
+    weight: 11
+    settings:
+      show_default_crop: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - two_column_block_image
+      progress_indicator: throbber
+      crop_types_required: {  }
+      show_crop_area: false
+      warn_multiple_usages: false
+    third_party_settings: {  }
+    type: image_widget_crop
+    region: content
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

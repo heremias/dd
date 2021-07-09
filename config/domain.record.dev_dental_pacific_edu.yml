@@ -1,0 +1,11 @@
+uuid: a12cf0e9-846d-4922-846f-9df862dabece
+langcode: en
+status: true
+dependencies: {  }
+id: dev_dental_pacific_edu
+domain_id: 13807783
+hostname: dental.pacific.edu
+name: dental.pacific.edu
+scheme: https
+weight: -4
+is_default: false

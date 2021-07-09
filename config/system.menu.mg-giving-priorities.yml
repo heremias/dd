@@ -1,0 +1,8 @@
+uuid: bab4434e-7d8f-4eb6-a920-1576f8c6d9a4
+langcode: en
+status: true
+dependencies: {  }
+id: mg-giving-priorities
+label: 'MG Giving Priorities'
+description: ''
+locked: false

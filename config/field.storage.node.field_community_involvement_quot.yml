@@ -1,0 +1,19 @@
+uuid: bf770b95-5be8-4598-b482-ee930319c97a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_community_involvement_quot
+field_name: field_community_involvement_quot
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

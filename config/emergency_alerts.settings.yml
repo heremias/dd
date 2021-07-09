@@ -1,0 +1,7 @@
+override: false
+show_block: false
+alert_level: danger
+alert_title: 'Emergency Alert - Danger'
+alert_message:
+  value: "<p>&nbsp;</p>\r\n\r\n<p>Maecenas luctus, lorem id vestibulum condimentum, elit turpis auctor ligula, sed fringilla dolor urna quis urna. Integer laoreet lacinia odio. Cras fermentum mauris sit amet ipsum laoreet, vitae tincidunt lectus eleifend. Vivamus non enim non magna vestibulum rhoncus. Nulla feugiat nibh condimentum lectus malesuada, vitae aliquet odio finibus.</p>\r\n"
+  format: basic_html

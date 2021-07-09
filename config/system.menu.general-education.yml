@@ -1,0 +1,8 @@
+uuid: af3c0c26-26e9-4d2c-9303-28146cde0ab8
+langcode: en
+status: true
+dependencies: {  }
+id: general-education
+label: 'General Education'
+description: ''
+locked: false

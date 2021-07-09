@@ -1,0 +1,89 @@
+uuid: 47d18c30-6d46-4424-a90c-19dfa3ac0b9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.test_extended_2_col.field_left_column
+    - field.field.paragraph.test_extended_2_col.field_right_column
+    - field.field.paragraph.test_extended_2_col.field_test_ref_iii
+    - field.field.paragraph.test_extended_2_col.field_view_ref
+    - field.field.paragraph.test_extended_2_col.field_view_ref_ii
+    - paragraphs.paragraphs_type.test_extended_2_col
+  module:
+    - paragraphs
+id: paragraph.test_extended_2_col.default
+targetEntityType: paragraph
+bundle: test_extended_2_col
+mode: default
+content:
+  field_left_column:
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  field_right_column:
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  field_test_ref_iii:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_view_ref:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_view_ref_ii:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

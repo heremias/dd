@@ -1,0 +1,8 @@
+uuid: e41458ef-1961-4dd6-b530-ac60ac2f9068
+langcode: en
+status: true
+dependencies: {  }
+id: discover-ethnic-studies
+label: 'Discover Ethnic Studies'
+description: ''
+locked: false

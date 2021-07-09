@@ -1,0 +1,8 @@
+uuid: e33c4234-e8f6-4dfc-aa75-cbb5b743f08c
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-sports-sciences
+label: 'Department of Sports Sciences'
+description: 'Section menu for Department of Sports Sciences'
+locked: false

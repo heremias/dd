@@ -1,0 +1,28 @@
+uuid: 7a6bd7c2-4420-4bde-ad61-b76dc7057313
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.yellow_links.field_link_list
+    - paragraphs.paragraphs_type.yellow_links
+  module:
+    - link
+id: paragraph.yellow_links.default
+targetEntityType: paragraph
+bundle: yellow_links
+mode: default
+content:
+  field_link_list:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  search_api_excerpt: true

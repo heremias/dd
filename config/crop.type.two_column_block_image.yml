@@ -1,0 +1,12 @@
+uuid: 44fe8a25-1783-48dd-aaaf-7cbc585b526b
+langcode: en
+status: true
+dependencies: {  }
+id: two_column_block_image
+label: 'Two Column Block Image'
+description: ''
+aspect_ratio: '579:482'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

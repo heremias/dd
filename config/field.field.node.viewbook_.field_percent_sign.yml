@@ -1,0 +1,23 @@
+uuid: 4fde8efd-c2e4-44a1-aeb1-3d8f7aec908c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_percent_sign
+    - node.type.viewbook_
+id: node.viewbook_.field_percent_sign
+field_name: field_percent_sign
+entity_type: node
+bundle: viewbook_
+label: 'Percent Sign'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Percent Sign'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,31 @@
+uuid: cb859a70-db7a-435c-8ad8-1c8bfb6b5575
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:rotator:799f9a42-5fb7-403a-8a02-8c0280c31331'
+  module:
+    - block_content
+    - system
+  theme:
+    - u_pacific
+id: homepagerotator
+theme: u_pacific
+region: header
+weight: -16
+provider: null
+plugin: 'block_content:799f9a42-5fb7-403a-8a02-8c0280c31331'
+settings:
+  id: 'block_content:799f9a42-5fb7-403a-8a02-8c0280c31331'
+  label: 'Homepage Rotator'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/node/648"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,256 @@
+uuid: 7162c190-5b7e-44d1-a7da-001f3d9ef4e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.campus_directory.feeds_item
+    - field.field.node.campus_directory.field_administrative_department
+    - field.field.node.campus_directory.field_biography
+    - field.field.node.campus_directory.field_campus
+    - field.field.node.campus_directory.field_curriculum_vitae
+    - field.field.node.campus_directory.field_domain_source
+    - field.field.node.campus_directory.field_education
+    - field.field.node.campus_directory.field_email
+    - field.field.node.campus_directory.field_email_override
+    - field.field.node.campus_directory.field_firstname
+    - field.field.node.campus_directory.field_headshot_1
+    - field.field.node.campus_directory.field_last_name
+    - field.field.node.campus_directory.field_linkedin
+    - field.field.node.campus_directory.field_meta_tags
+    - field.field.node.campus_directory.field_office_location
+    - field.field.node.campus_directory.field_office_location_2
+    - field.field.node.campus_directory.field_phone_number
+    - field.field.node.campus_directory.field_phone_number_override
+    - field.field.node.campus_directory.field_professional_title
+    - field.field.node.campus_directory.field_professional_title_2
+    - field.field.node.campus_directory.field_professional_title_3
+    - field.field.node.campus_directory.field_research_focus
+    - field.field.node.campus_directory.field_school
+    - field.field.node.campus_directory.field_teaching_interests
+    - field.field.node.campus_directory.field_website
+    - field.field.node.campus_directory.field_yoast_seo
+    - image.style.campus_directory
+    - node.type.campus_directory
+  module:
+    - file
+    - image
+    - link
+    - metatag
+    - telephone
+    - text
+    - user
+    - yoast_seo
+id: node.campus_directory.default
+targetEntityType: node
+bundle: campus_directory
+mode: default
+content:
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_administrative_department:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_biography:
+    weight: 24
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_campus:
+    weight: 21
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_curriculum_vitae:
+    weight: 19
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_education:
+    weight: 25
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_email:
+    weight: 1
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_email_override:
+    weight: 29
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_firstname:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_headshot_1:
+    weight: 16
+    label: hidden
+    settings:
+      image_style: campus_directory
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_last_name:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_linkedin:
+    weight: 28
+    label: inline
+    settings:
+      trim_length: 80
+      rel: nofollow
+      target: _blank
+      url_only: false
+      url_plain: false
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_meta_tags:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_office_location:
+    weight: 20
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_office_location_2:
+    weight: 15
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_phone_number:
+    weight: 4
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_phone_number_override:
+    weight: 30
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_professional_title:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_professional_title_2:
+    weight: 12
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_professional_title_3:
+    weight: 13
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_research_focus:
+    weight: 23
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_school:
+    weight: 7
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_teaching_interests:
+    type: text_default
+    weight: 22
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_website:
+    weight: 27
+    label: inline
+    settings:
+      trim_length: 80
+      rel: nofollow
+      target: _blank
+      url_only: false
+      url_plain: false
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_yoast_seo:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: yoastseo_formatter
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  feeds_item: true
+  field_domain_source: true
+  langcode: true
+  search_api_excerpt: true

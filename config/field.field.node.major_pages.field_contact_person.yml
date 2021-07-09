@@ -1,0 +1,28 @@
+uuid: 32b859d2-539c-4401-99bb-54d2ea9c0bf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_person
+    - node.type.campus_directory
+    - node.type.major_pages
+id: node.major_pages.field_contact_person
+field_name: field_contact_person
+entity_type: node
+bundle: major_pages
+label: 'Contact person'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      campus_directory: campus_directory
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

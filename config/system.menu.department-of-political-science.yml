@@ -1,0 +1,8 @@
+uuid: de9baf3b-3145-4275-90eb-b125d79099f3
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-political-science
+label: 'Department of Political Science'
+description: 'Section Menu for Department of Political Science'
+locked: false

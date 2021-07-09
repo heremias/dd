@@ -1,0 +1,21 @@
+uuid: 16d4f086-b06f-42c0-b465-ac1cb85e5ba8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_number_override
+    - node.type.campus_directory
+  module:
+    - telephone
+id: node.campus_directory.field_phone_number_override
+field_name: field_phone_number_override
+entity_type: node
+bundle: campus_directory
+label: 'Phone Number Override'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

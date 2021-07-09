@@ -1,0 +1,8 @@
+uuid: e69d162b-3fb5-4b77-aaf3-a261235b9aac
+langcode: en
+status: true
+dependencies: {  }
+id: long-about
+label: 'Long About'
+description: ''
+locked: false

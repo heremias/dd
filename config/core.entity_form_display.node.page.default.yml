@@ -1,0 +1,220 @@
+uuid: 808e5288-4a65-4922-b5fe-aa047da4b9e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.feeds_item
+    - field.field.node.page.field_attachement
+    - field.field.node.page.field_domain_source
+    - field.field.node.page.field_header_type
+    - field.field.node.page.field_hide_section_menu
+    - field.field.node.page.field_image
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_school_college_department
+    - field.field.node.page.field_temp_domain_access
+    - field.field.node.page.field_temp_domain_source
+    - field.field.node.page.field_yoast_seo
+    - image.style.thumbnail
+    - node.type.page
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - field_group
+    - file
+    - image_widget_crop
+    - metatag
+    - path
+    - shs
+    - text
+    - yoast_seo
+third_party_settings:
+  field_group:
+    group_header_options:
+      children:
+        - field_header_type
+        - field_image
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        open: false
+      label: 'Header Options'
+    group_seo:
+      children:
+        - field_yoast_seo
+        - field_meta_tags
+      parent_name: ''
+      weight: 14
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: SEO
+    group_attachements:
+      children:
+        - field_attachement
+      parent_name: ''
+      weight: 5
+      format_type: details
+      region: content
+      format_settings:
+        description: 'Page Attachments applies to Section Producers and Section Editors. Please upload any attachments and remember to specify where these files should be linked in the Revision Log Message.'
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: 'Page Attachements'
+_core:
+  default_config_hash: AD_lefuYmjsKeH3OQApsyP_nLj6ZnGaALznLQSQ0Z_o
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 4
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_attachement:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_domain_source:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_header_type:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hide_section_menu:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_image:
+    weight: 4
+    settings:
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - mobile_header_image
+        - small_header_image
+      progress_indicator: throbber
+      crop_types_required: {  }
+      show_crop_area: false
+    third_party_settings: {  }
+    type: image_widget_crop
+    region: content
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 11
+    region: content
+    settings:
+      sidebar: false
+    third_party_settings: {  }
+  field_school_college_department:
+    weight: 1
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
+    third_party_settings: {  }
+    type: options_shs
+    region: content
+  field_yoast_seo:
+    weight: 10
+    settings:
+      body: body
+    third_party_settings: {  }
+    type: yoast_seo_widget
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 9
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  feeds_item: true
+  field_temp_domain_access: true
+  field_temp_domain_source: true
+  promote: true
+  sticky: true

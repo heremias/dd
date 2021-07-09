@@ -1,0 +1,29 @@
+uuid: 438562df-2943-42ad-8e27-e999c7abe9fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - seven
+id: seven_mainnavigation_2
+theme: seven
+region: header
+weight: -6
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Mobile Menu - Admission & Aid'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'main:menu_link_content:968dc190-77c5-4dcc-9ace-5fca1be86085'
+  suggestion: main
+visibility: {  }

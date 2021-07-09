@@ -1,0 +1,12 @@
+uuid: 55ca7991-f922-4d79-b6d6-bf8b467e2d23
+langcode: en
+status: true
+dependencies: {  }
+id: campus_directory
+label: 'Campus Directory'
+description: ''
+aspect_ratio: '325:365'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

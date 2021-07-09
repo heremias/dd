@@ -1,0 +1,8 @@
+uuid: eb9a98ec-55eb-472d-b61b-a8cb6830364c
+langcode: en
+status: true
+dependencies: {  }
+id: geo-career-paths
+label: 'Geo Career Paths'
+description: ''
+locked: false

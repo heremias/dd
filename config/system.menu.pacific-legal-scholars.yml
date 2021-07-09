@@ -1,0 +1,8 @@
+uuid: 0090d8e1-01d7-4ff5-a212-abb3b854160e
+langcode: en
+status: true
+dependencies: {  }
+id: pacific-legal-scholars
+label: 'Pacific Legal Scholars'
+description: 'Section Menu for Pacific Legal Scholars'
+locked: false

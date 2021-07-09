@@ -1,0 +1,8 @@
+uuid: d5835d7a-23d0-4314-8cd4-ce7e00853c3c
+langcode: en
+status: true
+dependencies: {  }
+id: admin-offices
+label: 'Admin Offices'
+description: ''
+locked: false

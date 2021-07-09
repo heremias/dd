@@ -1,0 +1,30 @@
+uuid: 96d27a59-edc2-4149-b563-e92390730529
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - taxonomy
+id: taxonomy_term.field_contact_image
+field_name: field_contact_image
+entity_type: taxonomy_term
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: 921ca8d2-ff58-467f-b10a-14f30e549344
+    alt: 'More Contact Info'
+    title: ''
+    width: 468
+    height: 332
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

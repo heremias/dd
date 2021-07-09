@@ -1,0 +1,8 @@
+uuid: f0d0b48c-5061-4ca6-b91a-bb9a4b366535
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-communication
+label: 'Department of Communication'
+description: 'Section Menu for the Department of Communication'
+locked: false

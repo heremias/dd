@@ -1,0 +1,9 @@
+uuid: e90c0e7f-ed5c-47ea-9d05-8545c2f7686c
+langcode: en
+status: true
+dependencies: {  }
+id: music_live_pacific_edu
+domain_id: music_dev_pacific_edu
+pattern: music.live.pacific.edu
+redirect: 0
+environment: staging

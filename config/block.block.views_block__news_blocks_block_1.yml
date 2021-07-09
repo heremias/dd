@@ -1,0 +1,36 @@
+uuid: 1d315af8-4fd5-4433-965b-d7fed2be5e01
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news_blocks
+  module:
+    - domain
+    - system
+    - views
+  theme:
+    - u_pacific
+id: views_block__news_blocks_block_1
+theme: u_pacific
+region: content
+weight: -12
+provider: null
+plugin: 'views_block:news_blocks-block_1'
+settings:
+  id: 'views_block:news_blocks-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: '3'
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/node/648"
+    negate: false
+    context_mapping: {  }

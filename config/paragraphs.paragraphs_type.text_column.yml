@@ -1,0 +1,10 @@
+uuid: 3b15a795-93a0-4dc6-a636-d7220a143e02
+langcode: en
+status: true
+dependencies: {  }
+id: text_column
+label: 'Text Column'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

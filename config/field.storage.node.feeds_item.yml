@@ -1,0 +1,20 @@
+uuid: 0a5576ac-ec23-4a1f-b17e-207574271edd
+langcode: en
+status: true
+dependencies:
+  module:
+    - feeds
+    - node
+id: node.feeds_item
+field_name: feeds_item
+entity_type: node
+type: feeds_item
+settings:
+  target_type: feeds_feed
+module: feeds
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

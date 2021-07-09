@@ -1,0 +1,8 @@
+uuid: e07ce836-906a-4531-9352-bfd0cfdf1732
+langcode: en
+status: true
+dependencies: {  }
+id: educational-equity
+label: 'Educational Equity'
+description: ''
+locked: false

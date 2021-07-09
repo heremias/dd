@@ -1,0 +1,8 @@
+uuid: 5c7c57dd-62e4-4e6c-a8f9-735f2c55b54b
+langcode: en
+status: true
+dependencies: {  }
+id: school-of-engineering-and-comput
+label: 'School of Engineering and Computer Science'
+description: ''
+locked: false

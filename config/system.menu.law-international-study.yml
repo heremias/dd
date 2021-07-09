@@ -1,0 +1,8 @@
+uuid: 81f84fc0-0bd3-4ed1-9df7-fea13b69c99d
+langcode: en
+status: true
+dependencies: {  }
+id: law-international-study
+label: 'Law International Study'
+description: ''
+locked: false

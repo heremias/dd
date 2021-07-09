@@ -1,0 +1,26 @@
+uuid: 3cdb276c-679d-4e99-a0b3-80877382eebe
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.carousel_image
+  module:
+    - crop
+name: carousel_image_desktop
+label: 'Carousel Image Desktop'
+effects:
+  96dd7734-15ce-4056-b5a7-be68e06bf498:
+    uuid: 96dd7734-15ce-4056-b5a7-be68e06bf498
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1200
+      height: 604
+      anchor: center-center
+  7d097697-8c60-40b2-a8ca-3fa68d0213ea:
+    uuid: 7d097697-8c60-40b2-a8ca-3fa68d0213ea
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: carousel_image
+pipeline: __default__

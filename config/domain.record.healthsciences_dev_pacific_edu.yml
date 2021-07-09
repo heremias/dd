@@ -1,0 +1,11 @@
+uuid: d7a938e6-c307-47fa-80ed-3a9b1e61f164
+langcode: en
+status: true
+dependencies: {  }
+id: healthsciences_dev_pacific_edu
+domain_id: 5926633
+hostname: healthsciences.pacific.edu
+name: healthsciences.pacific.edu
+scheme: https
+weight: 7
+is_default: false

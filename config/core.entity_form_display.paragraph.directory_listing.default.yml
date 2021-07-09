@@ -1,0 +1,25 @@
+uuid: bdb845fc-ab8e-4b9a-86cf-b27cd0b9c15e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.directory_listing.field_listing
+    - paragraphs.paragraphs_type.directory_listing
+id: paragraph.directory_listing.default
+targetEntityType: paragraph
+bundle: directory_listing
+mode: default
+content:
+  field_listing:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

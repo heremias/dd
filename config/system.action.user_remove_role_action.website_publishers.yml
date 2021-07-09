@@ -1,0 +1,14 @@
+uuid: 6c17a836-e3e1-4d43-9ca3-75f7739b7fbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.website_publishers
+  module:
+    - user
+id: user_remove_role_action.website_publishers
+label: 'Remove the Website Publishers role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: website_publishers

@@ -1,0 +1,8 @@
+uuid: 5dc3515b-8d8f-49a7-a628-932ef19f75ce
+langcode: en
+status: true
+dependencies: {  }
+id: school-of-health-sciences
+label: 'School of Health Sciences'
+description: ''
+locked: false

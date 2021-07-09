@@ -1,0 +1,23 @@
+uuid: 74d98b94-d942-40ed-8eb0-ab0cbdf686d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_below_intro_field
+    - node.type.college_school_landing_page
+id: node.college_school_landing_page.field_menu_below_intro_field
+field_name: field_menu_below_intro_field
+entity_type: node
+bundle: college_school_landing_page
+label: 'Menu Below Intro Field'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Menu Below Intro Field'
+  off_label: 'Off'
+field_type: boolean

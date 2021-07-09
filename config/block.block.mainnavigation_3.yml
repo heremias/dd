@@ -1,0 +1,35 @@
+uuid: f9730fe9-a841-497d-ba67-55aba9146bcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: mainnavigation_3
+theme: u_pacific
+region: mobile_navigation
+weight: -17
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Mobile Menu - Academics'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'main:menu_link_content:7e59de65-6f70-4f81-88ff-5ef3f2af0e8b'
+  suggestion: main
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

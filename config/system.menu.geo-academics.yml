@@ -1,0 +1,8 @@
+uuid: 8e91ee04-6f8a-4f7a-9003-f4f1dbe48017
+langcode: en
+status: true
+dependencies: {  }
+id: geo-academics
+label: 'Geo Academics'
+description: ''
+locked: false

@@ -1,0 +1,8 @@
+uuid: ad64e8ad-f55e-4959-9c65-b6858dda0e26
+langcode: en
+status: true
+dependencies: {  }
+id: registrar-path-to-graduation
+label: 'Registrar Path to Graduation'
+description: ''
+locked: false

@@ -1,0 +1,21 @@
+uuid: 4262a03a-0453-4a37-8bc6-56b292eeff09
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.test
+    - field.storage.feeds_feed.field_meta
+  module:
+    - metatag
+id: feeds_feed.test.field_meta
+field_name: field_meta
+entity_type: feeds_feed
+bundle: test
+label: meta
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

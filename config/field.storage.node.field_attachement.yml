@@ -1,0 +1,23 @@
+uuid: ce3b810f-000c-47df-bdb5-ff56e3ce8f6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_attachement
+field_name: field_attachement
+entity_type: node
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 10
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

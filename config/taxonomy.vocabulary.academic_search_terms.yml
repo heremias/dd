@@ -1,0 +1,8 @@
+uuid: ef887daa-a2ee-49af-bf22-5192863f7708
+langcode: en
+status: true
+dependencies: {  }
+name: 'Academic Search Terms'
+vid: academic_search_terms
+description: ''
+weight: 0

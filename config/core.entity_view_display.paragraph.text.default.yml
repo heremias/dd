@@ -1,0 +1,47 @@
+uuid: 90acb068-3b00-4a16-903e-cdb54532abf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text.field_description
+    - field.field.paragraph.text.field_subtitle
+    - field.field.paragraph.text.field_text_title
+    - field.field.paragraph.text.field_title_color
+    - paragraphs.paragraphs_type.text
+  module:
+    - text
+_core:
+  default_config_hash: kyCEhGxyRmMibYB56zAOSPCf0TkEkMEPOHLFsFZmf4c
+id: paragraph.text.default
+targetEntityType: paragraph
+bundle: text
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_subtitle:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_text_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_title_color: true
+  search_api_excerpt: true
+  uid: true

@@ -1,0 +1,8 @@
+uuid: 80577e33-e535-49d2-b5d6-4609de4cd182
+langcode: en
+status: true
+dependencies: {  }
+id: emergency-management
+label: 'Emergency Management'
+description: ''
+locked: false

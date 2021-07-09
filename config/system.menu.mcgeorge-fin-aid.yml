@@ -1,0 +1,8 @@
+uuid: 0b5fb1c6-f793-43fa-8fd3-8fd2e5b22f17
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-fin-aid
+label: 'McGeorge Fin Aid'
+description: ''
+locked: false

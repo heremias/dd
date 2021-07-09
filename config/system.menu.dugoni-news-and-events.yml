@@ -1,0 +1,8 @@
+uuid: 634179f2-d058-4bbb-82a4-b84bf968a08b
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-news-and-events
+label: 'Dugoni News and Events'
+description: ''
+locked: false

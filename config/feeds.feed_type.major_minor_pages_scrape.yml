@@ -1,0 +1,195 @@
+uuid: a95d5585-bd18-4935-a55f-0e6aba3e38b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.major_pages.body
+    - field.field.node.major_pages.field_contact_location
+    - field.field.node.major_pages.field_contact_phone_number
+    - field.field.node.major_pages.field_more_information
+    - field.field.node.major_pages.field_program_classification
+    - field.field.node.major_pages.field_program_type
+    - field.field.node.major_pages.field_school_college_department
+    - field.field.node.major_pages.field_temp_domain_access
+    - field.field.node.major_pages.field_temp_domain_source
+    - node.type.major_pages
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      6e0fb87f-3071-4434-9808-d9a53ab90bd7:
+        separator: ','
+        limit: null
+        plugin: explode
+        source: program_classification
+        weight: 0
+        label: Explode
+        uuid: 6e0fb87f-3071-4434-9808-d9a53ab90bd7
+id: major_minor_pages_scrape
+label: 'Major / Minor pages scrape'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: major_pages
+custom_sources:
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  overview_text:
+    label: 'Overview Text'
+    value: 'Overview Text'
+    machine_name: overview_text
+  meta_description:
+    label: 'Meta Description'
+    value: 'Meta Description'
+    machine_name: meta_description
+  more_information:
+    label: 'More Information'
+    value: 'More Information'
+    machine_name: more_information
+  success_story_headline:
+    label: 'Success Story Headline'
+    value: 'Success Story Headline'
+    machine_name: success_story_headline
+  tag:
+    label: tag
+    value: tag
+    machine_name: tag
+  new_url:
+    label: 'New URL'
+    value: 'New URL'
+    machine_name: new_url
+  domain_access:
+    label: 'Domain Access'
+    value: 'Domain Access'
+    machine_name: domain_access
+  domain_source:
+    label: 'Domain Source'
+    value: 'Domain Source'
+    machine_name: domain_source
+  address:
+    label: Address
+    value: Address
+    machine_name: address
+  point_of_contact_email:
+    label: 'Point of Contact Email'
+    value: 'Point of Contact Email'
+    machine_name: point_of_contact_email
+  phone:
+    label: Phone
+    value: Phone
+    machine_name: phone
+  program_type:
+    label: 'Program Type'
+    value: 'Program Type'
+    machine_name: program_type
+  program_classification:
+    label: 'Program Classification'
+    value: 'Program Classification'
+    machine_name: program_classification
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: overview_text
+      summary: meta_description
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_more_information
+    map:
+      value: more_information
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_school_college_department
+    map:
+      target_id: tag
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: path
+    map:
+      alias: new_url
+    settings:
+      language: null
+  -
+    target: field_temp_domain_access
+    map:
+      value: domain_access
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_temp_domain_source
+    map:
+      value: domain_source
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_contact_location
+    map:
+      value: address
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_contact_phone_number
+    map:
+      value: phone
+    settings:
+      language: null
+  -
+    target: field_program_classification
+    map:
+      target_id: program_classification
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_program_type
+    map:
+      target_id: program_type
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false

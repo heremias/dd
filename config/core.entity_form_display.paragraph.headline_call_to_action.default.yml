@@ -1,0 +1,51 @@
+uuid: e9e865c9-30cb-4aa2-a9d3-dd95900248a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.headline_call_to_action.field_background_color
+    - field.field.paragraph.headline_call_to_action.field_description
+    - field.field.paragraph.headline_call_to_action.field_link
+    - paragraphs.paragraphs_type.headline_call_to_action
+  module:
+    - link_attributes
+    - text
+id: paragraph.headline_call_to_action.default
+targetEntityType: paragraph
+bundle: headline_call_to_action
+mode: default
+content:
+  field_background_color:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_description:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,8 @@
+uuid: 4f242d53-9698-4a94-8c97-6b74d322db6d
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-about
+label: 'Dugoni About'
+description: ''
+locked: false

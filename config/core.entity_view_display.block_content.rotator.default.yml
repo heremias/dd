@@ -1,0 +1,36 @@
+uuid: d3f49152-3bd5-4057-b57e-f1178b28bc0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.rotator
+    - field.field.block_content.rotator.field_slides
+    - field.field.block_content.rotator.field_video
+  module:
+    - entity_reference_revisions
+    - file
+id: block_content.rotator.default
+targetEntityType: block_content
+bundle: rotator
+mode: default
+content:
+  field_slides:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_video:
+    weight: 1
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

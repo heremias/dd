@@ -1,0 +1,22 @@
+uuid: be5b8f15-cc65-40ff-9a96-5df0c8887024
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - u_pacific
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: u_pacific_messages
+theme: u_pacific
+region: content
+weight: -18
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

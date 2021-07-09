@@ -1,0 +1,23 @@
+uuid: 7b484131-fd41-43df-81a7-496b245d9562
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_spacing
+    - paragraphs.paragraphs_type.spacer
+  module:
+    - options
+id: paragraph.spacer.field_spacing
+field_name: field_spacing
+entity_type: paragraph
+bundle: spacer
+label: Spacing
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 25px
+default_value_callback: ''
+settings: {  }
+field_type: list_string

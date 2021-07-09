@@ -1,0 +1,22 @@
+uuid: 9c48f7b3-c4a7-4e69-b39c-3856084d50e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - u_pacific
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: u_pacific_content
+theme: u_pacific
+region: content
+weight: -17
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

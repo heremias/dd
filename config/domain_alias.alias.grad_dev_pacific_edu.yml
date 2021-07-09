@@ -1,0 +1,9 @@
+uuid: daf573d6-92f2-4d8a-ac59-dd513837c6a2
+langcode: en
+status: true
+dependencies: {  }
+id: grad_dev_pacific_edu
+domain_id: grad_dev_pacific_edu
+pattern: grad.dev.pacific.edu
+redirect: 0
+environment: development

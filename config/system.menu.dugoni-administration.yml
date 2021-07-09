@@ -1,0 +1,8 @@
+uuid: 714dc834-162f-49f7-a666-a1440fd5cfb1
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-administration
+label: 'Dugoni Administration'
+description: ''
+locked: false

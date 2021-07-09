@@ -1,0 +1,8 @@
+uuid: ca655f4a-a5a2-45e3-b410-0ce14fd36119
+langcode: en
+status: true
+dependencies: {  }
+id: cop-academics
+label: 'COP Academics'
+description: ''
+locked: false

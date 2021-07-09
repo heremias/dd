@@ -1,0 +1,36 @@
+uuid: badac493-5af9-45bd-98a4-08b72bba5d65
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-menu
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitymenu
+theme: u_pacific
+region: tools
+weight: -9
+provider: null
+plugin: 'menu_block:utility-menu'
+settings:
+  id: 'menu_block:utility-menu'
+  label: 'WWWW Mobile Utility Menu'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-menu:'
+  suggestion: utility_menu
+visibility:
+  domain:
+    id: domain
+    domains:
+      www_dev_pacific_edu: www_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

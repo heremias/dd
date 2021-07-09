@@ -1,0 +1,9 @@
+uuid: 1b7aba11-8783-4ad8-abb3-2286ceeef88d
+langcode: en
+status: true
+dependencies: {  }
+id: engineering_live_pacific_edu
+domain_id: engineering_dev_pacific_edu
+pattern: engineering.live.pacific.edu
+redirect: 0
+environment: staging

@@ -1,0 +1,9 @@
+uuid: bd391094-9423-4e23-9e8e-ada6777fc6c8
+langcode: en
+status: true
+dependencies: {  }
+id: pharmacy_live_pacific_edu
+domain_id: pharmacy_dev_pacific_edu
+pattern: pharmacy.live.pacific.edu
+redirect: 0
+environment: staging

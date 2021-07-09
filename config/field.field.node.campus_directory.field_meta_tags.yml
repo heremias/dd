@@ -1,0 +1,21 @@
+uuid: 9c634b8c-7bfb-4352-972c-bee3feb68532
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.campus_directory
+  module:
+    - metatag
+id: node.campus_directory.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: campus_directory
+label: 'Meta tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -1,0 +1,10 @@
+uuid: 471b0141-d2f0-4191-a402-f7321dece8cb
+langcode: en
+status: true
+dependencies: {  }
+id: rotator
+label: Rotator
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

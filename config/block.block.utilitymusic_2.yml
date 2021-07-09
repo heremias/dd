@@ -1,0 +1,36 @@
+uuid: 9473906e-14bf-4e30-8d4e-0177a0bfb182
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-music
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitymusic_2
+theme: u_pacific
+region: tools_desktop
+weight: 0
+provider: null
+plugin: 'menu_block:utility-music'
+settings:
+  id: 'menu_block:utility-music'
+  label: 'Utility Desktop - Music'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-music:'
+  suggestion: utility_music
+visibility:
+  domain:
+    id: domain
+    domains:
+      music_dev_pacific_edu: music_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

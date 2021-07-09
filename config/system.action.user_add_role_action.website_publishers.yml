@@ -1,0 +1,14 @@
+uuid: e46f4328-a251-46b7-96b3-a89eae0faf0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.website_publishers
+  module:
+    - user
+id: user_add_role_action.website_publishers
+label: 'Add the Website Publishers role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: website_publishers

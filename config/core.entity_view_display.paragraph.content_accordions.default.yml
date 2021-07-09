@@ -1,0 +1,25 @@
+uuid: a2c744b8-d610-42ec-81e8-46121cff5cad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_accordions.field_accordions
+    - paragraphs.paragraphs_type.content_accordions
+  module:
+    - entity_reference_revisions
+id: paragraph.content_accordions.default
+targetEntityType: paragraph
+bundle: content_accordions
+mode: default
+content:
+  field_accordions:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

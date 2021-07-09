@@ -1,0 +1,8 @@
+uuid: 589edaea-9d7e-4d01-a7e7-ab87e25e67e8
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-biological-science
+label: 'Department of Biological Sciences'
+description: ''
+locked: false

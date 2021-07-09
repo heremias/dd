@@ -1,0 +1,10 @@
+uuid: 0998b25f-7157-4254-b1bd-62bdacabe7ef
+langcode: en
+status: true
+dependencies: {  }
+id: directory_listing
+label: 'Directory Listing'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,38 @@
+uuid: 429e681d-7284-4313-ba88-d83307e7d373
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_academic_quote_background
+    - node.type.viewbook_
+  module:
+    - image
+id: node.viewbook_.field_academic_quote_background
+field_name: field_academic_quote_background
+entity_type: node
+bundle: viewbook_
+label: 'Academic Quote Background'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

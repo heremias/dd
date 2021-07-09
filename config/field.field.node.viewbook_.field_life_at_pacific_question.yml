@@ -1,0 +1,21 @@
+uuid: 1664e11a-9f0a-4611-9673-696cbe3d3167
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_life_at_pacific_question
+    - node.type.viewbook_
+  module:
+    - text
+id: node.viewbook_.field_life_at_pacific_question
+field_name: field_life_at_pacific_question
+entity_type: node
+bundle: viewbook_
+label: 'Life at Pacific Question'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

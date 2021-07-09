@@ -1,0 +1,10 @@
+uuid: b985fde5-6708-434b-b731-05516c037fe6
+langcode: en
+status: true
+dependencies: {  }
+id: localist_events_
+label: 'Localist Events '
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,8 @@
+uuid: 39e2da5d-1b62-4bbf-9076-2670639cbdb3
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-public-safety
+label: 'McGeorge Public Safety'
+description: ''
+locked: false

@@ -1,0 +1,8 @@
+uuid: 2d02ccc9-f40a-4971-b248-4a95e21501ee
+langcode: en
+status: true
+dependencies: {  }
+id: collaboration
+label: Collaboration
+description: ''
+locked: false

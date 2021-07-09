@@ -1,0 +1,8 @@
+uuid: faf7af2e-776b-41d3-abd7-0b21299e20f2
+langcode: en
+status: true
+dependencies: {  }
+id: soecs-research
+label: 'SOECS Research'
+description: ''
+locked: false

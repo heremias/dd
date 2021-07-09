@@ -1,0 +1,8 @@
+uuid: 821ce45c-4d5a-463a-ad25-dfcbf313eb0e
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-giving
+label: 'McGeorge Development'
+description: 'The section menu for McGeorge Development pages'
+locked: false

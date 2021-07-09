@@ -1,0 +1,12 @@
+uuid: f3a269a3-3138-4e06-ae9b-11ff44aacffa
+langcode: en
+status: true
+dependencies: {  }
+id: video_background
+label: 'Video Background'
+description: ''
+aspect_ratio: '1200:597'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null
