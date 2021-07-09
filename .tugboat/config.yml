@@ -48,7 +48,7 @@ services:
       update:
         # Use the tugboat-specific Drupal settings.
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.local.php" "${DOCROOT}/sites/default/"
-        - cp "${TUGBOAT_ROOT}/config/*" "../${DOCROOT}"
+        - cp -R "${TUGBOAT_ROOT}/config/" "../${DOCROOT}"
 
 
         # Install/update packages managed by composer, including drush.
