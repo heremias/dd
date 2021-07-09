@@ -1,0 +1,36 @@
+uuid: 171c7c76-8a1a-4245-acc8-5880f1af84ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recent_news_block
+  module:
+    - domain
+    - system
+    - views
+  theme:
+    - u_pacific
+id: views_block__recent_news_block_block_2
+theme: u_pacific
+region: sidebar_left
+weight: 0
+provider: null
+plugin: 'views_block:recent_news_block-block_2'
+settings:
+  id: 'views_block:recent_news_block-block_2'
+  label: 'University Features'
+  provider: views
+  label_display: visible
+  views_label: 'University Features'
+  items_per_page: none
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/node/677\r\n/node/677*"
+    negate: false
+    context_mapping: {  }

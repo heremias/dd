@@ -1,0 +1,19 @@
+uuid: a6378c0c-c623-4674-9a27-2036cd1f39cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_firstname
+    - node.type.campus_directory
+id: node.campus_directory.field_firstname
+field_name: field_firstname
+entity_type: node
+bundle: campus_directory
+label: 'First Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

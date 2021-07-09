@@ -1,0 +1,8 @@
+uuid: 25baaaeb-0040-4b98-b660-ae22eb9f62ca
+langcode: en
+status: true
+dependencies: {  }
+id: psych-career-paths
+label: 'Psych Career Paths'
+description: ''
+locked: false

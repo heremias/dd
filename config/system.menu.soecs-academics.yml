@@ -1,0 +1,8 @@
+uuid: be2a55c9-4818-4964-b2c5-b96b363bdf4f
+langcode: en
+status: true
+dependencies: {  }
+id: soecs-academics
+label: 'SOECS Academics'
+description: ''
+locked: false

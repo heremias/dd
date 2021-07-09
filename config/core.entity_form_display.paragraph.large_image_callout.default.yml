@@ -1,0 +1,62 @@
+uuid: f7ad6c3e-b918-4c65-85f4-402423c8cb5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.large_image_callout.field_image
+    - field.field.paragraph.large_image_callout.field_link
+    - field.field.paragraph.large_image_callout.field_subtitle
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.large_image_callout
+  module:
+    - image_widget_crop
+    - link_attributes
+id: paragraph.large_image_callout.default
+targetEntityType: paragraph
+bundle: large_image_callout
+mode: default
+content:
+  field_image:
+    weight: 1
+    settings:
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - two_column_block_image
+        - video_background
+      progress_indicator: throbber
+      crop_types_required: {  }
+      show_crop_area: false
+    third_party_settings: {  }
+    type: image_widget_crop
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_subtitle:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

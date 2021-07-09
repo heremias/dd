@@ -1,0 +1,8 @@
+uuid: a25f2a2d-9040-45f0-9dad-501ddaa2d51b
+langcode: en
+status: true
+dependencies: {  }
+id: rlh-campus-facilities
+label: 'RLH Campus Facilities'
+description: ''
+locked: false

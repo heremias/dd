@@ -1,0 +1,23 @@
+uuid: 144b6d3a-7883-4244-bf80-28e37667fb4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_link
+    - node.type.landing_page
+  module:
+    - link
+id: node.landing_page.field_header_link
+field_name: field_header_link
+entity_type: node
+bundle: landing_page
+label: 'Header Call to Action'
+description: 'This field is optional.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

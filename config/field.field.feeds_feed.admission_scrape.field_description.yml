@@ -1,0 +1,23 @@
+uuid: a0bdc24f-c637-48a7-9e86-6ca562f6c32b
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.admission_scrape
+    - field.storage.feeds_feed.field_description
+id: feeds_feed.admission_scrape.field_description
+field_name: field_description
+entity_type: feeds_feed
+bundle: admission_scrape
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:metatag_defaults'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

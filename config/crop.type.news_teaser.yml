@@ -1,0 +1,12 @@
+uuid: 30c5876a-e3aa-45de-a5f3-accb40ab8ec4
+langcode: en
+status: true
+dependencies: {  }
+id: news_teaser
+label: 'News Teaser'
+description: ''
+aspect_ratio: '397:269'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

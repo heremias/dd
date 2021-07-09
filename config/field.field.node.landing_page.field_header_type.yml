@@ -1,0 +1,23 @@
+uuid: 8f82711a-7249-43fe-9cb9-16a314c78d27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_type
+    - node.type.landing_page
+  module:
+    - options
+id: node.landing_page.field_header_type
+field_name: field_header_type
+entity_type: node
+bundle: landing_page
+label: 'Header Image Type'
+description: 'Use contained type when there is a section menu and use Overflow type when there is no section menu.'
+required: true
+translatable: false
+default_value:
+  -
+    value: two_column
+default_value_callback: ''
+settings: {  }
+field_type: list_string

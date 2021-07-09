@@ -1,0 +1,8 @@
+uuid: fd5512bd-51f1-4a24-99d6-49425771e2c7
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-student-life
+label: 'McGeorge Student Life'
+description: 'Section Menu for McGeorge Student Life'
+locked: false

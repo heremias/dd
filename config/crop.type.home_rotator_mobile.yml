@@ -1,0 +1,12 @@
+uuid: efd2f4f1-a616-4500-9329-d52ce2556634
+langcode: en
+status: true
+dependencies: {  }
+id: home_rotator_mobile
+label: 'Home Rotator Mobile'
+description: ''
+aspect_ratio: '900:860'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

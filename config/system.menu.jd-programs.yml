@@ -1,0 +1,8 @@
+uuid: 7de25cc4-47e0-4a16-b1e5-7868295f45dc
+langcode: en
+status: true
+dependencies: {  }
+id: jd-programs
+label: 'McGeorge JD Programs'
+description: 'Section Menu for McGeorge JD Programs'
+locked: false

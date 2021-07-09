@@ -1,0 +1,8 @@
+uuid: 6d741d02-0b0e-4321-a811-b95220c85f05
+langcode: en
+status: true
+dependencies: {  }
+id: celebrating-research
+label: 'Celebrating Research'
+description: ''
+locked: false

@@ -1,0 +1,22 @@
+uuid: 67e2275e-1a41-488a-b7e2-8914f7b086d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.directory_listing.field_listing
+    - paragraphs.paragraphs_type.directory_listing
+id: paragraph.directory_listing.default
+targetEntityType: paragraph
+bundle: directory_listing
+mode: default
+content:
+  field_listing:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  search_api_excerpt: true

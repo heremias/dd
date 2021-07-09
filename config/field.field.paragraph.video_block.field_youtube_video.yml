@@ -1,0 +1,21 @@
+uuid: 1b138267-b847-4e20-b2f6-adb49202a61f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_youtube_video
+    - paragraphs.paragraphs_type.video_block
+  module:
+    - youtube
+id: paragraph.video_block.field_youtube_video
+field_name: field_youtube_video
+entity_type: paragraph
+bundle: video_block
+label: 'Youtube Video'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube

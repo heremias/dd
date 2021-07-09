@@ -1,0 +1,19 @@
+uuid: 6b43b59c-6744-42d2-a2de-e3d11dbdb790
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_life_at_pacific_question
+field_name: field_life_at_pacific_question
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

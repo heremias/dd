@@ -1,0 +1,8 @@
+uuid: 129f7b72-d6ec-44ca-a5d4-41c487d5cfa4
+langcode: en
+status: true
+dependencies: {  }
+id: cost-of-attendance
+label: 'Cost of Attendance'
+description: ''
+locked: false

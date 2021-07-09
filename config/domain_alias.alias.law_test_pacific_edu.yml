@@ -1,0 +1,9 @@
+uuid: 5f0dccc5-69b3-423c-9513-660778d0d16f
+langcode: en
+status: true
+dependencies: {  }
+id: law_test_pacific_edu
+domain_id: law_dev_pacific_edu
+pattern: law.test.pacific.edu
+redirect: 0
+environment: testing

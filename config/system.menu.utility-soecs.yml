@@ -1,0 +1,8 @@
+uuid: 68e58ad3-45a1-4eab-8840-15636ae7fa6a
+langcode: en
+status: true
+dependencies: {  }
+id: utility-soecs
+label: 'Utility - SOECS'
+description: ''
+locked: false

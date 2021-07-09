@@ -1,0 +1,23 @@
+uuid: 06e35568-6e4e-465c-acf6-6c0052d92e77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_section_menu
+    - node.type.major_pages
+id: node.major_pages.field_hide_section_menu
+field_name: field_hide_section_menu
+entity_type: node
+bundle: major_pages
+label: 'Hide Section Menu'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

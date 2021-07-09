@@ -1,0 +1,21 @@
+uuid: 40ac350c-6dda-495a-9140-f7c361b27cd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_do_you_gravitate_towards_b
+    - node.type.viewbook_
+  module:
+    - options
+id: node.viewbook_.field_do_you_gravitate_towards_b
+field_name: field_do_you_gravitate_towards_b
+entity_type: node
+bundle: viewbook_
+label: 'Would you prefer to be meeting new people in the community, or hanging out on campus with friends?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

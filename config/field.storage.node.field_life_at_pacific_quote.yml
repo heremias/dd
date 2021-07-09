@@ -1,0 +1,19 @@
+uuid: 6cfe460b-6e3e-4e21-b2ad-329ec19dd2bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_life_at_pacific_quote
+field_name: field_life_at_pacific_quote
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

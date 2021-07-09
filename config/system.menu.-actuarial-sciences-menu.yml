@@ -1,0 +1,8 @@
+uuid: 50201880-a3bd-41a0-a756-004edf79b6a0
+langcode: en
+status: true
+dependencies: {  }
+id: '-actuarial-sciences-menu'
+label: 'Actuarial Sciences Menu'
+description: ''
+locked: false

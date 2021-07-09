@@ -1,0 +1,8 @@
+uuid: 9efd0151-1ddc-472b-80bf-61c10c784970
+langcode: en
+status: true
+dependencies: {  }
+id: phil-career-paths
+label: 'Phil Career Paths'
+description: ''
+locked: false

@@ -1,0 +1,64 @@
+uuid: a752ef87-431c-491a-b8c9-9f2852780ab6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.feeds_item
+    - field.field.node.page.field_attachement
+    - field.field.node.page.field_domain_source
+    - field.field.node.page.field_header_type
+    - field.field.node.page.field_hide_section_menu
+    - field.field.node.page.field_image
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_school_college_department
+    - field.field.node.page.field_temp_domain_access
+    - field.field.node.page.field_temp_domain_source
+    - field.field.node.page.field_yoast_seo
+    - node.type.page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: cSv5lDnbIgDug475Hdz3woED2XMqYv3awI-J9u1JLbY
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  addtoany:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 100
+    region: content
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 101
+    region: content
+hidden:
+  feeds_item: true
+  field_attachement: true
+  field_domain_source: true
+  field_header_type: true
+  field_hide_section_menu: true
+  field_image: true
+  field_meta_tags: true
+  field_school_college_department: true
+  field_temp_domain_access: true
+  field_temp_domain_source: true
+  field_yoast_seo: true
+  langcode: true
+  search_api_excerpt: true

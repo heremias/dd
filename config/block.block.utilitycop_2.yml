@@ -1,0 +1,36 @@
+uuid: d22baeec-ee3f-46d4-b14f-8a134e82dfa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-cop
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitycop_2
+theme: u_pacific
+region: tools_desktop
+weight: 0
+provider: null
+plugin: 'menu_block:utility-cop'
+settings:
+  id: 'menu_block:utility-cop'
+  label: 'Utility Desktop - COP'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-cop:'
+  suggestion: utility_cop
+visibility:
+  domain:
+    id: domain
+    domains:
+      liberalarts_dev_pacific_edu: liberalarts_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

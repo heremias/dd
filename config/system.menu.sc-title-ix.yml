@@ -1,0 +1,8 @@
+uuid: 15d0e6c3-6bb1-4bb8-82ce-d9a5f6ee28d8
+langcode: en
+status: true
+dependencies: {  }
+id: sc-title-ix
+label: 'SC Title IX'
+description: ''
+locked: false

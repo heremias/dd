@@ -1,0 +1,91 @@
+uuid: f5bdb0f4-4f28-42e4-874e-74fd64bd6e35
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.viewbook_.field__do_you_prefer_solving_pro
+    - field.field.node.viewbook_.field__would_you_rather_spend_yo
+    - field.field.node.viewbook_.field__would_you_rather_travel_t
+    - field.field.node.viewbook_.field_academic_quote
+    - field.field.node.viewbook_.field_academic_quote_background
+    - field.field.node.viewbook_.field_activities_image
+    - field.field.node.viewbook_.field_activities_quote
+    - field.field.node.viewbook_.field_activities_sound_clip
+    - field.field.node.viewbook_.field_activities_subtitle
+    - field.field.node.viewbook_.field_are_you_more_comfortable_b
+    - field.field.node.viewbook_.field_class_year
+    - field.field.node.viewbook_.field_community_involvement_back
+    - field.field.node.viewbook_.field_community_involvement_gall
+    - field.field.node.viewbook_.field_community_involvement_quot
+    - field.field.node.viewbook_.field_do_you_gravitate_towards_b
+    - field.field.node.viewbook_.field_domain_source
+    - field.field.node.viewbook_.field_involvement_gallery_captio
+    - field.field.node.viewbook_.field_life_at_pacific_answer
+    - field.field.node.viewbook_.field_life_at_pacific_question
+    - field.field.node.viewbook_.field_life_at_pacific_quote
+    - field.field.node.viewbook_.field_life_at_pacific_subtitle
+    - field.field.node.viewbook_.field_life_at_pacific_video
+    - field.field.node.viewbook_.field_life_at_pacific_video_imag
+    - field.field.node.viewbook_.field_major_minor
+    - field.field.node.viewbook_.field_percent_sign
+    - field.field.node.viewbook_.field_profile_image
+    - field.field.node.viewbook_.field_quote_1
+    - field.field.node.viewbook_.field_quote_1_background
+    - field.field.node.viewbook_.field_quote_2
+    - field.field.node.viewbook_.field_quote_2_background
+    - field.field.node.viewbook_.field_quote_2_image
+    - field.field.node.viewbook_.field_stat_description
+    - field.field.node.viewbook_.field_stat_percentage
+    - field.field.node.viewbook_.field_video_caption
+    - node.type.viewbook_
+  module:
+    - user
+id: node.viewbook_.teaser
+targetEntityType: node
+bundle: viewbook_
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field__do_you_prefer_solving_pro: true
+  field__would_you_rather_spend_yo: true
+  field__would_you_rather_travel_t: true
+  field_academic_quote: true
+  field_academic_quote_background: true
+  field_activities_image: true
+  field_activities_quote: true
+  field_activities_sound_clip: true
+  field_activities_subtitle: true
+  field_are_you_more_comfortable_b: true
+  field_class_year: true
+  field_community_involvement_back: true
+  field_community_involvement_gall: true
+  field_community_involvement_quot: true
+  field_do_you_gravitate_towards_b: true
+  field_domain_source: true
+  field_involvement_gallery_captio: true
+  field_life_at_pacific_answer: true
+  field_life_at_pacific_question: true
+  field_life_at_pacific_quote: true
+  field_life_at_pacific_subtitle: true
+  field_life_at_pacific_video: true
+  field_life_at_pacific_video_imag: true
+  field_major_minor: true
+  field_percent_sign: true
+  field_profile_image: true
+  field_quote_1: true
+  field_quote_1_background: true
+  field_quote_2: true
+  field_quote_2_background: true
+  field_quote_2_image: true
+  field_stat_description: true
+  field_stat_percentage: true
+  field_video_caption: true
+  langcode: true
+  search_api_excerpt: true

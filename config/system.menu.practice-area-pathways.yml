@@ -1,0 +1,8 @@
+uuid: e25c5191-fe59-48bb-af5e-eba691a8af1f
+langcode: en
+status: true
+dependencies: {  }
+id: practice-area-pathways
+label: 'Practice Area Pathways'
+description: ''
+locked: false

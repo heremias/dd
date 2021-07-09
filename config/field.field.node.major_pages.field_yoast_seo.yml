@@ -1,0 +1,21 @@
+uuid: 0f5461b3-6f65-4160-b59c-054e2a8e70f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yoast_seo
+    - node.type.major_pages
+  module:
+    - yoast_seo
+id: node.major_pages.field_yoast_seo
+field_name: field_yoast_seo
+entity_type: node
+bundle: major_pages
+label: 'Real-time SEO'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

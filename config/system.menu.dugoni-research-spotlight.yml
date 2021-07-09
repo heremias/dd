@@ -1,0 +1,8 @@
+uuid: 62590943-1d45-4cae-b0ac-ad0cffa28e18
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-research-spotlight
+label: 'Dugoni Research Spotlight'
+description: ''
+locked: false

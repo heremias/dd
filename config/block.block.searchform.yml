@@ -1,0 +1,21 @@
+uuid: 4cc8c907-7ed6-4c68-a65d-9db90751c00c
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - u_pacific
+id: searchform
+theme: u_pacific
+region: full_screen_search
+weight: -16
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search Pacific University'
+  provider: search
+  label_display: '0'
+  page_id: ''
+visibility: {  }

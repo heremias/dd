@@ -1,0 +1,8 @@
+uuid: b2b86abd-bde2-469c-b90e-e9d7f1acae4e
+langcode: en
+status: true
+dependencies: {  }
+id: law-alumni
+label: 'McGeorge Alumni'
+description: 'The section menu for McGeorge Alumni pages'
+locked: false

@@ -1,0 +1,8 @@
+uuid: d848cb75-b8cf-45c9-9510-0b3a3b44b1c5
+langcode: en
+status: true
+dependencies: {  }
+id: gender-studies-academics
+label: 'Gender Studies Academics'
+description: ''
+locked: false

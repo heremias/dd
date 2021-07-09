@@ -1,0 +1,9 @@
+uuid: fca4aa15-007e-48ab-b243-87ea68badfd6
+langcode: en
+status: true
+dependencies: {  }
+id: healthsciences_dev_pacific_edu
+domain_id: healthsciences_dev_pacific_edu
+pattern: healthsciences.dev.pacific.edu
+redirect: 0
+environment: development

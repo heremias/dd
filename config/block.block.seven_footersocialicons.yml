@@ -1,0 +1,25 @@
+uuid: 15d71aee-a996-4006-8b37-dad64a3503c7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a5fbebfb-4316-4fc6-bf44-e38f71edcc73'
+  module:
+    - block_content
+  theme:
+    - seven
+id: seven_footersocialicons
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:a5fbebfb-4316-4fc6-bf44-e38f71edcc73'
+settings:
+  id: 'block_content:a5fbebfb-4316-4fc6-bf44-e38f71edcc73'
+  label: 'Footer Social Icons'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

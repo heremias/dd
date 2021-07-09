@@ -1,0 +1,290 @@
+uuid: e34d1701-e2f7-4aa5-a5fe-01c3d473959a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.department_landing_pages.body
+    - field.field.node.department_landing_pages.feeds_item
+    - field.field.node.department_landing_pages.field_additional_text
+    - field.field.node.department_landing_pages.field_attachement
+    - field.field.node.department_landing_pages.field_contact_email
+    - field.field.node.department_landing_pages.field_contact_link
+    - field.field.node.department_landing_pages.field_contact_location
+    - field.field.node.department_landing_pages.field_contact_person
+    - field.field.node.department_landing_pages.field_contact_phone_number
+    - field.field.node.department_landing_pages.field_domain_source
+    - field.field.node.department_landing_pages.field_header_type
+    - field.field.node.department_landing_pages.field_hide_section_menu
+    - field.field.node.department_landing_pages.field_image
+    - field.field.node.department_landing_pages.field_menu_below_intro_field
+    - field.field.node.department_landing_pages.field_page_builder_components_
+    - field.field.node.department_landing_pages.field_school_college_department
+    - field.field.node.department_landing_pages.field_temp_domain_source
+    - image.style.thumbnail
+    - node.type.department_landing_pages
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - field_group
+    - file
+    - image_widget_crop
+    - imce
+    - link_attributes
+    - paragraphs
+    - path
+    - shs
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_header_and_body_text:
+      children:
+        - field_image
+        - field_header_type
+        - body
+        - field_additional_text
+      parent_name: ''
+      weight: 3
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: 'Header Image & Body Text'
+    group_page_classification:
+      children:
+        - field_attachement
+      parent_name: ''
+      weight: 5
+      format_type: details
+      region: content
+      format_settings:
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: 'Page Attachments'
+id: node.department_landing_pages.default
+targetEntityType: node
+bundle: department_landing_pages
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 29
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_additional_text:
+    weight: 31
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_attachement:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_contact_email:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_contact_link:
+    weight: 33
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_contact_location:
+    weight: 16
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_contact_person:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_contact_phone_number:
+    weight: 17
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_domain_source:
+    type: options_select
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_header_type:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hide_section_menu:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_image:
+    weight: 26
+    settings:
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - mobile_header_image
+        - small_header_image
+        - two_column_header_image
+      progress_indicator: throbber
+      crop_types_required: {  }
+      show_crop_area: false
+    third_party_settings:
+      imce:
+        enabled: false
+    type: image_widget_crop
+    region: content
+  field_page_builder_components_:
+    weight: 4
+    settings:
+      title: Component
+      title_plural: Components
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  field_school_college_department:
+    weight: 1
+    settings:
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
+      display_node_count: false
+    third_party_settings: {  }
+    type: options_shs
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 12
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 13
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  feeds_item: true
+  field_menu_below_intro_field: true
+  field_temp_domain_source: true

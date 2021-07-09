@@ -1,0 +1,25 @@
+uuid: f61e83ea-b4af-4973-85f6-2d1b0782e0a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.localist_events_.field_embed_code1
+    - paragraphs.paragraphs_type.localist_events_
+  module:
+    - text
+id: paragraph.localist_events_.default
+targetEntityType: paragraph
+bundle: localist_events_
+mode: default
+content:
+  field_embed_code1:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

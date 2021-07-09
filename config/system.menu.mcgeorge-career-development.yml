@@ -1,0 +1,8 @@
+uuid: 4bf7ae70-58c5-46e2-9ac9-7b6cd847492c
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-career-development
+label: 'McGeorge Career Development Office'
+description: 'Section Menu for McGeorge Career Development Office'
+locked: false

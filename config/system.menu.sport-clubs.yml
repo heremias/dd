@@ -1,0 +1,8 @@
+uuid: d37c1383-28dd-458a-97bb-059d5025cece
+langcode: en
+status: true
+dependencies: {  }
+id: sport-clubs
+label: 'Sport Clubs'
+description: ''
+locked: false

@@ -1,0 +1,8 @@
+uuid: 47241d50-8f38-46c6-ba84-a364bf942aa5
+langcode: en
+status: true
+dependencies: {  }
+id: econ-academics
+label: 'Econ Academics'
+description: ''
+locked: false

@@ -1,0 +1,23 @@
+uuid: 1fe793be-19ee-420a-95fa-69e0a57a20f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website
+    - node.type.campus_directory
+  module:
+    - link
+id: node.campus_directory.field_website
+field_name: field_website
+entity_type: node
+bundle: campus_directory
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

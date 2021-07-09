@@ -1,0 +1,21 @@
+uuid: d843194b-45b0-437c-9a3c-cabecb70e8a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.headline_call_to_action
+  module:
+    - text
+id: paragraph.headline_call_to_action.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: headline_call_to_action
+label: Headline
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

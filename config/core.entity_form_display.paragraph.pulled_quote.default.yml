@@ -1,0 +1,25 @@
+uuid: 5e20dc3c-4b4e-43d7-b5b5-015a397a5f1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pulled_quote.field_quote
+    - paragraphs.paragraphs_type.pulled_quote
+  module:
+    - text
+id: paragraph.pulled_quote.default
+targetEntityType: paragraph
+bundle: pulled_quote
+mode: default
+content:
+  field_quote:
+    weight: 0
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

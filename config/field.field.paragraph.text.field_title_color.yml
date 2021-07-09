@@ -1,0 +1,23 @@
+uuid: fab0a697-9d45-405f-9d31-aa3e70b4d6c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_color
+    - paragraphs.paragraphs_type.text
+  module:
+    - options
+id: paragraph.text.field_title_color
+field_name: field_title_color
+entity_type: paragraph
+bundle: text
+label: 'Title Color'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: blue
+default_value_callback: ''
+settings: {  }
+field_type: list_string

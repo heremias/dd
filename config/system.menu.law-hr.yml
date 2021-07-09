@@ -1,0 +1,8 @@
+uuid: d419701e-0aa5-414d-bb81-d6e669dbdb4e
+langcode: en
+status: true
+dependencies: {  }
+id: law-hr
+label: 'Law HR'
+description: ''
+locked: false

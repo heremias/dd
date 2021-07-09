@@ -1,0 +1,19 @@
+uuid: 91405b77-4ad7-4b6d-866b-1c5e1f9743cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_temp_domain_access
+    - node.type.major_pages
+id: node.major_pages.field_temp_domain_access
+field_name: field_temp_domain_access
+entity_type: node
+bundle: major_pages
+label: temp_domain_access
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,28 @@
+uuid: d5968afa-499b-47bf-8d0b-851fc1987d66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_person
+    - node.type.campus_directory
+    - node.type.department_landing_pages
+id: node.department_landing_pages.field_contact_person
+field_name: field_contact_person
+entity_type: node
+bundle: department_landing_pages
+label: 'Contact person'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      campus_directory: campus_directory
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

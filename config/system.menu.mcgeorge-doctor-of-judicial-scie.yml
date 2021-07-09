@@ -1,0 +1,8 @@
+uuid: a1614d3e-372e-4358-ac43-5564ed364929
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-doctor-of-judicial-scie
+label: 'McGeorge LLM & JSD Programs'
+description: 'Section Menu for McGeorge LLM & JSD Programs'
+locked: false

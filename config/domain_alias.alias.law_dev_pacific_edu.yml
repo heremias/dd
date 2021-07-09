@@ -1,0 +1,9 @@
+uuid: 1f98231b-db58-4f1e-9885-26e849ec324d
+langcode: en
+status: true
+dependencies: {  }
+id: law_dev_pacific_edu
+domain_id: law_dev_pacific_edu
+pattern: law.dev.pacific.edu
+redirect: 0
+environment: development

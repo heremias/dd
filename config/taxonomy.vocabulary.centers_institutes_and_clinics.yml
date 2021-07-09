@@ -1,0 +1,8 @@
+uuid: 12d7616c-65c4-48d7-95e4-4df12c066c77
+langcode: en
+status: true
+dependencies: {  }
+name: 'Centers, Institutes and Clinics'
+vid: centers_institutes_and_clinics
+description: ''
+weight: 0

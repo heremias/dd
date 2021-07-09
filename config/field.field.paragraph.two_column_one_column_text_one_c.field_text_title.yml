@@ -1,0 +1,19 @@
+uuid: b2512f3c-d960-490f-a8da-99d19667a865
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_title
+    - paragraphs.paragraphs_type.two_column_one_column_text_one_c
+id: paragraph.two_column_one_column_text_one_c.field_text_title
+field_name: field_text_title
+entity_type: paragraph
+bundle: two_column_one_column_text_one_c
+label: 'Text List Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

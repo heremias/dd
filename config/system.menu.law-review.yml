@@ -1,0 +1,8 @@
+uuid: 03418854-4820-44ea-9f7a-53fa296432ab
+langcode: en
+status: true
+dependencies: {  }
+id: law-review
+label: 'Law Review'
+description: ''
+locked: false

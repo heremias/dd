@@ -1,0 +1,23 @@
+uuid: 3bd08c32-5599-4a6a-8f76-158b45898e90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_section_menu
+    - node.type.college_school_landing_page
+id: node.college_school_landing_page.field_hide_section_menu
+field_name: field_hide_section_menu
+entity_type: node
+bundle: college_school_landing_page
+label: 'Hide Section Menu'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

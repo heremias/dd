@@ -1,0 +1,8 @@
+uuid: b84771e0-cb8c-4b65-9eac-e837491529fc
+langcode: en
+status: true
+dependencies: {  }
+id: internship-program
+label: 'Internship Program'
+description: ''
+locked: false

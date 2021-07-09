@@ -1,0 +1,25 @@
+uuid: 94394daf-8ef2-491e-aac4-7c6c3d5b5611
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:975c8789-88f5-4ef3-be5b-26a448db74ba'
+  module:
+    - block_content
+  theme:
+    - seven
+id: seven_footerlocationlinks
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:975c8789-88f5-4ef3-be5b-26a448db74ba'
+settings:
+  id: 'block_content:975c8789-88f5-4ef3-be5b-26a448db74ba'
+  label: 'Footer Location & Links'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

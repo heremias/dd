@@ -1,0 +1,52 @@
+uuid: 80356793-3a3b-4eac-ac58-e9cf3e6f4598
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access devel information'
+  - 'access site-wide contact form'
+  - 'bypass paragraphs type content access'
+  - 'opt-in or out of google analytics tracking'
+  - 'search Google CSE'
+  - 'search content'
+  - 'use text format basic_html'
+  - 'view media'
+  - 'view paragraph content accordion'
+  - 'view paragraph content accordion_content'
+  - 'view paragraph content burning_glass_panel'
+  - 'view paragraph content carousel'
+  - 'view paragraph content content_accordions'
+  - 'view paragraph content from_library'
+  - 'view paragraph content headline_call_to_action'
+  - 'view paragraph content image_button'
+  - 'view paragraph content image_text'
+  - 'view paragraph content image_with_caption'
+  - 'view paragraph content images'
+  - 'view paragraph content large_image_callout'
+  - 'view paragraph content link'
+  - 'view paragraph content link_list_2_columns_'
+  - 'view paragraph content multi_colu_mn_text_grid'
+  - 'view paragraph content nested_paragraph'
+  - 'view paragraph content pulled_quote'
+  - 'view paragraph content rotator'
+  - 'view paragraph content simple_wysiwyg'
+  - 'view paragraph content slide'
+  - 'view paragraph content spacer'
+  - 'view paragraph content stat_block'
+  - 'view paragraph content stat_grid'
+  - 'view paragraph content text'
+  - 'view paragraph content text_column'
+  - 'view paragraph content text_image'
+  - 'view paragraph content title_text_links_3_columns_'
+  - 'view paragraph content two_column_one_column_text_one_c'
+  - 'view paragraph content user'
+  - 'view paragraph content video'
+  - 'view paragraph content video_block'
+  - 'view paragraph content yellow_links'

@@ -1,0 +1,8 @@
+uuid: 7526f89b-d125-4b75-9093-fe087611878a
+langcode: en
+status: true
+dependencies: {  }
+id: law-experiential-learning
+label: 'Law Experiential Learning'
+description: ''
+locked: false

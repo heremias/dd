@@ -1,0 +1,22 @@
+uuid: f1de4b81-3c1d-409e-8c32-17a6571ff36c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: campus_directory
+label: 'Campus Directory'
+type: 'canonical_entities:node'
+pattern: 'campus-directory/[node:title]'
+selection_criteria:
+  06bc4db3-4f60-4ecd-9321-fd24798a80e9:
+    id: node_type
+    bundles:
+      campus_directory: campus_directory
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 06bc4db3-4f60-4ecd-9321-fd24798a80e9
+selection_logic: and
+weight: -5
+relationships: {  }

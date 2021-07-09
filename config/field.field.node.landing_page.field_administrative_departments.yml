@@ -1,0 +1,27 @@
+uuid: b9e63154-ec2a-4020-83d6-b38670a1a216
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_administrative_departments
+    - node.type.landing_page
+id: node.landing_page.field_administrative_departments
+field_name: field_administrative_departments
+entity_type: node
+bundle: landing_page
+label: 'Administrative Departments'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

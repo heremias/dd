@@ -1,0 +1,19 @@
+uuid: 79599c71-8e65-45bd-8471-d641df220b01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_percentage
+    - node.type.viewbook_
+id: node.viewbook_.field_stat_percentage
+field_name: field_stat_percentage
+entity_type: node
+bundle: viewbook_
+label: 'Stat Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

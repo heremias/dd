@@ -1,0 +1,22 @@
+uuid: a2c844e2-efd9-473e-a733-5ff0efcd24bc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  description: '[node:summary]'
+  keywords: '[node:keywords]'
+  canonical_url: '[current-page:url] '
+  title: '[current-page:title] | [site:name]'
+  og_description: '[node:summary]'
+  og_url: '[current-page:url] '
+  og_image_secure_url: '[node:field_image:0:two_column_header_image_desktop:url], [node:field_school_college_department:0:entity:field_image:0:two_column_header_image_desktop:url]'
+  og_image_url: '[node:field_image:0:two_column_header_image_desktop:url], [node:field_school_college_department:0:entity:field_image:0:two_column_header_image_desktop:url]'
+  og_title: '[current-page:title] '
+  twitter_cards_type: summary_large_image
+  twitter_cards_page_url: '[current-page:url] '
+  twitter_cards_image: '[node:field_image:0:two_column_header_image_desktop:url], [node:field_school_college_department:0:entity:field_image:0:two_column_header_image_desktop:url]'
+  twitter_cards_description: '[node:summary]'

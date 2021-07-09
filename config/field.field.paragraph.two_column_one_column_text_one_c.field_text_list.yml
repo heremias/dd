@@ -1,0 +1,19 @@
+uuid: b832e7f1-5bed-4c64-8331-44b424dedd14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_list
+    - paragraphs.paragraphs_type.two_column_one_column_text_one_c
+id: paragraph.two_column_one_column_text_one_c.field_text_list
+field_name: field_text_list
+entity_type: paragraph
+bundle: two_column_one_column_text_one_c
+label: 'Text List'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

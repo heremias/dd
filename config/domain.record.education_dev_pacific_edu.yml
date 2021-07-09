@@ -1,0 +1,11 @@
+uuid: 06681e63-d7bc-443e-bc59-d57f89df7a9d
+langcode: en
+status: true
+dependencies: {  }
+id: education_dev_pacific_edu
+domain_id: 4820833
+hostname: education.pacific.edu
+name: education.pacific.edu
+scheme: https
+weight: -2
+is_default: false

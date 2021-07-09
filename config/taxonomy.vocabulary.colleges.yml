@@ -1,0 +1,8 @@
+uuid: 07546f8c-c502-40f2-8546-2220b0842c6c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Page Classification'
+vid: colleges
+description: ''
+weight: 0

@@ -1,0 +1,8 @@
+uuid: c8dc93bf-170f-43c3-afc3-c926a26594e8
+langcode: en
+status: true
+dependencies: {  }
+id: soecs-community
+label: 'SOECS Community'
+description: ''
+locked: false

@@ -1,0 +1,8 @@
+uuid: acb44165-30f3-42f7-add7-095defff4717
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-diversity
+label: 'McGeorge Diversity'
+description: ''
+locked: false

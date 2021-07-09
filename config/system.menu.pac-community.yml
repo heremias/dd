@@ -1,0 +1,8 @@
+uuid: c89d5b0c-7b83-4a52-9fe7-019f3c0fe71d
+langcode: en
+status: true
+dependencies: {  }
+id: pac-community
+label: 'Pac Community'
+description: ''
+locked: false

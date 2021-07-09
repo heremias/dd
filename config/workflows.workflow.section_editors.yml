@@ -1,0 +1,36 @@
+uuid: 2abe9dd4-6701-46eb-9930-105c1c4975a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_moderation
+id: section_editors
+label: '(do not use) - delete later'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: 0
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: 1
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      to: draft
+      weight: 0
+      from:
+        - draft
+    publish:
+      label: Publish
+      from:
+        - published
+      to: published
+      weight: 1
+  entity_types: {  }
+  default_moderation_state: draft

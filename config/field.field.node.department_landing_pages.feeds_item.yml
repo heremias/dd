@@ -1,0 +1,23 @@
+uuid: 9b31776a-947c-4530-aa61-c7a610f48a07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.department_landing_pages
+  module:
+    - feeds
+id: node.department_landing_pages.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: department_landing_pages
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

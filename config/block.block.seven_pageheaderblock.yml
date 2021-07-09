@@ -1,0 +1,37 @@
+uuid: 75535c75-43d7-4276-8d39-a6dfd5fe131a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:48736960-06e7-4a4b-be74-46c791a0e844'
+  module:
+    - block_content
+    - domain
+    - system
+  theme:
+    - seven
+id: seven_pageheaderblock
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:48736960-06e7-4a4b-be74-46c791a0e844'
+settings:
+  id: 'block_content:48736960-06e7-4a4b-be74-46c791a0e844'
+  label: 'Page Header Block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/node/648\r\n/pacific-newsroom/*\r\n/user/login\r\n/user/password"
+    negate: true
+    context_mapping: {  }
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

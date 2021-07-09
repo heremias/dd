@@ -1,0 +1,8 @@
+uuid: 6380790f-6a9e-4747-9da0-7f6a3f14342c
+langcode: en
+status: true
+dependencies: {  }
+id: law-executive-training
+label: 'Law Executive Training'
+description: ''
+locked: false

@@ -1,0 +1,23 @@
+uuid: ce45f162-2e30-4667-a182-6ef24be8a455
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.campus_directory
+  module:
+    - feeds
+id: node.campus_directory.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: campus_directory
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

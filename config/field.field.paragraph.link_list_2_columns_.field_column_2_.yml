@@ -1,0 +1,19 @@
+uuid: 5d401c23-5ec5-467c-9172-b160df5ad19e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column_2_
+    - paragraphs.paragraphs_type.link_list_2_columns_
+id: paragraph.link_list_2_columns_.field_column_2_
+field_name: field_column_2_
+entity_type: paragraph
+bundle: link_list_2_columns_
+label: 'Column One Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

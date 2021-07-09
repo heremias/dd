@@ -1,0 +1,21 @@
+uuid: 7778ae8b-471a-42dd-89df-c07cd7b8fa17
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_academic_quote
+    - node.type.viewbook_
+  module:
+    - text
+id: node.viewbook_.field_academic_quote
+field_name: field_academic_quote
+entity_type: node
+bundle: viewbook_
+label: 'Academic Quote'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

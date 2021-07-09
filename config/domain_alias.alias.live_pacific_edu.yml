@@ -1,0 +1,9 @@
+uuid: b4af9b3b-a5a5-49c9-9bee-1e4f1530766e
+langcode: en
+status: true
+dependencies: {  }
+id: live_pacific_edu
+domain_id: www_dev_pacific_edu
+pattern: www.live.pacific.edu
+redirect: 0
+environment: staging

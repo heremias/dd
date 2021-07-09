@@ -1,0 +1,12 @@
+uuid: 3c72a629-2b85-4aad-83f0-e3dc8ac9105d
+langcode: en
+status: true
+dependencies: {  }
+id: two_column_header_image
+label: 'Two Column Header Image'
+description: ''
+aspect_ratio: '1920:1429'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

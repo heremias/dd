@@ -1,0 +1,8 @@
+uuid: 43a0be8a-bf95-4b40-a253-c02100ce8e85
+langcode: en
+status: true
+dependencies: {  }
+id: benerd-college
+label: 'Benerd College'
+description: ''
+locked: false

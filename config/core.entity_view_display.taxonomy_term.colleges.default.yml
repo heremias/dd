@@ -1,0 +1,65 @@
+uuid: 80bc0df9-5aa1-4469-b45f-791599189692
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.colleges.feeds_item
+    - field.field.taxonomy_term.colleges.field_contact_image
+    - field.field.taxonomy_term.colleges.field_directory_url
+    - field.field.taxonomy_term.colleges.field_image
+    - field.field.taxonomy_term.colleges.field_menu
+    - field.field.taxonomy_term.colleges.gathercontent_option_ids
+    - taxonomy.vocabulary.colleges
+  module:
+    - image
+    - text
+id: taxonomy_term.colleges.default
+targetEntityType: taxonomy_term
+bundle: colleges
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_contact_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_directory_url:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_menu:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: entity_reference_entity_id
+    region: content
+hidden:
+  feeds_item: true
+  gathercontent_option_ids: true
+  langcode: true
+  search_api_excerpt: true

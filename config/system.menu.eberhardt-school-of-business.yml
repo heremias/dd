@@ -1,0 +1,8 @@
+uuid: 2d8dacdd-c14c-48a3-9eac-930b1b940b1a
+langcode: en
+status: true
+dependencies: {  }
+id: eberhardt-school-of-business
+label: 'Eberhardt School of Business'
+description: ''
+locked: false

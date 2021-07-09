@@ -1,0 +1,9 @@
+uuid: 68dd600d-baea-49f0-8e8c-5bc5b8b1d92a
+langcode: en
+status: true
+dependencies: {  }
+id: pharmacy_test_pacific_edu
+domain_id: pharmacy_dev_pacific_edu
+pattern: pharmacy.test.pacific.edu
+redirect: 0
+environment: testing

@@ -1,0 +1,21 @@
+uuid: 594fe358-aca1-40d2-aa95-a75f5c37aa66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_stat_type
+    - paragraphs.paragraphs_type.stat_block
+  module:
+    - options
+id: paragraph.stat_block.field_stat_type
+field_name: field_stat_type
+entity_type: paragraph
+bundle: stat_block
+label: 'Stat Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

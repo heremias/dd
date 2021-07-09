@@ -1,0 +1,21 @@
+uuid: fa939fef-242a-45e0-89d9-0efb0a193e42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_ref_ii
+    - paragraphs.paragraphs_type.test_extended_2_col
+id: paragraph.test_extended_2_col.field_view_ref_ii
+field_name: field_view_ref_ii
+entity_type: paragraph
+bundle: test_extended_2_col
+label: view_ref_ii
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings: {  }
+field_type: entity_reference

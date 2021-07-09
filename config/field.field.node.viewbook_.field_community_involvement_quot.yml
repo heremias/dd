@@ -1,0 +1,21 @@
+uuid: 3a166934-25b4-4afc-94f4-e73dc048847c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_community_involvement_quot
+    - node.type.viewbook_
+  module:
+    - text
+id: node.viewbook_.field_community_involvement_quot
+field_name: field_community_involvement_quot
+entity_type: node
+bundle: viewbook_
+label: 'Community Involvement Quote'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

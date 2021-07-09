@@ -1,0 +1,8 @@
+uuid: 0baf3d93-9209-41bc-9a7f-8cb96be19cbd
+langcode: en
+status: true
+dependencies: {  }
+id: scholarships
+label: Scholarships
+description: ''
+locked: false

@@ -1,0 +1,20 @@
+exclude_routes:
+  edit_form: edit_form
+  canonical: '0'
+  delete_form: '0'
+  delete_multiple_form: '0'
+  version_history: '0'
+  revision: '0'
+  create: '0'
+  clone_form: '0'
+  latest_version: '0'
+  devel_load: '0'
+  devel_render: '0'
+  devel_definition: '0'
+  token_devel: '0'
+  content_translation_overview: '0'
+  content_translation_add: '0'
+  content_translation_edit: '0'
+  content_translation_delete: '0'
+_core:
+  default_config_hash: mqVsLCNF_WfM-XDhZ0nuTWd7bjvrqR5a6K_-vd0bwjU

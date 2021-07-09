@@ -1,0 +1,140 @@
+uuid: b8a31480-7a6a-4549-8fc7-0129a319057a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.library.body
+    - field.field.node.library.field_school_college_department
+    - field.field.node.library.field_temp_domain_source
+    - node.type.library
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      5324c1c4-113c-4025-8609-2cb81c425623:
+        allowed_tags: '<p><u><a><b><strong><ul><li><ol><h1><h2><h3><h4><h5><iframe><em><table><tr><td><img>'
+        plugin: strip_tags
+        source: body
+        weight: 0
+        label: 'Strip tags'
+        uuid: 5324c1c4-113c-4025-8609-2cb81c425623
+id: library_scrape
+label: 'Library Scrape'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: xml
+parser_configuration:
+  context:
+    value: /scrape/Page
+  sources:
+    title:
+      label: Title
+      value: Title
+    tag:
+      label: tag
+      value: tag
+    relative_url:
+      label: relative_url
+      value: relative_url
+    domain_source:
+      label: domain_source
+      value: domain_source
+    body:
+      label: body
+      value: body
+    description:
+      label: Description
+      value: Description
+  use_tidy: false
+  display_errors: false
+  source_encoding:
+    - auto
+  debug_mode: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: library
+custom_sources:
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  tag:
+    label: tag
+    value: tag
+    machine_name: tag
+  relative_url:
+    label: relative_url
+    value: relative_url
+    machine_name: relative_url
+  domain_access:
+    label: domain_access
+    value: domain_access
+    machine_name: domain_access
+  domain_source:
+    label: domain_source
+    value: domain_source
+    machine_name: domain_source
+  body:
+    label: body
+    value: body
+    machine_name: body
+  description:
+    label: Description
+    value: Description
+    machine_name: description
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_school_college_department
+    map:
+      target_id: tag
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: path
+    map:
+      alias: relative_url
+    settings:
+      language: null
+  -
+    target: field_temp_domain_source
+    map:
+      value: domain_source
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: body
+      summary: description
+    settings:
+      language: ''
+      format: full_html

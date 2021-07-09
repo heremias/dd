@@ -1,0 +1,29 @@
+uuid: d30776ed-0f1c-43d5-8de8-eeb01eac4346
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - u_pacific
+id: mainnavigation_2
+theme: u_pacific
+region: mobile_navigation
+weight: -16
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Mobile Menu - Admission & Aid'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'main:menu_link_content:968dc190-77c5-4dcc-9ace-5fca1be86085'
+  suggestion: main
+visibility: {  }

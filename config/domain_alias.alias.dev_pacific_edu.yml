@@ -1,0 +1,9 @@
+uuid: 4e921ba4-5a72-4bbf-baf7-6d1fcc3c90e5
+langcode: en
+status: true
+dependencies: {  }
+id: dev_pacific_edu
+domain_id: www_dev_pacific_edu
+pattern: www.dev.pacific.edu
+redirect: 0
+environment: development

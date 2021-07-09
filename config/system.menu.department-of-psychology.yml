@@ -1,0 +1,8 @@
+uuid: 93e0176a-5d7c-4028-8b30-84694fea57f9
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-psychology
+label: 'Department of Psychology'
+description: 'Section Menu for the Department of Psychology'
+locked: false

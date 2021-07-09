@@ -1,0 +1,23 @@
+uuid: 456cdad9-7726-4246-804f-63be8fea77cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_block_color
+    - paragraphs.paragraphs_type.nested_paragraph
+  module:
+    - options
+id: paragraph.nested_paragraph.field_block_color
+field_name: field_block_color
+entity_type: paragraph
+bundle: nested_paragraph
+label: 'Block Color'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: white
+default_value_callback: ''
+settings: {  }
+field_type: list_string

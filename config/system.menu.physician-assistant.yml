@@ -1,0 +1,8 @@
+uuid: 799d2e1e-0329-4d56-94a4-5220118eb419
+langcode: en
+status: true
+dependencies: {  }
+id: physician-assistant
+label: 'Physician Assistant'
+description: ''
+locked: false

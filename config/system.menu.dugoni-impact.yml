@@ -1,0 +1,8 @@
+uuid: 58f2f94b-6acd-4a4a-a10d-a5e61f0c55dd
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-impact
+label: 'Dugoni Impact'
+description: ''
+locked: false

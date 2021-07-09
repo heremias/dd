@@ -1,0 +1,8 @@
+uuid: fd6242ea-aa07-426a-9848-61e7c0007e6b
+langcode: en
+status: true
+dependencies: {  }
+id: long-fellowship
+label: 'Long Fellowship'
+description: ''
+locked: false

@@ -1,0 +1,40 @@
+uuid: 90e94966-61b0-437a-be86-22bd4985f1c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - google_cse
+id: google_cse_search
+label: 'Google CSE Search'
+path: google
+weight: -10
+plugin: google_cse_search
+configuration:
+  cx: '005639619055895320543:9xrezxluw50'
+  results_tab: 'University of the Pacific Search Results'
+  results_width: ''
+  cof_here: ''
+  cof_google: ''
+  results_prefix: ''
+  results_suffix: ''
+  results_searchbox_width: ''
+  results_display: here
+  results_display_images: 0
+  no_results_message: ''
+  sitesearch: ''
+  sitesearch_form: ''
+  sitesearch_option: ''
+  sitesearch_default: 0
+  domain: ''
+  limit_domain: ''
+  cr: ''
+  gl: ''
+  hl: ''
+  locale_hl: 0
+  ie: ''
+  lr: ''
+  locale_lr: 0
+  oe: ''
+  safe: ''
+  custom_css: ''
+  custom_results_display: results-only

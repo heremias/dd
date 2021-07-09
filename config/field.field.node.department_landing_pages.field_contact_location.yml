@@ -1,0 +1,21 @@
+uuid: f1d114d4-2c83-49a7-b231-bc62feee3eac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_location
+    - node.type.department_landing_pages
+  module:
+    - text
+id: node.department_landing_pages.field_contact_location
+field_name: field_contact_location
+entity_type: node
+bundle: department_landing_pages
+label: 'Contact Location'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

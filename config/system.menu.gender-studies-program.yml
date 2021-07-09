@@ -1,0 +1,8 @@
+uuid: fdb04bb2-f8d1-467d-bca2-faca91572756
+langcode: en
+status: true
+dependencies: {  }
+id: gender-studies-program
+label: 'Gender Studies Program'
+description: ''
+locked: false

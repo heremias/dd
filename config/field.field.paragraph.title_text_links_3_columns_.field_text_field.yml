@@ -1,0 +1,21 @@
+uuid: 3b8f8598-7e0b-4de1-a381-bce45844739a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_field
+    - paragraphs.paragraphs_type.title_text_links_3_columns_
+  module:
+    - text
+id: paragraph.title_text_links_3_columns_.field_text_field
+field_name: field_text_field
+entity_type: paragraph
+bundle: title_text_links_3_columns_
+label: 'Text Field'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

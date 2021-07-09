@@ -1,0 +1,9 @@
+uuid: 4a1647bb-f010-4796-b2d9-337355196fa7
+langcode: en
+status: true
+dependencies: {  }
+id: music_test_pacific_edu
+domain_id: music_dev_pacific_edu
+pattern: music.test.pacific.edu
+redirect: 0
+environment: testing

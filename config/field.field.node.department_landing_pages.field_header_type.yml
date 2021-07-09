@@ -1,0 +1,23 @@
+uuid: 9ecf45b7-9768-4e34-991e-c642c471f5da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_type
+    - node.type.department_landing_pages
+  module:
+    - options
+id: node.department_landing_pages.field_header_type
+field_name: field_header_type
+entity_type: node
+bundle: department_landing_pages
+label: 'Header Image Type'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: two_column
+default_value_callback: ''
+settings: {  }
+field_type: list_string

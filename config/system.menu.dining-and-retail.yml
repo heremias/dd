@@ -1,0 +1,8 @@
+uuid: 3ff0e065-8bfe-4ce8-936e-dbdcf3aca0df
+langcode: en
+status: true
+dependencies: {  }
+id: dining-and-retail
+label: 'Dining and Retail'
+description: ''
+locked: false

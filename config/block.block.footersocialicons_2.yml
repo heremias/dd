@@ -1,0 +1,25 @@
+uuid: cc18ff72-ded8-4d77-883f-0a53dc9536bf
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a5fbebfb-4316-4fc6-bf44-e38f71edcc73'
+  module:
+    - block_content
+  theme:
+    - u_pacific
+id: footersocialicons_2
+theme: u_pacific
+region: subnav
+weight: -8
+provider: null
+plugin: 'block_content:a5fbebfb-4316-4fc6-bf44-e38f71edcc73'
+settings:
+  id: 'block_content:a5fbebfb-4316-4fc6-bf44-e38f71edcc73'
+  label: 'Footer Social Icons'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

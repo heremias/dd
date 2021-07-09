@@ -1,0 +1,47 @@
+uuid: af377cc7-182f-41df-8706-f31d86b4dd1b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a8ed19e9-4b5f-4056-9c9b-713389da7981'
+  module:
+    - block_content
+    - ctools
+    - domain
+  theme:
+    - u_pacific
+id: googletagmanagerbody
+theme: u_pacific
+region: custom_scripts
+weight: 0
+provider: null
+plugin: 'block_content:a8ed19e9-4b5f-4056-9c9b-713389da7981'
+settings:
+  id: 'block_content:a8ed19e9-4b5f-4056-9c9b-713389da7981'
+  label: 'Google Tag Manager Body'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      campus_directory: campus_directory
+      college_school_landing_page: college_school_landing_page
+      component_library: component_library
+      department_landing_pages: department_landing_pages
+      landing_page: landing_page
+      library: library
+      major_pages: major_pages
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

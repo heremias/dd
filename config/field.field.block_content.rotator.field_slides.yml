@@ -1,0 +1,109 @@
+uuid: fad6f92b-0a95-48ce-aa8d-cbccceb7ec96
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.rotator
+    - field.storage.block_content.field_slides
+    - paragraphs.paragraphs_type.rotator
+  module:
+    - entity_reference_revisions
+id: block_content.rotator.field_slides
+field_name: field_slides
+entity_type: block_content
+bundle: rotator
+label: Slides
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rotator: rotator
+    target_bundles_drag_drop:
+      accordion:
+        weight: 28
+        enabled: false
+      accordion_content:
+        weight: 29
+        enabled: false
+      carousel:
+        weight: 30
+        enabled: false
+      content_accordions:
+        weight: 31
+        enabled: false
+      from_library:
+        weight: 32
+        enabled: false
+      headline_call_to_action:
+        weight: 33
+        enabled: false
+      image_button:
+        weight: 35
+        enabled: false
+      images:
+        weight: 34
+        enabled: false
+      large_image_callout:
+        weight: 36
+        enabled: false
+      link:
+        weight: 37
+        enabled: false
+      link_list_2_columns_:
+        weight: 38
+        enabled: false
+      multi_colu_mn_text_grid:
+        weight: 39
+        enabled: false
+      nested_paragraph:
+        weight: 40
+        enabled: false
+      rotator:
+        enabled: true
+        weight: 41
+      simple_wysiwyg:
+        weight: 42
+        enabled: false
+      slide:
+        weight: 43
+        enabled: false
+      spacer:
+        weight: 44
+        enabled: false
+      stat_block:
+        weight: 45
+        enabled: false
+      stat_grid:
+        weight: 46
+        enabled: false
+      text:
+        weight: 47
+        enabled: false
+      text_column:
+        weight: 48
+        enabled: false
+      title_text_links_3_columns_:
+        weight: 49
+        enabled: false
+      two_column_one_column_text_one_c:
+        weight: 50
+        enabled: false
+      user:
+        weight: 51
+        enabled: false
+      video:
+        weight: 52
+        enabled: false
+      video_block:
+        weight: 53
+        enabled: false
+      yellow_links:
+        weight: 54
+        enabled: false
+field_type: entity_reference_revisions

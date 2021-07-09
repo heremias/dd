@@ -1,0 +1,9 @@
+uuid: 034bf6a4-557e-4a3e-872c-1249e0a2c761
+langcode: en
+status: true
+dependencies: {  }
+id: business_dev_pacific_edu
+domain_id: business_dev_pacific_edu_
+pattern: business.dev.pacific.edu
+redirect: 0
+environment: development

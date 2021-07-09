@@ -1,0 +1,8 @@
+uuid: 5ad6649d-f311-467e-b7fa-f751a2936016
+langcode: en
+status: true
+dependencies: {  }
+id: long-student-affairs
+label: 'Long Student Affairs'
+description: ''
+locked: false

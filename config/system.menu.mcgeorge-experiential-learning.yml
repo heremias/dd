@@ -1,0 +1,8 @@
+uuid: 6a434492-14b1-44e4-ad2c-501ab76de14d
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-experiential-learning
+label: 'McGeorge Experiential Learning'
+description: 'Section Menu for McGeorge Experiential Learning'
+locked: false

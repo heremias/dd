@@ -1,0 +1,9 @@
+uuid: 451760d9-4ada-4422-88a7-94029be4db7b
+langcode: en
+status: true
+dependencies: {  }
+id: healthsciences_live_pacific_edu
+domain_id: healthsciences_dev_pacific_edu
+pattern: healthsciences.live.pacific.edu
+redirect: 0
+environment: staging

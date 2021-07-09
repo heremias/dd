@@ -1,0 +1,8 @@
+uuid: 34db0cd2-0a5b-49b0-aeb2-4d0e04071962
+langcode: en
+status: true
+dependencies: {  }
+id: hist-academics
+label: 'Hist Academics'
+description: ''
+locked: false

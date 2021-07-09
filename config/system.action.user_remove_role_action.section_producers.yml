@@ -1,0 +1,14 @@
+uuid: 6258db68-74b7-424d-94af-17dcb4a7459e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.section_producers
+  module:
+    - user
+id: user_remove_role_action.section_producers
+label: 'Remove the Section Producers role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: section_producers

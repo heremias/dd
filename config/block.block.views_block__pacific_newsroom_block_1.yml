@@ -1,0 +1,36 @@
+uuid: aa123bb9-a636-435d-a835-4254a2e42218
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.pacific_newsroom
+  module:
+    - domain
+    - system
+    - views
+  theme:
+    - u_pacific
+id: views_block__pacific_newsroom_block_1
+theme: u_pacific
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:pacific_newsroom-block_1'
+settings:
+  id: 'views_block:pacific_newsroom-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/node/677\r\n/node/677*"
+    negate: false
+    context_mapping: {  }

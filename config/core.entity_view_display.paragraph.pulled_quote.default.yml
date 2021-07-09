@@ -1,0 +1,23 @@
+uuid: cddfaa79-d116-4182-a91e-b147c3de680d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pulled_quote.field_quote
+    - paragraphs.paragraphs_type.pulled_quote
+  module:
+    - text
+id: paragraph.pulled_quote.default
+targetEntityType: paragraph
+bundle: pulled_quote
+mode: default
+content:
+  field_quote:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,52 @@
+uuid: 17f068f3-fbc4-49d8-8172-07ab54a95e62
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.admission_scrape
+    - field.field.feeds_feed.admission_scrape.field_description
+  module:
+    - feeds
+    - user
+id: feeds_feed.admission_scrape.default
+targetEntityType: feeds_feed
+bundle: admission_scrape
+mode: default
+content:
+  field_description:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  imported:
+    label: inline
+    type: timestamp_ago
+    weight: 1
+    region: content
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+  next:
+    label: inline
+    type: timestamp
+    weight: 1
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  source:
+    label: inline
+    type: feeds_uri_link
+    weight: -3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

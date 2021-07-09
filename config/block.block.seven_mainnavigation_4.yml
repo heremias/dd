@@ -1,0 +1,29 @@
+uuid: 7d631b33-bab0-4e60-831d-38e4a4b7c8b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - seven
+id: seven_mainnavigation_4
+theme: seven
+region: header
+weight: -5
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Mobile Main Navigation - Campus Life'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'main:menu_link_content:3894b265-d867-4e1d-92cc-d75bfed98144'
+  suggestion: main
+visibility: {  }

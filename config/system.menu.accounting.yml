@@ -1,0 +1,8 @@
+uuid: 5d12d89f-e24c-4a0a-a4a1-29f110e8ff1d
+langcode: en
+status: true
+dependencies: {  }
+id: accounting
+label: Accounting
+description: ''
+locked: false

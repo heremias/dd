@@ -1,0 +1,8 @@
+uuid: 38c734a8-a12b-40dd-b472-20376ee9b9c3
+langcode: en
+status: true
+dependencies: {  }
+id: global-business
+label: 'Global Business'
+description: ''
+locked: false

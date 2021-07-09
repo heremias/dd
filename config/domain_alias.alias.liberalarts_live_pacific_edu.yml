@@ -1,0 +1,9 @@
+uuid: d44db10d-1dfc-4419-8b64-08b6c209112d
+langcode: en
+status: true
+dependencies: {  }
+id: liberalarts_live_pacific_edu
+domain_id: liberalarts_dev_pacific_edu
+pattern: liberalarts.live.pacific.edu
+redirect: 0
+environment: staging

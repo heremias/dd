@@ -1,0 +1,23 @@
+uuid: 5402ad23-6427-4145-9a5d-a0f2f5009f19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.college_school_landing_page
+  module:
+    - text
+id: node.college_school_landing_page.body
+field_name: body
+entity_type: node
+bundle: college_school_landing_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

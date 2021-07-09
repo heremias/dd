@@ -1,0 +1,23 @@
+uuid: 26c8291d-4887-4e17-847f-2969f87c7435
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_alignment
+    - paragraphs.paragraphs_type.carousel
+  module:
+    - options
+id: paragraph.carousel.field_image_alignment
+field_name: field_image_alignment
+entity_type: paragraph
+bundle: carousel
+label: 'Image Alignment'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

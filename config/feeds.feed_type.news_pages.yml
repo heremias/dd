@@ -1,0 +1,148 @@
+uuid: 9cf4588f-e8e5-46cf-9bbe-7f9f13ad3b9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - field.field.node.article.field_school_college_department
+    - field.field.node.article.field_temp_domain_source
+    - node.type.article
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      b381dfc8-47b3-4085-a811-eff8b1018853:
+        allowed_tags: '<p><u><a><b><strong><ul><li><ol><h3><h4><h5><iframe><em><table><tr><td><img><br>'
+        plugin: strip_tags
+        source: body_news
+        weight: 0
+        label: 'Strip tags'
+        uuid: b381dfc8-47b3-4085-a811-eff8b1018853
+id: news_pages
+label: 'News Pages'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: xml
+parser_configuration:
+  context:
+    value: /scrape/Page
+  sources:
+    title:
+      label: Title
+      value: Title
+    relative_url:
+      label: relative_url
+      value: relative_url
+    body_news:
+      label: body
+      value: body
+    description:
+      label: Description
+      value: Description
+    domain_source:
+      label: domain_source
+      value: domain_source
+    tag:
+      label: tag
+      value: tag
+  use_tidy: false
+  display_errors: false
+  source_encoding:
+    - auto
+  debug_mode: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: article
+custom_sources:
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  body:
+    label: body
+    value: body
+    machine_name: body
+  meta_description:
+    label: 'Meta Description'
+    value: 'Meta Description'
+    machine_name: meta_description
+  relative_url:
+    label: relative_url
+    value: relative_url
+    machine_name: relative_url
+  description:
+    label: Description
+    value: Description
+    machine_name: description
+  body_news:
+    label: body
+    value: body
+    machine_name: body_news
+  relative_url_news:
+    label: relative_url
+    value: relative_url
+    machine_name: relative_url_news
+  domain_source:
+    label: domain_source
+    value: domain_source
+    machine_name: domain_source
+  tag:
+    label: tag
+    value: tag
+    machine_name: tag
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: path
+    map:
+      alias: relative_url
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: body_news
+      summary: description
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_temp_domain_source
+    map:
+      value: domain_source
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_school_college_department
+    map:
+      target_id: tag
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false

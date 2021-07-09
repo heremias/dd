@@ -1,0 +1,64 @@
+uuid: a0d7d62c-45a8-474f-9065-559cd83e2ead
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_stats
+    - paragraphs.paragraphs_type.stat_block
+    - paragraphs.paragraphs_type.stat_grid
+  module:
+    - entity_reference_revisions
+id: paragraph.stat_grid.field_stats
+field_name: field_stats
+entity_type: paragraph
+bundle: stat_grid
+label: Stats
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      stat_block: stat_block
+    target_bundles_drag_drop:
+      from_library:
+        weight: 13
+        enabled: false
+      images:
+        weight: 14
+        enabled: false
+      image_text:
+        weight: 15
+        enabled: false
+      link_list_2_columns_:
+        weight: 16
+        enabled: false
+      nested_paragraph:
+        weight: 17
+        enabled: false
+      stat_block:
+        enabled: true
+        weight: 18
+      stat_grid:
+        weight: 19
+        enabled: false
+      text:
+        weight: 20
+        enabled: false
+      text_image:
+        weight: 21
+        enabled: false
+      two_column_one_column_text_one_c:
+        weight: 22
+        enabled: false
+      user:
+        weight: 23
+        enabled: false
+      video_block:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

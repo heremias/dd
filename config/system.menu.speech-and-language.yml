@@ -1,0 +1,8 @@
+uuid: 5fc3ed07-092c-4d90-98e2-1d9b095ec20e
+langcode: en
+status: true
+dependencies: {  }
+id: speech-and-language
+label: 'Speech and language'
+description: ''
+locked: false

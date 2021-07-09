@@ -1,0 +1,8 @@
+uuid: dd898b50-c8ba-48c9-a454-bc7eeacc2a38
+langcode: en
+status: true
+dependencies: {  }
+id: component_block
+label: 'Component Block'
+revision: 1
+description: ''

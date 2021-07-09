@@ -1,0 +1,98 @@
+uuid: a06e8b92-056f-4569-8c4d-4f0da09ea883
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.major_pages.body
+    - field.field.node.major_pages.feeds_item
+    - field.field.node.major_pages.field_academic_search_terms
+    - field.field.node.major_pages.field_alternative_title
+    - field.field.node.major_pages.field_attachement
+    - field.field.node.major_pages.field_contact_email
+    - field.field.node.major_pages.field_contact_link
+    - field.field.node.major_pages.field_contact_location
+    - field.field.node.major_pages.field_contact_person
+    - field.field.node.major_pages.field_contact_phone_number
+    - field.field.node.major_pages.field_domain_source
+    - field.field.node.major_pages.field_header_type
+    - field.field.node.major_pages.field_hide_section_menu
+    - field.field.node.major_pages.field_image
+    - field.field.node.major_pages.field_major_components
+    - field.field.node.major_pages.field_meta_tags
+    - field.field.node.major_pages.field_more_information
+    - field.field.node.major_pages.field_program_classification
+    - field.field.node.major_pages.field_program_type
+    - field.field.node.major_pages.field_school_college_department
+    - field.field.node.major_pages.field_temp_domain_access
+    - field.field.node.major_pages.field_temp_domain_source
+    - field.field.node.major_pages.field_yoast_seo
+    - node.type.major_pages
+  module:
+    - entity_reference_revisions
+    - metatag
+    - text
+    - user
+id: node.major_pages.default
+targetEntityType: node
+bundle: major_pages
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_major_components:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_meta_tags:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_more_information:
+    type: text_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  feeds_item: true
+  field_academic_search_terms: true
+  field_alternative_title: true
+  field_attachement: true
+  field_contact_email: true
+  field_contact_link: true
+  field_contact_location: true
+  field_contact_person: true
+  field_contact_phone_number: true
+  field_domain_source: true
+  field_header_type: true
+  field_hide_section_menu: true
+  field_image: true
+  field_program_classification: true
+  field_program_type: true
+  field_school_college_department: true
+  field_temp_domain_access: true
+  field_temp_domain_source: true
+  field_yoast_seo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

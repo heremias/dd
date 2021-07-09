@@ -1,0 +1,9 @@
+uuid: b4324b7e-64ea-418f-a540-7f8c999014e4
+langcode: en
+status: true
+dependencies: {  }
+id: business_test_pacific_edu
+domain_id: business_dev_pacific_edu_
+pattern: business.test.pacific.edu
+redirect: 0
+environment: testing

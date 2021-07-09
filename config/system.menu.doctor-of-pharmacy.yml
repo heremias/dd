@@ -1,0 +1,8 @@
+uuid: d5858d9d-2a88-48a7-a285-e54dc4b507e7
+langcode: en
+status: true
+dependencies: {  }
+id: doctor-of-pharmacy
+label: 'Doctor of Pharmacy'
+description: ''
+locked: false

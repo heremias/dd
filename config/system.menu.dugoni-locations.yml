@@ -1,0 +1,8 @@
+uuid: d75ad509-aba4-4361-93b2-889449383adc
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-locations
+label: 'Dugoni Locations'
+description: ''
+locked: false

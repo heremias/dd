@@ -1,0 +1,36 @@
+uuid: 1064d882-280a-423b-b142-b5f821ce1d46
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-business
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitybusiness
+theme: u_pacific
+region: tools
+weight: 0
+provider: null
+plugin: 'menu_block:utility-business'
+settings:
+  id: 'menu_block:utility-business'
+  label: 'Utility Mobile - Business'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-business:'
+  suggestion: utility_business
+visibility:
+  domain:
+    id: domain
+    domains:
+      business_dev_pacific_edu_: business_dev_pacific_edu_
+    negate: null
+    context_mapping: {  }

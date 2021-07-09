@@ -1,0 +1,21 @@
+uuid: 698eb206-d4f6-4f5f-9d49-384a5b49f556
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_life_at_pacific_video
+    - node.type.viewbook_
+  module:
+    - youtube
+id: node.viewbook_.field_life_at_pacific_video
+field_name: field_life_at_pacific_video
+entity_type: node
+bundle: viewbook_
+label: 'Life at Pacific Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube

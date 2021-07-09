@@ -1,0 +1,19 @@
+uuid: 9d5fe5cb-1386-4552-88d8-657b03310f04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_professional_title_3
+    - node.type.campus_directory
+id: node.campus_directory.field_professional_title_3
+field_name: field_professional_title_3
+entity_type: node
+bundle: campus_directory
+label: 'Professional Title 3'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

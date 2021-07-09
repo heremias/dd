@@ -1,0 +1,22 @@
+uuid: cbff992b-142c-4acf-bd8a-edce875c09d7
+langcode: en
+status: true
+dependencies:
+  theme:
+    - u_pacific
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: u_pacific_local_tasks
+theme: u_pacific
+region: tabs
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

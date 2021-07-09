@@ -1,0 +1,23 @@
+uuid: ada0ad9b-8c5a-4e03-9c95-0ebeb3390e8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_below_intro_field
+    - node.type.department_landing_pages
+id: node.department_landing_pages.field_menu_below_intro_field
+field_name: field_menu_below_intro_field
+entity_type: node
+bundle: department_landing_pages
+label: 'Menu Below Intro Field'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Menu Below Intro Field'
+  off_label: 'Off'
+field_type: boolean

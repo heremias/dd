@@ -1,0 +1,71 @@
+uuid: 58b32b7a-b0fc-4a72-a580-2a4e6e38fba1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nested_paragraph.field_block_color
+    - field.field.paragraph.nested_paragraph.field_left_column
+    - field.field.paragraph.nested_paragraph.field_right_column
+    - paragraphs.paragraphs_type.nested_paragraph
+  module:
+    - paragraphs
+_core:
+  default_config_hash: koYYwlW52xb05AiGtIbUHVvueeTQi6lKOx4z8s2umt0
+id: paragraph.nested_paragraph.default
+targetEntityType: paragraph
+bundle: nested_paragraph
+mode: default
+content:
+  field_block_color:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_left_column:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+  field_right_column:
+    type: paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+  translation:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

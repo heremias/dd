@@ -1,0 +1,8 @@
+uuid: 3941e0d5-2d6e-4ba6-9a14-2920277857df
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-chemistry
+label: 'Department of Chemistry'
+description: 'Section Menu for the Department of Chemistry'
+locked: false

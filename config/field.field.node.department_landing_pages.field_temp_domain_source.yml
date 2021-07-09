@@ -1,0 +1,19 @@
+uuid: aef09464-13ec-4bea-9a8d-86c92ff75dc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_temp_domain_source
+    - node.type.department_landing_pages
+id: node.department_landing_pages.field_temp_domain_source
+field_name: field_temp_domain_source
+entity_type: node
+bundle: department_landing_pages
+label: temp_domain_source
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

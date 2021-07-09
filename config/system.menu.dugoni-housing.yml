@@ -1,0 +1,8 @@
+uuid: d9aefb16-3755-4541-a5af-0cea3710a519
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-housing
+label: 'Dugoni Housing'
+description: ''
+locked: false

@@ -1,0 +1,22 @@
+uuid: f79d0dfe-d525-4667-8606-4f35b8726ddb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: viewbook
+label: Viewbook
+type: 'canonical_entities:node'
+pattern: 'viewbook/[node:title]'
+selection_criteria:
+  0367382c-a20d-4719-9f79-c1608a68428e:
+    id: node_type
+    bundles:
+      viewbook_: viewbook_
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 0367382c-a20d-4719-9f79-c1608a68428e
+selection_logic: and
+weight: -5
+relationships: {  }

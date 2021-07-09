@@ -1,0 +1,19 @@
+uuid: dd53bda4-e8b8-4230-a3d0-d3e963511078
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_temp_domain_source
+    - node.type.page
+id: node.page.field_temp_domain_source
+field_name: field_temp_domain_source
+entity_type: node
+bundle: page
+label: temp_domain_source
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,27 @@
+uuid: 9280adfc-c7fb-4220-a44e-95af17b4553b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachement
+    - node.type.landing_page
+  module:
+    - file
+id: node.landing_page.field_attachement
+field_name: field_attachement
+entity_type: node
+bundle: landing_page
+label: 'Page Attachments'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xls xlsx opt'
+  max_filesize: '50 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,8 @@
+uuid: 46e68760-4754-49b0-92c8-86acbf3de5bb
+langcode: en
+status: true
+dependencies: {  }
+id: ps-career-paths
+label: 'PS Career Paths'
+description: ''
+locked: false

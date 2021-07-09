@@ -1,0 +1,8 @@
+uuid: 78c76ba6-016e-4297-bb2a-5f53b4845c23
+langcode: en
+status: true
+dependencies: {  }
+id: campus-recreation
+label: 'Campus Recreation'
+description: ''
+locked: false

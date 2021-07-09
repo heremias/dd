@@ -1,0 +1,21 @@
+uuid: d150100d-4f78-4542-b32e-062ae9fc229c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_text
+    - node.type.department_landing_pages
+  module:
+    - text
+id: node.department_landing_pages.field_additional_text
+field_name: field_additional_text
+entity_type: node
+bundle: department_landing_pages
+label: 'Additional Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

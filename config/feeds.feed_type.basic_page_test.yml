@@ -1,0 +1,166 @@
+uuid: 0bbebd5f-2302-4ba8-8a74-df469a7110fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_school_college_department
+    - field.field.node.page.field_temp_domain_access
+    - field.field.node.page.field_temp_domain_source
+    - node.type.page
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      ba74fb50-cb2c-454b-a1b3-67869d55cb51:
+        allowed_tags: '<p><u><a><b><strong><ul><li><ol><h1><h2><h3><h4><h5><iframe><em><table><tr><td><img><br>'
+        plugin: strip_tags
+        source: body
+        weight: 0
+        label: 'Strip tags'
+        uuid: ba74fb50-cb2c-454b-a1b3-67869d55cb51
+      71350443-1910-4712-b2a7-e6eed4c8fe45:
+        find: "<ul class=\"social-bar\"> \t<li>join university of the pacific on:</li> \t<li><a class=\"facebook\" href=\"http://www.facebook.com/page"
+        replace: ''
+        case_sensitive: false
+        whole: false
+        plugin: find_replace
+        source: body
+        weight: 1
+        label: 'Find replace'
+        word_boundaries: false
+        uuid: 71350443-1910-4712-b2a7-e6eed4c8fe45
+id: basic_page_test
+label: 'Basic Page Scrape'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: xml
+parser_configuration:
+  context:
+    value: /scrape/Page
+  sources:
+    title:
+      label: Title
+      value: Title
+    body:
+      label: body
+      value: body
+    description:
+      label: Description
+      value: Description
+    relative_url:
+      label: relative_url
+      value: relative_url
+    tag:
+      label: tag
+      value: tag
+    domain_access:
+      label: domain_access
+      value: domain_access
+    domain_source:
+      label: domain_source
+      value: domain_source
+  use_tidy: false
+  display_errors: false
+  source_encoding:
+    - auto
+  debug_mode: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: true
+  owner_id: 0
+  authorize: true
+  skip_hash_check: true
+  values:
+    type: page
+custom_sources:
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  body:
+    label: body
+    value: body
+    machine_name: body
+  url:
+    label: URL
+    value: URL
+    machine_name: url
+  relative_url:
+    label: relative_url
+    value: relative_url
+    machine_name: relative_url
+  tag:
+    label: tag
+    value: tag
+    machine_name: tag
+  description:
+    label: Description
+    value: Description
+    machine_name: description
+  domain_access:
+    label: domain_access
+    value: domain_access
+    machine_name: domain_access
+  domain_source:
+    label: domain_source
+    value: domain_source
+    machine_name: domain_source
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: body
+      summary: description
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: path
+    map:
+      alias: relative_url
+    settings:
+      language: null
+  -
+    target: field_school_college_department
+    map:
+      target_id: tag
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_temp_domain_access
+    map:
+      value: domain_access
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_temp_domain_source
+    map:
+      value: domain_source
+    unique: {  }
+    settings:
+      language: null

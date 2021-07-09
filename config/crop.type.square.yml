@@ -1,0 +1,12 @@
+uuid: b1397177-f281-45b9-9ddd-5bf3ccca0070
+langcode: en
+status: true
+dependencies: {  }
+id: square
+label: Square
+description: ''
+aspect_ratio: '600:600'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

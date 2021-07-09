@@ -1,0 +1,72 @@
+uuid: 7fdf1149-779d-4023-8c83-1084fc279b50
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.section_producers_editors
+  module:
+    - ckeditor
+format: section_producers_editors
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Format
+            - Underline
+            - Bold
+            - Italic
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+            - Anchor
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Tools
+          items:
+            - HorizontalRule
+            - Table
+        -
+          name: Alignment
+          items:
+            - JustifyLeft
+            - JustifyCenter
+        -
+          name: Media
+          items:
+            - ImceImage
+            - ImceLink
+            - Source
+        -
+          name: 'Paste Options'
+          items:
+            - PasteFromWord
+  plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    linkit:
+      linkit_profile: ''
+    tokenbrowser:
+      token_types: {  }
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

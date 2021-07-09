@@ -1,0 +1,8 @@
+uuid: 19811c66-3803-4f4f-8b0d-dc275b53733d
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-religious-and-clas
+label: 'Department of Religious Study'
+description: 'Section Menu for Department of Religious Study'
+locked: false

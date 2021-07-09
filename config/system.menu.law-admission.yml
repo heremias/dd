@@ -1,0 +1,8 @@
+uuid: bfcb9263-9422-45e6-9138-c3fa6d404c38
+langcode: en
+status: true
+dependencies: {  }
+id: law-admission
+label: 'Law Admission'
+description: ''
+locked: false

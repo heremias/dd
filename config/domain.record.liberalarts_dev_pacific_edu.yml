@@ -1,0 +1,11 @@
+uuid: eb42f11e-7388-4a55-95bc-29c38598b1a5
+langcode: en
+status: true
+dependencies: {  }
+id: liberalarts_dev_pacific_edu
+domain_id: 4892200
+hostname: liberalarts.pacific.edu
+name: liberalarts.pacific.edu
+scheme: https
+weight: 9
+is_default: false

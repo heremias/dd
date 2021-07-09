@@ -1,0 +1,33 @@
+uuid: a39f54cf-5642-4cab-8050-c3fceaeab2fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_spacing
+field_name: field_spacing
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 25px
+      label: 25px
+    -
+      value: 50px
+      label: 50px
+    -
+      value: 100px
+      label: 100px
+    -
+      value: 200px
+      label: 200px
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,53 @@
+uuid: fcb164be-c2ff-4bdb-aecb-b76dbbaa1c40
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1b6afdff-5181-4053-a4b0-486f127362d3'
+  module:
+    - block_content
+    - ctools
+    - domain
+    - user
+  theme:
+    - u_pacific
+id: hotjar
+theme: u_pacific
+region: custom_scripts
+weight: 0
+provider: null
+plugin: 'block_content:1b6afdff-5181-4053-a4b0-486f127362d3'
+settings:
+  id: 'block_content:1b6afdff-5181-4053-a4b0-486f127362d3'
+  label: HotJar
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      college_school_landing_page: college_school_landing_page
+      department_landing_pages: department_landing_pages
+      landing_page: landing_page
+      library: library
+      major_pages: major_pages
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

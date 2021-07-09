@@ -1,0 +1,21 @@
+uuid: f06d32b9-10a1-41f8-87de-886b1593bb6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_field
+    - paragraphs.paragraphs_type.rotator
+  module:
+    - text
+id: paragraph.rotator.field_text_field
+field_name: field_text_field
+entity_type: paragraph
+bundle: rotator
+label: Body
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

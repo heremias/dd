@@ -1,0 +1,8 @@
+uuid: 2b990d0b-6dad-4195-8a4e-37f1ef8dddc3
+langcode: en
+status: true
+dependencies: {  }
+id: registrar-class-registration
+label: 'Registrar Class Registration'
+description: ''
+locked: false

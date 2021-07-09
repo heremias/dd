@@ -1,0 +1,38 @@
+uuid: 97f479ad-9f7f-41e9-881a-b39fdfe838f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_contact_image
+    - taxonomy.vocabulary.colleges
+  module:
+    - image
+id: taxonomy_term.colleges.field_contact_image
+field_name: field_contact_image
+entity_type: taxonomy_term
+bundle: colleges
+label: 'Contact Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: 'png gif jpg jpeg'
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  max_resolution: ''
+  min_resolution: ''
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

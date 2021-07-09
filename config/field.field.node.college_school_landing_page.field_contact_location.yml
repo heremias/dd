@@ -1,0 +1,21 @@
+uuid: 63fe14e5-66b4-4cc1-9138-288a582e4adb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_location
+    - node.type.college_school_landing_page
+  module:
+    - text
+id: node.college_school_landing_page.field_contact_location
+field_name: field_contact_location
+entity_type: node
+bundle: college_school_landing_page
+label: 'Contact Location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,21 @@
+uuid: 1ef99eab-eaa8-4ac0-baf3-4699ea0331f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_embed_code1
+    - paragraphs.paragraphs_type.localist_events_
+  module:
+    - text
+id: paragraph.localist_events_.field_embed_code1
+field_name: field_embed_code1
+entity_type: paragraph
+bundle: localist_events_
+label: 'Embed Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,8 @@
+uuid: 7fb1b663-031a-4e7a-be1d-d895a443d063
+langcode: en
+status: true
+dependencies: {  }
+id: benerd-degree-programs
+label: 'Benerd Degree Programs'
+description: ''
+locked: false

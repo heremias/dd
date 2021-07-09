@@ -1,0 +1,8 @@
+uuid: 366d38fa-cba4-4af6-aa44-3e481689eb69
+langcode: en
+status: true
+dependencies: {  }
+id: it-security-office
+label: 'IT Security Office'
+description: ''
+locked: false

@@ -1,0 +1,36 @@
+uuid: e70a6c4c-422a-4ce3-b889-02a85b336135
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-pharmacy
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitypharmacy
+theme: u_pacific
+region: tools
+weight: 0
+provider: null
+plugin: 'menu_block:utility-pharmacy'
+settings:
+  id: 'menu_block:utility-pharmacy'
+  label: 'Utility Mobile - Pharmacy'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-pharmacy:'
+  suggestion: utility_pharmacy
+visibility:
+  domain:
+    id: domain
+    domains:
+      pharmacy_dev_pacific_edu: pharmacy_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

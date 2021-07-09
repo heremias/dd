@@ -1,0 +1,19 @@
+uuid: 89d97564-b636-4af9-a1e8-4a25a6f7711b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activities_subtitle
+    - node.type.viewbook_
+id: node.viewbook_.field_activities_subtitle
+field_name: field_activities_subtitle
+entity_type: node
+bundle: viewbook_
+label: 'Activities Subtitle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

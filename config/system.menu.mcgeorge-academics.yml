@@ -1,0 +1,8 @@
+uuid: df167b6c-08d4-4227-9735-b244f5ab9af7
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-academics
+label: 'McGeorge Academics'
+description: ''
+locked: false

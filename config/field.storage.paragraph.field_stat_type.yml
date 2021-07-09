@@ -1,0 +1,30 @@
+uuid: 156572cd-3712-464c-9cab-5487de375beb
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_stat_type
+field_name: field_stat_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: na
+      label: None
+    -
+      value: percent
+      label: 'Percent Sign'
+    -
+      value: number
+      label: 'Number Sign'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

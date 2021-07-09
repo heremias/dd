@@ -1,0 +1,26 @@
+uuid: 609a43ac-d371-42b4-9bc5-8bec2fa9f8ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.headhsot
+  module:
+    - crop
+name: headshot
+label: Headshot
+effects:
+  609f1bdb-4430-4bc5-abbe-402448f0aff9:
+    uuid: 609f1bdb-4430-4bc5-abbe-402448f0aff9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 750
+      anchor: center-center
+  096dc224-481b-4f7a-a720-dec472be5c10:
+    uuid: 096dc224-481b-4f7a-a720-dec472be5c10
+    id: crop_crop
+    weight: 2
+    data:
+      crop_type: headhsot
+pipeline: __default__

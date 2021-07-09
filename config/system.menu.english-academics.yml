@@ -1,0 +1,8 @@
+uuid: aac029cc-585a-41c3-9faf-4b86356dc49a
+langcode: en
+status: true
+dependencies: {  }
+id: english-academics
+label: 'English Academics'
+description: ''
+locked: false

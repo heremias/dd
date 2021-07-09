@@ -1,0 +1,8 @@
+uuid: ccbafb18-a723-470f-9716-4625ca4a1260
+langcode: en
+status: true
+dependencies: {  }
+id: housing-and-dining
+label: 'Housing and Dining'
+description: ''
+locked: false

@@ -1,0 +1,21 @@
+uuid: 8dbc32ed-fd5a-4a82-89e4-16eeabe2d1fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_are_you_more_comfortable_b
+    - node.type.viewbook_
+  module:
+    - options
+id: node.viewbook_.field_are_you_more_comfortable_b
+field_name: field_are_you_more_comfortable_b
+entity_type: node
+bundle: viewbook_
+label: 'Are you more comfortable being in-front of people or working behind-the-scenes?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

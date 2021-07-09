@@ -1,0 +1,11 @@
+uuid: 5a424437-e5f6-4a67-800b-d908eefabb20
+langcode: en
+status: true
+dependencies: {  }
+id: engineering_dev_pacific_edu
+domain_id: 354944
+hostname: engineering.pacific.edu
+name: engineering.pacific.edu
+scheme: https
+weight: 5
+is_default: false

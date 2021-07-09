@@ -1,0 +1,19 @@
+uuid: 5c4076ae-fec3-4d69-b93b-32bbffea4cb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_temp_domain_access
+    - node.type.library
+id: node.library.field_temp_domain_access
+field_name: field_temp_domain_access
+entity_type: node
+bundle: library
+label: temp_domain_access
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

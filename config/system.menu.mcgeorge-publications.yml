@@ -1,0 +1,8 @@
+uuid: a5478cfd-5e15-4d1a-aa5b-208ccadc9158
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-publications
+label: 'McGeorge Publications'
+description: 'Section Menu for McGeorge Publications'
+locked: false

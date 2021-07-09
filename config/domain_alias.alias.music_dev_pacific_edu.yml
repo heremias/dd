@@ -1,0 +1,9 @@
+uuid: de3aa522-d740-403c-b4ac-946c341213cc
+langcode: en
+status: true
+dependencies: {  }
+id: music_dev_pacific_edu
+domain_id: music_dev_pacific_edu
+pattern: music.dev.pacific.edu
+redirect: 0
+environment: development

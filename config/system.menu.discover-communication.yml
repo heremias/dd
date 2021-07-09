@@ -1,0 +1,8 @@
+uuid: 2575f676-5b41-464d-81c5-63b5471656a8
+langcode: en
+status: true
+dependencies: {  }
+id: discover-communication
+label: 'Discover Communication'
+description: ''
+locked: false

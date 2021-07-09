@@ -1,0 +1,23 @@
+uuid: 4d6899d3-9f2b-4648-bf9f-c9ed46cef670
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_test_ref_iii
+    - paragraphs.paragraphs_type.test_extended_2_col
+id: paragraph.test_extended_2_col.field_test_ref_iii
+field_name: field_test_ref_iii
+entity_type: paragraph
+bundle: test_extended_2_col
+label: test_ref_iii
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference
