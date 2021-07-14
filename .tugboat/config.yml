@@ -77,6 +77,7 @@ services:
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - composer require drupal/zurb_foundation:^6.0@alpha
         - drush config-set system.theme default zurb_foundation
+        - wget https://drive.google.com/file/d/1XY-cpcEhcdPF5KrjecBY6dp1kxnGlqJk/view?usp=sharing
       # - drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
