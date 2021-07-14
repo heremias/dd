@@ -74,7 +74,7 @@ services:
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
         - drush --yes --db-url=mysql://tugboat:tugboat@mysql:3306/tugboat --account-name=admin --account-pass=admin site:install standard
         - drush pm:enable --yes stage_file_proxy
-        - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
+        - drush config:set --yes stage_file_proxy.settings origin "http://www.pacific.edu"
         - composer require drupal/zurb_foundation:^6.0@alpha
         - drush config-set system.theme default zurb_foundation
         - wget https://tulepond.sfo3.digitaloceanspaces.com/dump.sql
