@@ -77,9 +77,8 @@ services:
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - composer require drupal/zurb_foundation:^6.0@alpha
         - drush config-set system.theme default zurb_foundation
-        - wget https://drive.google.com/file/d/1XY-cpcEhcdPF5KrjecBY6dp1kxnGlqJk/view?usp=sharing
-        - mv view?usp=sharing //var/dump.sql
-        - drush sql-cli < //var/dump.sql
+        - wget https://tulepond.sfo3.digitaloceanspaces.com/prod_drupal.sql
+        - drush sql-cli < prod_drupal.sql
         - drush updatedb -y
       # - drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
