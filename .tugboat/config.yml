@@ -75,7 +75,10 @@ services:
         - drush --yes --db-url=mysql://tugboat:tugboat@mysql:3306/tugboat --account-name=admin --account-pass=admin site:install standard
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
-        - drush config-import --source=//var/config
+        - drush dl zurb_foundation
+        - drush en zurb_foundation
+        - drush vset theme_default zurb_foundation
+      # - drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
       # set up or configure the site. When a preview is built from a
