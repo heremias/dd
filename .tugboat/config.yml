@@ -76,7 +76,6 @@ services:
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - composer require drupal/zurb_foundation:^6.0@alpha
-        - drush en zurb_foundation
         - drush vset theme_default zurb_foundation
       # - drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
