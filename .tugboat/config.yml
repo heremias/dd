@@ -80,6 +80,7 @@ services:
         - wget https://tulepond.sfo3.digitaloceanspaces.com/dump.sql
         - drush sql-cli < dump.sql
         #- drush updatedb -y
+        - drush cache:rebuild
         - drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
