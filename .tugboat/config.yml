@@ -67,6 +67,7 @@ services:
         - composer require --dev drupal/stage_file_proxy
         - composer require drupal/google_cse
         - composer require drupal/simple_sitemap
+        - composer require drupal/entity_reference_revisions
         - composer require drush/drush
         
 
