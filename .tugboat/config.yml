@@ -65,7 +65,7 @@ services:
         # syncing the entire files directory into the Tugboat Preview.
         # This results in smaller previews and reduces the build time.
         - composer require --dev drupal/stage_file_proxy
-        - composer require drupal/google_cse_search
+        - composer require drupal/google_cse
         - composer require drush/drush
         
 
