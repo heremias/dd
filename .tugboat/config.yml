@@ -65,6 +65,7 @@ services:
         # syncing the entire files directory into the Tugboat Preview.
         # This results in smaller previews and reduces the build time.
         - composer require --dev drupal/stage_file_proxy
+        - composer require drupal/google_cse_search
         - composer require drush/drush
         
 
@@ -97,7 +98,7 @@ services:
         #- wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
         #- chmod +x drush.phar
         #- sudo mv drush.phar /usr/local/bin/drush
-        - composer require drupal/google_cse_search
+        
         - composer install --optimize-autoloader
        
         #- composer global update
