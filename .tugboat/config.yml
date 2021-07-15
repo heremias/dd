@@ -68,6 +68,7 @@ services:
         - composer require drupal/google_cse
         - composer require drupal/simple_sitemap
         - composer require drupal/entity_reference_revisions
+        - composer require drupal/feeds
         - composer require drush/drush
         
 
