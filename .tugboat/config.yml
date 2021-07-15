@@ -66,6 +66,7 @@ services:
         # This results in smaller previews and reduces the build time.
         - composer require --dev drupal/stage_file_proxy
         - composer require drupal/google_cse
+        - composer require drupal/simple_sitemap
         - composer require drush/drush
         
 
