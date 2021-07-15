@@ -76,7 +76,7 @@ services:
         - composer require drupal/adminimal_admin_toolbar
         - composer require drupal/adminimal_theme
         - composer require drupal/anchor_link
-        - composer require drupal/better_exposed_filters
+        - composer require drupal/better_exposed_filters:^5.0@beta
         - composer require drupal/blocache
         - composer require drupal/bootstrap_barrio
         - composer require drupal/bulk_edit_terms
