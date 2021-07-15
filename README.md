@@ -1,1 +1,1 @@
-# dd Build and Push Drupal Container to Github Packages and Deploy to Digital Ocean Kubernetes Cluster Drupster and much much more
+# dd Build and Push Drupal Container to Github Packages and Deploy to Digital Ocean Kubernetes Cluster Drupster and much more
