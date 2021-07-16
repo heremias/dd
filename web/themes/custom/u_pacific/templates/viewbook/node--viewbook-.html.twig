@@ -1,0 +1,232 @@
+{{ attach_library('u_pacific/play_video') }}
+<main id="maincontent"> 
+<div class="wrapper" id="js-wrapper">
+	<div class="sections" id="js-slideContainer">
+		<section class="section" id="section-1">
+		<img class="accent-image-2" aria-hidden="true" id="curly-1" src="{{ base_path ~ directory }}/images/curly-1-min.png" alt="Curly Accent of a swirl used for flair">
+		<img class="accent-image-1" id="white-circles" src="{{ base_path ~ directory }}/images/white-circles-min.png" alt="White Circles">
+		<img class="accent-image-2" id="orange-circles" src="{{ base_path ~ directory }}/images/full-circles-min.png" alt="Orange Circles">
+			<div class="inner">
+			<div class="row">
+			<div class="col-7 vertical-center">
+			<div class="text-wrap">
+			<div class="meet">Meet</div>
+			<h1 class="node-title">{{node.title.value}}</h1>
+			<h2>{{node.field_major_minor.0.value}}<br>
+			Class of '{{node.field_class_year.0.value}}
+			</h2>
+			</div>
+			</div>
+			<div class="col-5">
+			{{content.field_profile_image}}
+			</div>
+			</div>
+			</div>
+		</section>
+		<section class="section" id="section-2">
+		<div class="quote">
+				<img class="accent-image-1" aria-hidden="true" id="curly-2" src="{{ base_path ~ directory }}/images/curly-1-min.png" alt="Section 2 Curly accent inserted">
+		{{content.field_quote_1}}
+		</div>
+		{{content.field_quote_1_background}}
+		</section>
+		<section class="section" id="section-3">
+		<img class="accent-image-1" aria-hidden="true" id="curly-3" src="{{ base_path ~ directory }}/images/curly-1-min.png" alt="Section 3 Curly Accent that is decoration">
+		<div class="pane-heading">Academics</div>
+			<div class="quote">{{content.field_academic_quote}}</div>
+		</section>
+
+		<section class="section" id="section-4">
+				{{content.field_academic_quote_background}}
+		</section>
+<section class="section" id="section-5">
+		<img class="accent-image-1" aria-hidden="true" id="curly-4" src="{{ base_path ~ directory }}/images/curly-1-min.png" alt="Deoration for Section 5 Curly">
+	<div class="row">
+		<div class="col-6">
+		<div class="image-wrap">
+			{{content.field_activities_image}}
+			{% if  node.field_activities_image.0.title %}
+			<div class="image-caption">
+			<span>▲</span> {{ node.field_activities_image.0.title }}
+			</div>
+			{% endif %}
+			</div>
+			<div class="stat">
+				<div class="number">
+					{{node.field_stat_percentage.0.value}}{% if node.field_percent_sign.value == 1 %}<span class="percent">%</span>{% endif %}
+				</div>
+				{{content.field_stat_description}}
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="inner">
+			<div class="shift">
+				<div class="pane-heading">
+					Activities
+					<span>
+						{{node.field_activities_subtitle.0.value}}
+					</span>
+				</div>
+				<div class="padding-left">
+					<div class="quote">
+						{{content.field_activities_quote}}
+					</div>
+					{% if content.field_activities_sound_clip.0['#file'].uri.value %}
+					<div class="in-words">
+						<img src="{{ base_path ~ directory }}/images/mic-min.png" alt="microphone">
+						In {{node.title.value}}'s words
+					</div>
+					{% set mp3 = url('<front>')  %}
+					{% set mp3 = mp3['#markup'] ~ file_url(content.field_activities_sound_clip.0['#file'].uri.value)%}
+					{% set mp3 = mp3|replace({'//sites': '/sites'}) %}
+					<div id="mp3player" data-audio="{{ mp3 }}">
+						<div class="d-flex buttons">
+							<button ton id="prev">
+								prev
+							</button>
+							<button id="play">
+								Play
+							</button>
+							<button id="pause" style="display:none">
+								pause
+							</button>
+							<button id="next">
+								next
+							</button>
+						</div>
+						<div class="duration">
+							<div class="d-flex time">
+								<div id="currentTime">
+									0:00
+								</div>
+								<div id="totaltime"></div>
+							</div>
+							<div class="status">
+								<span></span>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</section>
+         <section class="section" id="section-6">
+		 <div class="row align-items-center">
+		 <div class="col-6">
+		 			<div class="pane-heading">
+					Life At Pacific
+					<span>
+						{{node.field_life_at_pacific_subtitle.0.value}}
+						</span>
+					 </div>
+				<div class="quote">
+				 	{{ content.field_life_at_pacific_quote}}
+				 </div>
+				<div class="d-flex questions">
+						<div class="q">Q<span>:</span></div><div>{{node.field_life_at_pacific_question.0.value|raw }}</div>
+				</div>
+				<div class="d-flex questions">
+						<div class="q">A<span>:</span></div><div>{{node.field_life_at_pacific_answer.0.value|raw }}</div>
+				</div>	
+		 </div>
+		 	 <div class="col-6">
+			  <div class="video-wrap">
+				{% if content.field_life_at_pacific_video['#items'].input  %}
+					{% set youtube =  content.field_life_at_pacific_video['#items'].input %}
+					{% set youtube = youtube|replace({'watch?v=': 'embed/'}) %}
+					{% set youtube = youtube|replace({'youtu.be/': 'youtube.com/embed/'}) %}
+					{% set youtube = youtube|replace({'http://': 'https://'}) %}
+					<a class="play-video" href="#" data-video="{{ youtube }}">
+					<div class="play-button">
+						<span class="d-none">Play Video</span>
+					</div>
+				{% endif %}
+			  {{content.field_life_at_pacific_video_imag }}
+			  {% if content.field_life_at_pacific_video['#items'].input  %}
+				 </a>
+				{% endif %}		
+			{% if node.field_video_caption.0.value %}
+			<div class="image-caption">
+			<span>▲</span> {{ node.field_video_caption.0.value }}
+			</div>
+			{% endif %}
+			 </div>
+			  </div>
+			  </div>
+		</section>
+            <section class="section" id="section-7">
+			<div class="d-flex">
+			<div class="white-bg"></div>
+			<div class="content">
+			<div class="pane-heading">
+					Getting Involved
+			</div>
+			<div class="quote">
+			{{content.field_community_involvement_quot}}
+			</div>
+			</div>
+			</div>
+			{{content.field_community_involvement_back }}
+{% set count = content.field_community_involvement_gall['#items']|length %}
+<div id="profileCarousel" class="carousel carousel-fade" data-ride="carousel">
+{% if count > 1 %}
+<div class="carousel-nav">
+	<a class="prev" href="#profileCarousel" role="button" data-slide="prev" aria-label="Previous Slide">
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="next" href="#profileCarousel" role="button" data-slide="next"  aria-label="Next Slide">
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
+{% endif %}
+				<div class="carousel-inner">
+				{% for key, slide in content.field_community_involvement_gall if key|first != '#' %}
+				{% set active = ''%}
+				{% if key == 0 %}
+					{% set active = 'active'%}
+				{% endif %}
+					<div class="carousel-item {{ active }}">
+					{{ content.field_community_involvement_gall[key] }}
+					</div>
+					{% endfor %}
+				</div>
+				 {{ content.field_involvement_gallery_captio }}	
+				</div>
+		</section>
+            <section class="section" id="section-8">
+					<img class="accent-image-1" aria-hidden="true" id="curly-5" src="{{ base_path ~ directory }}/images/curly-1-min.png" alt="Section 8 Curly Swirl decoration">
+		</section>
+		<section class="section" id="section-9">
+			{{content.field_quote_2_image}}
+			<div class="quote">
+			{{content.field_quote_2}}
+			</div>
+			{{content.field_quote_2_background}}
+		</section>   
+		<section class="section" id="section-10">
+		<a class="next-profile" href="{{ path('entity.node.canonical', {'node': next.nid.value}) }}"><span class="text">Next Profile</span><span class="icon-wrap"><span class="image-wrap"> <img src="{{ next.field_profile_image.entity.uri.value|image_style('viewbook_profile_')}}" alt="{{ next.field_profile_image.alt }}"></span><span class="arrow"></span></span></a>
+		<div class="blue-wrap">
+		<a href="#" id="view-all" class="profile-menu"><span>View All Profiles</span></a>
+		<div class="bottom-buttons">
+			<a target="_blank" class="view-majors" href="{{ base_path }}">Learn More About Pacific<i class="fas fa-external-link-alt"></i></a>
+		</div>
+		</div>
+		</section>   
+	</div>
+</div>
+<div class="viewbook-share">
+	<div class="inner">
+		<div class="container">
+			<h2>Share Viewbook</h2>
+				<img src="{{ base_path ~ directory }}/images/p-min.png" alt="P Logo" />
+				<div class="share-viewbook">
+					{{content.addtoany}}
+				</div>
+				<a href="#" class="sr-only sr-only-focusable share text-center" tabindex="0">Close Share</a>
+		</div>
+	</div>
+</div>
+</main>

@@ -1,0 +1,54 @@
+{# teaser  #}
+  {% if view_mode == 'teaser' %}
+  <div{{ attributes.addClass('news-teaser') }}>
+  {% set path = url %}
+  {% set target = '_self' %}
+
+  {% if node.field_external_url.value %}
+      {% set path = node.field_external_url.value %}
+      {% set target = '__blank' %}
+  {% endif %}
+
+  <a target="{{ target }}" href="{{ path }}">
+  <div class="img-wrap">
+    {{ content.field_image }}
+    {{ content.field_article_type}}
+    </div>
+    <div class="teaser-content">
+   <h4> {{ label }}</h4>
+  <span class="read-more">Read More</span>
+  </div>
+  </a>
+  </div>
+  {% endif %}
+
+
+{# full  #}
+  {% if view_mode == 'full' %}
+  <div{{ attributes.addClass('full-node news-node') }}>
+  <div class="container">
+  {{ drupal_block('system_breadcrumb_block') }}
+  </div>
+      <div class="container news-wrap">
+          <h1>{{label}}</h1>
+          <div class="pub-details">
+          {% if node.field_news_author.value %}
+                {{node.field_news_author.value}} | 
+          {% endif %}
+                {{node.created.value|date('M d, Y')}} {{content.addtoany}}
+          </div>
+            {{ content.body }}
+            {{ content.field_news_components }}
+
+            {% if node.field_tags.0 %}
+              <div class="field--name-field-tags">
+              {% for tag in node.field_tags %}
+              <span class="field__item"><a href="../../../pacific-newsroom?tid={{tag.target_id}}&keys=#views-exposed-form-pacific-newsroom-block-1">{{tag.entity.label}}</a></span>
+              {% endfor %}
+              </div>
+            {% endif %}
+
+
+    </div>
+  </div>
+  {% endif %}

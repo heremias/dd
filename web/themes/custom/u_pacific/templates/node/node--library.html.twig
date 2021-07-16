@@ -1,0 +1,65 @@
+{# teaser  #}
+  {% if view_mode == 'teaser '%}
+  <div{{ attributes }}>
+    {{ content }}
+  </div>
+  {% endif %}
+
+{# full  #}
+  {% if view_mode == 'full'%}
+  <div{{ attributes.addClass('full-node') }}>
+
+
+
+{% if node.field_menu_below_intro_field.value == 0 and node.field_hide_section_menu.value != 1 %}
+{% if node.field_school_college_department.entity.field_menu.target_id %}
+    	<div id="sub-menu">
+		<div class="container">
+    {{ drupal_region('sub_menu') }}
+    </div>
+    </div>
+{% endif %}
+{% endif %}
+
+
+
+{% if node.field_header_type.value == 'standard' %}
+{% set grid = 'col-xl-7' %}
+{% endif %}
+
+
+{% if node.body.value is not empty %}
+      <div class="container">
+          <div class="row">
+          <div class="page-content {{ grid }}">
+            {{ content.body }}
+          </div>
+      </div>
+    </div>
+{% endif %}
+
+{% if node.field_menu_below_intro_field.value == 1  and node.field_hide_section_menu.value != 1 %}
+{% if node.field_school_college_department.entity.field_menu.target_id %}
+    	<div id="sub-menu">
+		<div class="container">
+    {{ drupal_region('sub_menu') }}
+    </div>
+    </div>
+{% endif %}
+{% endif %}
+
+
+
+
+
+    {{ content|without('body') }}
+      
+      
+            {% if show_news == 1 %}
+  {{ drupal_region('below_content') }}
+{% endif %}
+
+      
+
+  </div>
+  {% endif %}

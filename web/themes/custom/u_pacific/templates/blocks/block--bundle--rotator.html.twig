@@ -1,0 +1,76 @@
+{{ attach_library('u_pacific/home_slider') }}
+{% set count = content.field_slides['#items']|length %}
+<div{{ attributes.addClass('home-slider') }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="owl-carousel owl-theme" id="carousel-{{content['#block_content'].id.value}}">
+    {% for key, slide in content.field_slides if key|first != '#' %}
+        <div class="item">
+        <picture>
+        	<source media="(min-width: 992px)" srcset="{{ file_url(slide['#paragraph'].field_image.entity.uri.value | image_style('home_rotator_desktop'))}}">
+            <source media="(max-width: 991px)" srcset="{{ file_url(slide['#paragraph'].field_mobile_image.entity.uri.value | image_style('home_rotator_mobile'))}}">
+            <img class="slide-image" src="{{ file_url(slide['#paragraph'].field_mobile_image.entity.uri.value | image_style('home_rotator_mobile'))}}" alt="{{slide['#paragraph'].field_image.alt}}">
+        </picture>
+    <div class="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="inner">
+                <h1>{{ slide['#paragraph'].field_title.value|raw  }}</h1>
+                <div class="copy">{{ slide['#paragraph'].field_text_field.value|raw  }}</div>
+                {# if link  #}
+                {% if slide['#paragraph'].field_slide_link.0.value['uri'] %}
+                    {% set path = slide['#paragraph'].field_slide_link.0.value['uri'] %}
+                    {% if 'entity:node/' in path %}
+                        {% set path = path('entity.node.canonical', {'node': path|replace({'entity:node/': ''})}) %}
+                    {% endif %}
+                    <a tabindex="-1" href="{{ path }}">{{ slide['#paragraph'].field_slide_link.0.value['title'] }}</a>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+        </div>
+                {# only show owls if there is more than one slide  #}
+                {% if content.field_slides['#items']|length > 1 %}
+                    <div class="owl-footer d-flex">
+                    <div class="container">
+                        <div class="custom-owl-arrows d-flex">
+                            <img data-carousel="carousel-{{content['#block_content'].id.value}}" class="prev" src="{{ base_path ~ directory }}/images/white-arrow.png" alt="prev" />
+                            <img data-carousel="carousel-{{content['#block_content'].id.value}}" class="next" src="{{ base_path ~ directory }}/images/white-arrow.png" alt="next" />
+                        </div>
+                        </div>
+                        <div class="custom-dots">
+                            {% set thiskey = key %}
+                            {% for key, slide in content.field_slides if key|first != '#' %}
+                            {# if dot exists  #}
+                            {% if  thiskey + 1 == key and key <= count %}
+                            <div class="next-up">Next —
+                            <span>{{ content.field_slides[key]['#paragraph'].field_title.value|raw|replace({'.' : ''}) }}</span>
+                            </div>
+                            {% endif %}
+                            {% if thiskey + 1 >= count and key == 0 %}
+                             <div class="next-up">Next —
+                            <span>{{ content.field_slides[0]['#paragraph'].field_title.value|raw|replace({'.' : ''}) }}</span>
+                            </div>
+                            {% endif %}
+                            <span data-carousel="carousel-{{content['#block_content'].id.value}}" data-slide="{{ key }}" class="c-dot{% if thiskey == key %} active {% endif %}"></span>
+                            {% endfor %}
+                        </div>
+                   </div> 
+                {% endif %}
+    </div>
+    </div>
+    {% endfor %}
+  {% endblock %}
+</div>
+{% if content['#block_content'].field_video.entity.uri.value %}
+{% set video = file_url(content['#block_content'].field_video.entity.uri.value) %}
+<div id="ambient">
+	<label style="display:none" for="herovideo">Introduction Video</label>
+	<video  id="herovideo" autoplay loop autobuffer muted playsinline>
+		<source src="{{ video }}" type="video/mp4">
+	</video>
+</div>
+{% endif %}
+</div>

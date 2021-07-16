@@ -1,0 +1,39 @@
+{{ attach_library('u_pacific/owl') }}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'paragraph-' ~ paragraph.id.value
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+<div class="container">
+<div class="row owl-theme owl" id="carousel-{{paragraph.id.value}}">
+{% set count = content.field_stats['#items']|length %}
+{% set grid = 6 %}
+{% if count ==  3 %}
+    {% set grid = 4 %}
+{% endif %}
+{% if count ==  4 %}
+    {% set grid = 3 %}
+{% endif %}
+
+{% for key, stat in content.field_stats if key|first != '#' %}
+<div class="col-lg-{{ grid }} text-center item">
+{% spaceless %}
+<div class="stat stat-{{ key }}">
+{% if stat['#paragraph'].field_stat_type.value == 'number' %}<span class="stat-type">#</span>{% endif %}{% if stat['#paragraph'].field_stat_type.value == 'dollar' %}<span class="stat-type">$</span>{% endif %}{{ stat['#paragraph'].field_stat.value|trim }}{% if stat['#paragraph'].field_stat_type.value == 'percent' %}<span class="stat-type">%</span>{% endif %}
+</div>
+{% endspaceless %}
+<div class="stat-description">{{ stat['#paragraph'].field_description.value|raw  }}</div>
+</div>
+{% endfor %}
+</div>
+</div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

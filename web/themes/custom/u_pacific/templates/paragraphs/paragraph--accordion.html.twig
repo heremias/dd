@@ -1,0 +1,20 @@
+<div class="link-accordion">
+<div class="container">
+<div  id="accordion-{{ elements['#paragraph'].id.value }}">
+  <div class="card">
+    <div class="card-header" id="heading-{{ elements['#paragraph'].id.value }}">
+      <h2>
+        <button class="btn btn-link collapsed " type="button" data-toggle="collapse" data-target="#collapse-{{ elements['#paragraph'].id.value }}"  aria-controls="collapse-{{ elements['#paragraph'].id.value }}">
+          {{ content.field_title}}
+        </button>
+      </h2>
+    </div>
+    <div id="collapse-{{ elements['#paragraph'].id.value }}" class="collapse" aria-labelledby="heading-{{ elements['#paragraph'].id.value }}" data-parent="#accordion-{{ elements['#paragraph'].id.value }}">
+      <div class="card-body">
+        {{ content.field_link_list }}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

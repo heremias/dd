@@ -1,0 +1,31 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'paragraph-' ~ paragraph.id.value
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+  {% block content %}
+    <div class="container">
+      <div class="row">
+      {% if content.field_text_title.0 %}
+        <div class="col-lg-5">
+          <h2>{{ content.field_text_title  }}</h2>
+          {{ content.field_text_list}}
+        </div>
+      {% endif %}
+      {% if content.field_link_list_tile.0 %}
+        <div class="col-lg-7">
+          <h2>{{ content.field_link_list_tile }}</h2>
+          {{ content.field_link_list}}
+        </div>
+      {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+  </div>
+{% endblock paragraph %}

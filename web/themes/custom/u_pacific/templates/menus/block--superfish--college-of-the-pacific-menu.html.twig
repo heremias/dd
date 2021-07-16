@@ -1,0 +1,15 @@
+{{ attach_library('u_pacific/sub_nav_sticky') }}
+
+
+<div{{ attributes }} data-menu-name="{{content.content['#menu_name']}}">
+    {{ title_prefix }}
+    <div class="d-lg-flex">
+    {# Live setting  #}
+    {# <div class="in-this-section">In this Section</div>#}
+    {# Uncomment for screens  #}
+    <div class="in-this-section">{{content.content['#menu_title']}}</div>
+
+    <div>{{ content }}</div>
+    </div>
+  {{ title_suffix }}
+</div>

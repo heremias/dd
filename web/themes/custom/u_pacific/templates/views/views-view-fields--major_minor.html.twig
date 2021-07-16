@@ -1,0 +1,12 @@
+<div class="mms">
+  <div class="mm">
+    <input type="radio" id="{{ fields.nid.content }}" name="rd" class="mmrd">
+    <div>{{ fields.field_image.content }}</div>
+    <label class="mm-label" for="{{ fields.nid.content }}">{{fields.field_alternative_title.content}}<div class="degree-type">{{fields.field_degree_type.content}}</div></label>
+    
+    
+    <div class="mm-content"><div class="mmbox"><h3>{{fields.field_alternative_title.content}}</h3><div class="degree-type">{{fields.field_degree_type.content}}</div></div><div class="mmbody">{{fields.body.content}}<div class="mm_link"><a href="/node/{{ fields.nid.content }}">Learn More &nbsp; <i class="fas fa-arrow-right icon-white"></i></a></div><div class="close_item"><input type=button value="x" onclick="document.getElementById('{{ fields.nid.content }}').checked = false"></div></div>
+      
+    </div>
+  </div>
+</div>

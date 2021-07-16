@@ -1,0 +1,55 @@
+{{ attach_library('u_pacific/featured_news') }}
+
+{%
+  set classes = [
+    'featured-news-carousel',
+  ]
+%}
+
+  <div{{ attributes.addClass(classes) }}>
+    <div class="owl-carousel owl-theme" id="featured-news-carousel">
+    {% for key, slide in rows %}
+        <div class="item">
+        <picture>
+        	<source media="(min-width: 992px)" srcset="{{ file_url(slide.content['#row']._entity.field_image.entity.uri.value | image_style('carousel_image_desktop'))}}">
+            <source media="(max-width: 991px)" srcset="{{ file_url(slide.content['#row']._entity.field_image.entity.uri.value | image_style('carousel_image_mobile'))}}">
+            <img class="slide-image" src="{{ file_url(slide.content['#row']._entity.field_image.entity.uri.value | image_style('carousel_image_mobile'))}}" alt="{{ slide.content['#row']._entity.field_image.alt }}">
+        </picture>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6"> 
+                {# blank #}
+            </div>
+            <div class="col-lg-6  blue">
+                <div class="inner">
+                <div class="subtitle">Featured News</div>
+                <h3>{{slide.content['#row']._entity.title.value}}</h3>
+                {# if link  #}
+                    {% set path = path('entity.node.canonical', {'node': slide.content['#row']._entity.nid.value}) %}
+                    {% set target = '_self' %}
+                    {% if slide.content['#row']._entity.field_external_url.value %}
+                        {% set path = slide.content['#row']._entity.field_external_url.value %}
+                        {% set target = '_blank'%}
+                    {% endif %}
+                    <a target='{{target}}' href="{{ path }}">Read Full Feature</a>
+                {# only show owls if there is more than one slide  #}
+                    <div class="owl-footer d-flex">
+                        <div class="custom-dots d-flex">
+                        {% set thiskey = key %}
+                        {% for key, slide in rows %}
+                        <span data-carousel="carousel-featured" data-slide="{{ key }}" class="c-dot {% if thiskey == key %} active {% endif %}"></span>
+                        {% endfor %}
+                        </div>
+                        <div class="custom-owl-arrows">
+                            <img data-carousel="carousel-featured" class="prev" src="{{ base_path ~ directory }}/images/orange-arrow-thin-min.png" alt="prev" />
+                            <img data-carousel="carousel-featured" class="next" src="{{ base_path ~ directory }}/images/orange-arrow-thin-min.png" alt="next" />
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
