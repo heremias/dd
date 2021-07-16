@@ -1,1 +1,1 @@
-# dd Build and Push Drupal Container to Github Packages etc
+# dd Build and Push Drupal Container to Github Packages
