@@ -1,0 +1,35 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'paragraph-' ~ paragraph.id.value
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+  <div class="container">
+    <div class="row">
+    {% if content.field_column_one_links.0 %}
+      <div class="col-lg-6">
+      <h2>{{ content.field_column_2_ }}</h2>
+         {{ content.field_column_one_links}}
+      </div>
+    {% endif %}
+    {% if content.field_column_two_links.0 %}
+      <div class="col-lg-6">
+      {% if content.field_title_column_one.0 %}
+      <h2>{{ content.field_title_column_one }}</h2>
+      {% else %}
+      <h2 class="d-none d-lg-block" style="visibility: hidden" aria-hidden="true">{{ content.field_column_2_ }}</h2>
+      {% endif %}
+               {{ content.field_column_two_links}}
+      </div>
+    {% endif %}
+</div>
+    </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

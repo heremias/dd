@@ -1,0 +1,95 @@
+
+<div class="watch-popup">
+	<img id="close-watch" src="{{ base_path ~ directory }}/images/close-x.png" alt="close video button" aria-hidden="true">
+</div>
+<div class="overflow-hidden">
+	<!-- header of the page -->
+
+
+	<header id="navigation" {% if is_front == FALSE %} class="fixed" {% endif %}>
+		<div
+			class="container">
+			<!-- page logo -->
+			<div class="logo">
+				<a href="{{ default_domain }}">
+					<img src="{{ base_path ~ directory }}/images/logo.png" alt="University of the Pacific">
+				</a>
+			</div>
+			<div id="nav" class="desktop-primary d-none d-xl-block">
+				{{ page.navigation }}
+			</div>
+			<div class="d-flex icon-wrap">
+				<a href="#" class="nav-opener opens" aria-label="Toggle Open the Sub Navigation">
+					<span class="d-none d-lg-inline-block">
+						More
+					</span>
+					<img src="{{ base_path ~ directory }}/images/menu-icon.png" alt="Menu Icon"/>
+				</a>
+				<a href="#" title="Search" id="search-pop" class="opens">
+					<span class="d-none">
+						search
+					</span>
+					<span class="fas fa-search"></span>
+				</a>
+				<a href="#" class="closes close-subnav" aria-label="Toggle Open the Sub Navigation">
+					<span class="d-none d-lg-inline-block">
+						Close
+					</span>
+					<img src="{{ base_path ~ directory }}/images/close-x.png" alt="Menu Icon"/>
+				</a>
+	
+			</div>
+		</div>
+	</header>
+
+
+
+	{# slideout #}
+	<section class="slideout-wrap">
+		<div class="slideout">
+			<div class="subnav">
+				<div id="close-subnav">
+					<a class="close-subnav" href="#" title="Close Navigation">
+						<span class="d-none">
+							Close
+						</span>
+					</a>
+				</div>
+				<div class="logo">
+					<a href="{{ default_domain }}">
+						<img src="{{ base_path ~ directory }}/images/logo.png" alt="University of the Pacific">
+					</a>
+				</div>
+				<div class="search-tab">
+					<div class="inner">
+						{{ page.search }}
+					</div>
+				</div>
+				<div class="d-block d-xl-none order-1 w-100">
+					<div class="inner">
+						{{ page.mobile_navigation }}
+					</div>
+				</div>
+				<div class="split row no-gutters" tabindex="-2">
+					<div class="tools order-2 order-xl-3">
+						<div class="inner" id="tools-menu">
+							{{ page.tools }}
+						</div>
+					</div>
+					<div class="order-3 order-xl-2  w-100" tabindex="-1">
+						<div class="inner">
+							{{ page.subnav}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+					<div class="tools-desktop d-none d-xl-block" id="desktop-tools">
+				<div class="container">
+					{{ page.tools_desktop }}
+					</div>
+				</div>
+				
+</div>

@@ -1,0 +1,52 @@
+{{ attach_library('u_pacific/viewbook') }}
+<div class="d-none" id="maincontent"></div>
+<div class="d-none" aria-hidden="true">{{ page.custom_scripts }}</div>
+<div class="preloader"></div>
+	{% if page.tabs %}
+		<div class="content-block page-tabs">
+			<div class="container">
+				{{ page.tabs }}
+			</div>
+		</div>
+	{% endif %}
+<div class="intro-wrapper">
+<div class="intro-1-wrap">
+<div class="dark"></div>
+<section class="intro-section" id="intro-section-1">
+<div class="viewbook-header">
+<img src="{{ base_path ~ directory }}/images/viewbook-logo-min.png" alt="viewbook logo">
+</div>
+<div class="lag-bg"></div>
+<div class="inner">
+<div class="container-fluid">
+	<div class="explore">
+	<span>University</span>
+	<h1><u>Explore</u> Pacific</h1>
+	<span>of the Pacific</span>
+	</div>
+	<div class="choose">
+	<p>
+	Choose the options below that most closely describe you, and we'll give 
+	you a personalized glimpse into what makes life at Pacific so great.
+	</p>
+	</div>
+	</div>
+	</div>
+<img id="full-circles" src="{{ base_path ~ directory }}/images/full-circles-min.png" alt="circles">
+<img id="student-lax-1" src="{{ base_path ~ directory }}/images/student-lax-1-min.png" alt="building">
+<img id="student-lax-2" src="{{ base_path ~ directory }}/images/student-lax-2-min.png" alt="student">
+</section>
+</div>
+<section class="intro-section" id="intro-section-2">
+<div class="bg-wrap"><div class="bg"></div></div>
+<img id="full-circles-2" src="{{ base_path ~ directory }}/images/full-circles-min.png" alt="circles">
+	<div class="container">
+		<div class="inner">
+			<div class="orange">
+				{{ page.content }}
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+{% include directory ~ '/inc/footer.html.twig' %}

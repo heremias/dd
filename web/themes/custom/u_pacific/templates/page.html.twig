@@ -1,0 +1,29 @@
+<div class="d-none" aria-hidden="true">{{ page.custom_scripts }}</div>
+{% include directory ~ '/inc/navigation.html.twig' %}
+<main id="main">
+	<div class="header-wrap">
+				{% if page.emergency %}
+				{{ page.emergency }}
+		{% endif %}
+		{{ page.header }}
+	</div>
+<section class="main-content" id="maincontent">
+	{% if page.tabs %}
+		<div class="content-block page-tabs">
+			<div class="container">
+				{{ page.tabs }}
+			</div>
+		</div>
+	{% endif %}
+	{{ page.content }}
+	</section>
+	{% if page.below_content_full_width is not empty %}
+		<div class="below-content-full-width">
+			{{ page.below_content_full_width }}
+		</div>
+	{% endif %}
+	{% if page.above_footer is not empty %}
+		{{ page.above_footer }}
+	{% endif %}
+</main>
+{% include directory ~ '/inc/footer.html.twig' %}

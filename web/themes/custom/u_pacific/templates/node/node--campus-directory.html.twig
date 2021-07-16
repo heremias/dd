@@ -1,0 +1,76 @@
+{% if view_mode == 'full'%}
+	<div{{attributes.addClass('campus-directory-node')}}>
+<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				{{ content.field_headshot_1}}
+			</div>
+			<div class="col-md-8">
+			<div class="row">
+				<div class="col-12">
+					<h2>{{ label }}</h2>
+				</div>
+			</div>
+				<div class="row cdtails">
+					<div class="col-lg-6">
+                            {{ content.field_professional_title }}
+                            {{ content.field_professional_title_2 }}
+                            {{ content.field_professional_title_3 }}
+                            {{ content.field_campus }}
+                            {{ content.field_office_location}}
+                            {{ content.field_office_location_2}}
+					</div>
+					<div class="col-lg-6">
+						{# email overrides  #}
+						{% set email = content.field_email %}
+						{% if node.field_email_override.value is not empty %}
+							{% set email = content.field_email_override %}
+						{% endif %}
+						{% if email is not empty %}
+							{{ email }}
+						{% endif %}
+
+						{# phone overrides  #}
+						{% set phone = content.field_phone_number %}
+						{% if node.field_phone_number_override is not empty %}
+							{% set phone = content.field_phone_number_override %}
+						{% endif %}
+						{% if phone is not empty %}
+							{{ phone }}
+						{% endif %}
+
+
+						{{ content.field_linkedin }}
+						{{ content.field_website }}
+					</div>
+				</div>
+                <div class="row bio">
+                <div class="col-12">
+                {{ content.field_biography }}
+				{{ content.field_education }}
+                    
+                		{{ content.field_curriculum_vitae }}    
+                    
+                </div>
+                </div>
+			</div>
+		</div>
+	</div>
+{% if node.field_teaching_interests.0 or node.field_research_focus.0 %}
+	<div class="interests-focus">
+	<div class="container">
+	<div class="row">
+		{% set offset = 'offset-md-1' %}
+		{% if node.field_teaching_interests.0 %}
+		{% set offset = '' %}
+		<div class="col-md-5 offset-md-1">{{ content.field_teaching_interests }}</div>
+		{% endif %}
+		{% if node.field_research_focus.0 %}
+			<div class="col-md-5 {{ offset }}">{{ content.field_research_focus }}</div>
+			{% endif %}
+	</div>
+	</div>
+	</div>
+	</div>
+	{% endif %}
+{% endif %}

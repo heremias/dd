@@ -1,0 +1,124 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{# set where image is  #}
+<div class="map-position">
+{% set image_align = 'image-right' %}
+{% for  box in content.field_left_column if key|first != '#' %}
+  {% if box['#paragraph'].type.target_id == 'images' or  box['#paragraph'].type.target_id == 'video' %}
+  {% set image_align = 'image-left' %}
+  {% endif %}
+{% endfor %}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    paragraph.field_block_color.value,
+    image_align,
+    'paragraph-' ~ paragraph.id.value
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+  <div class="container">
+  <div class="row">
+    {% block content %}
+      <div class="col-lg-6">{{ content.field_left_column }}</div>
+      <div class="col-lg-6 d-lg-none">{{ content.field_right_column }}</div>
+    {% endblock %}
+  </div>
+  </div>
+  </div>
+{% endblock paragraph %}
+
+<div id="location-hover" aria-hidden="false">
+<div class="map-wrap">
+<div class="hotspot sacramento">
+<div class="card">
+<div class="card-img-wrap">
+  <img  src="../../themes/custom/u_pacific/images/location-sacramento.jpeg" alt="University of the Pacific - Sacramento Campus">
+  <a class="location-link" href="/node/17">Sacramento Campus</a>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+   3200 Fifth Avenue,<br>
+    Sacramento, California 95817<br>
+    <span class="phone">916.520.7499</span>
+    </p>
+  </div>
+</div>
+</div>
+<div class="hotspot stockton">
+<div class="card">
+<div class="card-img-wrap">
+  <img alt="Campus Locations"  src="../../themes/custom/u_pacific/images/location-stockton.jpeg" alt="University of the Pacific - Stockton Campus">
+  <a class="location-link" href="/node/28585/">Stockton Campus</a>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+    3601 Pacific Avenue,<br>
+    Stockton, California 95211<br>
+    <span class="phone">209.946.2285</span>
+    </p>
+  </div>
+</div>
+</div>
+<div class="hotspot sanfran">
+<div class="card">
+<div class="card-img-wrap">
+  <img  src="../../themes/custom/u_pacific/images/location-san-francisco.jpeg" alt="University of the Pacific - San Francisco Campus">
+  <a class="location-link" href="/san-francisco-campus">San Francisco Campus</a>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+    155 Fifth Street,<br>
+    San Francisco, California 94103<br>
+    <span class="phone">415.400.8222</span>
+    </p>
+  </div>
+</div>
+</div>
+<img id="map" alt="campus locations" src="../../themes/custom/u_pacific/images/locations.jpg">
+</div>
+</div>
+
+</div>

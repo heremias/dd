@@ -1,0 +1,12 @@
+<div{{ attributes.addClass('large-callout') }}>
+    <div class="container">
+    {{ title_prefix }}
+        <picture>
+        <source media="(min-width: 992px)" srcset="{{ file_url(content.field_image['#items'].entity.uri.value|image_style('video_background'))}}">
+          <source media="(max-width: 991px)" srcset="{{ file_url(content.field_image['#items'].entity.uri.value|image_style('two_column_image'))}}">
+          <img class="slide-image" src="{{ file_url(content.field_image['#items'].entity.uri.value|image_style('two_column_image'))}}" alt="content.field_image.alt">
+        </picture>
+        {{content.field_link}}
+    {{ title_suffix }}
+    </div>
+</div>

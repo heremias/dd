@@ -1,0 +1,40 @@
+// custom mixins
+
+@navy: #161729;
+@darknavy: #0f101d;
+@yellow: #f6b222;
+@darkyellow: #f4b223;
+@orange: #bf4a12;
+@lightorange: #f7713e;
+@darkorange: #ac441e;
+@lighterorange: #e65300;
+@clr1: @navy;
+@gray: #555555;
+@lightgray: #d1cdc5;
+@peach: @lightorange;
+@green: #2d7050;
+
+@galaxie :  GalaxiePolaris;
+@bely-display: bely-display, sans-serif;
+@bely: bely, sans-serif;
+@grotesk:  neuzeit-grotesk, sans-serif;
+
+
+@phone: ~"only screen and (min-width: 576px)";
+@tablet: ~"only screen and (min-width: 768px)";
+@desktop: ~"only screen and (min-width: 992px)";
+@widescreen: ~"only screen and (min-width: 1200px)";
+
+@tiny: ~"only screen and (min-height: 340px)";
+@short: ~"only screen and (min-height: 558px)";
+@tall: ~"only screen and (min-height: 940px)";
+
+
+
+.transition (@prop: all, @time: 300ms, @ease: ease-in-out) {
+  -webkit-transition: @prop @time @ease;
+  -moz-transition: @prop @time @ease;
+  -o-transition: @prop @time @ease;
+  -ms-transition: @prop @time @ease;
+  transition: @prop @time @ease;
+}

@@ -1,0 +1,20 @@
+<div class="d-none" aria-hidden="true">{{ page.custom_scripts }}</div>
+{% include directory ~ '/inc/navigation.html.twig' %}
+<main id="main">
+	<div class="header-wrap">
+		{{ page.header }}
+	</div>
+<section class="main-content" id="maincontent">
+	{% if page.tabs %}
+		<div class="content-block page-tabs">
+			<div class="container">
+				{{ page.tabs }}
+			</div>
+		</div>
+	{% endif %}
+<div class="container">
+	{{ page.content }}
+    </div>
+	</section>
+</main>
+{% include directory ~ '/inc/footer.html.twig' %}

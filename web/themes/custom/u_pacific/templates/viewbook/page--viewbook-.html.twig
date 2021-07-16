@@ -1,0 +1,38 @@
+{{ attach_library('u_pacific/viewbook') }}
+<div class="d-none" id="maincontent"></div>
+<div class="watch-popup">
+	<img id="close-watch" src="{{ base_path ~ directory }}/images/close-x.png" alt="close video button" aria-hidden="true">
+</div>
+<div class="d-none" aria-hidden="true">
+	{{ page.custom_scripts }}
+</div>
+<div class="profile-nav">
+	<div class="nav-buttons">
+		<a class="profile-menu" href="#">
+			<span class="sr-only">
+				Profile Menu
+			</span>
+		</a>
+		<a href="#" class="share">
+		<i class="fas fa-share-square"></i>
+			<span class="sr-only">
+				Share
+			</span>
+		</a>
+	</div>
+	<div id="nav-img">
+		<a id="pagetop" href="#" aria-label="University of the Pacific Home">
+			<img src="{{ base_path ~ directory }}/images/viewbook-logo-min.png" alt="viewbook logo">
+		</a>
+	</div>
+</div>
+<a class="start-over" href="{{ base_path }}viewbook" id="start-over-link">Start Over</a>
+{{page.content}}
+<div class="viewbook-profiles">
+	<div class="inner">
+		<div class="container">
+			{{ page.below_content }}
+						<a href="#" class="sr-only sr-only-focusable profile-menu text-center" tabindex="0">Close Profiles</a>
+		</div>
+	</div>
+</div>
