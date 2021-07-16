@@ -3,7 +3,7 @@ type: theme
 description: 'Custom Drupal 8 Theme'
 package: Core
 version: VERSION
-core: 8.x
+core_version_requirement: ^8.8 || ^9
 base theme: false
 libraries:
 - u_pacific/global-styling
@@ -25,7 +25,6 @@ regions:
   content: 'Content'
   below_content: 'Below Content'
   mobile_submenu: 'Mobile Submenu'
-  emergency: 'Emergency Notification'
   footer_1: 'Footer 1'
   footer_2: 'Footer 2'
   footer_3: 'Footer 3'
