@@ -67,20 +67,20 @@ services:
         - composer require --dev drupal/stage_file_proxy
         - composer require drush/drush
         
-
         # Set file permissions such that Drupal will not complain.
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
         - drush --yes --db-url=mysql://tugboat:tugboat@mysql:3306/tugboat --account-name=admin --account-pass=admin site:install standard
-        - drush pm:enable --yes stage_file_proxy
-        - drush config:set --yes stage_file_proxy.settings origin "http://www.pacific.edu"
+        
         - composer require drupal/zurb_foundation:^6.0@alpha
         - drush config-set system.theme default zurb_foundation
         - wget https://tulepond.sfo3.digitaloceanspaces.com/dump.sql
         - drush sql-cli < dump.sql
         - drush updatedb -y
         - drush cache:rebuild
+        - drush pm:enable --yes stage_file_proxy
+        - drush config:set --yes stage_file_proxy.settings origin "http://www.pacific.edu"
         - drush uli admin/content
         #- drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
