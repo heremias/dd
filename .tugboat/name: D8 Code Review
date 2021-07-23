@@ -1,0 +1,153 @@
+name: D8 Code Review
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  code-standards:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php_version: ['7.3']
+
+    steps:
+    - name: Check out code 
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+
+    - name: Set up PHP ${{ matrix.php_version }}
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php_version }}
+
+    - name: Install dependencies
+      run: composer install --dev
+
+    - name: Composer version
+      run: composer -V
+
+    - name: Install Coder
+      run: composer global require drupal/coder:^8.3.1
+
+    - name: Install Codesniffer
+      run: composer global require dealerdirect/phpcodesniffer-composer-installer
+
+    - name: List all of the available packages
+      run: composer global show -P
+
+    - name: Composer home directory
+      run: composer config home
+
+    - name: Verify Registered Standards
+      run: ~/.composer/vendor/bin/phpcs -i
+
+    - name: Manually Set Installed Paths
+      run: ~/.composer/vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+  
+    - name: Code review initiated
+      run: |
+        ~/.composer/vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml ./
+        ~/.composer/vendor/bin/phpcs --standard=DrupalPractice --php,module,inc,install,test,profile,theme,css,info,txt,md,yml ./    
+
+
+
+
+name: Tests and code
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    container:
+      image: juampynr/drupal8ci:latest
+
+    services:
+      mariadb:
+        image: quay.io/juampynr/drupal8-github-actions:latest
+        ports:
+          - 33306:3306
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Build project
+        run: |
+          robo job:build
+
+  code-standards:
+    runs-on: ubuntu-latest
+    container:
+      image: juampynr/drupal8ci:latest
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Build project
+        run: |
+          robo job:build
+
+      - name: Check coding standards
+        run: vendor/bin/robo job:coding-standards
+
+  code-coverage:
+    runs-on: ubuntu-latest
+    container:
+      image: juampynr/drupal8ci:latest
+
+    services:
+      mariadb:
+        image: quay.io/juampynr/drupal8-github-actions:latest
+        ports:
+          - 33306:3306
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Build project
+        run: |
+          robo job:build
+
+      - name: Assess code coverage
+        run: |
+          vendor/bin/robo job:coverage-report
+          ls -hal coverage
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v1
+        with:
+          name: coverage
+          path: coverage
+
+  existing-site-tests:
+    runs-on: ubuntu-latest
+    container:
+      image: juampynr/drupal8ci:latest
+
+    services:
+      mariadb:
+        image: quay.io/juampynr/drupal8-github-actions:latest
+        ports:
+          - 33306:3306
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Build project
+        run: |
+          robo job:build
+
+      - name: Run existing site tests
+        run: |
+          vendor/bin/robo run:chrome-headless &
+          vendor/bin/robo job:existing-site-tests
