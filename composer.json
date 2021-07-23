@@ -39,6 +39,7 @@
         "drupal/domain": "1.0.0-beta5",
         "drupal/editor_advanced_link": "1.9.0",
         "drupal/embed": "1.4",
+        "drupal/emergency_alerts": "2.x-dev",
         "drupal/entity_browser": "2.6.0",
         "drupal/entity_clone": "1.0.0-beta6",
         "drupal/entity_reference_revisions": "1.9.0",
