@@ -1,0 +1,38 @@
+on:
+  push:
+    branches:
+      - master
+name: Build and deploy
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Build, push, and verify image
+        run: |
+          echo $PACKAGES_TOKEN | docker login ghcr.io -u heremias --password-stdin
+          docker build --tag docker.pkg.github.com/juampynr/drupal8-do/app:${GITHUB_SHA} .
+          docker push docker.pkg.github.com/juampynr/drupal8-do/app:${GITHUB_SHA}
+          docker pull docker.pkg.github.com/juampynr/drupal8-do/app:${GITHUB_SHA}
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Save cluster configuration
+        run: doctl kubernetes cluster kubeconfig save drupster
+
+      - name: Deploy to DigitalOcean
+        run: |
+          sed -i 's|<IMAGE>|docker.pkg.github.com/juampynr/drupal8-do/app:'${GITHUB_SHA}'|' $GITHUB_WORKSPACE/definitions/drupal-deployment.yaml
+          kubectl apply -k definitions
+          kubectl rollout status deployment/drupal
+
+      - name: Update database
+        run: |
+          kubectl exec deployment/drupal -- vendor/bin/robo project:files-configure
+          kubectl exec deployment/drupal -- vendor/bin/robo project:database-update
