@@ -75,7 +75,7 @@ services:
         
         - composer require drupal/zurb_foundation:^6.0@alpha
         - drush config-set system.theme default zurb_foundation
-        - wget https://tulepond.sfo3.digitaloceanspaces.com/prod_drupal.sql
+        - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
         - drush sql-cli < dump.sql
         - drush updatedb -y
         - drush cache:rebuild
