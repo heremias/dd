@@ -75,12 +75,12 @@ services:
         
         - composer require drupal/zurb_foundation:^6.0@alpha
         - drush config-set system.theme default zurb_foundation
-        - wget https://tulepond.sfo3.digitaloceanspaces.com/dump.sql
+        - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
         - drush sql-cli < dump.sql
         - drush updatedb -y
         - drush cache:rebuild
         - drush pm:enable --yes stage_file_proxy
-        - drush config:set --yes stage_file_proxy.settings origin "http://www.pacific.edu"
+        - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
         #- drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
