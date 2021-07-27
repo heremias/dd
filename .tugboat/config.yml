@@ -21,6 +21,7 @@ services:
         # Install opcache and mod-rewrite.
         - docker-php-ext-install opcache
         - a2enmod headers rewrite
+        - sudo apt-get install php7.0-zip
 
         # Link the document root to the expected path. This example links /web
         # to the docroot.
