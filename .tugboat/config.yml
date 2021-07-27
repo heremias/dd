@@ -20,6 +20,7 @@ services:
       init:
         # Install opcache and mod-rewrite.
         - docker-php-ext-install opcache
+        - sudo apt-get install -y zlib1g-dev
         - docker-php-ext-install zip
         - a2enmod headers rewrite
         #- php --version
