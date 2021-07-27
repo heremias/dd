@@ -23,7 +23,7 @@ services:
         - a2enmod headers rewrite
         #- sudo apt-get install libz-dev -y
         #- pecl install zlib zip
-        - sudo apt-get install php-zip
+        #- sudo apt-get install php-zip
 
         # Link the document root to the expected path. This example links /web
         # to the docroot.
