@@ -69,6 +69,8 @@ services:
         # This results in smaller previews and reduces the build time.
         - composer require --dev drupal/stage_file_proxy
         - composer require drush/drush
+        - php --version
+        #- sudo apt-get install php7.4-zip
         - composer require drupal/clipboardjs
         # Set file permissions such that Drupal will not complain.
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
