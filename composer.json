@@ -20,6 +20,7 @@
         "drupal/admin_toolbar": "2.4.0",
         "drupal/adminimal_admin_toolbar": "1.11",
         "drupal/adminimal_theme": "1.6.0",
+        "drupal/advanced_help": "^1.0@beta",
         "drupal/anchor_link": "2.5.0",
         "drupal/backup_migrate": "^5.0",
         "drupal/better_exposed_filters": "5.0.0-beta3",
