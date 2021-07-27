@@ -82,6 +82,7 @@ services:
         #- drush updatedb -y
         #- drush cache:rebuild
         #- grep -rn 'path.alias_manager' ${DOCROOT}/modules/contrib/
+        - drush cbdl
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
