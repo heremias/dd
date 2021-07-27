@@ -20,14 +20,15 @@ services:
       init:
         # Install opcache and mod-rewrite.
         - docker-php-ext-install opcache
+        - docker-php-ext-install zip
         - a2enmod headers rewrite
-        - php --version
-        - sudo apt-get update
-        - sudo apt-get install software-properties-common
-        - sudo add-apt-repository ppa:ondrej/<repository>
+        #- php --version
+        #- sudo apt-get update
+        #- sudo apt-get install software-properties-common
+        #- sudo add-apt-repository ppa:ondrej/<repository>
         #- sudo add-apt-repository ppa:ondrej/php
         #- sudo apt-get update
-        - sudo apt-get install php7.4-zip
+        #- sudo apt-get install php7.4-zip
         #- sudo apt-get install libz-dev -y
         #- pecl install zlib zip
       
