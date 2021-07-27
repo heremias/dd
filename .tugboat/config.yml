@@ -21,7 +21,13 @@ services:
         # Install opcache and mod-rewrite.
         - docker-php-ext-install opcache
         - a2enmod headers rewrite
-        
+        - php --version
+        - sudo apt-get update
+        - sudo apt-get install software-properties-common
+        - sudo apt-get update
+        - sudo add-apt-repository ppa:ondrej/php
+        - sudo apt-get update
+        - sudo apt-get install php7.4-zip
         #- sudo apt-get install libz-dev -y
         #- pecl install zlib zip
       
@@ -71,12 +77,7 @@ services:
         # This results in smaller previews and reduces the build time.
         - composer require --dev drupal/stage_file_proxy
         - composer require drush/drush
-        - php --version
-        - sudo apt-get install software-properties-common
-        - sudo apt-get update
-        - sudo add-apt-repository ppa:ondrej/php
-        - sudo apt-get update
-        - sudo apt-get install php7.4-zip
+        
         - composer require drupal/clipboardjs
         # Set file permissions such that Drupal will not complain.
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
