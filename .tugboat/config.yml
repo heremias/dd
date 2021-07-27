@@ -25,7 +25,7 @@ services:
         - sudo apt-get update
         - sudo apt-get install software-properties-common
         - sudo apt-get update
-        #- sudo add-apt-repository ppa:ondrej/php
+        - sudo add-apt-repository ppa:ondrej/php
         #- sudo apt-get update
         - sudo apt-get install php7.4-zip
         #- sudo apt-get install libz-dev -y
