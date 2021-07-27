@@ -1,7 +1,0 @@
-name: 'DocMagic Migrate'
-type: module
-description: 'Helper code to ease DocMagic site migration from Drupal 6 to Drupal 8'
-core: 8.x
-package: 'Custom'
-dependencies:
-  - migrate_drupal
