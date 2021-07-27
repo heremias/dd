@@ -24,9 +24,7 @@ services:
         - php --version
         - sudo apt-get update
         - sudo apt-get install software-properties-common
-        - sudo apt-get update
-        - sudo apt-get install -y language-pack-en-base
-        - LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/<repository>
+        - sudo add-apt-repository ppa:ondrej/<repository>
         #- sudo add-apt-repository ppa:ondrej/php
         #- sudo apt-get update
         - sudo apt-get install php7.4-zip
