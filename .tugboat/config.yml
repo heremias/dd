@@ -21,6 +21,7 @@ services:
         # Install opcache and mod-rewrite.
         - docker-php-ext-install opcache
         - a2enmod headers rewrite
+        - sudo apt-get install software-properties-common
         #- sudo apt-get install libz-dev -y
         #- pecl install zlib zip
       
