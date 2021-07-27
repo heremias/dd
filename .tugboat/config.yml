@@ -23,6 +23,7 @@ services:
         - a2enmod headers rewrite
         #- sudo apt-get install libz-dev -y
         #- pecl install zlib zip
+      
         #- sudo apt-get install php-zip
 
         # Link the document root to the expected path. This example links /web
@@ -70,6 +71,8 @@ services:
         - composer require --dev drupal/stage_file_proxy
         - composer require drush/drush
         - php --version
+        - add-apt-repository ppa:ondrej/php
+        - sudo apt-get update
         - sudo apt-get install php7.4-zip
         - composer require drupal/clipboardjs
         # Set file permissions such that Drupal will not complain.
