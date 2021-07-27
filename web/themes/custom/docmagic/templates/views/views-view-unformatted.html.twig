@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if compliance_faq_rows is defined %}
+{% if title %}
+  <h2>{{ title }}</h2>
+{% endif %}
+<div class="view-content-wrap">
+  <div class="compliance_faq_list">
+    {% for row in compliance_faq_rows %}
+    <div class="faq_content">
+
+      <h2 class="faq_question">
+        <a href="javascript:;" onclick="return false;">
+          {{ row.content['#node'].label }}
+        </a>
+      </h2>
+      <div class="faq_answer">
+        {{ row.content['#node'].body.value|raw }}
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% else %}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+<div class="view-content-wrap">
+   {% for row in rows %}
+     {%
+       set row_classes = [
+         default_row_class ? 'item',
+       ]
+     %}
+     <div{{ row.attributes.addClass(row_classes) }}>
+       {{ row.content }}
+     </div>
+   {% endfor %}
+</div>
+{% endif %}

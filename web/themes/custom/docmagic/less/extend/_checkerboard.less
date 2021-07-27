@@ -1,0 +1,194 @@
+/* ------------- checkerboard layout styles  -----------*/
+
+.checkerboard-row-gradient-background {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1d95c7+0,42bcb4+100 */
+  background: #1d95c7; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #1d95c7 0%, #42bcb4 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #1d95c7 0%,#42bcb4 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #1d95c7 0%,#42bcb4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d95c7', endColorstr='#42bcb4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+
+div#checkerboard-text-right > div.bb-inner.default {
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
+}
+
+div#checkerboard-text-right-two > div.bb-inner.default {
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
+}
+
+
+.checkerboard-text-right, .checkerboard-text-right-two {
+  max-width: 600px;
+  padding: 70px 70px;
+}
+
+.checkerboard-text-right, .checkerboard-text-right-two {
+  justify-content: center;
+}
+
+.checkerboard-text-left, .checkerboard-text-left-two {
+  max-width: 600px;
+  padding: 70px 70px;
+  margin-left: auto;
+  justify-content: center;
+}
+
+.column-inner.bg-size-cover.checkerboard-text-right {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.column-inner.bg-size-cover.checkerboard-text-left {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media (max-width: 991px) {
+  #checkerboard-text-right .checkerboard-image .column-inner.bg-size-cover {
+    padding-top: 65.9722222222222%;
+  }
+}
+
+@media (max-width: 991px) {
+  #checkerboard-text-right-two .checkerboard-image .column-inner.bg-size-cover {
+    padding-top: 65.9722222222222%;
+  }
+}
+
+
+
+@media (max-width: 991px) {
+  #checkerboard-text-left .checkerboard-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 991px) {
+  #checkerboard-text-left-two .checkerboard-image {
+    order: -1;
+  }
+}
+
+
+@media (max-width: 991px) {
+  #checkerboard-text-left .checkerboard-image .column-inner.bg-size-cover {
+    padding-top: 65.9722222222222%;
+  }
+}
+
+@media (max-width: 991px) {
+  #checkerboard-text-left-two .checkerboard-image .column-inner.bg-size-cover {
+    padding-top: 65.9722222222222%;
+  }
+}
+
+
+.checkerboard-image {
+  .column-inner.bg-size-cover {
+    padding-top: 65.9722222222222%;
+  }
+}
+
+@media (max-width: 991px) {
+  // specific rule for /eNotary page
+  #block-gaviasblockbuiderenotary-2 {
+    .gbb-row-wrapper:nth-of-type(2) {
+      .column-inner.bg-size-contain {
+        padding-top: 65.9722222222222%;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .checkerboard-image {
+    &.checkerboard-image-mobile-top {
+      order: -1;
+    }
+    &.checkerboard-image-mobile-bottom {
+      order: 100;
+    }
+  }
+}
+
+
+@media (max-width: 991px) {
+  .checkerboard-text-left {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .checkerboard-text-left-two {
+    margin-left: 0;
+  }
+}
+
+// page specific css
+
+@media (max-width: 991px) {
+
+  #block-gaviasblockbuidercollaborativeclosingtechnology {
+    .checkerboard-text-right.gradient-background-row {
+      padding-bottom: 70px;
+      max-width: 100%;
+    }
+  }
+
+  #block-gaviasblockbuideremortgagetechnology {
+
+    .prod-detail-button-center {
+      order: 100;
+    }
+
+    .gbb-row-wrapper:nth-of-type(4) {
+      .product-detail-row {
+
+        .gsc-column:nth-of-type(2),
+        .gsc-column:nth-of-type(4) {
+          .widget.gsc-heading {
+            padding-bottom: 0;
+          }
+        }
+        .product-label-top-left,
+        .product-label-top-right,
+        .product-labels {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+#block-gaviasblockbuidercareers {
+  #checkerboard-text-left .checkerboard-image {
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 991px) {
+  #block-gaviasblockbuidercareers {
+    #checkerboard-text-left .checkerboard-image {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #block-gaviasblockbuideremortgagetechnology {
+    #checkerboard-text-left .checkerboard-image {
+      img {
+        width: 75%;
+        max-width: 432px;
+        margin-top: 45px;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+/* -------------  styles for company landing page  -----------*/
+
+.image-content-row.gbb-row.bg-size-cover {
+  margin-top: 20px;
+}
+
+.gsc-image-content.image-content-headline.company-page-link.skin-v1 > .content > .desc > p.image-content-text:hover,
+.gsc-image-content.image-content-headline.company-page-link.skin-v1 > .content > .desc > p.image-content-text > a:hover {
+  color: #f4784d;
+  cursor: pointer;
+}
+
+/* -- styles for space between image squares --*/
+
+#block-gaviasblockbuidercompany .gsc-image-content {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.gsc-image-content.image-content-headline.skin-v1 > .content > .desc {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  & > p.image-content-text {
+    color: #ffffff;
+    font-size: 28px;
+    margin-top: -52%;
+  }
+}
+
+.gsc-image-content .image {
+  width: ~"calc(100% - 20px)";
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gsc-image-content .image img:hover {
+  transform: scale(1.2);
+}
+
+/* -- deletes read more link --*/
+
+.gsc-image-content.image-content-headline.skin-v1 > .content > .action {
+  display: none;
+}
+
+@media (max-width: 991px) {
+    .gsc-image-content.image-content-headline.skin-v1 > .content > .desc  & > p.image-content-text {
+      margin-top: -42%;
+    }
+}
+
+@media (max-width: 768px) {
+  .gsc-image-content.image-content-headline.skin-v1 > .content > .desc  & > p.image-content-text {
+    margin-top: -50%;
+  }
+}

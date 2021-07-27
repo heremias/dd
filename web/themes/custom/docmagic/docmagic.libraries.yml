@@ -1,0 +1,24 @@
+global-styling:
+  version: 1.0
+  css:
+    theme:
+      css/style.css: {}
+#      //fonts.googleapis.com/css?family=Libre+Baskerville:400,400i: { type: external }
+#      //fonts.googleapis.com/css?family=Poppins:400,500,600,700: { type: external }
+      //fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900: { type: external }
+      //fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900: { type: external }
+      //fonts.googleapis.com/css?family=Nunito+Sans:100,200,300,400,500,600,700,800,900: { type: external }
+
+page-careers:
+  version: 1.0
+  js:
+    js/page-careers.js: {}
+  dependencies:
+    - core/jquery
+
+page-partners:
+  version: 1.0
+  js:
+    js/page-partners.js: {}
+  dependencies:
+    - core/jquery

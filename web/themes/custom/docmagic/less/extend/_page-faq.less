@@ -1,0 +1,46 @@
+/* ------------- faq styles  -----------*/
+@faq-font-size: 16px;
+
+.faq {
+  font-size:@faq-font-size;
+
+  a {
+    color: @orange;
+
+    &:hover {
+      color: @orange-hover;
+    }
+  }
+  .faq-row {
+    margin-bottom:1em;
+  }
+
+  .faq-number {
+    position:absolute;
+    left:-50px;
+  }
+
+  p {
+    display:inline;
+    font-size:@faq-font-size;
+  }
+
+  .faq-question, .faq-answer {
+    position:relative;
+    margin-left:50px;
+  }
+
+  &.faq-bottom-questions {
+    margin-top:6em;
+
+    .faq-question {
+      margin-bottom:1em;
+      font-weight:bold;
+      color:#333;
+    }
+
+    .faq-answer {
+      margin-bottom:2em;
+    }
+  }
+}

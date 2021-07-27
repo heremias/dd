@@ -1,0 +1,93 @@
+/* ------------- counter element  -----------*/
+
+.counter-row {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8391d5+0,43bcb5+100 */
+  background: #8391d5; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #8391d5 0%, #43bcb5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #8391d5 0%,#43bcb5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #8391d5 0%,#43bcb5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8391d5', endColorstr='#43bcb5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.counter-column-border {
+  border-left: 1px solid #ffffff;
+}
+
+.widget.milestone-block.position-icon-left .milestone-number {
+  font-size: 28px!important;
+  font-weight: 600!important;
+}
+
+.widget.milestone-block.position-icon-left .milestone-right {
+  float: none!important;
+  text-align: center!important;
+  padding-left: 0px!important;
+  margin-left: 0px!important;
+  border-left: none!important;
+}
+
+.milestone-number {
+  display: inline-block;
+  line-height: 1!important;
+  margin-right: 10px!important;
+  text-align: center!important;
+}
+
+.milestone-text {
+  display: inline-block;
+  font-size: 28px!important;
+  line-height: 1;
+  text-align: center!important;
+}
+
+div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-one, div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-two,
+div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-three, div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-four {
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
+
+div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-two, div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-three,
+div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-four {
+  border-left: 1px solid #ffffff;
+}
+
+@media (max-width: 991px) {
+  div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-three {
+    border-left: none;
+  }
+}
+
+@media (max-width: 991px) {
+  div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-two, div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-four {
+    border-left: 1px solid #ffffff;
+  }
+}
+
+@media (max-width: 991px) {
+  div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-three, div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-four {
+    padding-top: 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  div.gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.counter-column-two {
+    padding-top: 35px;
+  }
+}
+
+// block divider line on mobile
+
+@media (max-width: 767px) {
+  .counter-row {
+    .gsc-column:not(:last-of-type) {
+      .column-inner:after {
+        width: 100%;
+        max-width: 60vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35px;
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+}

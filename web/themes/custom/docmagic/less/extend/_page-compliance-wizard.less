@@ -1,0 +1,63 @@
+// #cw_formtable
+
+table#cw_formtable {
+
+  // link
+
+  a,
+  a:visited {
+    color: #ff9d6f;
+  }
+
+  // table cells
+
+  th {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0C94C8;
+    font-family: 'Roboto',sans-serif;
+    text-align: center;
+    height: 45px;
+    border: #ffffff 1px solid;
+    border-top-color: #0C94C8;
+
+    &:first-of-type {
+      border-left-color: #0C94C8;
+    }
+
+    &:last-of-type {
+      border-right-color: #0C94C8;
+    }
+  }
+
+  td {
+    font-size: 10px;
+    color: #666666;
+    background-color: transparent;
+    font-family: 'Roboto',sans-serif;
+    border: 1px solid #dadada;
+    line-height: 27px;
+
+    p {
+      font-size: 10px;
+      color: #666666;
+      font-family: 'Roboto',sans-serif;
+      padding: 0;
+    }
+  }
+
+  // alternate row colors
+
+  > tbody:not(:first-of-type) {
+
+    > tr:nth-of-type(odd) {
+      background-color: #faf9f9;
+    }
+
+    > tr:nth-of-type(even) {
+      background-color: #ffffff;
+    }
+  }
+}

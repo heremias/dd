@@ -1,0 +1,215 @@
+/* ------------- product detail styles  -----------*/
+
+div.column-content.product-detail-headlines > p.p1 {
+  margin-top: -15px;
+}
+
+div.column-content.product-detail-headlines > h4.p1.orange-text {
+  margin: -10px 0 72px !important;
+}
+
+.product-labels {
+  /*margin-bottom: 40px!important;*/
+  /*margin-top: -20px;*/
+}
+
+.prod-detail-headline-row {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.prod-detail-icon-headline {
+  color: #000000!important;
+  font-size: 22px!important;
+  letter-spacing: .02em!important;
+  line-height: 24px;
+}
+
+.prod-detail-icon-description {
+  text-align: left;
+  font-size: 16px!important;
+  line-height: 24px!important;
+}
+
+div.widget.gsc-image.text-center.evault-phone-image > div.widget-content > img {
+  height: 565px!important;
+}
+
+.prod-detail-bottom-row {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+
+  .prod-detail-bottom-row,
+  .left-column-evault-prod-detail {
+    margin-bottom: 0;
+
+    > .column-inner {
+      width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .prod-detail-bottom-row .widget.gsc-heading.align-left,
+  .left-column-evault-prod-detail .widget.gsc-heading.align-right {
+    padding: 15px 0;
+
+    .title-desc {
+      float: none;
+      text-align: left;
+    }
+  }
+
+  .left-column-evault-prod-detail .widget.gsc-icon-box.right {
+    display: flex;
+    align-items: flex-start;
+
+    .highlight_content {
+      order: 2;
+    }
+    .highlight-icon {
+      order: 1;
+      padding-left: 0;
+      padding-right: 20px;
+    }
+  }
+
+  .left-column-evault-prod-detail .widget.gsc-icon-box.right .desc {
+    text-align: left;
+
+    .prod-detail-icon-description {
+      text-align: left !important;
+    }
+  }
+
+  .left-column-evault-prod-detail + .gsc-column {
+    .more-space-above {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .product-detail-row.gbb-row.bg-size-cover .row-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-detail-row.gbb-row.bg-size-cover .row-wrapper .gsc-column:nth-of-type(1) {
+    order: 1;
+  }
+
+  .product-detail-row.gbb-row.bg-size-cover .row-wrapper .gsc-column:nth-of-type(2) {
+    order: 3;
+  }
+
+  .product-detail-row.gbb-row.bg-size-cover .row-wrapper .gsc-column:nth-of-type(3) {
+    order: 2;
+  }
+
+  .product-detail-row.gbb-row.bg-size-cover .row-wrapper .gsc-column:nth-of-type(4) {
+    order: 4;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .mobile-bullet {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .mobile-bullet {
+    display: inline-block;
+    margin-right: 3px;
+  }
+}
+
+
+/* ------------- esign product detail styles  -----------*/
+
+@media (max-width: 991px) {
+  .product-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .product-labels {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .product-labels-top {
+    margin-top: 30px;
+  }
+}
+
+.product-label-top-right {
+  margin-bottom: 30px;
+}
+
+.product-label-top-left {
+  margin-bottom: 30px;
+}
+
+
+@media (max-width: 991px) {
+  .product-label-top-right {
+    margin-bottom: 0px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .product-label-top-left {
+    margin-bottom: 0px;
+    margin-top: 30px;
+  }
+}
+
+
+/* ------------- evault product detail styles  -----------*/
+
+.prod-detail-button-center {
+  text-align: center;
+}
+
+@media (max-width:991px) {
+  .left-column-evault-prod-detail .widget.gsc-icon-box.right.text-dark.icon-border.icon-background {
+    display: flex;
+  }
+
+  .left-column-evault-prod-detail .widget.gsc-icon-box.right.text-dark.icon-border.icon-background .highlight_content {
+    order: 2;
+    text-align: left;
+    margin-top: 0px;
+  }
+
+  .left-column-evault-prod-detail .widget.gsc-icon-box.right.text-dark.icon-border.icon-background .highlight_content .prod-detail-icon-description {
+    text-align: left!important;
+  }
+
+  .left-column-evault-prod-detail .widget.gsc-icon-box.right.text-dark.icon-border.icon-background .highlight-icon {
+    order: 1;
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+}
+
+// for IE11 bug
+@media all and (max-width: 991px) and (-ms-high-contrast: none), (max-width: 991px) and (-ms-high-contrast: active) {
+
+  .left-column-evault-prod-detail .widget.gsc-icon-box.right.text-dark.icon-border.icon-background .highlight_content {
+    display: inline-block;
+  }
+
+  .left-column-evault-prod-detail .widget.gsc-icon-box.right.text-dark.icon-border.icon-background .highlight-icon {
+    display: inline-block;
+  }
+}

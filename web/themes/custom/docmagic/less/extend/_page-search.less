@@ -1,0 +1,71 @@
+.path-search {
+  #content {
+    #page-main-content {
+      #search-form {
+        margin: 3em 0;
+
+        #edit-basic {
+          position: relative;
+
+          .form-item.form-item-keys {
+            label[for="edit-keys"] {
+              display: none;
+            }
+
+            input#edit-keys.form-search {
+              border: 1px solid #d6d6d6;
+              font-size: 16px;
+              height: 52px;
+              padding: 1em;
+              width: 90%;
+            }
+          }
+
+          .search-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+
+          .search-button-icon {
+            color: #ffffff;
+            font-size: 28px;
+            height: 50px;
+            padding: 10px 0;
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            right: 95px;
+            z-index: 1;
+          }
+
+          input#edit-submit.search-form__submit {
+            padding-left: 50px !important;  // make room for .search-button-icon
+          }
+        }
+
+        .search-help-link {
+          display: none;
+        }
+      }
+
+      .content-main {
+        // search results
+        ol {
+          list-style-type: none;
+
+          // search result item
+          li {
+            h3 {
+              border-bottom: 1px solid #d6d6d6;
+
+              a {
+                color: #4e13bf;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
