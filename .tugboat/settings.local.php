@@ -8,7 +8,7 @@ $databases['default']['default'] = array (
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
-  'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"
+  'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'",
 );
 // Use the TUGBOAT_REPO_ID to generate a hash salt for Tugboat sites.
 $settings['hash_salt'] = hash('sha256', getenv('TUGBOAT_REPO_ID'));
