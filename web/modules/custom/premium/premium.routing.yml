@@ -1,0 +1,7 @@
+premium.settings:
+  path: /admin/settings/premium
+  defaults:
+    _title: Premium
+    _form: \Drupal\premium\Form\PremiumSettings
+  requirements:
+    _permission: 'administer site configuration'

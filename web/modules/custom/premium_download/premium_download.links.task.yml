@@ -1,0 +1,9 @@
+premium_download.admin_file:
+  route_name: premium_download.admin_file
+  title: List
+  weight: -10
+  base_route: premium_download.admin_file
+premium_download.edit_form:
+  route_name: premium_download.edit_form
+  title: 'Add premium download'
+  base_route: premium_download.admin_file

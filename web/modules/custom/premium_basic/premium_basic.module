@@ -1,0 +1,477 @@
+<?php 
+// $Id: premium_basic.module,v 1.17 2009/01/13 19:16:42 jerdavis Exp $
+
+/**
+ * @file Restrict access to the full body of premium_basic content
+ */
+
+/**
+ * Implementation of hook_menu()
+ */
+function premium_basic_menu() {
+  $items = array();
+  $items['admin/settings/premium_basic'] = array(
+    'title' => 'Premium Basic',
+    'description' => 'Settings for access control to premium_basic content.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('premium_basic_settings'),
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+ 
+/**
+ * Implementation of hook_perm()
+ */
+function premium_basic_perm() {
+  return array('access premium_basic content');
+}
+
+/**
+ * Implementation of hook_cron()
+ */
+function premium_basic_cron() {
+  /*
+  // ndr - prevent mass delete for now, expiration doesn't seem to be used either
+  $ts = time();
+  db_query("DELETE FROM {premium_basic} WHERE start_ts < ? AND end_ts <> 0 AND end_ts < ?", array($ts, $ts));
+  */
+}
+
+/**
+ * Implementation of hook_nodeapi()
+ */
+function premium_basic_nodeapi(&$node, $op, $teaser) {
+  $node->premium_basic = _premium_basic_node($node);
+  $node->premium_basic_access = _premium_basic_access($node, $teaser);
+
+  switch ($op) {
+    case 'load':
+      return array(
+        'premium_basic' => $node->premium_basic,
+        'premium_basic_access' => $node->premium_basic_access);
+    
+    case 'insert':
+    case 'delete':
+    case 'update': 
+      _premium_basic_set_premium_basic($node, $node->premium_basic);
+      return;
+      
+    case 'view':
+      if (!$node->premium_basic_access) {
+        $node->content['body']['#value'] = theme_premium_basic_body($node);// \Drupal::theme()->render('premium_basic_body', array('node' => $node));
+
+      }
+      return;
+  }
+  return;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_load().
+ */
+function premium_basic_node_load(array $entities)
+{
+    foreach ($entities as $entity) {
+        premium_basic_nodeapi($entity, 'load', '');
+    }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function premium_basic_node_insert(Drupal\Core\Entity\EntityInterface $entity)
+{
+    premium_basic_nodeapi($entity, 'insert', '');
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function premium_basic_node_delete(Drupal\Core\Entity\EntityInterface $entity)
+{
+    premium_basic_nodeapi($entity, 'delete', '');
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function premium_basic_node_update(Drupal\Core\Entity\EntityInterface $entity)
+{
+    premium_basic_nodeapi($entity, 'update', '');
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function premium_basic_node_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display)
+{
+    premium_basic_nodeapi($entity, 'view', '');
+
+    if (isset($entity->content['body']['#value']) && $entity->content['body']['#value']) {
+        $build['body'][0]['#text'] = $entity->content['body']['#value'];
+    }
+}
+
+/**
+ * Implementation of hook_node_operations().
+ */
+function premium_basic_node_operations() {
+  $operations = array(
+    'premium_basic' => array(
+      'label' => t('Set premium_basic status'),
+      'callback' => '_premium_basic_node_operations_premium_basic',
+      'callback arguments' => array(1),
+    ),
+    'unpremium_basic' => array(
+      'label' => t('Remove premium_basic status'),
+      'callback' => '_premium_basic_node_operations_premium_basic',
+      'callback arguments' => array(0),
+    ),
+  ); 
+  return $operations;
+}
+
+/**
+ * Callback for hook_node_operations()
+ */
+function _premium_basic_node_operations_premium_basic($nids, $premium_basic = 0) {
+  foreach ($nids as $nid) {
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+    _premium_basic_set_premium_basic($node, $premium_basic);
+  }
+}
+
+/**
+ * Implementation of hook_form_alter()
+ * 
+ * Add the Premium_basic checkbox to the node editing options and default settings
+ * The Premium_basic flag will behave like other options (published, promote, etc)
+ */
+function premium_basic_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $type = isset($form['type']) && isset($form['type']['#value']) ? $form['type']['#value'] : 'page'; // @TODO proper default
+  $title = t('Access restricted for non-premium basic users');
+  switch ($form_id) {
+    
+    case 'node_type_form':
+      $form['workflow']['node_options']['#options']['premium_basic'] = $title;
+      if (_premium_basic_node($type)) {
+        $form['workflow']['node_options']['#default_value'][] = 'premium_basic';
+      }
+      return;
+      
+    case $type .'_node_form':
+      if (\Drupal::currentUser()->hasPermission('administer nodes')) {
+        $node = $form['#node'];
+        $form['options']['premium_basic'] = array(
+          '#type' => 'checkbox', 
+          '#title' => $title, 
+          '#default_value' => _premium_basic_node($node),
+        );
+      }
+      return;
+  }
+
+  if ($form_state->getFormObject() instanceof \Drupal\node\NodeForm) {
+      if (\Drupal::currentUser()->hasPermission('administer nodes')) {
+          $node = $form_state->getFormObject()->getEntity();
+          $values = $form_state->getUserInput();
+          if (isset($values['premium_basic']) && $values['premium_basic'] == 1) {
+              $node->premium_basic = 1;
+          }
+          $form['options']['premium_basic'] = array(
+              '#type' => 'checkbox',
+              '#title' => $title,
+              '#default_value' => _premium_basic_node($node),
+          );
+      }
+      return;
+  }
+}
+
+/**
+ * Settings form
+ */
+function premium_basic_settings() {
+  $form = array();
+  $form['#validate'] = array('premium_basic_settings_validate'); 
+
+  $premium_basic_types = array();
+  foreach (node_type_get_names() as $type => $value) {
+    if (_premium_basic_node($type)) {
+      $premium_basic_types[$type] = $type; 
+    } 
+    else {
+      $premium_basic_types[$type] = 0;
+    }
+  }
+
+  $form['premium_basic_node_types'] = array(
+    '#type' => 'checkboxes',
+    '#options' => node_type_get_names(),
+    '#title' => t('Node Types'),
+    '#default_value' => $premium_basic_types,
+  );
+
+  // timeframe for premium_basic + update existing nodes
+  $form['premium_basic_mode'] = array(
+    '#type'          => 'radios', 
+    '#title'         => t('Mode'), 
+    '#default_value' => \Drupal::config('premium_basic.settings')->get('premium_basic_mode'), 
+    '#options'       => array(
+      '0' => t('Premium_basic items are permanently restricted'), 
+      'archive' => t('Protect archives only: Items switch to premium_basic status after a specified period'), 
+      'latest' => t('Protect latest content only: Items switch to non-premium_basic status after a specified period'), 
+    ),
+  );
+  
+  $options = (range(0, 15));
+  unset($options[0]);
+  $form['premium_basic_time_count'] = array(
+    '#type'          => 'select', 
+    '#title'         => t('Count'), 
+    '#default_value' => \Drupal::config('premium_basic.settings')->get('premium_basic_time_count'), 
+    '#options'       => $options,
+  );
+  
+  $form['premium_basic_time_unit'] = array(
+    '#type'          => 'select', 
+    '#title'         => t('Unit'), 
+    '#default_value' => \Drupal::config('premium_basic.settings')->get('premium_basic_time_unit'), 
+    '#options'       => array('D' => t('Days'), 
+        'W' => t('Weeks'), 
+        'M' => t('Months'), 
+        'Y' => t('Years')), 
+  );
+
+  $form['premium_basic_bulk_update'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Bulk update premium_basic status'),
+    '#description' => t('Update all existing nodes of the types selected above with the new premium_basic settings.'),
+  );
+  
+  $form['premium_basic_message'] = array(
+    '#type'          => 'textarea', 
+    '#title'         => t('Premium_basic body text'), 
+    '#default_value' => \Drupal::config('premium_basic.settings')->get('premium_basic_message'),
+    '#cols'          => 60, 
+    '#rows'          => 15, 
+    '#description'   => t('When a visitor doesn\'t have access to a premium_basic item they will see this message instead of its full text')
+  );
+
+  if (\Drupal::moduleHandler()->moduleExists('filter')) {
+    // @TODO change filter_form()
+//    $form['premium_basic_format'] = filter_form(\Drupal::config('premium_basic.settings')->get('premium_basic_format'), NULL, array('premium_basic_format'));
+  }
+  // @TODO change system_settings_form()
+//  return system_settings_form($form);
+  return $form;
+}
+
+/**
+ * Save premium_basic status as set on admin/settings/premium_basic to each type 
+ */
+function premium_basic_settings_validate($form, &$form_state) {
+  $count = $form_state['values']['premium_basic_time_count'];
+  $unit  = $form_state['values']['premium_basic_time_unit'];
+  $mode  = $form_state['values']['premium_basic_mode'];
+  $types = $form_state['values']['premium_basic_node_types'];
+
+  foreach ($types as $type => $premium_basic) {
+    $node_options = \Drupal::config('node.type.'.$type)->get('options') ?: array();
+    if (in_array('premium_basic', $node_options)) {
+      $premium_basic_key = array_search('premium_basic', $node_options);
+      unset($node_options[$premium_basic_key]);
+    }
+    if ($types[$type]) { 
+      $node_options = array_merge($node_options, array('premium_basic'));
+      $premium_basic_types[] = $types[$type];
+    } 
+    \Drupal::configFactory()->getEditable('node.type.'.$type)->set('options', $node_options)->save();
+  }
+  
+  /*
+  // ndr - prevent mass delete for now
+  if ($form_state['values']['premium_basic_bulk_update']) {
+    db_query("DELETE from {premium_basic}");
+
+    foreach ($premium_basic_types as $type) {
+      $start = $end = 0;
+      _premium_basic_offset(0, $start, $end, $mode, $count, $unit);
+      // Apply the timestamp delta's to the node's created date.
+      if ($start) $start = 'created + '. (int) $start;
+      if ($end) $end = 'created + '. (int) $end;
+
+      db_query("INSERT INTO {premium_basic} (nid, start_ts, end_ts)
+        SELECT nid, $start, $end FROM {node} WHERE type = ?", array($type));
+     }
+  }
+  */
+}
+
+/**
+ * Calculate time offset for auto-aging / auto-archiving
+ */
+function _premium_basic_offset($timestamp, &$start_ts, &$end_ts, $mode, $count, $unit) {
+
+  // If the timestamp is zero, set it to "now" so mktime() will work properly.
+  $ts = $timestamp ? $timestamp : time();
+  $offset = mktime(
+    date('H', $ts)+($unit=='H')*$count, 0, 0, 
+    date('m', $ts)+($unit=='M')*$count,
+    date('d', $ts)+($unit=='D')*$count+($unit=='W')*$count*7, 
+    date('y', $ts)+($unit=='Y')*$count
+  );
+
+  // If we faked a timestamp, remove it.
+  if ($ts != $timestamp) $offset -= $ts; 
+
+  if ($mode == 'archive') $start_ts = $offset;
+  if ($mode == 'latest') $end_ts = $offset;
+  return;
+}
+
+/**
+ * Establish premium_basic settings for a node or node type
+ */
+function _premium_basic_node($node) {
+  // This is a node type: use default settings
+  if (is_string($node)) {
+    return in_array('premium_basic', \Drupal::config('node.type.'.$node)->get('options') ?: array());
+  }
+
+  // Already has a value.
+  if (isset($node->premium_basic)) return $node->premium_basic;
+
+  if ($node->nid->value) {
+    // Attempt to find the value from the premium_basic table.
+    return (int) db_result(db_query("SELECT 1 FROM {premium_basic}  WHERE nid = ?
+      AND (( start_ts = 0 and end_ts > ?)
+      OR ( start_ts < ? AND end_ts = 0)
+      OR ( start_ts = 0 AND end_ts = 0))", array($node->nid->value, time(), time())));
+  }
+
+  // Use default settings for this node type.
+  // return in_array('premium_basic', \Drupal::config('node.type.'.$node->type)->get('options') ?: array());
+   return false; // Do not apply checkbox by default
+}
+
+/**
+ * Establish premium_basic visibility settings for a node
+ */
+function _premium_basic_access($node, $teaser) {
+
+  $query_str = parse_url(isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '', PHP_URL_QUERY);
+
+  $ignore = FALSE;
+  parse_str($query_str, $query_params);
+  if (isset($query_params['clean']) && $query_params['clean'] == 'dde') {
+    $ignore = TRUE;
+  }
+
+  // per a parameter in the url, ignore premium requirements
+  if ($ignore) {
+    return TRUE;
+  }
+
+  if (isset($node->premium_basic_access)) return $node->premium_basic_access;
+
+  $user = \Drupal::currentUser();
+
+  // Access is granted or revoked explicitly.
+  foreach (\Drupal::moduleHandler()->getImplementations('premium_basic_access') as $name) {
+    $function = $name .'_premium_basic_access';
+    if (is_bool($access = $function($user, $node))) {
+      return $access;
+    }
+  }
+
+  // Not viewing the body, or it's not premium_basic, or user has privileges.
+  if ($teaser || !$node->premium_basic || \Drupal::currentUser()->hasPermission('access premium_basic content')) {
+    return TRUE;
+  }
+
+  // Nobody said we could access the node. 
+  return FALSE;
+}
+ 
+/**
+ * Update the premium_basic table with appropriate premium_basic values for a node.
+ */
+function _premium_basic_set_premium_basic($node, $premium_basic = FALSE) {
+  db_query('DELETE FROM {premium_basic} WHERE nid = ?', array($node->nid->value));
+  if ($premium_basic) {
+    $start_ts = $end_ts = 0 ;
+    $mode = \Drupal::config('premium_basic.settings')->get('premium_basic_mode');
+    $count = \Drupal::config('premium_basic.settings')->get('premium_basic_time_count');
+    $unit = \Drupal::config('premium_basic.settings')->get('premium_basic_time_unit');
+    _premium_basic_offset($node->created->value, $start_ts, $end_ts, $mode, $count, $unit);
+    db_query('INSERT INTO {premium_basic} (nid, start_ts, end_ts) 
+              VALUES ( ?, ?, ? )', array($node->nid->value, $start_ts, $end_ts));
+  }
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function premium_basic_theme() {
+  return array(
+    'premium_basic_body' => array(
+      'arguments' => array('node' => NULL),
+    ),
+  );
+}
+
+/**  (CUSTOM)
+ * Reformat the message body with a premium_basic content message
+ */
+function theme_premium_basic_body($node) {
+	$user = \Drupal::currentUser();
+//	$teaser = check_markup($node->teaser, $node->format, FALSE);
+//	$body = check_markup($node->body, $node->format, FALSE);
+	$teaser = check_markup($node->body->summary, $node->body->format, FALSE);
+	$body = check_markup($node->body->value, $node->body->format, FALSE);
+	if ($teaser == $body) { // we need to create our own teaser (vs displaying the entire article)
+		//do this via the paragraph element
+		$needle = '<p>';
+		$count = substr_count(strtolower($body), $needle);
+		//...or do it via a table element (we start with a table)
+		$tableStart = strpos(strtolower($body), '<table'); 
+		//...or show nothing if we are displaying a FAQ page
+		$faqPage = strpos(strtolower($_SERVER['REQUEST_URI']), '/compliance/faq'); 
+		//$dom = new DOMDocument; // another way to get the count. but let's get actual defined elements instead of those that 'appear' in the DOM (since we are manipulating the same)
+		//$dom->loadHTML($body);
+		//$count = $dom->getElementsByTagName('p')->length;
+		if ($faqPage !== false && $faqPage == 0) {
+			return 'The full text is available to subscribers only. Please <a href="/compliance/faq">click here</a> to log in.';
+		} elseif ($tableStart !== false && $tableStart == 0) {
+			$teaser = '';
+		} elseif ($count >= 2) { // we'll only force a teaser if we have more than one paragraph defined in the html
+			$pos = strposition_offset($needle, strtolower($body), 2); // get the location of the second element
+			$teaser = substr($body, 0, $pos); // and remove everything from that point to the end
+			//return $teaser;
+		} else { // there is not enough content that proves the premium_basic 'link' relevant
+			return $body;
+		}
+	}
+	// this is the default behavior provided by the module (here our node provides us with a legit teaser)
+	return $teaser . check_markup(\Drupal::config('premium_basic.settings')->get('premium_basic_message'), \Drupal::config('premium_basic.settings')->get('premium_basic_format'), FALSE);
+}
+
+/**  (CUSTOM)
+ * Find position of Nth $occurrence of $needle in $haystack
+ * Starts from the beginning of the string
+**/
+function strposition_offset($needle, $haystack, $occurrence) {
+  // explode the haystack
+  $arr = explode($needle, $haystack);
+  // check the needle is not out of bounds
+  switch( $occurrence ) {
+    case $occurrence == 0:
+      return false;
+    case $occurrence > max(array_keys($arr)):
+      return false;
+    default:
+      return strlen(implode($needle, array_slice($arr, 0, $occurrence)));
+  }
+}

@@ -1,0 +1,11 @@
+;$Id: premium.info,v 1.2 2009/01/13 19:16:42 jerdavis Exp $
+name = Premium Basic
+description = Restrict access to premium basic content. This is content that is a subset of premium content and is granted by the 'compliance_basic' uv permission.
+core = 6.x
+
+; Information added by drupal.org packaging script on 2010-01-11
+version = "6.x-1.0-alpha1"
+core = "6.x"
+project = "premium_basic"
+datestamp = "1263235514"
+

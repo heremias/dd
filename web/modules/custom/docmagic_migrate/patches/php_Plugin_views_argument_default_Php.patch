@@ -1,0 +1,12 @@
+diff --git a/src/Plugin/views/argument_default/Php.php b/src/Plugin/views/argument_default/Php.php
+--- a/src/Plugin/views/argument_default/Php.php
++++ b/src/Plugin/views/argument_default/Php.php
+@@ -60,7 +60,7 @@
+     $view = &$this->view;
+     $argument = &$this->argument;
+     ob_start();
+-    $result = eval($this->options['code']);
++    $result = function_exists('mock_eval') ? eval(mock_eval($this->options['code'])) : eval($this->options['code']);
+     ob_end_clean();
+     return $result;
+   }

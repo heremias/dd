@@ -1,0 +1,4 @@
+name: 'Premium Basic'
+description: 'Restrict access to premium basic content. This is content that is a subset of premium content and is granted by the ''compliance_basic'' uv permission.'
+core: 8.x
+type: module

@@ -1,0 +1,7 @@
+docmagic_compliance_newsletter.generate_compliance_newsletter_form:
+  path: '/admin/content/generate_compliance_newsletter'
+  defaults:
+    _form: '\Drupal\docmagic_compliance_newsletter\Form\GenerateNewsletterForm'
+    _title: 'Generate Compliance Newsletter'
+  requirements:
+    _entity_create_access: 'simplenews_newsletter'

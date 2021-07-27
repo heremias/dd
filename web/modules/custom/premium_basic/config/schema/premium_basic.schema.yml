@@ -1,0 +1,14 @@
+premium_basic.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    premium_basic_mode:
+      type: integer
+    premium_basic_time_count:
+      type: integer
+    premium_basic_time_unit:
+      type: string
+    premium_basic_message:
+      type: string
+    premium_basic_format:
+      type: string

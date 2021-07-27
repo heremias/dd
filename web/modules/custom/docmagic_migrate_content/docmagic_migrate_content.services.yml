@@ -1,0 +1,10 @@
+services:
+  docmagic_migrate_content.default_content.importer:
+    class: Drupal\docmagic_migrate_content\DefaultContent\Importer
+    decorates: default_content.importer
+    arguments: ['@docmagic_migrate_content.default_content.importer.inner']
+
+  docmagic_migrate_content.subscriber.import:
+    class: Drupal\docmagic_migrate_content\EventSubscriber\ImportSubscriber
+    tags:
+    - { name: event_subscriber }

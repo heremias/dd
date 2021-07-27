@@ -1,0 +1,60 @@
+<?php
+// $Id: premium_download.install,v 1.2.2.6.2.26 2009/12/01 05:40:09 davereid Exp $
+
+/**
+ * @file
+ * Install and uninstall schema and functions for the premium_download module.
+ */
+
+/**
+ * Implement hook_schema().
+ */
+function premium_download_schema() {
+  $schema['premium_download'] = array(
+    'description' => 'Stores information on redirects.',
+    'fields' => array(
+      'pid'  => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique path premium download ID.',
+      ),
+      'filepath' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'The filepath path of PDF.',
+      ),
+      'permission' => array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => FALSE,
+        'description' => 'Permission type text here.',
+      ),
+    ),
+    'primary key' => array('pid'),
+  );
+  return $schema;
+}
+///**
+// * Implement hook_install().
+// */
+//function premium_download_install() {
+//  drupal_install_schema('premium_download');
+//}
+
+/**
+ * Implement hook_uninstall().
+ */
+function premium_download_uninstall() {
+  // Remove tables.
+  drupal_uninstall_schema('premium_download');
+}
+
+/**
+ * Add a unique key on pid.
+ */
+function premium_download_update_1() {
+  $ret = array();
+  db_change_field(/*$ret,*/ 'premium_download', 'filepath', 'filepath', array('type' => 'varchar', 'length' => 255, 'not null' => TRUE), array('unique keys' => array('pid')));
+  return $ret;
+}

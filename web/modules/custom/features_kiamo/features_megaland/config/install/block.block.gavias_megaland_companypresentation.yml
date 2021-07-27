@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.right_sidebar
+  content:
+    - 'block_content:basic:9db6746c-07ed-4976-8d06-1a9a56f38e24'
+  module:
+    - block_content
+    - block_visibility_groups
+    - gaviasthemer
+  theme:
+    - gavias_megaland
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_megaland_companypresentation
+theme: gavias_megaland
+region: sidebar_right
+weight: -8
+provider: null
+plugin: 'block_content:9db6746c-07ed-4976-8d06-1a9a56f38e24'
+settings:
+  id: 'block_content:9db6746c-07ed-4976-8d06-1a9a56f38e24'
+  label: ' Company presentation'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: right_sidebar
+    context_mapping: {  }

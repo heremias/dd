@@ -1,0 +1,48 @@
+<?php
+// $Id: premium.install,v 1.5 2009/01/13 19:16:42 jerdavis Exp $
+
+///**
+// * Implementation of hook_install().
+// */
+//function premium_basic_install() {
+//  drupal_install_schema('premium_basic');
+//}
+
+/**
+ * Implementation of hook_schema().
+ */
+function premium_basic_schema() {
+  $schema['premium_basic'] = array(
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'disp-width' => '11',
+      ),
+      'start_ts' => array(
+        'type' => 'int',
+        'not null' => FALSE,
+        'disp-width' => '11',
+      ),
+      'end_ts' => array(
+        'type' => 'int',
+        'not null' => FALSE,
+        'disp-width' => '11',
+      ),
+    ),
+    'primary key' => array('nid'),
+  );
+  return $schema;
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function premium_basic_uninstall() {
+  drupal_uninstall_schema('premium_basic');
+  \Drupal::configFactory()->getEditable('premium_basic.settings')->clear('premium_basic_mode')->save();
+  \Drupal::configFactory()->getEditable('premium_basic.settings')->clear('premium_basic_time_count')->save();
+  \Drupal::configFactory()->getEditable('premium_basic.settings')->clear('premium_basic_time_unit')->save();
+  \Drupal::configFactory()->getEditable('premium_basic.settings')->clear('premium_basic_message')->save();
+  \Drupal::configFactory()->getEditable('premium_basic.settings')->clear('premium_basic_format')->save();
+}

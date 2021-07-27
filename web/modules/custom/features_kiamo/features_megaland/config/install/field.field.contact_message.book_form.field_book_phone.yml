@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.book_form
+    - field.storage.contact_message.field_book_phone
+id: contact_message.book_form.field_book_phone
+field_name: field_book_phone
+entity_type: contact_message
+bundle: book_form
+label: 'Book Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

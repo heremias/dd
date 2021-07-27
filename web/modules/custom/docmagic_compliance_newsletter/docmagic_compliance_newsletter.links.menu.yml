@@ -1,0 +1,4 @@
+docmagic_compliance_newsletter.generate_compliance_newsletter_form:
+  route_name: docmagic_compliance_newsletter.generate_compliance_newsletter_form
+  title: Generate Compliance Newsletter
+  description: 'Generate a Compliance Newsletter for a month and year'

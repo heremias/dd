@@ -1,0 +1,35 @@
+id: d6_premium_settings
+label: Premium configuration
+migration_tags:
+  - Drupal 6
+  - Configuration
+source:
+  plugin: variable
+  variables:
+    - premium_node_types
+    - premium_mode
+    - premium_time_count
+    - premium_time_unit
+    - premium_bulk_update
+    - premium_message
+    - premium_format
+  source_module: premium
+process:
+  premium_node_types: premium_node_types
+  premium_mode: premium_mode
+  premium_time_count: premium_time_count
+  premium_time_unit: premium_time_unit
+  premium_bulk_update: premium_bulk_update
+  premium_message: premium_message
+  premium_format:
+    plugin: static_map
+    source: premium_format
+    default_value: basic_html
+    map:
+      3: full_html
+      2: php_code
+      1: filtered_html
+      0: basic_html
+destination:
+  plugin: config
+  config_name: premium.settings

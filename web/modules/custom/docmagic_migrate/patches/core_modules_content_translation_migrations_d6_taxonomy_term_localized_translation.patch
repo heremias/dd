@@ -1,0 +1,12 @@
+diff --git a/modules/content_translation/migrations/d6_taxonomy_term_localized_translation.yml b/modules/content_translation/migrations/d6_taxonomy_term_localized_translation.yml
+--- a/modules/content_translation/migrations/d6_taxonomy_term_localized_translation.yml
++++ b/modules/content_translation/migrations/d6_taxonomy_term_localized_translation.yml
+@@ -10,7 +10,7 @@
+ process:
+   # If you are using this file to build a custom migration consider removing
+   # the tid field to allow incremental migrations.
+-  tid: tid
++#  tid: tid
+   langcode: language
+   vid:
+     plugin: migration

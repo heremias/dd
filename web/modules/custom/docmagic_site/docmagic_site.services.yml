@@ -1,0 +1,13 @@
+services:
+  content_response_subscriber:
+    class: Drupal\docmagic_site\EventSubscriber\ContentResponseSubscriber
+    tags:
+      - { name: event_subscriber }
+  login_cookie_subscriber:
+    class: Drupal\docmagic_site\EventSubscriber\LoginCookieSubscriber
+    tags:
+      - { name: event_subscriber }
+  remove_x_frame_options_subscriber:
+    class: Drupal\docmagic_site\EventSubscriber\RemoveXFrameOptionsSubscriber
+    tags:
+      - { name: event_subscriber }

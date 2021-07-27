@@ -1,0 +1,13 @@
+services:
+  # overwrite service to change the class used
+  cas.helper:
+    class: Drupal\docmagic_cas\Service\CasHelper
+    arguments: ['@config.factory', '@logger.factory']
+  cas.validator:
+    class: Drupal\docmagic_cas\Service\CasValidator
+    arguments: ['@http_client', '@cas.helper', '@config.factory', '@url_generator.non_bubbling', '@event_dispatcher']
+
+  docmagic_cas.subscriber.login:
+    class: Drupal\docmagic_cas\EventSubscriber\LoginSubscriber
+    tags:
+      - { name: event_subscriber }

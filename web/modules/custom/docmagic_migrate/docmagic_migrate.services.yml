@@ -1,0 +1,14 @@
+services:
+  # There appears to be a user "uid" reference called in PHP database records.
+  current_user:
+    class: Drupal\docmagic_migrate\Session\AccountProxy
+
+  docmagic_migrate.subscriber.migrate:
+    class: Drupal\docmagic_migrate\EventSubscriber\MigrateSubscriber
+    tags:
+    - { name: event_subscriber }
+
+#  docmagic_migrate.file_system:
+#    class: Drupal\docmagic_migrate\File\FileSystem
+#    decorates: file_system
+#    arguments: ['@docmagic_migrate.file_system.inner']

@@ -1,0 +1,5 @@
+premium_basic_mode: 0
+premium_basic_time_count: 2
+premium_basic_time_unit: W
+premium_basic_message: 'Full text available to premium_basic subscribers only'
+premium_basic_format: basic_html

@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_book_time
+field_name: field_book_time
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '5:00pm'
+      label: '5:00 pm'
+    -
+      value: '5:30pm'
+      label: '5:30 pm'
+    -
+      value: '6:00pm'
+      label: '6:00 pm'
+    -
+      value: '6:30pm'
+      label: '6:30 pm'
+    -
+      value: '7:00pm'
+      label: '7:00 pm'
+    -
+      value: '7:30pm'
+      label: '7:30 pm'
+    -
+      value: '8:00pm'
+      label: '8:00 pm'
+    -
+      value: '8:30pm'
+      label: '8:30 pm'
+    -
+      value: '9:00pm'
+      label: '9:00 pm'
+    -
+      value: '9:30pm'
+      label: '9:30 pm'
+    -
+      value: '10:00pm'
+      label: '10:00 pm'
+    -
+      value: '10:30pm'
+      label: '10:30 pm'
+    -
+      value: '11:00pm'
+      label: '11:00 pm'
+    -
+      value: '11:30pm'
+      label: '11:30 pm'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

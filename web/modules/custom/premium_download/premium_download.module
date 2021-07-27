@@ -1,0 +1,500 @@
+<?php 
+// $Id$
+// do not add closing php " ? > "
+
+// Make sure "private download" module is not enabled. This will conflict.
+// Add this to htaccess for media/docmagic/compliance folder:
+
+// SetHandler Drupal_Security_Do_Not_Remove_See_SA_2006_006
+// Options None
+// Options +FollowSymLinks
+// <IfModule mod_rewrite.c>
+//   RewriteEngine on
+//   RewriteBase /system/files/docmagic/compliance
+//   RewriteRule ^(.*)\.pdf$ $1.pdf [L,R=301]
+// </IfModule>
+
+function premium_download_help($path, $arg)
+{
+    $output = '';
+    switch($path)
+    {
+        case "admin/help#premium_download":
+            $output = "<p>". t("Premium download module.")."</p>";
+            break;
+    }
+    return $output;
+}
+
+function premium_download_perm()
+{
+    return array('compliance download', 'trial download', 'access premium download admin');
+}
+
+function premium_download_menu()
+{
+      $items = array();
+
+      $items['admin/build/premium-download'] = array(
+          'title' => 'Premium Download',
+          'description' => 'Redirect users from one URL to another.',
+          'page callback' => 'drupal_get_form',
+          'page arguments' => array('premium_download_admin_file'),
+          'access arguments' => array('access premium download admin'),
+          'file' => 'premium_download.admin.inc',
+      );
+      $items['admin/build/premium-download/list'] = array(
+          'title' => 'List',
+          'type' => MENU_DEFAULT_LOCAL_TASK,
+          'weight' => -10,
+      );
+      $items['admin/build/premium-download/add'] = array(
+          'title' => 'Add premium download',
+          'description' => 'Add a new URL redirect.',
+          'page callback' => 'drupal_get_form',
+          'page arguments' => array('premium_download_edit_form'),
+          'access arguments' => array('access premium download admin'),
+          'type' => MENU_LOCAL_TASK,
+          'file' => 'premium_download.admin.inc',
+      );
+
+      $items['admin/build/premium-download/edit/%premium_download'] = array(
+          'title' => 'Edit premium download',
+          'description' => 'Edit a premium download access control.',
+          'page callback' => 'drupal_get_form',
+          'page arguments' => array('premium_download_edit_form', 4),
+          'access arguments' => array('access premium download admin'),
+          'type' => MENU_CALLBACK,
+          'file' => 'premium_download.admin.inc',
+      );
+      $items['admin/build/premium-download/delete/%premium_download'] = array(
+          'title' => 'Delete premium download',
+          'description' => 'Delete an existing premium download.',
+          'page callback' => 'drupal_get_form',
+          'page arguments' => array('premium_download_delete_form', 4),
+          'access arguments' => array('access premium download admin'),
+          'type' => MENU_CALLBACK,
+          'file' => 'premium_download.admin.inc',
+      );
+       return $items;   
+}
+
+
+
+/**
+* Implements hook_init().
+*/
+function premium_download_init() {
+    if (defined('MAINTENANCE_MODE')) {
+        return;
+    }
+    premium_download_goto();
+}
+
+function premium_download_goto($premium_download = NULL) {
+    if (!isset($premium_download)) {
+        $path = premium_download_get_path();
+        $premium_download = premium_download_load_by_filepath($path);
+        //If this is returned, then we know this is one of the PDF that has ACL defined.
+    }
+    if ($premium_download) {
+        //$premium_downloadUrl = "/system/file/".$path;
+        //$qUrl = isset($_GET['q']) ? '/'.ltrim($_GET['q'], '/') : '/';
+        $qUrl = isset($_GET['q']) ? '/'.ltrim($_GET['q'], '/') : '/'.ltrim(\Drupal::request()->getPathInfo(), '/');
+        $pfUrl = '/'.ltrim($premium_download->filepath, '/');
+        $premium_downloadUrl = $pfUrl;
+        if (\Drupal\Core\Url::fromUserInput($pfUrl)->toString() == \Drupal\Core\Url::fromUserInput($qUrl)->toString()) {
+        	//Prevent infinite loop redirection.
+//            watchdog('premium_download', 'Redirect to <code>%redirect</code> is causing an infinite loop; redirect cancelled.', array('%redirect' => $premium_downloadUrl), WATCHDOG_WARNING, \Drupal\Core\Link::fromTextAndUrl(t('Edit'), \Drupal\Core\Url::fromUserInput('/admin/build/premium-download/edit/'. $premium_download->pid))->toString());
+
+            $localFile = 'public://'.ltrim(str_replace('/media', '/d6', $pfUrl), '/'); // Drupal 6 migration path
+            if (file_exists($localFile)) {
+                $headers = premium_download_file_download($premium_download->filepath);
+                $response = new \Symfony\Component\HttpFoundation\StreamedResponse(function () use ($localFile) {
+                    readfile($localFile);
+                }, 200, $headers);
+                $response->headers->set('Content-Type', 'application/octet-stream');
+                //$response->headers->set('Content-Disposition', 'attachment; filename="'.basename($localFile).'"');
+                $response->send();
+                exit();
+            }
+        }
+        else {
+        	//Perform the redirect.
+            unset($_REQUEST['destination']);
+            //drupal_goto($premium_downloadUrl, NULL, NULL, 301);
+            drupal_goto($premium_downloadUrl, NULL, NULL, 302);
+        }
+
+    }
+
+    // If this is being executed as a menu item, return a not found flag.
+    return 2;//MENU_NOT_FOUND;
+}
+/**
+* Implements hook_path_redirect_operations().
+*/
+function premium_download_premium_download_operations() {
+    $operations = array(
+    'delete' => array(
+      'action' => t('Delete'),
+      'action_past' => t('Deleted'),
+      'callback' => 'premium_download_delete_multiple',
+      'confirm' => TRUE,
+    ),
+    );
+    return $operations;
+}
+
+function premium_download_get_query($query = NULL) {
+    if (!isset($query)) {
+        $query = $_GET;
+    }
+    unset($query['q']);
+    return $query;
+}
+
+function premium_download_local_actions($premium_download = array()) {
+    $links = array(
+    'add' => array(
+      'title' => $premium_download ? t('Add premium download to this location') : t('Add premium download'),
+      'href' => 'admin/build/premium-download/add',
+//      'query' => drupal_get_destination() . ($premium_download ? '&' . drupal_query_string_encode($premium_download) : ''),
+    ),
+    );
+    return \Drupal::theme()->render('links', $links, array('class' => 'item-list action-links'));
+
+}
+
+
+/**
+ * Load a premium_download by incoming path.
+ *
+ * @param $filepath
+ *   The incoming path.
+ */
+function premium_download_load_by_filepath($filepath) {
+    //$where = "filepath = '%s'";
+    $where = "filepath = ?";
+    $args =  array($filepath);
+    $pid_query = db_query("SELECT * FROM {premium_download} WHERE $where ", $args);
+   $premium_download = db_fetch_object($pid_query);
+    if (isset($premium_download) && !empty($premium_download)) {
+        return $premium_download;
+    }
+    return false;
+}
+
+
+function premium_download_get_path($path = NULL) {
+    if (!isset($path)) {
+        if (false/*drupal_is_front_page()*/) {
+            $path = '<front>';
+        }
+        else {
+            $path = isset($_GET['q']) ? $_GET['q'] : null;
+            if (!$path) {
+                $path = \Drupal::request()->getPathInfo();
+                $path = ltrim($path, '/');
+            }
+        }
+    }
+    else {
+        // @FIXME
+// // @FIXME
+// // This looks like another module's variable. You'll need to rewrite this call
+// // to ensure that it uses the correct configuration object.
+// if ($path == drupal_get_normal_path(variable_get('site_frontpage', 'node'))) {
+//             $path = '<front>';
+//         }
+
+    }
+    return $path;
+}
+
+
+/**
+* Implementation of hook_file_download().
+*/
+function premium_download_file_download($filepath) {
+	//watchdog('premium_download', '$filepath: ' . $filepath);
+	$user = \Drupal::currentUser(); 
+	//error_log('>>>> in PREMIUM_DOWNLOAD_FILE_DOWNLOAD');
+    // define default file header attributes
+    if($hasPermission = premium_download_permission($filepath)) {
+        $header = array(
+//    'Content-Type: '. file_get_mimetype($filepath),
+//    'Content-Length: '. filesize(file_create_path($filepath)),
+    'Content-Disposition: attachment; filename="'. \Drupal\Component\Utility\Unicode::mimeHeaderEncode(basename($filepath)) .'"'
+        );
+        //   additional user-defined file header attributes (if any)
+        // @FIXME
+// // @FIXME
+// // This looks like another module's variable. You'll need to rewrite this call
+// // to ensure that it uses the correct configuration object.
+// return array_merge($header, explode("\n", variable_get('private_download_header', "Content-Transfer-Encoding: binary\nCache-Control: max-age=60, must-revalidate")));
+        return array_merge($header, array());
+
+    } else {
+//    	$subscribeUrl = 'compliance/subscribe';
+        $subscribeUrl = '/compliance/subscribe';
+    	if ($user->uid) { // the user is logged but does not have proper permissions. present them with an option to add those permissions...
+    		//error_log('the user is logged but does not have proper permissions. present them with an option to add those permissions...');
+    		unset($_REQUEST['destination']);
+            //drupal_goto($subscribeUrl, NULL, NULL, 301);
+            drupal_goto($subscribeUrl, NULL, NULL, 302);
+    		//return "-1"; // This will show "access denied page" instead of "page not found"
+    	} else { // the user is not logged in
+    		//error_log('the user is not logged in');
+    		unset($_REQUEST['destination']);
+            //drupal_goto($subscribeUrl, NULL, NULL, 301);
+            drupal_goto($subscribeUrl, NULL, NULL, 302);
+    		//return "-1"; // This will show "access denied page" instead of "page not found"
+    	}
+    }
+}
+
+function premium_download_permission($filepath)
+{
+	//error_log('>>> in PREMIUM_DOWNLOAD_PERMISSION : ');
+//    $filepath = file_directory_path()."/".$filepath;
+    //error_log('>>> $filepath = ' . $filepath);
+    $premium_download = premium_download_load_by_filepath($filepath);
+    $access = false;
+    if(isset($premium_download->permission) && !empty($premium_download->permission))
+    {
+        $permissionArr = explode(",",$premium_download->permission);
+        if(isset($permissionArr) && count($permissionArr))
+        {
+            foreach($permissionArr as $permssion)
+            {
+            	//error_log('>>> $permssion (from array): ' . $permssion);
+                if (\Drupal::currentUser()->hasPermission($permssion)) {
+                    $access = true;
+                    //error_log(">>> ACCESS");
+                } else {
+                	//error_log("DENIED");
+                }
+                //error_log($permssion);
+            }
+        }
+    }
+    else
+    {
+        //If no permission was set, then this means that this file is open to public.
+        $access = true;
+        //error_log("no access set", 0);
+    }
+    
+    if (\Drupal::currentUser()->hasPermission('access premium content')) { // this is the same way we handle the premium permission in the 'premium' module (this should not be hardcoded?)
+    	$access = true;
+    }
+    
+    //error_log($filepath);
+    return $access;
+}
+
+
+/**
+* Save an URL redirect to the database.
+*/
+function premium_download_redirect_save(&$premium_download) {
+    // Merge default values.
+    $premium_download += array(
+    'pid' => NULL,
+    'query' => '',
+    'fragment' => '',
+    'permission' => \Drupal::config('premium_download.settings')->get('premium_download_default_status')
+    );
+
+    // Allow spaces in "from" path
+    // @todo Move to validation?
+    $premium_download['filepath'] = str_replace('+', ' ', $premium_download['filepath']);
+
+    // Remove beginning and trailing slashes from path.
+    // @todo Move to validation?
+    $premium_download['filepath'] = trim($premium_download['filepath'], '\/?');
+
+    foreach ($premium_download as $key => $value) {
+        if (!in_array($key, array('pid', 'filepath', 'permission'))) {
+            unset($premium_download[$key]);
+        }
+    }
+
+    premium_download_clear_cache();
+
+    if (empty($premium_download['pid'])) {
+        \Drupal::database()->insert('premium_download')->fields($premium_download)->execute();
+    }
+    else {
+        \Drupal::database()->merge('premium_download')->fields($premium_download)->key('pid', $premium_download['pid'])->execute();
+    }
+
+    return $premium_download;
+}
+
+/**
+ * Load a redirect by ID.
+ *
+ * @param $pid
+ *   An integer with the redirect ID.
+ */
+function premium_download_load($pid) {
+    $premium_download = premium_download_load_multiple(array($pid));
+    return $premium_download ? reset($premium_download) : FALSE;
+}
+
+function premium_download_load_multiple($pids = NULL, $conditions = array()) {
+    if (isset($pids) && empty($pids)) {
+        return array();
+    }
+
+    $query = array();
+    _premium_download_build_conditions($query, $pids, $conditions);
+    $sql = "SELECT * FROM {premium_download} WHERE " . implode(' AND ', $query['conditions']);
+    $query = db_query($sql, $query['args']);
+
+    $premium_downloads = array();
+    while ($premium_download = db_fetch_array($query)) {
+        $premium_downloads[$premium_download['pid']] = $premium_download;
+    }
+    return $premium_downloads;
+}
+
+function premium_download_get_query_array($query) {
+    $result = array();
+    if (!empty($query)) {
+        foreach (explode('&', $query) as $param) {
+            $param = explode('=', $param);
+            $result[$param[0]] = isset($param[1]) ? rawurldecode($param[1]) : '';
+        }
+    }
+    return $result;
+}
+/**
+* Delete a redirect.
+*
+* @param $pid
+*   The ID of the redirect to delete.
+*/
+function premium_download_delete($pid) {
+    // @todo Remove legacy premium_download_delete support for pathauto.
+
+    if (is_array($pid) && !isset($pid['pid'])) {
+        $pid = $pid['pid'];
+    }
+
+    return premium_download_delete_multiple(array($pid));
+}
+
+/**
+ * Delete multiple redirects.
+ *
+ * @param $pids
+ *   An optional array or redirect IDs.
+ * @param $conditions
+ *   An optional array of conditions keyed by field to match.
+ * @return
+ *   The number of deleted redirects.
+ */
+function premium_download_delete_multiple($pids = NULL, $conditions = array()) {
+    $query = array();
+    _premium_download_build_conditions($query, $pids, $conditions);
+    $sql = 'DELETE FROM {premium_download} WHERE ' . implode(' AND ', $query['conditions']);
+    db_query($sql, $query['args']);
+    $deleted = 0;//db_affected_rows();
+    premium_download_clear_cache();
+    return $deleted;
+}
+
+function _premium_download_build_conditions(&$query, $pids, $conditions) {
+//    static $schema;
+//    if (!isset($schema)) {
+//        $schema = !defined('MAINTENANCE_MODE') ? drupal_get_schema('premium_download') : drupal_get_schema_unprocessed('premium_download', 'premium_download');
+//    }
+
+    $query += array(
+    'conditions' => array(),
+    'args' => array(),
+    );
+
+    if ($pids) {
+        $conditions += array('pid' => array());
+        $conditions['pid'] = array_merge($pids, (array) $conditions['pid']);
+    }
+    if ($conditions) {
+        foreach ($conditions as $field => $value) {
+            if (!is_string($field) /*|| !isset($schema['fields'][$field])*/) {
+                continue;
+            }
+            //if ($field == 'langauge' && !is_array($value)) {
+            //  $value = array($value, '');
+            //}
+//            $type = $schema['fields'][$field]['type'];
+            if (is_array($value)) {
+                $conditions[$field] = "$field IN (" . trim(str_repeat('?,', count($value)), ',')/*db_placeholders($value, $type)*/ . ')';
+                $query['args'] = array_merge($query['args'], $value);
+            }
+            else {
+                $conditions[$field] = "$field = " . '?'/*db_type_placeholder($type)*/;
+                $query['args'][] = $value;
+            }
+        }
+    }
+    $query['conditions'] = array_merge($query['conditions'], $conditions);
+
+    return $query;
+}
+
+function premium_download_clear_cache() {
+    //Not necessary to clear cache of the page, as PDF is not cached in drupal
+    //     cache_clear_all(NULL, 'cache_page');
+}
+
+function premium_download_variables() {
+    return array(
+    'premium_download_redirect_warning' => 0,
+    'premium_download_allow_bypass' => 0,
+    'premium_download_auto_redirect' => 1,
+    'premium_download_purge_inactive' => 0,
+    'premium_download_default_status' => 'trial download',
+    'premium_download_nodeapi_enabled' => NULL,
+    );
+}
+
+
+/**
+ * Save an URL redirect to the database.
+ */
+function premium_download_save(&$premium_download) {
+    // Merge default values.
+    $premium_download += array(
+    'pid' => NULL,
+    'permission' => \Drupal::config('premium_download.settings')->get('premium_download_default_status')
+    );
+
+    // Allow spaces in "from" path
+    // @todo Move to validation?
+    $premium_download['filepath'] = str_replace('+', ' ', $premium_download['filepath']);
+
+    // Remove beginning and trailing slashes from path.
+    // @todo Move to validation?
+    $premium_download['filepath'] = trim($premium_download['filepath'], '\/?');
+
+    foreach ($premium_download as $key => $value) {
+        if (!in_array($key, array('pid', 'filepath', 'permission'))) {
+            unset($premium_download[$key]);
+        }
+    }
+
+    premium_download_clear_cache();
+
+    if (empty($premium_download['pid'])) {
+        \Drupal::database()->insert('premium_download')->fields($premium_download)->execute();
+    }
+    else {
+        \Drupal::database()->merge('premium_download')->fields($premium_download)->key('pid', $premium_download['pid'])->execute();
+    }
+
+    return $premium_download;
+}

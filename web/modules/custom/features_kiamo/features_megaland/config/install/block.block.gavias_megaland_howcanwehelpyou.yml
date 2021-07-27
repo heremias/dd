@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.right_sidebar
+  content:
+    - 'block_content:basic:f41634fc-4c30-48a7-b5c2-c3e4709c65f1'
+  module:
+    - block_content
+    - block_visibility_groups
+    - gaviasthemer
+  theme:
+    - gavias_megaland
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_megaland_howcanwehelpyou
+theme: gavias_megaland
+region: sidebar_right
+weight: -7
+provider: null
+plugin: 'block_content:f41634fc-4c30-48a7-b5c2-c3e4709c65f1'
+settings:
+  id: 'block_content:f41634fc-4c30-48a7-b5c2-c3e4709c65f1'
+  label: 'How can we help you ?'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: right_sidebar
+    context_mapping: {  }

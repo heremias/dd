@@ -1,0 +1,12 @@
+diff --git a/modules/comment/migrations/d6_comment.yml b/modules/comment/migrations/d6_comment.yml
+--- a/modules/comment/migrations/d6_comment.yml
++++ b/modules/comment/migrations/d6_comment.yml
+@@ -11,7 +11,7 @@
+ process:
+   # If you are using this file to build a custom migration consider removing
+   # the cid field to allow incremental migrations.
+-  cid: cid
++#  cid: cid
+   pid:
+     plugin: migration_lookup
+     migration: d6_comment

@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+id: right_sidebar
+label: 'Right sidebar'
+logic: or
+conditions:
+  3d80285e-3e0e-488a-a59e-d2c64c14e079:
+    id: node_type
+    bundles:
+      article: article
+      gallery: gallery
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 3d80285e-3e0e-488a-a59e-d2c64c14e079
+  5ea78dbd-6bab-4183-9a0a-71d1c2683fe0:
+    id: request_path
+    pages: "/team-list\r\n/team-grid\r\n/teams"
+    negate: false
+    context_mapping: {  }
+    uuid: 5ea78dbd-6bab-4183-9a0a-71d1c2683fe0
+allow_other_conditions: true

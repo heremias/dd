@@ -1,0 +1,14 @@
+{
+  "name": "drupal/docmagic_migrate_views",
+  "type": "drupal-module",
+  "description": "Helper code to ease DocMagic site migration from Drupal 6 to Drupal 8",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/docmagic_migrate_views",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/docmagic_migrate_views",
+    "source": "http://cgit.drupalcode.org/docmagic_migrate_views"
+  },
+  "require": { }
+}

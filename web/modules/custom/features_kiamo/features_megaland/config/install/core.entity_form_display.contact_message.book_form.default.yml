@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.book_form
+    - field.field.contact_message.book_form.field_book_date
+    - field.field.contact_message.book_form.field_book_guests
+    - field.field.contact_message.book_form.field_book_phone
+    - field.field.contact_message.book_form.field_book_time
+  module:
+    - datetime
+id: contact_message.book_form.default
+targetEntityType: contact_message
+bundle: book_form
+mode: default
+content:
+  field_book_date:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+  field_book_guests:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_book_phone:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_book_time:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  mail:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  message:
+    type: string_textarea
+    weight: 7
+    settings:
+      rows: 12
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  copy: true

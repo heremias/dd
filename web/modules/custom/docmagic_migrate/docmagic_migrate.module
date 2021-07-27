@@ -1,0 +1,978 @@
+<?php
+
+/**
+ * @file
+ * Contains docmagic_migrate.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function docmagic_migrate_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the docmagic_migrate module.
+    case 'help.page.docmagic_migrate':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Helper code to ease DocMagic site migration from Drupal 6 to Drupal 8') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_migrate_prepare_row().
+ */
+function docmagic_migrate_migrate_prepare_row(\Drupal\migrate\Row $row, \Drupal\migrate\Plugin\MigrateSourceInterface $source, \Drupal\migrate\Plugin\MigrationInterface $migration) {
+    if ('d6_filter_format' == $migration->id()) {
+        // @see \Drupal\filter\Plugin\migrate\process\FilterID
+        $process = $migration->getProcess();
+        $process['filters'][0]['process']['id']['map']['php'][0] = 'php_code';
+        $process['filters'][0]['process']['id']['map']['pathfilter'][0] = 'filter_pathologic';
+        $migration->setProcess($process);
+    }
+
+    if ('d6_menu_links' == $migration->id()) {
+        $process = $migration->getProcess();
+        $process['link/uri'][0]['validate_route'] = false;
+        $migration->setProcess($process);
+    }
+
+    if ('d6_system_file' == $migration->id()) {
+        $process = $migration->getProcess();
+        $process['allow_insecure_uploads'][0]['map']['NULL'] = false;
+        $process['allow_insecure_uploads'][0]['map'][NULL] = false;
+        $migration->setProcess($process);
+    }
+
+    if ('d6_node:news' == $migration->id()
+        || 'd6_node_revision:news' == $migration->id()
+    ) {
+        $monthYear = $row->getSourceProperty('field_month_year');
+        foreach ($monthYear as $index => $data) {
+            foreach ($data as $key => $value) {
+                if (false !== strpos($value, '-00T')) {
+                    // the day is an invalid zero, change it to one
+                    $monthYear[$index][$key] = str_replace('-00T', '-01T', $value);
+                }
+            }
+        }
+        $row->setSourceProperty('field_month_year', $monthYear);
+    }
+}
+
+// Missing Drupal 6 global variables that are used in PHP database records.
+
+if (!isset($GLOBALS['user'])) {
+    // @see \Drupal\docmagic_migrate\Session\AccountProxy
+    //global $user;
+    $GLOBALS['user'] = \Drupal::currentUser();
+}
+
+// Missing Drupal 6 functions that are used in PHP database records.
+
+$overrideDrupal8Functions = false;
+
+// from Drupal 8 modules/contrib/php/php.module
+$isPhpDatabaseContentMockApplied = false;
+if (class_exists(\Drupal\php\Plugin\Filter\Php::class)
+    && class_exists(\Drupal\docmagic_migrate\Mock\PhpDatabaseContentMock::class)
+) {
+    // define original function that will be overridden
+    if (!function_exists('mock_eval')) {
+        function mock_eval($code)
+        {
+            return $code;
+        }
+    }
+    // override php_eval() calls so that other defined functions can be overridden as well
+    \Drupal\docmagic_migrate\Mock\PhpDatabaseContentMock::register(\Drupal\php\Plugin\Condition\Php::class);
+    \Drupal\docmagic_migrate\Mock\PhpDatabaseContentMock::register(\Drupal\php\Plugin\Filter\Php::class);
+    // override patched mock_eval() calls so that other defined functions can be overridden as well
+    \Drupal\docmagic_migrate\Mock\PhpDatabaseContentMock::register(\Drupal\php\Plugin\views\argument_default\Php::class);
+    \Drupal\docmagic_migrate\Mock\PhpDatabaseContentMock::register(\Drupal\php\Plugin\views\argument_validator\Php::class);
+    $isPhpDatabaseContentMockApplied = true;
+}
+
+// from Drupal 6 includes/bootstrap.inc
+
+if ($overrideDrupal8Functions && !function_exists('drupal_set_message')) {
+    /**
+     * Set a message which reflects the status of the performed operation.
+     *
+     * If the function is called with no arguments, this function returns all set
+     * messages without clearing them.
+     *
+     * @param $message
+     *   The message should begin with a capital letter and always ends with a
+     *   period '.'.
+     * @param $type
+     *   The type of the message. One of the following values are possible:
+     *   - 'status'
+     *   - 'warning'
+     *   - 'error'
+     * @param $repeat
+     *   If this is FALSE and the message is already set, then the message won't
+     *   be repeated.
+     */
+    function drupal_set_message($message = NULL, $type = 'status', $repeat = TRUE) {
+        // @TODO
+        // same function, different defaults in Drupal 8 core/includes/bootstrap.inc
+        // function drupal_set_message($message = NULL, $type = 'status', $repeat = FALSE)
+    }
+}
+if (!function_exists('request_uri')) {
+    /**
+     * Since $_SERVER['REQUEST_URI'] is only available on Apache, we
+     * generate an equivalent using other environment variables.
+     */
+    function request_uri() {
+
+        if (isset($_SERVER['REQUEST_URI'])) {
+            $uri = $_SERVER['REQUEST_URI'];
+        }
+        else {
+            if (isset($_SERVER['argv'])) {
+                $uri = $_SERVER['SCRIPT_NAME'] .'?'. $_SERVER['argv'][0];
+            }
+            elseif (isset($_SERVER['QUERY_STRING'])) {
+                $uri = $_SERVER['SCRIPT_NAME'] .'?'. $_SERVER['QUERY_STRING'];
+            }
+            else {
+                $uri = $_SERVER['SCRIPT_NAME'];
+            }
+        }
+        // Prevent multiple slashes to avoid cross site requests via the FAPI.
+        $uri = '/'. ltrim($uri, '/');
+
+        return $uri;
+    }
+}
+
+// from Drupal 6 includes/cache.inc
+
+if (!function_exists('cache_clear_all')) {
+    /**
+     *
+     * Expire data from the cache. If called without arguments, expirable
+     * entries will be cleared from the cache_page and cache_block tables.
+     *
+     * @param $cid
+     *   If set, the cache ID to delete. Otherwise, all cache entries that can
+     *   expire are deleted.
+     *
+     * @param $table
+     *   If set, the table $table to delete from. Mandatory
+     *   argument if $cid is set.
+     *
+     * @param $wildcard
+     *   If $wildcard is TRUE, cache IDs starting with $cid are deleted in
+     *   addition to the exact cache ID specified by $cid.  If $wildcard is
+     *   TRUE and $cid is '*' then the entire table $table is emptied.
+     */
+    function cache_clear_all($cid = NULL, $table = NULL, $wildcard = FALSE) {
+        // @TODO
+    }
+}
+
+// from Drupal 6 includes/common.inc
+
+if (!function_exists('drupal_goto')) {
+    /**
+     * Send the user to a different Drupal page.
+     *
+     * This issues an on-site HTTP redirect. The function makes sure the redirected
+     * URL is formatted correctly.
+     *
+     * Usually the redirected URL is constructed from this function's input
+     * parameters. However you may override that behavior by setting a
+     * destination in either the $_REQUEST-array (i.e. by using
+     * the query string of an URI) or the $_REQUEST['edit']-array (i.e. by
+     * using a hidden form field). This is used to direct the user back to
+     * the proper page after completing a form. For example, after editing
+     * a post on the 'admin/content/node'-page or after having logged on using the
+     * 'user login'-block in a sidebar. The function drupal_get_destination()
+     * can be used to help set the destination URL.
+     *
+     * Drupal will ensure that messages set by drupal_set_message() and other
+     * session data are written to the database before the user is redirected.
+     *
+     * This function ends the request; use it rather than a print theme('page')
+     * statement in your menu callback.
+     *
+     * @param $path
+     *   (optional) A Drupal path or a full URL, which will be passed to url() to
+     *   compute the redirect for the URL.
+     * @param $query
+     *   (optional) A URL-encoded query string to append to the link, or an array of
+     *   query key/value-pairs without any URL-encoding. Passed to url().
+     * @param $fragment
+     *   (optional) A destination fragment identifier (named anchor).
+     * @param $http_response_code
+     *   (optional) The HTTP status code to use for the redirection, defaults to 302.
+     *   The valid values for 3xx redirection status codes are defined in
+     * @link http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3 RFC 2616 @endlink
+     *   and the
+     * @link http://tools.ietf.org/html/draft-reschke-http-status-308-07 draft for the new HTTP status codes: @endlink
+     *   - 301: Moved Permanently (the recommended value for most redirects).
+     *   - 302: Found (default in Drupal and PHP, sometimes used for spamming search
+     *     engines).
+     *   - 303: See Other.
+     *   - 304: Not Modified.
+     *   - 305: Use Proxy.
+     *   - 307: Temporary Redirect.
+     * @see drupal_get_destination()
+     */
+    function drupal_goto($path = '', $query = NULL, $fragment = NULL, $http_response_code = 302) {
+        if (!$path) {
+            $path = '/';
+        }
+        $url = \Drupal\Core\Url::fromUserInput($path, array('query' => $query, 'fragment' => $fragment))->setAbsolute()->toString();
+        $response = new \Drupal\Core\Routing\TrustedRedirectResponse($url, $http_response_code);
+        $response->send();
+        exit();
+    }
+}
+if (!function_exists('drupal_not_found')) {
+    /**
+     * Generates a 404 error if the request can not be handled.
+     */
+    function drupal_not_found() {
+        throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
+    }
+}
+if (!function_exists('l')) {
+    /**
+     * Formats an internal or external URL link as an HTML anchor tag.
+     *
+     * This function correctly handles aliased paths, and adds an 'active' class
+     * attribute to links that point to the current page (for theming), so all
+     * internal links output by modules should be generated by this function if
+     * possible.
+     *
+     * However, for links enclosed in translatable text you should use t() and
+     * embed the HTML anchor tag directly in the translated string. For example:
+     * @code
+     * t('Visit the <a href="@url">settings</a> page', array('@url' => url('admin')));
+     * @endcode
+     * This keeps the context of the link title ('settings' in the example) for
+     * translators.
+     *
+     * @param $text
+     *   The link text for the anchor tag.
+     * @param $path
+     *   The internal path or external URL being linked to, such as "node/34" or
+     *   "http://example.com/foo". After the url() function is called to construct
+     *   the URL from $path and $options, the resulting URL is passed through
+     *   check_url() before it is inserted into the HTML anchor tag, to ensure
+     *   well-formed HTML. See url() for more information and notes.
+     * @param $options
+     *   An associative array of additional options, with the following elements:
+     *   - 'attributes': An associative array of HTML attributes to apply to the
+     *     anchor tag.
+     *   - 'html' (default FALSE): Whether $text is HTML or just plain-text. For
+     *     example, to make an image tag into a link, this must be set to TRUE, or
+     *     you will see the escaped HTML image tag.
+     *   - 'language': An optional language object. If the path being linked to is
+     *     internal to the site, $options['language'] is used to look up the alias
+     *     for the URL, and to determine whether the link is "active", or pointing
+     *     to the current page (the language as well as the path must match).This
+     *     element is also used by url().
+     *   - Additional $options elements used by the url() function.
+     *
+     * @return
+     *   An HTML string containing a link to the given path.
+     */
+    function l($text, $path, $options = array()) {
+        $path = '/'.ltrim($path, '/');
+        $url = \Drupal\Core\Url::fromUserInput($path, $options);
+        $link = \Drupal\Core\Link::fromTextAndUrl($text, $url);
+
+        return $link->toString();
+    }
+}
+if ($overrideDrupal8Functions && !function_exists('drupal_clear_css_cache')) {
+    /**
+     * Delete all cached CSS files.
+     */
+    function drupal_clear_css_cache() {
+        // @TODO
+        // same function in Drupal 8 core/includes/common.inc
+    }
+}
+
+// from Drupal 6 includes/database.inc
+
+if ($overrideDrupal8Functions && !function_exists('db_set_active')) {
+    /**
+     * Activate a database for future queries.
+     *
+     * If it is necessary to use external databases in a project, this function can
+     * be used to change where database queries are sent. If the database has not
+     * yet been used, it is initialized using the URL specified for that name in
+     * Drupal's configuration file. If this name is not defined, a duplicate of the
+     * default connection is made instead.
+     *
+     * Be sure to change the connection back to the default when done with custom
+     * code.
+     *
+     * @param $name
+     *   The key in the $db_url global variable from settings.php. If omitted, the
+     *   default connection will be made active.
+     *
+     * @return
+     *   The name of the previously active database, or FALSE if none was found.
+     */
+    function db_set_active($name = 'default') {
+        // @TODO
+        // same function in Drupal 8 core/includes/database.inc
+        // function db_set_active($key = 'default')
+        return $name;
+    }
+}
+
+// from Drupal 6 includes/database.mysql-common.inc
+
+if (!$isPhpDatabaseContentMockApplied && $overrideDrupal8Functions && !function_exists('db_query')) {
+    /**
+     * Runs a basic query in the active database.
+     *
+     * User-supplied arguments to the query should be passed in as separate
+     * parameters so that they can be properly escaped to avoid SQL injection
+     * attacks.
+     *
+     * @param $query
+     *   A string containing an SQL query.
+     * @param ...
+     *   A variable number of arguments which are substituted into the query
+     *   using printf() syntax. Instead of a variable number of query arguments,
+     *   you may also pass a single array containing the query arguments.
+     *
+     *   Valid %-modifiers are: %s, %d, %f, %b (binary data, do not enclose
+     *   in '') and %%.
+     *
+     *   NOTE: using this syntax will cast NULL and FALSE values to decimal 0,
+     *   and TRUE values to decimal 1.
+     *
+     * @return
+     *   Successful SELECT, SHOW, DESCRIBE, EXPLAIN, or other queries which return a
+     *   set of results will return a database query result resource. Other
+     *   successful queries will return TRUE and failing queries will return FALSE.
+     */
+    function db_query($query) {
+        // @TODO
+        // same function, different inputs in Drupal 8 core/includes/database.inc
+        // function db_query($query, array $args = [], array $options = [])
+        return false;
+    }
+}
+
+// from Drupal 6 includes/database.mysqli.inc
+
+if (!function_exists('db_fetch_object')) {
+    /**
+     * Fetch one result row from the previous query as an object.
+     *
+     * @param $result
+     *   A database query result resource, as returned from db_query().
+     * @return
+     *   An object representing the next row of the result, or FALSE. The attributes
+     *   of this object are the table fields selected by the query.
+     */
+    function db_fetch_object($result) {
+        if ($result instanceof \Drupal\Core\Database\Statement) {
+            return $result->fetch();
+        }
+        if ($result) {
+            $object = mysqli_fetch_object($result);
+            return isset($object) ? $object : FALSE;
+        }
+    }
+}
+if (!function_exists('db_fetch_array')) {
+    /**
+     * Fetch one result row from the previous query as an array.
+     *
+     * @param $result
+     *   A database query result resource, as returned from db_query().
+     * @return
+     *   An associative array representing the next row of the result, or FALSE.
+     *   The keys of this object are the names of the table fields selected by the
+     *   query, and the values are the field values for this result row.
+     */
+    function db_fetch_array($result) {
+        if ($result instanceof \Drupal\Core\Database\Statement) {
+            return $result->fetchAssoc();
+        }
+        if ($result) {
+            $array = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            return isset($array) ? $array : FALSE;
+        }
+    }
+}
+if (!function_exists('db_result')) {
+    /**
+     * Return an individual result field from the previous query.
+     *
+     * Only use this function if exactly one field is being selected; otherwise,
+     * use db_fetch_object() or db_fetch_array().
+     *
+     * @param $result
+     *   A database query result resource, as returned from db_query().
+     * @return
+     *   The resulting field or FALSE.
+     */
+    function db_result($result) {
+        if ($result instanceof \Drupal\Core\Database\Statement) {
+            return $result->fetchField();
+        }
+        if ($result && mysqli_num_rows($result) > 0) {
+            // The mysqli_fetch_row function has an optional second parameter $row
+            // but that can't be used for compatibility with Oracle, DB2, etc.
+            $array = mysqli_fetch_row($result);
+            return $array[0];
+        }
+        return FALSE;
+    }
+}
+if (!$isPhpDatabaseContentMockApplied && $overrideDrupal8Functions && !function_exists('db_query_range')) {
+    /**
+     * Runs a limited-range query in the active database.
+     *
+     * Use this as a substitute for db_query() when a subset of the query is to be
+     * returned.
+     * User-supplied arguments to the query should be passed in as separate parameters
+     * so that they can be properly escaped to avoid SQL injection attacks.
+     *
+     * @param $query
+     *   A string containing an SQL query.
+     * @param ...
+     *   A variable number of arguments which are substituted into the query
+     *   using printf() syntax. The query arguments can be enclosed in one
+     *   array instead.
+     *   Valid %-modifiers are: %s, %d, %f, %b (binary data, do not enclose
+     *   in '') and %%.
+     *
+     *   NOTE: using this syntax will cast NULL and FALSE values to decimal 0,
+     *   and TRUE values to decimal 1.
+     *
+     * @param $from
+     *   The first result row to return.
+     * @param $count
+     *   The maximum number of result rows to return.
+     * @return
+     *   A database query result resource, or FALSE if the query was not executed
+     *   correctly.
+     */
+    function db_query_range($query) {
+        // @TODO
+        // same function, different inputs in Drupal 8 core/includes/database.inc
+        // function db_query_range($query, $from, $count, array $args = [], array $options = [])
+        return false;
+    }
+}
+
+// from Drupal 6 includes/form.inc
+
+if (!function_exists('drupal_get_form')) {
+    /**
+     * Retrieves a form from a constructor function, or from the cache if
+     * the form was built in a previous page-load. The form is then passed
+     * on for processing, after and rendered for display if necessary.
+     *
+     * @param $form_id
+     *   The unique string identifying the desired form. If a function
+     *   with that name exists, it is called to build the form array.
+     *   Modules that need to generate the same form (or very similar forms)
+     *   using different $form_ids can implement hook_forms(), which maps
+     *   different $form_id values to the proper form constructor function. Examples
+     *   may be found in node_forms(), search_forms(), and user_forms().
+     * @param ...
+     *   Any additional arguments are passed on to the functions called by
+     *   drupal_get_form(), including the unique form constructor function.
+     *   For example, the node_edit form requires that a node object be passed
+     *   in here when it is called. These are available to implementations of
+     *   hook_form_alter() and hook_form_FORM_ID_alter() as the array
+     *   $form['#parameters'].
+     * @return
+     *   The rendered form.
+     */
+    function drupal_get_form($form_id) {
+        $form = null;
+        if (is_callable($form_id)) {
+            $form = call_user_func($form_id);
+        }
+        if (!$form) {
+            if ('Year_dropdown_form' == $form_id) {
+                $form = \Drupal\docmagic_migrate\Mock\PhpDatabaseContentMock::Year_dropdown_form();
+            }
+            if ('Company_dropdown_form' == $form_id) {
+                $form = \Drupal\docmagic_migrate\Mock\PhpDatabaseContentMock::Company_dropdown_form();
+            }
+        }
+        if (is_array($form)) {
+            $formState = new \Drupal\Core\Form\FormState();
+            $formState->addBuildInfo('callback_object', new stdClass());
+            \Drupal::formBuilder()->prepareForm($form_id, $form, $formState);
+
+            if (!isset($form['#form_id']) && isset($form['#id'])) {
+                $form['#form_id'] = $form['#id'];
+            }
+
+            return \Drupal::service('renderer')->render($form);
+        }
+    }
+}
+
+// from Drupal 6 includes/path.inc
+
+if (!function_exists('drupal_lookup_path')) {
+    /**
+     * Given an alias, return its Drupal system URL if one exists. Given a Drupal
+     * system URL return one of its aliases if such a one exists. Otherwise,
+     * return FALSE.
+     *
+     * @param $action
+     *   One of the following values:
+     *   - wipe: delete the alias cache.
+     *   - alias: return an alias for a given Drupal system path (if one exists).
+     *   - source: return the Drupal system URL for a path alias (if one exists).
+     * @param $path
+     *   The path to investigate for corresponding aliases or system URLs.
+     * @param $path_language
+     *   Optional language code to search the path with. Defaults to the page language.
+     *   If there's no path defined for that language it will search paths without
+     *   language.
+     *
+     * @return
+     *   Either a Drupal system path, an aliased path, or FALSE if no path was
+     *   found.
+     */
+    function drupal_lookup_path($action, $path = '', $path_language = '') {
+        if ('alias' == $action) {
+            return \Drupal::service('path.alias_manager')->getAliasByPath($path, $path_language);
+        }
+
+        return \Drupal::service('path.alias_manager')->getPathByAlias($path, $path_language);
+    }
+}
+if (!function_exists('drupal_get_path_alias')) {
+    /**
+     * Given an internal Drupal path, return the alias set by the administrator.
+     *
+     * @param $path
+     *   An internal Drupal path.
+     * @param $path_language
+     *   An optional language code to look up the path in.
+     *
+     * @return
+     *   An aliased path if one was found, or the original path if no alias was
+     *   found.
+     */
+    function drupal_get_path_alias($path, $path_language = '') {
+        $result = $path;
+        //if ($alias = drupal_lookup_path('alias', $path, $path_language)) {
+        if ($alias = \Drupal::service('path.alias_manager')->getAliasByPath($path, $path_language)) {
+            $result = $alias;
+        }
+        return $result;
+    }
+}
+if (!function_exists('drupal_get_title')) {
+    /**
+     * Get the title of the current page, for display on the page and in the title bar.
+     *
+     * @return
+     *   The current page's title.
+     */
+    function drupal_get_title() {
+        return \Drupal::service('title_resolver')->getTitle(\Drupal::request(), \Drupal::routeMatch()->getRouteObject());
+    }
+}
+
+// from Drupal 6 includes/theme.inc
+
+if (!function_exists('theme')) {
+    /**
+     * Generates the themed output.
+     *
+     * All requests for theme hooks must go through this function. It examines
+     * the request and routes it to the appropriate theme function. The theme
+     * registry is checked to determine which implementation to use, which may
+     * be a function or a template.
+     *
+     * If the implementation is a function, it is executed and its return value
+     * passed along.
+     *
+     * If the implementation is a template, the arguments are converted to a
+     * $variables array. This array is then modified by the module implementing
+     * the hook, theme engine (if applicable) and the theme. The following
+     * functions may be used to modify the $variables array. They are processed in
+     * this order when available:
+     *
+     * - template_preprocess(&$variables, $hook)
+     *   This sets a default set of variables for all template implementations.
+     *
+     * - template_preprocess_HOOK(&$variables)
+     *   This is the first preprocessor called specific to the hook; it should be
+     *   implemented by the module that registers it.
+     *
+     * - MODULE_preprocess(&$variables, $hook)
+     *   This will be called for all templates; it should only be used if there
+     *   is a real need. It's purpose is similar to template_preprocess().
+     *
+     * - MODULE_preprocess_HOOK(&$variables)
+     *   This is for modules that want to alter or provide extra variables for
+     *   theming hooks not registered to itself. For example, if a module named
+     *   "foo" wanted to alter the $submitted variable for the hook "node" a
+     *   preprocess function of foo_preprocess_node() can be created to intercept
+     *   and alter the variable.
+     *
+     * - ENGINE_engine_preprocess(&$variables, $hook)
+     *   This function should only be implemented by theme engines and exists
+     *   so that it can set necessary variables for all hooks.
+     *
+     * - ENGINE_engine_preprocess_HOOK(&$variables)
+     *   This is the same as the previous function, but it is called for a single
+     *   theming hook.
+     *
+     * - ENGINE_preprocess(&$variables, $hook)
+     *   This is meant to be used by themes that utilize a theme engine. It is
+     *   provided so that the preprocessor is not locked into a specific theme.
+     *   This makes it easy to share and transport code but theme authors must be
+     *   careful to prevent fatal re-declaration errors when using sub-themes that
+     *   have their own preprocessor named exactly the same as its base theme. In
+     *   the default theme engine (PHPTemplate), sub-themes will load their own
+     *   template.php file in addition to the one used for its parent theme. This
+     *   increases the risk for these errors. A good practice is to use the engine
+     *   name for the base theme and the theme name for the sub-themes to minimize
+     *   this possibility.
+     *
+     * - ENGINE_preprocess_HOOK(&$variables)
+     *   The same applies from the previous function, but it is called for a
+     *   specific hook.
+     *
+     * - THEME_preprocess(&$variables, $hook)
+     *   These functions are based upon the raw theme; they should primarily be
+     *   used by themes that do not use an engine or by sub-themes. It serves the
+     *   same purpose as ENGINE_preprocess().
+     *
+     * - THEME_preprocess_HOOK(&$variables)
+     *   The same applies from the previous function, but it is called for a
+     *   specific hook.
+     *
+     * There are two special variables that these hooks can set:
+     *   'template_file' and 'template_files'. These will be merged together
+     *   to form a list of 'suggested' alternate template files to use, in
+     *   reverse order of priority. template_file will always be a higher
+     *   priority than items in template_files. theme() will then look for these
+     *   files, one at a time, and use the first one
+     *   that exists.
+     * @param $hook
+     *   The name of the theme function to call. May be an array, in which
+     *   case the first hook that actually has an implementation registered
+     *   will be used. This can be used to choose 'fallback' theme implementations,
+     *   so that if the specific theme hook isn't implemented anywhere, a more
+     *   generic one will be used. This can allow themes to create specific theme
+     *   implementations for named objects.
+     * @param ...
+     *   Additional arguments to pass along to the theme function.
+     *
+     * @return
+     *   An HTML string that generates the themed output.
+     */
+    function theme() {
+        $args = func_get_args();
+        $hook = array_shift($args);
+        $variables = array_shift($args);
+
+        return \Drupal::theme()->render($hook, $variables);
+    }
+}
+
+// from Drupal 6 modules/node/node.module
+
+if (!$isPhpDatabaseContentMockApplied && $overrideDrupal8Functions && !function_exists('node_load')) {
+    /**
+     * Load a node object from the database.
+     *
+     * @param $param
+     *   Either the nid of the node or an array of conditions to match against in the database query
+     * @param $revision
+     *   Which numbered revision to load. Defaults to the current version.
+     * @param $reset
+     *   Whether to reset the internal node_load cache.
+     *
+     * @return
+     *   A fully-populated node object.
+     */
+    function node_load($param = array(), $revision = NULL, $reset = NULL) {
+        // @TODO
+        // same function, different inputs in Drupal 8 core/modules/node/node.module
+        // function node_load($nid = NULL, $reset = FALSE)
+        $node = new stdClass();
+        $node->teaser = '';
+        $node->body = '';
+
+        return $node;
+    }
+}
+if (!function_exists('node_hook')) {
+    /**
+     * Determine whether a node hook exists.
+     *
+     * @param &$node
+     *   Either a node object, node array, or a string containing the node type.
+     * @param $hook
+     *   A string containing the name of the hook.
+     * @return
+     *   TRUE iff the $hook exists in the node type of $node.
+     */
+    function node_hook(&$node, $hook) {
+        // @TODO
+    }
+}
+if (!function_exists('node_invoke')) {
+    /**
+     * Invoke a node hook.
+     *
+     * @param &$node
+     *   Either a node object, node array, or a string containing the node type.
+     * @param $hook
+     *   A string containing the name of the hook.
+     * @param $a2, $a3, $a4
+     *   Arguments to pass on to the hook, after the $node argument.
+     * @return
+     *   The returned value of the invoked hook.
+     */
+    function node_invoke(&$node, $hook, $a2 = NULL, $a3 = NULL, $a4 = NULL) {
+        // @TODO
+    }
+}
+if (!function_exists('node_prepare')) {
+    /**
+     * Apply filters and build the node's standard elements.
+     */
+    function node_prepare($node, $teaser = FALSE) {
+        // @TODO
+        /** @var \Drupal\Core\Field\FieldItemList $fieldItemList */
+        $fieldItemList = $node->body;
+        $body = '';
+        if ($fieldItemList instanceof \Drupal\Core\Field\FieldItemList) {
+            $body = $fieldItemList->view();
+            $body = \Drupal::service('renderer')->render($body);
+        }
+
+        $nodeWrap = new stdClass();
+        $nodeWrap->teaser = '';
+        $nodeWrap->body = $body;
+
+        return $nodeWrap;
+    }
+}
+if (!function_exists('node_invoke_nodeapi')) {
+    /**
+     * Invoke a hook_nodeapi() operation in all modules.
+     *
+     * @param &$node
+     *   A node object.
+     * @param $op
+     *   A string containing the name of the nodeapi operation.
+     * @param $a3, $a4
+     *   Arguments to pass on to the hook, after the $node and $op arguments.
+     * @return
+     *   The returned value of the invoked hooks.
+     */
+    function node_invoke_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+        // @TODO
+    }
+}
+
+// from Drupal 6 modules/taxonomy/taxonomy.module
+
+if (!function_exists('taxonomy_term_path')) {
+    /**
+     * For vocabularies not maintained by taxonomy.module, give the maintaining
+     * module a chance to provide a path for terms in that vocabulary.
+     *
+     * @param $term
+     *   A term object.
+     * @return
+     *   An internal Drupal path.
+     */
+    function taxonomy_term_path($term) {
+        // @TODO
+        return 'taxonomy/term/'.$term->tid;
+    }
+}
+if (!function_exists('taxonomy_node_get_terms')) {
+    /**
+     * Find all terms associated with the given node, ordered by vocabulary and term weight.
+     */
+    function taxonomy_node_get_terms($node, $key = 'tid', $reset = FALSE) {
+        // @TODO
+        return array();
+    }
+}
+if (!function_exists('taxonomy_get_children')) {
+    /**
+     * Find all children of a term ID.
+     */
+    function taxonomy_get_children($tid, $vid = 0, $key = 'tid') {
+        if ($vid == 101) {
+            $vid = 'faq';
+        }
+
+        if ($vid) {
+            //$result = db_query(db_rewrite_sql('SELECT t.* FROM {term_data} t INNER JOIN {term_hierarchy} h ON h.tid = t.tid WHERE t.vid = %d AND h.parent = %d ORDER BY weight, name', 't', 'tid'), $vid, $tid);
+            $result = db_query('SELECT t.* FROM {taxonomy_term_field_data} t INNER JOIN {taxonomy_term__parent} h ON h.entity_id = t.tid WHERE t.vid = ? AND h.parent_target_id = ? ORDER BY t.weight, t.name', array($vid, $tid));
+        }
+        else {
+            //$result = db_query(db_rewrite_sql('SELECT t.* FROM {term_data} t INNER JOIN {term_hierarchy} h ON h.tid = t.tid WHERE parent = %d ORDER BY weight, name', 't', 'tid'), $tid);
+            $result = db_query('SELECT t.* FROM {taxonomy_term_field_data} t INNER JOIN {taxonomy_term__parent} h ON h.entity_id = t.tid WHERE h.parent_target_id = ? ORDER BY t.weight, t.name', array($tid));
+        }
+        $children = array();
+        while ($term = db_fetch_object($result)) {
+            $children[$term->$key] = $term;
+        }
+
+        return $children;
+    }
+}
+
+// from Drupal 6 modules/user/user.module
+
+if (!function_exists('user_access')) {
+    /**
+     * Determine whether the user has a given privilege.
+     *
+     * @param $string
+     *   The permission, such as "administer nodes", being checked for.
+     * @param $account
+     *   (optional) The account to check, if not given use currently logged in user.
+     * @param $reset
+     *   (optional) Resets the user's permissions cache, which will result in a
+     *   recalculation of the user's permissions. This is necessary to support
+     *   dynamically added user roles.
+     *
+     * @return
+     *   Boolean TRUE if the current user has the requested permission.
+     *
+     * All permission checks in Drupal should go through this function. This
+     * way, we guarantee consistent behavior, and ensure that the superuser
+     * can perform all actions.
+     */
+    function user_access($string, $account = NULL, $reset = FALSE) {
+        return \Drupal::currentUser()->hasPermission($string);
+    }
+}
+
+// from Drupal 6 sites/all/modules/views/views.module
+
+if ($overrideDrupal8Functions && !function_exists('views_embed_view')) {
+    /**
+     * Embed a view using a PHP snippet.
+     *
+     * This function is meant to be called from PHP snippets, should one wish to
+     * embed a view in a node or something. It's meant to provide the simplest
+     * solution and doesn't really offer a lot of options, but breaking the function
+     * apart is pretty easy, and this provides a worthwhile guide to doing so.
+     *
+     * Note that this function does NOT display the title of the view. If you want
+     * to do that, you will need to do what this function does manually, by
+     * loading the view, getting the preview and then getting $view->get_title().
+     *
+     * @param $name
+     *   The name of the view to embed.
+     * @param $display_id
+     *   The display id to embed. If unsure, use 'default', as it will always be
+     *   valid. But things like 'page' or 'block' should work here.
+     * @param ...
+     *   Any additional parameters will be passed as arguments.
+     */
+    function views_embed_view($name, $display_id = 'default') {
+        // @TODO
+        // same function, different return value (render array) in Drupal 8 core/modules/views/views.module
+    }
+}
+if ($overrideDrupal8Functions && !function_exists('views_get_current_view')) {
+    /**
+     * Find out what, if any, current view is currently in use. Please note that
+     * this returns a reference, so be careful! You can unintentionally modify the
+     * $view object.
+     */
+    //function &views_get_current_view() {
+    function views_get_current_view() {
+        // @TODO
+        // same function in Drupal 8 core/modules/views/views.module
+        $view = new stdClass();
+        $view->name = '';
+
+        return $view;
+    }
+}
+if (!function_exists('views_get_view')) {
+    /**
+     * Get a view from the database or from default views.
+     *
+     * This function is just a static wrapper around views::load(). This function
+     * isn't called 'views_load()' primarily because it might get a view
+     * from the default views which aren't technically loaded from the database.
+     *
+     * @param $name
+     *   The name of the view.
+     * @param $reset
+     *   If TRUE, reset this entry in the load cache.
+     * @return view
+     *   A reference to the $view object. Use $reset if you're sure you want
+     *   a fresh one.
+     */
+    function views_get_view($name, $reset = FALSE) {
+        // @TODO
+    }
+}
+
+// from Drupal 6 sites/all/modules/workflow/workflow.module
+
+if ($overrideDrupal8Functions && !function_exists('workflow_node_current_state')) {
+    /**
+     * Get the current state of a given node.
+     *
+     * @param $node
+     *   The node to check.
+     * @return
+     *   The ID of the current state.
+     */
+    function workflow_node_current_state($node) {
+        // @TODO
+        // same function, different inputs in Drupal 8 modules/contrib/workflow/workflow.module
+        // function workflow_node_current_state(\Drupal\Core\Entity\EntityInterface $entity, $field_name = '')
+    }
+}
+
+// Other
+
+if (!function_exists('db_num_rows')) {
+    // @see https://api.drupal.org/api/drupal/includes%21database.mysqli.inc/function/db_num_rows/5.x
+    // example in database: if (db_num_rows($optionalResults) > 0){
+    function db_num_rows($result) {
+        if ($result instanceof \Drupal\Core\Database\Statement) {
+            $rows = $result->fetchAll();
+
+            return count($rows);
+        }
+        if ($result) {
+            return mysqli_num_rows($result);
+        }
+    }
+}
+if (!function_exists('filter_get')) {
+    // example in database: filter_get($_GET['ref'])
+    // possibly older code for: filter_input(INPUT_GET, 'ref', FILTER_SANITIZE_STRING)
+    function filter_get($input) {
+        return $input;
+    }
+}

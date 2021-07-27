@@ -1,0 +1,35 @@
+id: d6_premium_basic_settings
+label: Premium Basic configuration
+migration_tags:
+  - Drupal 6
+  - Configuration
+source:
+  plugin: variable
+  variables:
+    - premium_basic_node_types
+    - premium_basic_mode
+    - premium_basic_time_count
+    - premium_basic_time_unit
+    - premium_basic_bulk_update
+    - premium_basic_message
+    - premium_basic_format
+  source_module: premium_basic
+process:
+  premium_basic_node_types: premium_basic_node_types
+  premium_basic_mode: premium_basic_mode
+  premium_basic_time_count: premium_basic_time_count
+  premium_basic_time_unit: premium_basic_time_unit
+  premium_basic_bulk_update: premium_basic_bulk_update
+  premium_basic_message: premium_basic_message
+  premium_basic_format:
+    plugin: static_map
+    source: premium_basic_format
+    default_value: basic_html
+    map:
+      3: full_html
+      2: php_code
+      1: filtered_html
+      0: basic_html
+destination:
+  plugin: config
+  config_name: premium_basic.settings

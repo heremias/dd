@@ -1,0 +1,7 @@
+premium_basic.settings:
+  path: /admin/settings/premium_basic
+  defaults:
+    _title: 'Premium Basic'
+    _form: \Drupal\premium_basic\Form\PremiumBasicSettings
+  requirements:
+    _permission: 'administer site configuration'

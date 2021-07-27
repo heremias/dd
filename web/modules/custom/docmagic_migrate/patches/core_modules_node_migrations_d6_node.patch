@@ -1,0 +1,14 @@
+diff --git a/modules/node/migrations/d6_node.yml b/modules/node/migrations/d6_node.yml
+--- a/modules/node/migrations/d6_node.yml
++++ b/modules/node/migrations/d6_node.yml
+@@ -13,8 +13,8 @@
+   # @see \Drupal\node\Plugin\migrate\source\d6\Node::prepareRow().
+   # If you are using this file to build a custom migration consider removing
+   # the nid and vid fields to allow incremental migrations.
+-  nid: tnid
+-  vid: vid
++#  nid: tnid
++#  vid: vid
+   langcode:
+     plugin: default_value
+     source: language

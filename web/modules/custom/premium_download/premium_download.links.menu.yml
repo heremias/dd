@@ -1,0 +1,4 @@
+premium_download.admin_file:
+  route_name: premium_download.admin_file
+  title: 'Premium Download'
+  description: 'Redirect users from one URL to another.'
