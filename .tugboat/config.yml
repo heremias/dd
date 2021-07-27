@@ -69,7 +69,7 @@ services:
         # This results in smaller previews and reduces the build time.
         - composer require --dev drupal/stage_file_proxy
         - composer require drush/drush
-        
+        - composer require drupal/clipboardjs
         # Set file permissions such that Drupal will not complain.
         - chgrp -R www-data "${DOCROOT}/sites/default/files"
         - find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
