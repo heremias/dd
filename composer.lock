@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3d6c1029acf6f11c7e77c0e5819a442",
+    "content-hash": "999cad4a7978e1986978bac705fd95e0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1119,6 +1119,63 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/anchor_link",
                 "issues": "https://www.drupal.org/project/issues/anchor_link"
+            }
+        },
+        {
+            "name": "drupal/authorization",
+            "version": "1.0.0-beta5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/authorization.git",
+                "reference": "8.x-1.0-beta5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/authorization-8.x-1.0-beta5.zip",
+                "reference": "8.x-1.0-beta5",
+                "shasum": "e90297c2a3b6faaa26954a399a4bd121b6e96894"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9",
+                "drupal/externalauth": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta5",
+                    "datestamp": "1601842121",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "grahl",
+                    "homepage": "https://www.drupal.org/user/146040"
+                },
+                {
+                    "name": "johnbarclay",
+                    "homepage": "https://www.drupal.org/user/225037"
+                },
+                {
+                    "name": "queenvictoria",
+                    "homepage": "https://www.drupal.org/user/856454"
+                },
+                {
+                    "name": "webflo",
+                    "homepage": "https://www.drupal.org/user/254778"
+                }
+            ],
+            "description": "An abstraction layer for providers and consumers of authorizations.",
+            "homepage": "https://www.drupal.org/project/authorization",
+            "support": {
+                "source": "https://git.drupalcode.org/project/authorization"
             }
         },
         {
@@ -11240,6 +11297,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/advanced_help": 10,
+        "drupal/authorization": 10,
         "drupal/emergency_alerts": 20,
         "drupal/image_widget_crop": 20,
         "drupal/search_api": 20,
