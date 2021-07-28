@@ -83,6 +83,7 @@
         "drupal/sftp_client": "1.0.x-dev@dev",
         "drupal/shs": "1.0.0-alpha5",
         "drupal/simple_sitemap": "3.10.0",
+        "drupal/simplenews": "^2.0@beta",
         "drupal/superfish": "1.4",
         "drupal/tac_lite": "1.5",
         "drupal/tamper": "1.0-alpha2",
