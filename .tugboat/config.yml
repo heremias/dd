@@ -101,6 +101,8 @@ services:
         #- drush cache:rebuild
         #- grep -rn 'path.alias_manager' ${DOCROOT}/modules/contrib/
         #- drush cbdl
+        - drush -y config-export
+        - drush -y config-import
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
@@ -126,6 +128,7 @@ services:
         #- composer global update
         #- vendor/bin/drush cache:rebuild
         #- vendor/bin/drush config:import -y
+       
         - drush updatedb -y
         #- vendor/bin/drush cache:rebuild
 
