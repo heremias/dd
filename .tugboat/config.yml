@@ -113,6 +113,7 @@ services:
         - drush cdel core.extension module.conflict
         - drush cdel core.extension module.deploy
         - drush cdel core.extension module.docmagic_compliance_newsletter
+        - drush cdel core.extension module.docmagic_migrate
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
