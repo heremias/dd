@@ -1,9 +1,0 @@
-name: 'DocMagic Compliance Newsletter'
-type: module
-description: 'Compliance Newsletter'
-core: 8.x
-core_version_requirement: ^8 || ^9
-package: 'Custom'
-dependencies:
-  - clipboardjs
-  - simplenews
