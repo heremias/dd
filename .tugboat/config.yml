@@ -98,15 +98,16 @@ services:
         
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
-        #- drush pm:uninstall clipboardjs
+        - drush pm:uninstall cas
         #- drush updatedb -y
         #- drush cache:rebuild
         #- grep -rn 'path.alias_manager' ${DOCROOT}/modules/contrib/
         #- drush cbdl
         #- drush -y config-export
         #- drush -y config-import
-        - drush eval "drupal_flush_all_caches();"
-        - drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
+        - drush cr discovery
+        #- drush eval "drupal_flush_all_caches();"
+        #- drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
