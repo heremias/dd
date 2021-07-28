@@ -70,6 +70,7 @@
         "drupal/imageapi_optimize": "4.0.0-beta1",
         "drupal/imageapi_optimize_resmushit": "2.0.0-beta1",
         "drupal/imce": "2.4.0",
+        "drupal/ldap": "^4.0@beta",
         "drupal/libraries": "3.0.0-beta1",
         "drupal/link_attributes": "1.11.0",
         "drupal/linkit": "5.0.0-beta12",
