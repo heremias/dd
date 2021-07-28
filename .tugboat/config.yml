@@ -108,7 +108,8 @@ services:
         #- drush cr discovery
         #- drush eval "drupal_flush_all_caches();"
         #- drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
-        - drush eval "\Drupal::service('extension.list.module')->reset()->getList();"
+        #- drush eval "\Drupal::service('extension.list.module')->reset()->getList();"
+        - drush cdel core.extension module.clipboardjs
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
