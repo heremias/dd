@@ -1,0 +1,139 @@
+/****/
+.nav-tabs, .topbar ul, ul.contact-info, ul.menu {
+  list-style: none !important;
+  padding-left: 0;
+}
+
+.node--view-mode-full p {
+  margin-bottom: 10px;
+}
+
+body div.body-page {
+  background-color: #fff;
+}
+
+.site-branding-logo {
+  max-height: inherit;
+}
+.site-branding-logo img {
+  max-height: 80px;
+  width: auto;
+}
+
+.simpleslider ul {
+  padding: 0;
+}
+.simpleslider ul li {
+  list-style: none;
+}
+
+.team-list .view-content-wrap .item {
+  float: left;
+  width: 100%;
+  margin-top: 30px;
+}
+
+@media (max-width: 991px) {
+  .gbb-row.gsc-equal-height .column-content-inner {
+    top: 20px;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+header.header-v2 .stuck {
+  background-color: #222 !important;
+}
+
+header.header-v2 .stuck .navigation .gva_menu > li > a {
+  color: #fff !important;
+}
+
+header.header-v2 .stuck .site-branding-logo {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+  header.header-v2 {
+    background-color: #222;
+    margin-top: 0;
+  }
+
+  header.header-v2 .gva-search-region .icon {
+    color: #fff !important;
+  }
+
+  header.header-v2 .menu-bar span {
+    background-color: #fff;
+  }
+
+  header .area-main-menu .gva-search-region {
+    margin-top: -5px !important;
+  }
+
+  header.header-v2 .header-inner, header.header-v1 .header-inner {
+    padding-right: 0 !important;
+  }
+
+  header .area-main-menu .gva-search-region {
+    right: 55px !important;
+  }
+}
+.gva-search-region form.search-form {
+  position: relative;
+  padding-right: 80px;
+}
+
+header .area-main-menu .gva-search-region .search-content input#edit-keys {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .services-tab .tab-lists-content .service-block .service-images {
+    width: 100%;
+    float: left;
+  }
+  .services-tab .tab-lists-content .service-block .service-content {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+    padding-left: 0;
+  }
+}
+@media (max-width: 420px) {
+  .gva-search-region .search-content {
+    right: -90px !important;
+  }
+}
+.gbb-row.gsc-equal-height .column-content-inner {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  top: 0;
+}
+
+.body.logged-in.node--type-page .help.show {
+  position: static !important;
+}
+
+div.help {
+  display: none !important;
+}
+
+.gav-help-region {
+  padding: 15px 0 0;
+  position: relative;
+  z-index: 1;
+}
+.gav-help-region .control-panel {
+  display: none;
+}
+.gav-help-region .messages__wrapper {
+  padding: 10px;
+  border: 1px solid #5CB85C;
+}
+.gav-help-region .messages__wrapper a {
+  color: #000;
+}

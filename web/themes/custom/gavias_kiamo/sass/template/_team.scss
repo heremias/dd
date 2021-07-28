@@ -1,0 +1,201 @@
+.team-block{
+  .team-image{
+    position: relative;
+    text-align: center;
+    img{
+      border: 1px solid $border-color;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      background: rgba(0, 0, 0, 0.5);
+      @include opacity(0);
+      @include scale(0);
+      z-index: 1;
+      @include transition(all 0.35s);
+    }
+    .box-hover{
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      padding: 20px;
+      @include opacity(0);
+      @include scale(0);
+      z-index: 9;
+      @include transition(all 0.35s);
+    }
+  }
+  .team-name{
+    font-weight: 600;
+    color: $black;
+    margin-top: 20px;
+    line-height: 24px;
+    font-size: 16px;
+  }
+  .team-body{
+    color: $white;
+  }
+  .team-job{
+    font-size: 12px;
+    color: #999999;
+  }
+  .socials{
+    margin-top: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  &:hover{
+    .team-image{
+      &:after{
+        @include opacity(1);
+        @include scale(1);
+      }
+    }
+    .box-hover{
+      @include opacity(1);
+      @include scale(1);
+    }
+  }  
+}
+.team-grid-2{
+  .views-row{
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .team-block{
+    .team-content{
+      text-align: center;
+    }
+  }
+}
+
+.team-grid{
+  .team-block{
+    margin-bottom: 30px;
+  }
+}
+
+.team-list{
+  .team-block{
+    .team-image{
+      width: 35%;
+      float: left;
+    }
+    .team-content{
+      padding-left: 30px;
+      width: 65%;
+      float: left;
+      .team-body{
+        display: block!important;
+        visibility: visible!important;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+.team-list-small{
+
+}
+
+.team-single-page{
+  .team-name{
+    margin-bottom: 30px;
+    .name{
+      font-size: 30px;
+      font-weight: 700;
+      color: $black;
+      line-height: 42px;
+    }
+    .job{
+      font-size: 12px;
+      color: #999999;
+    }
+    .line{
+      text-align: center;
+      float: left;
+      span{
+        @include size(30px, 5px);
+        @include border-radius(10px);
+        display: inline-block;
+        margin: 0 5px;
+        &.one{
+          background: #5EB4E7;
+          margin-left: 0;
+        }
+        &.second{
+          background: #F8C44F;
+        }
+        &.three{
+          background: #F49626;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .socials{
+    margin-top: 10px;
+  }
+  .heading{
+    font-size: 18px;
+    font-weight: 700;
+    color: $black;
+  }
+  .team-contact{
+    margin-bottom: 25px;
+  }
+  .team-contact, .team-education{
+    .content-inner{
+      color: #999999;
+      font-size: 13px;
+      line-height: 28px;
+    }
+  }
+  .team-education{
+    .field__item{
+      padding-left: 20px;
+      position: relative;
+      &:after{
+        content: "";
+        @include size(6px, 6px);
+        background: $theme-color;
+        position: absolute;
+        top: 13px;
+        left: 0;
+        @include border-radius(50%);
+        z-index: 1;
+      }
+    }
+  }
+  .team-info{
+    margin-bottom: 30px!important;
+  }
+  .team-quote{
+    font-size: 16px;
+    color: #999999;
+    margin-top: 20px;
+    padding-left: 50px;
+    position: relative;
+    &:after{
+      font-family: "FontAwesome";
+      content: "\f10d";
+      left: 0;
+      top: 0;
+      position: absolute;
+      z-index: 1;
+      color: $theme-color;
+      font-size: 24px;
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+}

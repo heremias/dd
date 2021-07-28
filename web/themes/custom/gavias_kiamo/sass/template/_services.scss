@@ -1,0 +1,122 @@
+.service-block{
+   margin-bottom: 30px;
+   @include clearfix();
+   .service-images{
+      position: relative;
+      &:after{
+         content: '';
+         @include size(100%, 100%);
+         background: rgba(0, 0, 0, 0.6);
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: 9;
+         @include transition(all 0.35s);
+         @include opacity(0);
+      }
+      &:before{
+         content: '';
+         @include size(90%, 90%);
+         position: absolute;
+         top: 5%;
+         left: 5%;
+         border: 1px solid $white;
+         z-index: 10;
+      }
+      .zoomGallery{
+         position: absolute;
+         @include size(36px, 36px);
+         top: 50%;
+         left: 50%;
+         margin-top: -15px;
+         margin-left: -15px;
+         z-index: 11;
+         text-align: center;
+         @include border-radius(50%);
+         background: $white;
+         line-height: 36px;
+         @include opacity(0);
+      }
+      &:hover{
+         .zoomGallery{
+            @include opacity(1);
+         }
+         &:after{
+            @include opacity(1);
+         }
+      }
+
+   }
+   .readmore{
+      margin-top: 20px;
+      a{
+         text-transform: uppercase;
+         color: $theme-color;
+         &:hover, &:focus{
+            text-decoration: underline;
+         }
+      }
+   }
+}
+
+.services-tab{
+   .tab-carousel-nav{
+      max-width: 1100px;
+      margin: 0 auto 30px;
+      .link-service{
+         font-weight: 600;
+         display: block;
+         text-align: center;
+         text-transform: uppercase;
+         padding: 10px;
+         margin: 5px 15px 15px;
+         @include box-shadow(0 1px 6px rgba(0, 0, 0, 0.1));
+         background: $white;
+         &:hover{
+            cursor: pointer;
+            border-color: $theme-color;
+         }
+      }
+      .slick-center{
+         .link-service{
+            background: $theme-color;
+            color: $white;
+         }
+      }
+   }
+   .tab-lists-content{
+      .service-block{
+         .service-images{
+            width: 45%;
+            float: left;
+         }
+         .service-content{
+            width: 55%;
+            float: left;
+            padding-left: 30px;
+         }
+      }
+   }
+}
+
+.services-1{
+   .service-block{
+      background: $white;
+      .service-content{
+         padding: 0 20px 20px;
+         .title{
+            h3{
+               margin: 18px 0 5px;
+            }
+         }
+         .desc{
+            max-height: 100px;
+            overflow: hidden;
+            @include box-shadow(0px 6px 10px 0px rgba(2255, 255, 255, 0.5));
+         }
+         .readmore{
+            margin-top: 10px;
+         }
+      }
+   }
+}
