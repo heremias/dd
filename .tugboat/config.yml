@@ -98,7 +98,7 @@ services:
         - drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
-        - drush pm:uninstall civicrm_views
+        - drush pm:uninstall clipboardjs
         #- drush updatedb -y
         #- drush cache:rebuild
         #- grep -rn 'path.alias_manager' ${DOCROOT}/modules/contrib/
