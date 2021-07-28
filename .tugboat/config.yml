@@ -95,12 +95,16 @@ services:
         - drush config-set system.theme default zurb_foundation
         - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
         - drush pm:enable --yes workspaces
+        - drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
+        - drush pm:uninstall clipboardjs
         #- drush updatedb -y
         #- drush cache:rebuild
         #- grep -rn 'path.alias_manager' ${DOCROOT}/modules/contrib/
         #- drush cbdl
+        - drush -y config-export
+        - drush -y config-import
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
@@ -124,9 +128,10 @@ services:
         - composer install --optimize-autoloader
        
         #- composer global update
-        - vendor/bin/drush cache:rebuild
+        #- vendor/bin/drush cache:rebuild
         #- vendor/bin/drush config:import -y
-        #- vendor/bin/drush updatedb -y
+       
+        - drush updatedb -y
         #- vendor/bin/drush cache:rebuild
 
   # This 'mysql' key acts as the hostname to access the service by from the php service.
