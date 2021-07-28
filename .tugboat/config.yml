@@ -105,6 +105,7 @@ services:
         #- drush cbdl
         #- drush -y config-export
         #- drush -y config-import
+        - drush eval "drupal_flush_all_caches();"
         - drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
