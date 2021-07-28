@@ -105,12 +105,14 @@ services:
         #- drush cbdl
         #- drush -y config-export
         #- drush -y config-import
-        - drush cr discovery
+        #- drush cr discovery
         #- drush eval "drupal_flush_all_caches();"
         #- drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
+        - ls
+        - pwd
         #- drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
@@ -134,7 +136,7 @@ services:
         #- vendor/bin/drush cache:rebuild
         #- vendor/bin/drush config:import -y
        
-        - drush updatedb -y
+        #- drush updatedb -y
         #- vendor/bin/drush cache:rebuild
 
   # This 'mysql' key acts as the hostname to access the service by from the php service.
