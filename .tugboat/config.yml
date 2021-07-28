@@ -111,6 +111,11 @@ services:
         #- drush eval "\Drupal::service('extension.list.module')->reset()->getList();"
         - drush cdel core.extension module.clipboardjs
         - drush cdel core.extension module.conflict
+        - drush cdel core.extension module.deploy
+        - drush cdel core.extension module.docmagic_compliance_newsletter
+        - drush cdel core.extension module.docmagic_migrate
+        - drush cdel core.extension module.docmagic_migrate_content
+        - drush cdel core.extension module.docmagic_migrate_views
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
