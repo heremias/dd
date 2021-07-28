@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21e54e8f4befa9d6ea3401240731c37f",
+    "content-hash": "4a789d4cb0ed53f3dc81c4de34c203ca",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4678,7 +4678,7 @@
         },
         {
             "name": "drupal/ldap_query",
-            "version": "4.0.0-beta3",
+            "version": "dev-4.x",
             "require": {
                 "drupal/core": "^8.7.7 || ^9",
                 "drupal/ldap": "^4",
@@ -4686,12 +4686,15 @@
             },
             "type": "metapackage",
             "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-4.0-beta3",
-                    "datestamp": "1621188709",
+                    "version": "8.x-4.x-dev",
+                    "datestamp": "1626014748",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -4788,7 +4791,7 @@
         },
         {
             "name": "drupal/ldap_user",
-            "version": "4.0.0-beta3",
+            "version": "dev-4.x",
             "require": {
                 "drupal/core": "^8.7.7 || ^9",
                 "drupal/externalauth": "*",
@@ -4798,12 +4801,15 @@
             },
             "type": "metapackage",
             "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-4.0-beta3",
-                    "datestamp": "1621188709",
+                    "version": "8.x-4.x-dev",
+                    "datestamp": "1626014748",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -12407,8 +12413,8 @@
         "drupal/emergency_alerts": 20,
         "drupal/image_widget_crop": 20,
         "drupal/ldap": 20,
-        "drupal/ldap_query": 10,
-        "drupal/ldap_user": 10,
+        "drupal/ldap_query": 20,
+        "drupal/ldap_user": 20,
         "drupal/search_api": 20,
         "drupal/sftp_client": 20,
         "drupal/simplenews": 10
