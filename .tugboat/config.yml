@@ -20,11 +20,11 @@ services:
       init:
         # Install opcache and mod-rewrite.
         - docker-php-ext-install opcache
-        - sudo apt-get install php-zip
+        #- sudo apt-get install php-zip
         - sudo apt-get install -y zlib1g-dev
         #- sudo apt-get install -y libzip-dev
         - sudo apt-get install -y zip
-        - docker-php-ext-configure zip --with-libzip
+        - docker-php-ext-configure zip
         - docker-php-ext-install zip
         - a2enmod headers rewrite
         #- php --version
