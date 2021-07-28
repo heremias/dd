@@ -65,6 +65,7 @@
         "drupal/flood_unblock": "3.1.0",
         "drupal/google_analytics": "2.5.0",
         "drupal/google_cse": "3.4.0",
+        "drupal/image_url_formatter": "^1.0",
         "drupal/image_widget_crop": "2.3+5-dev",
         "drupal/imageapi_optimize": "4.0.0-beta1",
         "drupal/imageapi_optimize_resmushit": "2.0.0-beta1",
