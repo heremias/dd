@@ -21,11 +21,11 @@ services:
         # Install opcache and mod-rewrite.
         - docker-php-ext-install opcache
         #- sudo apt-get install php-zip
-        - sudo apt-get install -y zlib1g-dev
+        #- sudo apt-get install -y zlib1g-dev
         #- sudo apt-get install -y libzip-dev
-        - sudo apt-get install -y zip
-        - docker-php-ext-configure zip
-        - docker-php-ext-install zip
+        #- sudo apt-get install -y zip
+        #- docker-php-ext-configure zip
+        #- docker-php-ext-install zip
         - a2enmod headers rewrite
         #- php --version
         #- sudo apt-get update
@@ -100,7 +100,7 @@ services:
         #- drush updatedb -y
         #- drush cache:rebuild
         #- grep -rn 'path.alias_manager' ${DOCROOT}/modules/contrib/
-        - drush cbdl
+        #- drush cbdl
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
