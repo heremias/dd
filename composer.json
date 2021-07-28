@@ -34,6 +34,7 @@
         "drupal/coffee": "1.2.0",
         "drupal/config_update": "^1.7",
         "drupal/contact_ajax": "^1.5",
+        "drupal/contact_block": "^1.5",
         "drupal/content_moderation_notifications": "3.3.0",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-project-message": "^9.2",
