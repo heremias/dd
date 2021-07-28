@@ -41,6 +41,7 @@
         "drupal/core-recommended": "^9.2",
         "drupal/crop": "2.1",
         "drupal/csv_importer": "1.11.0",
+        "drupal/csv_serialization": "^2.0",
         "drupal/ctools": "3.7.0",
         "drupal/diff": "1.0",
         "drupal/domain": "1.0.0-beta5",
