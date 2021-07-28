@@ -98,7 +98,7 @@ services:
         
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
-        - drush pm:uninstall cas
+        #- drush pm:uninstall cas
         #- drush updatedb -y
         #- drush cache:rebuild
         #- grep -rn 'path.alias_manager' ${DOCROOT}/modules/contrib/
