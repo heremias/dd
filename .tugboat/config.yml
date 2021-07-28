@@ -98,7 +98,8 @@ services:
         
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
-        #- drush pm:uninstall cas
+        - drush pm:uninstall cas
+        - drush pm:uninstall authorization
         - drush pm:uninstall ldap
         - drush pm:uninstall ldap_user
         - drush pm:uninstall ldap_query
@@ -112,6 +113,7 @@ services:
         #- drush eval "drupal_flush_all_caches();"
         #- drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
         #- drush eval "\Drupal::service('extension.list.module')->reset()->getList();"
+        - drush cdel core.extension module.authorization
         - drush cdel core.extension module.ldap
         - drush cdel core.extension module.ldap_user
         - drush cdel core.extension module.ldap_query
