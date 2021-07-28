@@ -95,8 +95,10 @@ services:
         - drush config-set system.theme default zurb_foundation
         - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
         - drush pm:enable --yes workspaces
+        - drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
+        - drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
         #- drush updatedb -y
         #- drush cache:rebuild
         #- grep -rn 'path.alias_manager' ${DOCROOT}/modules/contrib/
