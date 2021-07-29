@@ -91,14 +91,19 @@ services:
         - find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
         - drush --yes --db-url=mysql://tugboat:tugboat@mysql:3306/tugboat --account-name=admin --account-pass=admin site:install standard
         
-        - composer require drupal/zurb_foundation:^6.0@alpha
-        - drush config-set system.theme default zurb_foundation
+        
+        
         - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
-        - drush pm:enable --yes workspaces
+        #- drush pm:enable --yes workspaces
         
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
+        #- composer require drupal/zurb_foundation:^6.0@alpha
         - drush pm:uninstall cas
+        #- drush dl -y zurb_foundation
+        #- drush en -y zurb_foundation
+        - drush config-set system.theme default bartik
+        
         #- drush pm:uninstall printable
         #- drush pm:uninstall ldap
         #- drush pm:uninstall ldap_user
@@ -128,6 +133,8 @@ services:
         - drush cdel core.extension module.printable
         - drush cdel core.extension module.pathauto
         - drush cdel core.extension module.clipboardjs
+        - drush cdel core.extension module.workspace
+        - drush cdel core.extension module.features_kiamo
         - drush cdel core.extension module.conflict
         - drush cdel core.extension module.deploy
         - drush cdel core.extension module.docmagic_compliance_newsletter
@@ -138,6 +145,9 @@ services:
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
+        #- drush updatedb -y
+        - drush cache:rebuild
+        - drush updatedb -y
         - ls
         - pwd
         #- drush config-import --source=//var/config
