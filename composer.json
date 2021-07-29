@@ -112,6 +112,7 @@
         "drupal/views_fieldsets": "3.4.0",
         "drupal/views_infinite_scroll": "^1.8",
         "drupal/views_show_more": "1.0",
+        "drupal/weight": "^3.3",
         "drupal/yoast_seo": "1.7.0",
         "drupal/youtube": "1.2.0"
     },
