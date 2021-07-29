@@ -110,6 +110,7 @@
         "drupal/views_data_export": "^1.0",
         "drupal/views_entity_form_field": "1.0.0-beta9",
         "drupal/views_fieldsets": "3.4.0",
+        "drupal/views_infinite_scroll": "^1.8",
         "drupal/views_show_more": "1.0",
         "drupal/yoast_seo": "1.7.0",
         "drupal/youtube": "1.2.0"
