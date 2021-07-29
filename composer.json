@@ -90,6 +90,7 @@
         "drupal/search_api_autocomplete": "1.4",
         "drupal/search_api_solr": "4.1.12",
         "drupal/sendgrid_integration": "2.0.0-alpha5",
+        "drupal/seo_checklist": "^5.0",
         "drupal/sftp_client": "1.0.x-dev@dev",
         "drupal/shs": "1.0.0-alpha5",
         "drupal/simple_sitemap": "3.10.0",
