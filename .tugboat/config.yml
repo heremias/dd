@@ -129,6 +129,7 @@ services:
         - drush cdel core.extension module.pathauto
         - drush cdel core.extension module.clipboardjs
         - drush cdel core.extension module.workspace
+        - drush cdel core.extension module.features_kiamo
         - drush cdel core.extension module.conflict
         - drush cdel core.extension module.deploy
         - drush cdel core.extension module.docmagic_compliance_newsletter
