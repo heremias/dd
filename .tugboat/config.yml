@@ -92,12 +92,13 @@ services:
         - drush --yes --db-url=mysql://tugboat:tugboat@mysql:3306/tugboat --account-name=admin --account-pass=admin site:install standard
         
         - composer require drupal/zurb_foundation:^6.0@alpha
-        - drush config-set system.theme default zurb_foundation
-        - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
+        
+        - wget https://tulepond.sfo3.digitaloceanspaces.com/copy.sql
         #- drush pm:enable --yes workspaces
         
         - drush -y sql-drop
-        - drush sql-cli < drupal.sql
+        - drush sql-cli < copy.sql
+        - drush config-set system.theme default zurb_foundation
         - drush pm:uninstall cas
         #- drush pm:uninstall printable
         #- drush pm:uninstall ldap
