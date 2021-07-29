@@ -121,6 +121,7 @@ services:
         - drush cdel core.extension module.ldap_servers
         - drush cdel core.extension module.memcache
         - drush cdel core.extension module.memcache_storage
+        - drush cdel core.extension module.multiversion
         - drush cdel core.extension module.clipboardjs
         - drush cdel core.extension module.conflict
         - drush cdel core.extension module.deploy
