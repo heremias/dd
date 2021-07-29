@@ -118,6 +118,7 @@ services:
         - drush cdel core.extension module.ldap_user
         - drush cdel core.extension module.ldap_authorization
         - drush cdel core.extension module.ldap_authentication
+        - drush cdel core.extension module.ldap_servers
         - drush cdel core.extension module.clipboardjs
         - drush cdel core.extension module.conflict
         - drush cdel core.extension module.deploy
