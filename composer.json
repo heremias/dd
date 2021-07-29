@@ -114,6 +114,7 @@
         "drupal/views_show_more": "1.0",
         "drupal/weight": "^3.3",
         "drupal/workflow": "^1.5",
+        "drupal/xmlsitemap": "^1.0",
         "drupal/yoast_seo": "1.7.0",
         "drupal/youtube": "1.2.0"
     },
