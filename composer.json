@@ -116,7 +116,8 @@
         "drupal/workflow": "^1.5",
         "drupal/xmlsitemap": "^1.0",
         "drupal/yoast_seo": "1.7.0",
-        "drupal/youtube": "1.2.0"
+        "drupal/youtube": "1.2.0",
+        "drupal/zurb_foundation": "6.x-dev@dev"
     },
     "conflict": {
         "drupal/drupal": "*"
