@@ -141,6 +141,7 @@ services:
         - drush uli admin/content
         #- drush updatedb -y
         - drush cache:rebuild
+        - drush updatedb -y
         - ls
         - pwd
         #- drush config-import --source=//var/config
