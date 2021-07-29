@@ -139,6 +139,8 @@ services:
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
+        #- drush updatedb -y
+        - drush cache:rebuild
         - ls
         - pwd
         #- drush config-import --source=//var/config
