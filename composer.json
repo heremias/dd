@@ -113,6 +113,7 @@
         "drupal/views_infinite_scroll": "^1.8",
         "drupal/views_show_more": "1.0",
         "drupal/weight": "^3.3",
+        "drupal/workflow": "^1.5",
         "drupal/yoast_seo": "1.7.0",
         "drupal/youtube": "1.2.0"
     },
