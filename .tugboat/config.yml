@@ -98,8 +98,9 @@ services:
         
         - drush -y sql-drop
         - drush sql-cli < copy.sql
-        - drush config-set system.theme default zurb_foundation
         - drush pm:uninstall cas
+        - drush config-set system.theme default zurb_foundation
+        
         #- drush pm:uninstall printable
         #- drush pm:uninstall ldap
         #- drush pm:uninstall ldap_user
