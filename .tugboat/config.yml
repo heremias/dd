@@ -99,7 +99,7 @@ services:
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
         - drush pm:uninstall cas
-        #- drush pm:uninstall authorization
+        - drush pm:uninstall printable
         #- drush pm:uninstall ldap
         #- drush pm:uninstall ldap_user
         #- drush pm:uninstall ldap_query
