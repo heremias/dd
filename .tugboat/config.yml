@@ -150,10 +150,10 @@ services:
         #- drush updatedb -y
         - ls
         - pwd
-        - cd //var/log | ls
+        - cd //var | ls
         - php -i | grep php.ini
         #- cd apache2
-        - tail -f //var/log/apache2/error.log
+        #- tail -f //var/log/apache2/error.log
         #- drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
