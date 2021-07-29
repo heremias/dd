@@ -93,11 +93,11 @@ services:
         
         - composer require drupal/zurb_foundation:^6.0@alpha
         
-        - wget https://tulepond.sfo3.digitaloceanspaces.com/copy.sql
+        - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
         #- drush pm:enable --yes workspaces
         
         - drush -y sql-drop
-        - drush sql-cli < copy.sql
+        - drush sql-cli < drupal.sql
         - drush pm:uninstall cas
         - drush config-set system.theme default zurb_foundation
         
