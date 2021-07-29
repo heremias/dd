@@ -107,6 +107,7 @@
         "drupal/views_bootstrap": "4.3",
         "drupal/views_bulk_edit": "2.6.0",
         "drupal/views_bulk_operations": "3.11.0",
+        "drupal/views_data_export": "^1.0",
         "drupal/views_entity_form_field": "1.0.0-beta9",
         "drupal/views_fieldsets": "3.4.0",
         "drupal/views_show_more": "1.0",
