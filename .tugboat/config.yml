@@ -94,7 +94,7 @@ services:
         - composer require drupal/zurb_foundation:^6.0@alpha
         - drush config-set system.theme default zurb_foundation
         - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
-        - drush pm:enable --yes workspaces
+        #- drush pm:enable --yes workspaces
         
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
@@ -128,6 +128,7 @@ services:
         - drush cdel core.extension module.printable
         - drush cdel core.extension module.pathauto
         - drush cdel core.extension module.clipboardjs
+        - drush cdel core.extension module.workspace
         - drush cdel core.extension module.conflict
         - drush cdel core.extension module.deploy
         - drush cdel core.extension module.docmagic_compliance_newsletter
