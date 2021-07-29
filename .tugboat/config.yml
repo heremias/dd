@@ -99,7 +99,7 @@ services:
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
         - drush pm:uninstall cas
-        #- drush pm:uninstall authorization
+        - drush pm:uninstall printable
         #- drush pm:uninstall ldap
         #- drush pm:uninstall ldap_user
         #- drush pm:uninstall ldap_query
@@ -123,6 +123,7 @@ services:
         - drush cdel core.extension module.memcache_storage
         - drush cdel core.extension module.multiversion
         - drush cdel core.extension module.nodequeue_migrate
+        - drush cdel core.extension module.printable
         - drush cdel core.extension module.clipboardjs
         - drush cdel core.extension module.conflict
         - drush cdel core.extension module.deploy
