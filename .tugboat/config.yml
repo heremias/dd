@@ -147,7 +147,7 @@ services:
         - drush uli admin/content
         #- drush updatedb -y
         - drush cache:rebuild
-        - drush updatedb -y
+        #- drush updatedb -y
         - ls
         - pwd
         - cd /var/log 
