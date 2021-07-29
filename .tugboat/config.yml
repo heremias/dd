@@ -123,6 +123,7 @@ services:
         - drush cdel core.extension module.memcache_storage
         - drush cdel core.extension module.multiversion
         - drush cdel core.extension module.nodequeue_migrate
+        - drush cdel core.extension module.printable
         - drush cdel core.extension module.clipboardjs
         - drush cdel core.extension module.conflict
         - drush cdel core.extension module.deploy
