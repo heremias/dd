@@ -98,8 +98,9 @@ services:
         
         - drush -y sql-drop
         - drush sql-cli < drupal.sql
-        - composer require drupal/zurb_foundation:^6.0@alpha
+        #- composer require drupal/zurb_foundation:^6.0@alpha
         - drush pm:uninstall cas
+        - drush dl -y zurb_foundation
         - drush en -y zurb_foundation
         - drush config-set system.theme default zurb_foundation
         
