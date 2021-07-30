@@ -102,7 +102,7 @@ services:
         - drush pm:uninstall cas
         #- drush dl -y zurb_foundation
         #- drush en -y zurb_foundation
-        - drush config-set system.theme default bartik
+        - drush config-set system.theme default bartik -y
         
         #- drush pm:uninstall printable
         #- drush pm:uninstall ldap
@@ -147,9 +147,13 @@ services:
         - drush uli admin/content
         #- drush updatedb -y
         - drush cache:rebuild
-        - drush updatedb -y
+        #- drush updatedb -y
         - ls
         - pwd
+        - cd //var | ls
+        - php -i | grep php.ini
+        #- cd apache2
+        #- tail -f //var/log/apache2/error.log
         #- drush config-import --source=//var/config
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
