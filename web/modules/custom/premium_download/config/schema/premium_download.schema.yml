@@ -1,6 +1,0 @@
-premium_download.settings:
-  type: mapping
-  label: Settings
-  mapping:
-    premium_download_default_status:
-      type: string

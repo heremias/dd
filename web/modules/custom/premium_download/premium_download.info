@@ -1,4 +1,0 @@
-; $Id$
-name = Premium Download
-description = Add permission to specific download link
-core = 6.x

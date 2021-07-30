@@ -1,4 +1,0 @@
-name: 'Premium Download'
-description: 'Add permission to specific download link'
-core: 8.x
-type: module
