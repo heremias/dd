@@ -124,6 +124,7 @@ services:
         #- drush cdel core.extension module.views_data
         #- drush cdel core.extension module.gva_blockbuilder
         #- drush cdel core.extension module.aggregator_feed
+        - drush cdel core.extension module.docmagic_cas
         - drush cdel core.extension module.premium_basic
         - drush cdel core.extension module.premium_download
         - drush cdel core.extension module.replication
