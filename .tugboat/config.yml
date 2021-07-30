@@ -153,10 +153,10 @@ services:
         - drush uli admin/content
         #- drush updatedb -y
         - drush cache:rebuild
-        - drush updatedb -y
+        #- drush updatedb -y
         - ls
         - pwd
-        - cd //var | ls
+        - cd ../../ | ls
         - php -i | grep php.ini
         #- cd apache2
         #- tail -f //var/log/apache2/error.log
