@@ -15,4 +15,6 @@ $settings['hash_salt'] = hash('sha256', getenv('TUGBOAT_REPO_ID'));
 
 $config['system.logging']['error_level']='verbose';
 
+$settings['update_free_access'] = TRUE;
+
 
