@@ -122,7 +122,7 @@ services:
         #- drush eval "\Drupal::service('extension.list.module')->reset()->getList();"
         - drush cdel core.extension module.premium
         #- drush cdel core.extension module.views_data
-        #- drush cdel core.extension module.gva_blockbuilder
+        - drush cdel core.extension module.gavias_blockbuilder
         #- drush cdel core.extension module.aggregator_feed
         - drush cdel core.extension module.docmagic_cas
         - drush cdel core.extension module.docmagic_site
