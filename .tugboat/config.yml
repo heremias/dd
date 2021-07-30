@@ -132,7 +132,7 @@ services:
         - drush cdel core.extension module.ldap_authentication
         - drush cdel core.extension module.ldap_servers
         - drush cdel core.extension module.memcache
-        - drush cdel core.extension module.views_data
+        #- drush cdel core.extension module.views_data
         - drush cdel core.extension module.memcache_storage
         - drush cdel core.extension module.multiversion
         - drush cdel core.extension module.nodequeue_migrate
@@ -147,7 +147,7 @@ services:
         - drush cdel core.extension module.docmagic_migrate
         - drush cdel core.extension module.docmagic_migrate_content
         - drush cdel core.extension module.docmagic_migrate_views
-        - drush cdel core.extension module.key_value
+        #- drush cdel core.extension module.key_value
         - drush pm:enable --yes stage_file_proxy
         - drush config:set --yes stage_file_proxy.settings origin "http://www.docmagic.com"
         - drush uli admin/content
