@@ -1,5 +1,0 @@
-name: 'docmagic_site'
-type: module
-description: 'DocMagic'
-core: 8.x
-package: 'Custom'
