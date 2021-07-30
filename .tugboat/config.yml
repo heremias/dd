@@ -132,6 +132,7 @@ services:
         - drush cdel core.extension module.ldap_authentication
         - drush cdel core.extension module.ldap_servers
         - drush cdel core.extension module.memcache
+        - drush cdel core.extension module.views_data
         - drush cdel core.extension module.memcache_storage
         - drush cdel core.extension module.multiversion
         - drush cdel core.extension module.nodequeue_migrate
