@@ -122,14 +122,14 @@ services:
         #- drush ev "\Drupal::configFactory()->getEditable('core.extension')->set('profile', 'standard')->save();"
         #- drush eval "\Drupal::service('extension.list.module')->reset()->getList();"
         - drush cdel core.extension module.premium
-        #- drush cdel core.extension module.views_data
+        - drush cdel core.extension module.views_data
         - drush cdel core.extension module.gavias_blockbuilder
         - drush cdel core.extension module.gavias_hook_themer
         - drush cdel core.extension module.gavias_sliderlayer
         - drush cdel core.extension module.gavias_view
         - drush cdel core.extension module.gaviasthemer
         - drush cdel core.extension module.gva_render_shortcode
-        #- drush cdel core.extension module.aggregator_feed
+        - drush cdel core.extension module.aggregator_feed
         - drush cdel core.extension module.docmagic_cas
         - drush cdel core.extension module.docmagic_site
         - drush cdel core.extension module.premium_basic
