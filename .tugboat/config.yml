@@ -99,7 +99,7 @@ services:
         
         - drush -y sql-drop
         - drush sql-cli < drupal.old
-        - echo "$config['system.logging']['error_level'] = 'verbose';" >> /var/lib/tugboat/web/sites/default/settings.php
+        #- echo "$config['system.logging']['error_level'] = 'verbose';" >> /var/lib/tugboat/web/sites/default/settings.php
         - drush config-delete field.storage.node.field_block_builder
         - drush config-delete field.field.node.page.field_block_builder
                                    
