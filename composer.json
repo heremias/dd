@@ -81,7 +81,6 @@
         "drupal/pantheon_advanced_page_cache": "1.2.0",
         "drupal/paragraphs": "1.12",
         "drupal/paragraphs_edit": "2.0-alpha8",
-        "drupal/pathologic": "^1.0@alpha",
         "drupal/pdf_api": "^2.0",
         "drupal/php": "^1.1",
         "drupal/redis": "1.5.0",
