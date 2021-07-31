@@ -57,7 +57,7 @@ services:
         - wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar
         - chmod +x /usr/local/bin/drush
         - echo "memory_limit = 4G" >> /usr/local/etc/php/conf.d/my-php.ini
-        - echo "$config['system.logging']['error_level'] = 'verbose';" >> /var/lib/tugboat/web/sites/default/settings.php
+       
         - composer self-update --2
       # Commands that import files, databases,  or other assets. When an
       # existing preview is refreshed, the build workflow starts here,
@@ -99,6 +99,7 @@ services:
         
         - drush -y sql-drop
         - drush sql-cli < drupal.old
+        - echo "$config['system.logging']['error_level'] = 'verbose';" >> /var/lib/tugboat/web/sites/default/settings.php
         - drush config-delete field.storage.node.field_block_builder
         - drush config-delete field.field.node.page.field_block_builder
                                    
