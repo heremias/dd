@@ -98,7 +98,8 @@ services:
         
         - drush -y sql-drop
         - drush sql-cli < drupal.old
-        - drush config-delete field.storage.node.field_block_builder                            
+        - drush config-delete field.storage.node.field_block_builder
+        - drush config-delete field.field.node.page.field_block_builder
                                    
         #- composer require drupal/zurb_foundation:^6.0@alpha
         - drush pm:uninstall cas
