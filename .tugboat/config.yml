@@ -127,7 +127,7 @@ services:
         - drush cdel core.extension module.pathologic
         #- drush cdel core.extension module.views_data
         - drush cdel core.extension module.gavias_blockbuilder
-        - drush cdel core.extension module.comment
+        #- drush cdel core.extension module.comment
         - drush cdel core.extension module.gavias_hook_themer
         - drush cdel core.extension module.gavias_sliderlayer
         - drush cdel core.extension module.gavias_view
