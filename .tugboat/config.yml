@@ -107,7 +107,7 @@ services:
         - drush config-set system.theme admin seven
                                    
         #- composer require drupal/zurb_foundation:^6.0@alpha
-        - drush pm:uninstall cas
+        #- drush pm:uninstall cas
         #- drush dl -y zurb_foundation
         #- drush en -y zurb_foundation
         - drush config-set system.theme default bartik -y
@@ -130,7 +130,7 @@ services:
         - drush cdel core.extension module.pathologic
         #- drush cdel core.extension module.views_data
         - drush cdel core.extension module.gavias_blockbuilder
-        #- drush cdel core.extension module.comment
+        - drush cdel core.extension module.cas
         - drush cdel core.extension module.gavias_hook_themer
         - drush cdel core.extension module.gavias_sliderlayer
         - drush cdel core.extension module.gavias_view
