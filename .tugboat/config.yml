@@ -102,6 +102,7 @@ services:
         #- echo "$config['system.logging']['error_level'] = 'verbose';" >> /var/lib/tugboat/web/sites/default/settings.php
         - drush config-delete field.storage.node.field_block_builder
         - drush config-delete field.field.node.page.field_block_builder
+        - drush config-set system.theme admin seven
                                    
         #- composer require drupal/zurb_foundation:^6.0@alpha
         - drush pm:uninstall cas
