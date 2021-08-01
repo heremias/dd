@@ -146,6 +146,7 @@ services:
         - drush cdel core.extension module.premium_basic
         - drush cdel core.extension module.premium_download
         - drush cdel core.extension module.replication
+        - drush cdel core.extension module.workflow
         - drush cdel core.extension module.redirect
         - drush cdel core.extension module.authorization
         - drush cdel core.extension module.ldap
