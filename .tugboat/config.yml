@@ -97,7 +97,7 @@ services:
         - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
         #- drush pm:enable --yes workspaces
         
-        - drush -y sql-drop
+        #- drush -y sql-drop
         - drush sql-cli < drupal.sql
         #- echo "$config['system.logging']['error_level'] = 'verbose';" >> /var/lib/tugboat/web/sites/default/settings.php
         - drush config-delete field.storage.node.field_block_builder
