@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c34f06c1cabc12aad3da3a9072582112",
+    "content-hash": "088b45bbfbe677078e56722a06e70900",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1425,204 +1425,6 @@
             "homepage": "https://www.drupal.org/project/bootstrap_barrio",
             "support": {
                 "source": "https://git.drupalcode.org/project/bootstrap_barrio"
-            }
-        },
-        {
-            "name": "drupal/cas",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/cas.git",
-                "reference": "8.x-1.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cas-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "a8f7689f1e610bf3d9390d5a2a97eaa6911842d1"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9",
-                "drupal/externalauth": "^1.2"
-            },
-            "require-dev": {
-                "drupal/cas_mock_server": "^1.0||dev-0.x"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1592250922",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "David Metzler",
-                    "homepage": "https://www.drupal.org/u/metzlerd",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Brian Osborne",
-                    "homepage": "https://www.drupal.org/u/bkosborne",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Tim Yale",
-                    "homepage": "https://www.drupal.org/u/yalet",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "See other contributors",
-                    "homepage": "https://www.drupal.org/node/78967/committers",
-                    "role": "contributor"
-                }
-            ],
-            "description": "Provides CAS authentication for Drupal.",
-            "homepage": "http://drupal.org/project/cas",
-            "support": {
-                "source": "https://git.drupalcode.org/project/cas",
-                "issues": "http://drupal.org/project/issues/cas",
-                "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/cas_attributes",
-            "version": "2.0.0-beta3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/cas_attributes.git",
-                "reference": "2.0.0-beta3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cas_attributes-2.0.0-beta3.zip",
-                "reference": "2.0.0-beta3",
-                "shasum": "e76b90f025b88e5ed43556f23ac48045fb9488b5"
-            },
-            "require": {
-                "drupal/cas": "^1.7 || ^2.0@beta",
-                "drupal/core": "^8.8 || ^9",
-                "drupal/token": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0-beta3",
-                    "datestamp": "1617032053",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Olarin",
-                    "homepage": "https://www.drupal.org/user/334773"
-                },
-                {
-                    "name": "bfroehle",
-                    "homepage": "https://www.drupal.org/user/381391"
-                },
-                {
-                    "name": "bkosborne",
-                    "homepage": "https://www.drupal.org/user/788032"
-                },
-                {
-                    "name": "metzlerd",
-                    "homepage": "https://www.drupal.org/user/32494"
-                },
-                {
-                    "name": "redndahead",
-                    "homepage": "https://www.drupal.org/user/160320"
-                },
-                {
-                    "name": "yalet",
-                    "homepage": "https://www.drupal.org/user/2413764"
-                }
-            ],
-            "description": "Provides tokens for CAS attributes and an interface for token replacement in user account fields as well as advanced role mapping capability.",
-            "homepage": "https://www.drupal.org/project/cas_attributes",
-            "keywords": [
-                "CAS",
-                "Drupal",
-                "single sign-on"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/cas_attributes",
-                "issues": "https://www.drupal.org/project/issues/cas_attributes"
-            }
-        },
-        {
-            "name": "drupal/checklistapi",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/checklistapi.git",
-                "reference": "2.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/checklistapi-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "32aa1590ab68d41cf9f54c073a22bfd2f27abe36"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9",
-                "php": ">=5.6.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1595476219",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^10"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Travis Carden",
-                    "homepage": "https://www.drupal.org/user/236758",
-                    "email": "travis.carden@gmail.com"
-                }
-            ],
-            "description": "Provides an API for creating fillable, persistent checklists.",
-            "homepage": "http://drupal.org/project/checklistapi",
-            "support": {
-                "source": "https://git.drupalcode.org/project/checklistapi",
-                "issues": "https://www.drupal.org/project/issues/checklistapi"
             }
         },
         {
@@ -3258,114 +3060,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_usage",
                 "issues": "http://drupal.org/project/issues/entity_usage"
-            }
-        },
-        {
-            "name": "drupal/entityqueue",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/entityqueue.git",
-                "reference": "8.x-1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entityqueue-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "ef579fde4fbed75be2b9728ee3167d6a32beb527"
-            },
-            "require": {
-                "drupal/core": "^8.7.7 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1606297907",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Andrei Mateescu",
-                    "homepage": "https://www.drupal.org/u/amateescu",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Jonathan Jordan",
-                    "homepage": "https://www.drupal.org/u/jojonaloha",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "quicksketch",
-                    "homepage": "https://www.drupal.org/user/35821"
-                }
-            ],
-            "description": "The Entityqueue module allows users to create queues of any entity type.",
-            "homepage": "https://www.drupal.org/project/entityqueue",
-            "support": {
-                "source": "http://cgit.drupalcode.org/entityqueue",
-                "issues": "https://www.drupal.org/project/issues/entityqueue",
-                "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/externalauth",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/externalauth.git",
-                "reference": "8.x-1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/externalauth-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "caea7d2d5a890adad9e6b5beaa2cf139727266d6"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1624457459",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "rgristroph",
-                    "homepage": "https://www.drupal.org/user/516442"
-                },
-                {
-                    "name": "snufkin",
-                    "homepage": "https://www.drupal.org/user/58645"
-                },
-                {
-                    "name": "svendecabooter",
-                    "homepage": "https://www.drupal.org/user/35369"
-                }
-            ],
-            "description": "Helper module to authenticate users using an external site / service and storing identification details",
-            "homepage": "https://www.drupal.org/project/externalauth",
-            "support": {
-                "source": "https://git.drupalcode.org/project/externalauth"
             }
         },
         {
@@ -5921,59 +5615,6 @@
             }
         },
         {
-            "name": "drupal/seo_checklist",
-            "version": "5.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/seo_checklist.git",
-                "reference": "5.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/seo_checklist-5.0.0.zip",
-                "reference": "5.0.0",
-                "shasum": "b4ce6887bb12b5b973a25468453364ae63347eb1"
-            },
-            "require": {
-                "drupal/checklistapi": "^2.0",
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "5.0.0",
-                    "datestamp": "1621000992",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Ben Finklea",
-                    "homepage": "https://www.drupal.org/user/46676"
-                },
-                {
-                    "name": "TravisCarden",
-                    "homepage": "https://www.drupal.org/user/236758"
-                }
-            ],
-            "description": "Uses best practices to check for proper search engine optimization.",
-            "homepage": "https://www.drupal.org/project/seo_checklist",
-            "keywords": [
-                "SEO"
-            ],
-            "support": {
-                "source": "http://drupalcode.org/seo_checklist",
-                "issues": "https://www.drupal.org/project/issues/seo_checklist"
-            }
-        },
-        {
             "name": "drupal/sftp_client",
             "version": "dev-1.0.x",
             "source": {
@@ -6129,73 +5770,6 @@
                 "source": "https://cgit.drupalcode.org/simple_sitemap",
                 "issues": "https://drupal.org/project/issues/simple_sitemap",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/simplenews",
-            "version": "2.0.0-beta2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/simplenews.git",
-                "reference": "8.x-2.0-beta2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simplenews-8.x-2.0-beta2.zip",
-                "reference": "8.x-2.0-beta2",
-                "shasum": "e33699acad01501ff6a8fc474a53e7ca45244f83"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9"
-            },
-            "require-dev": {
-                "drupal/monitoring": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.0-beta2",
-                    "datestamp": "1592298547",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "AdamPS",
-                    "homepage": "https://www.drupal.org/user/2650563"
-                },
-                {
-                    "name": "AlexisWilke",
-                    "homepage": "https://www.drupal.org/user/356197"
-                },
-                {
-                    "name": "Berdir",
-                    "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "Simon Georges",
-                    "homepage": "https://www.drupal.org/user/172312"
-                },
-                {
-                    "name": "Sutharsan",
-                    "homepage": "https://www.drupal.org/user/73854"
-                },
-                {
-                    "name": "miro_dietiker",
-                    "homepage": "https://www.drupal.org/user/227761"
-                }
-            ],
-            "description": "Send newsletters to subscribed email addresses. For uninstall go to Configuration > Web services > Simplenews > Settings and hit \"Prepare uninstall\".",
-            "homepage": "https://www.drupal.org/project/simplenews",
-            "support": {
-                "source": "https://git.drupalcode.org/project/simplenews"
             }
         },
         {
@@ -13265,13 +12839,11 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/advanced_help": 10,
-        "drupal/cas_attributes": 10,
         "drupal/default_content": 15,
         "drupal/emergency_alerts": 20,
         "drupal/image_widget_crop": 20,
         "drupal/search_api": 20,
         "drupal/sftp_client": 20,
-        "drupal/simplenews": 10,
         "drupal/zurb_foundation": 20
     },
     "prefer-stable": true,
