@@ -137,7 +137,8 @@ services:
         - drush cdel core.extension module.gavias_view
         - drush cdel core.extension module.gaviasthemer
         - drush cdel core.extension module.gva_render_shortcode
-        #- drush cdel core.extension module.aggregator_feed
+        - drush cdel core.extension module.seo_checklist
+        - drush cdel core.extension module.checklistapi
         - drush cdel core.extension module.docmagic_cas
         - drush cdel core.extension module.simplenews
         - drush cdel core.extension module.entityqueue
