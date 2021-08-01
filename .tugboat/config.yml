@@ -131,6 +131,7 @@ services:
         #- drush cdel core.extension module.views_data
         - drush cdel core.extension module.gavias_blockbuilder
         - drush cdel core.extension module.cas
+        - drush cdel core.extension module.cas_attributes
         - drush cdel core.extension module.gavias_hook_themer
         - drush cdel core.extension module.gavias_sliderlayer
         - drush cdel core.extension module.gavias_view
