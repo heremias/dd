@@ -143,7 +143,7 @@ services:
         - drush cdel core.extension module.simplenews
         - drush cdel core.extension module.entityqueue
         - drush cdel core.extension module.externalauth
-        - drush cdel core.extension module.checklistapi
+        #- drush cdel core.extension module.checklistapi
         - drush cdel core.extension module.docmagic_site
         - drush cdel core.extension module.premium_basic
         - drush cdel core.extension module.premium_download
