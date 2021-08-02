@@ -47,6 +47,7 @@
         "drupal/emergency_alerts": "2.x-dev",
         "drupal/entity_browser": "2.6.0",
         "drupal/entity_clone": "1.0.0-beta6",
+        "drupal/entity_import": "^1.0@alpha",
         "drupal/entity_reference_revisions": "1.9.0",
         "drupal/entity_usage": "2.0-beta3",
         "drupal/facets": "^1.8",
