@@ -104,6 +104,8 @@ services:
         - drush config-delete field.field.node.page.field_block_builder
         - drush config-delete field.storage.node.simplenews_issue
         - drush config-delete field.storage.simplenews_subscriber.subscriptions
+        - drush config-delete field.field.node.simplenews_issue.simplenews_issue
+                                           ssue
         - drush config-set system.theme admin seven
                                    
         #- composer require drupal/zurb_foundation:^6.0@alpha
