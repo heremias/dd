@@ -1,0 +1,21 @@
+uuid: 0b49e5a1-d2d0-4691-9345-7f005046da54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_location
+    - node.type.major_pages
+  module:
+    - text
+id: node.major_pages.field_contact_location
+field_name: field_contact_location
+entity_type: node
+bundle: major_pages
+label: 'Contact Location'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

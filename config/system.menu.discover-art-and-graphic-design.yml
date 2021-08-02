@@ -1,0 +1,8 @@
+uuid: e7d613d1-1c06-49cf-88e0-95297d580f70
+langcode: en
+status: true
+dependencies: {  }
+id: discover-art-and-graphic-design
+label: 'Discover Art and Graphic Design'
+description: ''
+locked: false

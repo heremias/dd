@@ -1,0 +1,334 @@
+<?php
+
+use Drupal\block\Entity\Block;
+
+
+// make containers have unique ids for accessibility 
+function u_pacific_preprocess_container(&$variables) {
+  if (isset($variables['element']['#id'])) {
+    $id = $variables['element']['#id'];
+    if (in_array($id, ['edit-actions'])) {
+		$random = new \Drupal\Component\Utility\Random();
+      $id .= '--' . $random->name();
+    }
+    $variables['element']['#id'] = $id;
+    $variables['attributes']['id'] = $id;
+  }
+}
+
+
+function u_pacific_preprocess(&$variables, $hook){
+	// set base path to use in templates 
+	$variables['base_path'] = base_path();
+
+	// Set default domain to use for main logo links 
+	$storage = \Drupal::entityTypeManager()->getStorage('domain');
+	$domains = $storage->load('www_dev_pacific_edu');
+	$variables['default_domain'] = $domains->getpath();
+}
+
+ function u_pacific_preprocess_html(&$variables) {
+
+
+	//  Add node id to body class 
+	if (\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical') {
+		$node = \Drupal::routeMatch()->getParameter('node');
+		$variables['attributes']['class'][] = 'page-node-' . $node->id();
+	}
+	if (\Drupal::routeMatch()->getRouteName() == 'entity.node.revision') {
+		$node = \Drupal::routeMatch()->getParameter('node');
+		$variables['attributes']['class'][] = 'page-node-' . $node;
+	}
+	if (\Drupal::routeMatch()->getRouteName() == 'entity.node.preview') {
+		$node = \Drupal::routeMatch()->getParameter('node_preview');
+		$variables['attributes']['class'][] = 'page-node-' . $node->id();
+	}
+
+
+	if (!empty($variables['alert_level'])){
+		$variables['attributes']['class'][] = 'active-alert';
+	}
+}
+
+ function u_pacific_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+
+// Create template suggestions for block types 
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+
+//   Add region to block template suggestions 
+  if (isset($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+		if (isset($block)) {
+    	$suggestions[] = 'block__' . $block->getRegion();
+		}
+  }
+}
+
+function u_pacific_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+	// Search block form 
+	if ($form_id == 'search_block_form') {
+		$form['keys']['#attributes']['placeholder'] = 'Start exploring';
+		$form['#attributes']['class'][] = 'search-form';
+		$form['keys']['#suffix'] = '<span class="fa fa-search"></span>';
+		$form['keys']['#title_display'] = 'visible';
+		$form['keys']['#attributes']['aria-label'] = 'Search University of the Pacific';
+		unset($form['keys']['#attributes']['title']);
+	}
+
+	// Search form 
+	if ($form_id == 'search_form') {
+	$form['keys']['#attributes']['placeholder'] = 'Find anything you need';
+	$form['keys']['#suffix'] = '<span class="ico-search"></span>';
+	$form['basic']['keys']['#title'] = 'Search u_pacific.edu';
+	unset($form['advanced']);
+	unset($form['help_link']);
+	}
+
+	// Campus directory form 
+	if($form['#id'] == 'views-exposed-form-campus-directory-block-1'){
+		$form['keys']['#attributes']['placeholder'] = 'Search Departments, Offices, Faculty & Staff';
+		$form['keys']['#prefix'] = '<div class="ico-wrap">';
+		$form['keys']['#suffix'] = '<span class="fa fa-search"></span></div>';
+		// set default to directory 
+		$value = \Drupal::request()->query->get('type');
+			if(empty($value)){
+			$form['type']['#value'] = 'campus_directory';
+		}
+	}
+
+	// News form 
+	if($form['#id'] == 'views-exposed-form-pacific-newsroom-block-1'){
+		$form['keys']['#attributes']['placeholder'] = 'Search News';
+		$form['keys']['#prefix'] = '<div class="ico-wrap">';
+		$form['keys']['#suffix'] = '<span class="fa fa-search"></span></div>';
+	}
+	if ($form['#id'] == 'search-form'){
+		$form['basic']['keys']['#attributes']['placeholder'] = 'Search pacific.edu';
+		$form['basic']['keys']['#prefix'] = '<div class="ico-wrap">';
+		$form['basic']['keys']['#suffix'] = '<span class="fa fa-search"></span></div>';
+	}
+	// Homepage Program Search 
+	if($form['#id'] == 'views-exposed-form-search-professional-programs-and-careers-block-1'){
+		$form['keys']['#attributes']['placeholder'] = 'Search Undergraduate Programs and Careers';
+	}
+	if($form['#id'] == 'views-exposed-form-search-professional-programs-and-careers-block-2'){
+		$form['keys']['#attributes']['placeholder'] = 'Search Graduate Programs and Careers';
+	}
+	if($form['#id'] == 'views-exposed-form-search-professional-programs-and-careers-block-3'){
+		$form['keys']['#attributes']['placeholder'] = 'Search Professional Programs and Careers';
+	}
+}
+
+// Create template suggestions for paragraph types 
+function u_pacific_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $parent = $paragraph->getParentEntity();
+  if ($parent) {
+	$suggestions[] = 'paragraph__' . $parent->bundle() . '__' .  $paragraph->bundle();
+	$suggestions[] = 'paragraph__' . $parent->bundle() . '__' .  $paragraph->bundle() . '__' . $paragraph->id();
+  }
+}
+
+// Add region to block array in order to create block template suggestions 
+function u_pacific_preprocess_block(&$variables) {
+   if (isset($variables['elements']['#id'])) {
+		$block = Block::load($variables['elements']['#id']);
+		if (isset($block)) {
+			$region = $block->getRegion();
+			$variables['content']['#attributes']['region'] = $region;
+		}
+  }
+}
+
+// Add menu template suggestions 
+function u_pacific_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+	if (isset($variables['attributes']['region'])) {
+    $suggestions[] = 'menu__' . $variables['attributes']['region'];
+  }
+}
+
+// Style the header block, look for taxonomy and parents to display default images 
+function u_pacific_preprocess_block__pageheaderblock(&$variables){
+	$variables['#cache']['contexts'] = ['url'];
+	if (\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical') {
+		$node = \Drupal::routeMatch()->getParameter('node');
+	}
+	if (\Drupal::routeMatch()->getRouteName() == 'entity.node.revision') {
+		$nid = \Drupal::routeMatch()->getParameter('node');
+		$node = node_load($nid);
+	}
+	if (\Drupal::routeMatch()->getRouteName() == 'entity.node.preview') {
+		$node = \Drupal::routeMatch()->getParameter('node_preview');
+	}
+	if(!empty($node)){
+		$variables['node_title'] = $node->title->value;
+		$variables['node'] = $node;
+		if(!empty($node->field_image->entity->uri->value)){
+			$large_style = \Drupal::entityTypeManager()->getStorage('image_style')->load('small_header_image');
+			$large = $large_style->buildUrl($node->field_image->entity->uri->value);
+			$small_style = \Drupal::entityTypeManager()->getStorage('image_style')->load('mobile_header_image');
+			$small = $small_style->buildUrl($node->field_image->entity->uri->value);	
+			$variables['header_image'] = '<picture>
+				<source media="(min-width: 1200px)" srcset="'. $large.'">
+				<source media="(max-width: 1199px)" srcset="'. $small.'">
+				<img src="'.$small.'"  alt="'.$node->field_image->alt.'">
+				</picture>';
+			}
+			$variables['header_type'] = 'basic';
+			if($node->getType() == 'college_school_landing_page'){
+				$variables['header_type'] = 'two_column';
+			}
+			// header type override
+			if( !empty($node->field_header_type->value) && $node->field_header_type->value == 'two_column' ){
+				$variables['header_type'] = 'two_column';
+				if(!empty($node->field_header_link)){
+					$variables['header_link'] = $node->field_header_link->view(['label' => 'hidden',]);
+				}
+			}
+	}
+}
+
+// style submenu yellow menu 
+// We are using one block template and switching out the links by loading the taxonomy term and then the term's menu
+function u_pacific_preprocess_block__superfish__college_of_the_pacific_menu(&$variables){
+	$variables['#cache']['contexts'] = ['url'];
+	if ($node = \Drupal::request()->attributes->get('node')) {
+		$variables['node'] = $node;
+		if(!empty($node->field_school_college_department)){
+			$menu_tree = \Drupal::service ( 'menu.link_tree' );
+			$term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($node->field_school_college_department->target_id);
+			$menu_name = $term->field_menu->target_id;
+			$menu_title = $term->field_menu->entity->label();
+			$menu_parameters = new \Drupal\Core\Menu\MenuTreeParameters();
+			$menu_parameters->setMaxDepth(2);
+			$menu_tree_service = \Drupal::service('menu.link_tree');
+			$tree = $menu_tree_service->load($menu_name, $menu_parameters);
+			$manipulators = [
+				['callable' => 'menu.default_tree_manipulators:checkNodeAccess'],
+				['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+			  ];
+			$tree = $menu_tree_service->transform($tree, $manipulators);
+			// filter out inactive menu items 
+			foreach( $tree as $key=>$link){
+				if($link->link->getPluginDefinition()['enabled'] == 0){
+					unset($tree[$key]);
+				}
+			}
+			$variables['content']['content']['#menu_title'] = $menu_title;
+			$variables['content']['content']['#menu_name'] = $menu_name;
+			$variables['derivative_plugin_id'] = $menu_name;
+			$variables['content']['content']['#tree'] = $tree;
+
+			// set correct menu for edit
+			if(!empty($variables['title_suffix']['contextual_links']['#id'])){
+				$variables['title_suffix']['contextual_links']['#id'] = str_replace('menu:menu=college-of-the-pacific-menu', 'menu:menu='. $menu_name, $variables['title_suffix']['contextual_links']['#id']);
+			}
+		}
+	}	
+}
+
+// Alter the mobile menu for styling 
+function u_pacific_preprocess_menu__mobile_navigation(&$variables){
+	$parent = reset($variables['items']);
+	$parent = $parent['original_link']->getParent();
+	$uuid = str_replace('menu_link_content:', '', $parent);
+	$parent_menu_content = current(\Drupal::entityTypeManager()
+		->getStorage('menu_link_content')
+		->loadByProperties(array('uuid' => $uuid)));		
+	$variables['first_link'] = $parent_menu_content;
+}
+
+// Preprocess node to see if there are news items to show on the page 
+function u_pacific_preprocess_node(&$variables){
+	$variables['show_news'] = 0;
+	if(!empty($variables['node']->field_school_college_department->target_id)){
+		$tid = $variables['node']->field_school_college_department->target_id;
+		$view = views_get_view_result('news_blocks', 'block_3', $tid);
+			if(!empty($view[0])){
+				$variables['show_news'] = 1;
+			}
+	}
+
+	// viewbook version 
+	$target = $variables['node']->nid->value;
+	if($target == 29450){
+		// standard 
+		$tempstore = \Drupal::service('user.private_tempstore')->get('viewbook');
+		$tempstore->set('viewbook_version', 'standard');
+	}
+	if($target == 29640){
+		// future 
+		$tempstore = \Drupal::service('user.private_tempstore')->get('viewbook');
+		$tempstore->set('viewbook_version', 'future');
+	
+	}
+}
+
+// add template suggestions based on node alias 
+function u_pacific_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+if ($node = Drupal::routeMatch()->getParameter('node')) {
+	$content_type = $node->bundle();
+		if (in_array($content_type, array('page','viewbook'))) {
+		$current_path = Drupal::service('path.current')->getPath();
+		$alias = Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+		if ($alias != '')  {
+		  $parts = explode('/', $alias);
+		  $suggestion = 'page__alias';
+		  foreach ($parts as $part) {
+			  $suggestion .= "_" . "$part";
+		  }
+		  $suggestion = str_replace("-", "_", $suggestion);
+		  $suggestions[] = $suggestion;
+		}
+	}
+	// node type page templates 
+	if(!empty($content_type)){
+		$suggestions[] = 'page__'.$content_type;
+	}
+  }
+}
+
+// preprocess viewbook node to get next profile 
+
+function u_pacific_preprocess_node__viewbook_(&$variables) {
+	
+	$target = $variables['node']->nid->value;
+
+	$view = views_get_view_result('viewbook_profiles', 'block_1');
+
+	// get session variable from returned results 
+	$tempstore = \Drupal::service('user.private_tempstore')->get('viewbook');
+
+	$next = $tempstore->get('viewbook_next');
+
+	if($target == $next){
+		$next = $tempstore->get('viewbook_skip');
+	}
+
+	if(!empty($next)){
+		$variables['next'] = node_load($next);
+	}
+
+	if(empty($next)){
+		foreach($view as $key=>$result){
+			if($result->nid == $target){
+				if(!empty($view[$key+1])){
+				$variables['next'] = node_load($view[$key+1]->nid);
+				}
+				else{
+					$variables['next'] = node_load($view[0]->nid);
+				}
+			}
+		}
+	}
+
+	// remove session variable since we no longer need it after the first 
+	$tempstore->set('viewbook_next','');
+
+	$variables['content']['addtoany']['#link_title'] = 'University of the Pacific Viewbook';
+	$variables['content']['addtoany']['#link_url'] = $variables['default_domain']  . 'viewbook';	
+
+}
+

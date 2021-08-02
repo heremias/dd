@@ -1,0 +1,8 @@
+uuid: 63c42494-7090-42e3-9a0e-9b2e3eadf03d
+langcode: en
+status: true
+dependencies: {  }
+id: jd-degree
+label: 'JD Degree'
+description: ''
+locked: false

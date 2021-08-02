@@ -1,0 +1,8 @@
+uuid: 45dd605d-a096-488f-a5be-774114130735
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-centers
+label: 'McGeorge Centers'
+description: ''
+locked: false

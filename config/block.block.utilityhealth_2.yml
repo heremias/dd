@@ -1,0 +1,36 @@
+uuid: 498cc1a5-59fc-4eab-9d36-35649fe64b8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-health
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilityhealth_2
+theme: u_pacific
+region: tools_desktop
+weight: 0
+provider: null
+plugin: 'menu_block:utility-health'
+settings:
+  id: 'menu_block:utility-health'
+  label: 'Utility Desktop - Health'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-health:'
+  suggestion: utility_health
+visibility:
+  domain:
+    id: domain
+    domains:
+      healthsciences_dev_pacific_edu: healthsciences_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

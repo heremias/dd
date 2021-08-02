@@ -1,0 +1,279 @@
+/* ------------- hover box  -----------*/
+
+.gradient-background-row {
+  background: -moz-linear-gradient(45deg, rgba(30,150,199,1) 0%, rgba(68,187,182,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(30,150,199,1)), color-stop(100%, rgba(68,187,182,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(45deg, rgba(30,150,199,1) 0%, rgba(68,187,182,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(45deg, rgba(30,150,199,1) 0%, rgba(68,187,182,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(45deg, rgba(30,150,199,1) 0%, rgba(68,187,182,1) 100%); /* ie10+ */
+  background: linear-gradient(45deg, rgba(30,150,199,1) 0%, rgba(68,187,182,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44bbb6', endColorstr='#1e96c7',GradientType=1 ); /* ie6-9 */
+  padding-bottom: 0px;
+}
+
+.hoverbox-cta a {
+  color: #ffffff;
+  padding: 10px 27px;
+  background-color: #fd9d74;
+}
+
+.hover-box-element.gbb-row.bg-size-contain > .bb-inner.default {
+  padding-top: 0px;
+}
+
+.photo-with-headline {
+  padding-top: 56px!important;
+  padding-bottom: 73px!important;
+}
+
+.four-column-photo-row-headline {
+  padding-bottom: 35px;
+}
+
+.gsc-box-hover .backend .box-title {
+  display: none;
+}
+
+.gsc-box-hover .backend .content-be {
+  padding-top: 58px;
+}
+
+.hover-box-dm .be-desc > h4, .hover-box-four-column-dm > .be-desc > h4  {
+  margin-top: -18px;
+  color: #ffffff!important;
+}
+
+.hover-box-dm .be-desc, .hover-box-four-column-dm .be-desc  {
+  font-size: 16px;
+}
+
+.gsc-box-hover .backend {
+  background-color: #2bafe2;
+}
+
+.hover-box-dm .be-desc > h4, .hover-box-four-column-dm .be-desc > h4  {
+  margin-top: -18px;
+  color: #ffffff!important;
+}
+
+.gsc-box-hover .backend .be-desc {
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .gsc-column.col-lg-3.col-md-3.col-sm-6.col-xs-12.photo-headline-card {
+    margin-bottom: 20px;
+  }
+}
+
+
+// Custom hoverbox - bigger one
+
+.hover-box-dm .frontend .box-link, .hover-box-four-column-dm .frontend .box-link {
+  color: #ffffff !important;
+}
+
+.hover-box-dm .frontend .box-title, .hover-box-four-column-dm .frontend .box-title  {
+  margin-top: -130px !important;
+  line-height: 24px;
+}
+
+.gsc-box-hover .frontend .frontend-content {
+  padding: 0;
+}
+
+.hover-box-four-column-dm > .box-content > .backend {
+  height: 188px;
+}
+
+.hoverbox {
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hoverbox{
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    transition: all .35s;
+    z-index: 1;
+
+    @media (max-width: 991px) {
+      top: 0;
+      opacity: 0.35;
+    }
+  }
+
+  &:hover:after,
+  &:active:after,
+  &:focus:after {
+    top: 0;
+    opacity: .8;
+
+    @media (max-width: 991px) {
+      opacity: 0.35;
+    }
+  }
+}
+
+.hoverbox {
+  .hoverbox-content {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 67.5675675675676%;
+  }
+}
+
+.hoverbox {
+  .hoverbox-content-front {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    line-height: 2.7rem;
+    text-align: center;
+
+    @media (max-width: 991px) {
+      bottom: auto;
+      height: 30%;
+      align-items: flex-end;
+      font-size: 1.8rem;
+      z-index: 11;
+    }
+  }
+}
+
+.hoverbox {
+
+  .hoverbox-content-hover {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    bottom: -20px;
+    padding: 25px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(0);
+    transition: all .35s;
+    z-index: 11;
+
+    @media (max-width: 991px) {
+      bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+    }
+  }
+
+  &:hover .hoverbox-content-hover {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.hoverbox {
+  .hoverbox-content-hover .hoverbox-text {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+
+    @media (max-width: 991px) {
+      margin-bottom: 25px;
+      font-size: 1.25rem;
+      line-height: 1.8rem;
+      font-weight: 300;
+    }
+
+    // fix IE11 bug
+    @media all and (max-width: 991px) and (-ms-high-contrast: none), (max-width: 991px) and (-ms-high-contrast: active) {
+      display: inline-table;
+    }
+  }
+
+  .hoverbox-content-hover .hoverbox-text-smaller {
+    margin-bottom: 18px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+  }
+}
+
+.hoverbox {
+  .hoverbox-content-hover .hoverbox-cta .gsc-button-orange {
+    display: inline-block;
+    padding: 10px 40px;
+
+    a {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.05rem;
+    }
+  }
+}
+
+.hoverbox-cta {
+  margin-bottom: 20px;
+}
+
+
+
+// Custom hoverbox - smaller one
+
+.hoverbox {
+  .hoverbox-content-hover .hoverbox-text-smaller {
+    margin-bottom: 18px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+
+    @media (max-width: 991px) {
+      margin-bottom: 26px;
+      font-size: 1.35rem;
+      line-height: 1.9rem;
+      font-weight: 300;
+    }
+  }
+}
+
+
+@media (max-width: 1200px) and (min-width: 992px) {
+  .hoverbox .hoverbox-content-hover .hoverbox-text-smaller {
+    margin-bottom: 18px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .smaller-hb .hoverbox-cta {
+    margin-bottom: 0px;
+  }
+}
+

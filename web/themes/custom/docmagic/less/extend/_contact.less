@@ -1,0 +1,316 @@
+/* ------------- docmagic contact form styles  -----------*/
+
+.contact-message-form .form-item input[type='text'] {
+  background-color: #f7f7f7!important;
+}
+
+.docmagic-contact-form.block {
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+form[id^="contact-message-docmagic-contact-form"] {
+  width: 50%;
+  margin: auto;
+  background-color: #fff!important;
+  color: #777777;
+}
+
+input[id^="edit-field-field-email-0-value"] {
+  background-color: #f7f7f7!important;
+  border: 1px solid #a8cddc!important;
+  height: 55px!important;
+}
+
+#dcModal input[id^="edit-field-your-email-address-0-value"] {
+  background-color: #f7f7f7!important;
+  border: 1px solid #a8cddc!important;
+  height: 55px!important;
+}
+
+input[id^="edit-field-field-phone-0-value"] {
+  background-color: #f7f7f7!important;
+  border: 1px solid #a8cddc!important;
+  height: 55px!important;
+  width: 100%;
+  padding-left: 15px;
+}
+
+textarea[id^="edit-message-0-value"] {
+  background-color: #f7f7f7!important;
+  border: 1px solid #a8cddc!important;
+  height: 350px !important;
+}
+
+textarea[id^="edit-field-comments"] {
+  background-color: #f7f7f7!important;
+  border: 1px solid #a8cddc!important;
+}
+
+.docmagic-contact-form {
+  background-color: #fff;
+}
+
+.contact-message-form .form-item input[type='text'] {
+  background-color: #f7f7f7!important;
+  border: 1px solid #a8cddc!important;
+  height: 55px!important;
+}
+
+.contact-message-form .form-item label {
+  display: none!important;
+}
+
+/* ------------- dropdowns  -----------*/
+
+select[id^="edit-field-services"] {
+  background-color: #00ade7;
+  width: 100%;
+  height: 49px;
+  border-radius: 0px!important;
+  color: white;
+}
+
+select[id^="edit-field-product-interest"] {
+  background-color: #00ade7;
+  width: 100%;
+  height: 49px;
+  border-radius: 0px!important;
+  color: white;
+}
+
+select[id^="edit-field-los-software"] {
+  background-color: #00ade7;
+  width: 100%;
+  height: 49px;
+  border-radius: 0px!important;
+  color: white;
+}
+
+input[type="submit"] {
+  background-color: @orange;
+  padding: 8px 27px;
+  border: 1px solid @orange;
+  border-radius: 3px;
+  color: #fff;
+  font-family: 'Catamaran', sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  float: right;
+  
+  &:hover {
+    background-color:@orange-hover;
+  }
+}
+
+/*
+@media (min-width: 992px) {
+
+  form[id^="contact-message-docmagic-contact-form"] {
+    display: -ms-grid;
+    -ms-grid-columns: 50% 50%;
+    -ms-grid-rows: 75px 75px 75px 75px 75px;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(5, 75px);
+    grid-column-gap: 18px;
+    justify-content: center;
+  }
+
+  .contact-message-form form[id^="contact-message-docmagic-contact-form"] .form-item  {
+    margin-bottom: 0;
+  }
+
+  div[id^="edit-field-first-name-wrapper"] {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+  }
+
+  div[id^="edit-field-last-name-wrapper"] {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  div[id^="edit-field-field-phone-wrapper"] {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+  }
+
+  div[id^="edit-field-field-email-wrapper"] {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+
+  div[id^="edit-field-services-wrapper"] {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+  }
+
+  div[id^="edit-message-wrapper"] {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 5;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 6;
+  }
+
+  div[id^="edit-actions"] {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 7;
+  }
+}
+
+// implement grid-column-gap for IE11
+@media all and (min-width: 992px) and (-ms-high-contrast: none), (min-width: 992px) and (-ms-high-contrast: active) {
+
+  div[id^="edit-field-first-name-wrapper"],
+  div[id^="edit-field-last-name-wrapper"],
+  div[id^="edit-field-field-phone-wrapper"],
+  div[id^="edit-field-field-email-wrapper"],
+  div[id^="edit-field-services-wrapper"] {
+    margin-right: 9px;
+  }
+
+  div[id^="edit-message-wrapper"],
+  div[id^="edit-actions"] {
+    margin-left: 9px;
+  }
+}
+*/
+
+.block-gavias-blockbuilder form[id^="contact-message-docmagic-contact-form"] {
+  width: 70%;
+}
+
+.messages--error, .form-item--error-message {
+  color: #f4784d;
+}
+
+.contact-message-form {
+  .messages__wrapper {
+    padding-left:0;
+    width: 100%;
+  }
+
+  .messages--error {
+    text-align: left;
+//    width: 838px;
+    margin: 0 auto;
+    background-color: #f4784d;
+    padding: 20px;
+    border-radius: 3px;
+  }
+
+  .messages--error, .messages--error li a {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  input[id^="edit-preview"] {
+    display: none;
+  }
+}
+
+.contact-form-submitted-message {
+  font-weight: bold;
+  padding: 20px;
+  background-color: #4aca85;
+  color: white;
+  margin: 0 auto;
+  width:838px;
+  border-radius: 3px;
+
+  p {
+    color: white;
+  }
+}
+
+/* --------- success message -------*/
+
+#contact_ajax_contact_message_docmagic_contact_form h2 {
+  text-align: center;
+  color: @purple;
+}
+
+#contact_ajax_contact_message_docmagic_contact_form p {
+  text-align: center;
+}
+
+
+/* ------------- modal style  -----------*/
+
+#dcModal .modal-header {
+  border-bottom: none!important;
+}
+
+#dcModal .modal-title {
+  padding-top: 30px;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #7e90da;
+}
+
+#dcModal .modal-footer {
+  margin-top: 31px;
+  border-top: none!important;
+}
+
+#dcModal .modal-body {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#dcModal {
+  *::-webkit-input-placeholder {
+    font-size: 15px;
+  }
+
+  *:-moz-placeholder {
+    font-size: 15px;
+  }
+  *::-moz-placeholder {
+    font-size: 15px;
+  }
+  *:-ms-input-placeholder {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,280 @@
+<?php
+include('includes/_cookie.php');
+
+/**
+ * @file
+ * Contains theme override functions and preprocess functions
+ */
+
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+function docmagic_preprocess_page(array &$variables) {
+  
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+
+      //pass variable to twig if gaviasblockbuilder is on the page
+      if (isset($variables['page']) && isset($variables['page']['content'])) {
+        $gb_exists = false;
+
+        //check all the block names in the "content" region
+        foreach(array_keys($variables['page']['content']) as $k) {
+          if (strpos($k, 'gaviasblockbuider') === 0) {
+            $gb_exists = true;
+          }
+        }
+
+        if ($gb_exists) {
+          $variables['has_block_builder'] = true;
+        }
+      }
+
+      // Load job-listing-specific JS to the Partners page
+      if ($node->getType() === 'job_listing') {
+        // Current page is a job listing node.
+        // Attach JavaScript to the page.
+        $variables['#attached']['library'][] = 'docmagic/page-careers';
+      }
+
+      // Load partner-specific JS to the Partners page
+      if ($node->getTitle() == 'Partners') {
+        $variables['#attached']['library'][] = 'docmagic/page-partners';
+      }
+
+      // Load partner-specific JS to the Integration Services page
+      if ($node->getTitle() == 'Integration Services') {
+        $variables['#attached']['library'][] = 'docmagic/page-partners';
+      }
+
+    }
+
+    //pass theme cache query string to jQuery via drupalSettings
+    $variables['#attached']['drupalSettings']['css_js_query_string'] = \Drupal::state()->get('system.css_js_query_string');
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function docmagic_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
+    // Reference: https://stackoverflow.com/questions/39139541/custom-404-template-file-in-drupal-8/39276564
+
+    /**
+     * 404 template suggestion.
+     */
+    if (!is_null(Drupal::requestStack()->getCurrentRequest()->attributes->get('exception'))) {
+        $status_code = Drupal::requestStack()->getCurrentRequest()->attributes->get('exception')->getStatusCode();
+        switch ($status_code) {
+            case 404: {
+                $suggestions[] = 'page__' . (string) $status_code;
+                break;
+            }
+            default:
+                break;
+        }
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function docmagic_theme_suggestions_field_alter(array &$suggestions, array $variables)
+{
+    if (isset($variables['element']['#field_name'])
+        && 'body' == $variables['element']['#field_name']
+        && isset($variables['element']['#view_mode'])
+        && 'teaser' == $variables['element']['#view_mode']
+        && isset($variables['element']['#object'])
+        && $variables['element']['#object'] instanceof \Drupal\node\Entity\Node
+    ) {
+        if ($variables['element']['#object']->__isset('rss_elements')) {
+            $suggestions[] = $variables['theme_hook_original'].'__'.$variables['element']['#field_name'].'__'.$variables['element']['#view_mode'].'__rss';
+        }
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function docmagic_theme_suggestions_links_alter(array &$suggestions, array $variables)
+{
+    if (isset($variables['links']['node-readmore'])
+        && isset($variables['links']['node-readmore']['url'])
+        && $variables['links']['node-readmore']['url'] instanceof \Drupal\Core\Url
+        && isset($variables['links']['node-readmore']['url']->getOptions()['entity'])
+        && $variables['links']['node-readmore']['url']->getOptions()['entity'] instanceof \Drupal\node\Entity\Node
+    ) {
+        if ($variables['links']['node-readmore']['url']->getOptions()['entity']->__isset('rss_elements')) {
+            $suggestions[] = $variables['theme_hook_original'].'__rss';
+        }
+    }
+}
+
+/**
+ * Implements hook_module_implements_alter() to make sure our suggestions have priority.
+ */
+function docmagic_templates_module_implements_alter(&$implementations, $hook) {
+    if ($hook == 'theme_suggestions_page_alter') {
+        // Move my_module_form_alter() to the end of the list.
+        // \Drupal::moduleHandler()->getImplementations()
+        // iterates through $implementations with a foreach loop which PHP iterates
+        // in the order that the items were added, so to move an item to the end of
+        // the array, we remove it and then add it.
+        $group = $implementations['docmagic_templates'];
+        unset($implementations['docmagic_templates']);
+        $implementations['docmagic_templates'] = $group;
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK()
+ */
+function docmagic_preprocess_breadcrumb(&$variables) {
+    // remove page title breadcrumb added by gavias_kiamo_preprocess_breadcrumb
+    $request = \Drupal::request();
+    $title = '';
+    if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+        $title = \Drupal::service('title_resolver')->getTitle($request, $route);
+    }
+
+    if ($variables['breadcrumb'] && !empty($title)) {
+        foreach ($variables['breadcrumb'] as $key => &$value) {
+            if ($value == array('text' => $title)) {
+                unset($variables['breadcrumb'][$key]);
+            }
+        }
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK()
+ */
+function docmagic_preprocess_pager(&$variables) {
+    $path = \Drupal::request()->getPathInfo();
+    if (preg_match('`/compliance/wizard/\d+$`', $path) || preg_match('`^/faq/.+$`', $path)) {
+        // no pager needed
+        // @see docmagic_site_preprocess_views_view_unformatted()
+        $variables['items'] = array();
+    }
+}
+
+/**
+ * Implements hook_form_alter()
+ * Hook for form id: contact_message_docmagic_contact_form
+ */
+function docmagic_form_contact_message_docmagic_contact_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['field_services']['widget']['#options']['_none'] = '(Select Product Interest)';
+}
+
+/**
+ * Implements hook_form_alter()
+ * Hook for form id: contact_message_schedule_demo_form_form
+ */
+function docmagic_form_contact_message_schedule_demo_form_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $defaultStr = '- Please Select -';
+  $form['field_product_interest']['widget']['#options']['_none'] = $defaultStr;
+  $form['field_los_software']['widget']['#options']['_none'] = $defaultStr;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function docmagic_form_search_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    $form['basic']['keys']['#attributes']['placeholder'] = $form['basic']['keys']['#title'];
+    $form['basic']['submit']['#prefix'] = '<span class="search-button"><span class="search-button-icon fa fa-search"></span>';
+    $form['basic']['submit']['#suffix'] = '</span>';
+}
+
+/**
+ * Implements hook_preprocess_form()
+ */
+function docmagic_preprocess_form(&$variables) {
+  if ($variables['element']['#form_id'] == 'contact_message_docmagic_contact_form'){
+    // disable the HTML5 validation to allow for server-side validation error messages
+    $variables['attributes']['novalidate'] = 'novalidate';
+  }
+}
+
+/**
+ * Implements hook_preprocess_html()
+ */
+function docmagic_preprocess_html(&$variables) {
+
+  /*
+   * Adding analytics tracking code directly to html.html.twig
+   */
+
+  // Google Analytics tracking code
+  $variables['analytics_tracking']['google'] = <<<EOT
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-257262-14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-257262-14');
+</script>
+
+EOT;
+
+  // Bing tracking code
+  $variables['analytics_tracking']['bing'] = <<<EOT
+
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"39000711"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+
+EOT;
+
+  // LinkedIn tracking code
+  $variables['analytics_tracking']['linkedin'] = <<<EOT
+
+<script type="text/javascript">
+_linkedin_data_partner_id = "294140";
+</script><script type="text/javascript">
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=294140&fmt=gif" />
+</noscript>
+
+EOT;
+
+  // Facebook tracking code
+  $variables['analytics_tracking']['facebook'] = <<<EOT
+
+<!-- Facebook Pixel Code -->
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '189199341805739');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1"
+src="https://www.facebook.com/tr?id=189199341805739&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+EOT;
+
+    // Hubspot tracking code
+    $variables['analytics_tracking']['hubspot'] = <<<EOT
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/464431.js"></script>
+<!-- End of HubSpot Embed Code -->
+EOT;
+}

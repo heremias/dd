@@ -1,0 +1,8 @@
+uuid: c8c1e0d3-e2d8-43cb-b878-b25b0482dcf2
+langcode: en
+status: true
+dependencies: {  }
+id: cop-academic-advising
+label: 'COP Academic Advising'
+description: ''
+locked: false

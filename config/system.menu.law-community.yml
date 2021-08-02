@@ -1,0 +1,8 @@
+uuid: 8d68e04a-4103-4222-99a6-956650f0eac1
+langcode: en
+status: true
+dependencies: {  }
+id: law-community
+label: 'Law Community'
+description: ''
+locked: false

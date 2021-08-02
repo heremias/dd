@@ -1,0 +1,8 @@
+uuid: a67b7cbf-9c61-46bb-9c17-48bcb9c9a7d5
+langcode: en
+status: true
+dependencies: {  }
+id: dept-of-geological-environmen-sc
+label: 'Department of Geological & Environmental Science'
+description: 'Section Menu for the Department of Geological & Environmental Science'
+locked: false

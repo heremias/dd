@@ -1,0 +1,23 @@
+uuid: 230f558e-1f4d-402f-9c76-665885dbba99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_type
+    - node.type.page
+  module:
+    - options
+id: node.page.field_header_type
+field_name: field_header_type
+entity_type: node
+bundle: page
+label: 'Header Type'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

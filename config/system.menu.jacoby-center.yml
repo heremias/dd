@@ -1,0 +1,8 @@
+uuid: 727414c9-ea4e-4666-87df-0225b30e24fb
+langcode: en
+status: true
+dependencies: {  }
+id: jacoby-center
+label: 'Jacoby Center'
+description: ''
+locked: false

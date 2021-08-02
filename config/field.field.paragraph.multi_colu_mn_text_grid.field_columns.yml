@@ -1,0 +1,97 @@
+uuid: ffe6c285-63e8-4890-a25d-f3d2dd6110b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_columns
+    - paragraphs.paragraphs_type.multi_colu_mn_text_grid
+    - paragraphs.paragraphs_type.text_column
+  module:
+    - entity_reference_revisions
+id: paragraph.multi_colu_mn_text_grid.field_columns
+field_name: field_columns
+entity_type: paragraph
+bundle: multi_colu_mn_text_grid
+label: Columns
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      text_column: text_column
+    target_bundles_drag_drop:
+      accordion:
+        weight: 24
+        enabled: false
+      carousel:
+        weight: 25
+        enabled: false
+      from_library:
+        weight: 26
+        enabled: false
+      headline_call_to_action:
+        weight: 27
+        enabled: false
+      image_button:
+        weight: 29
+        enabled: false
+      images:
+        weight: 28
+        enabled: false
+      large_image_callout:
+        weight: 30
+        enabled: false
+      link:
+        weight: 31
+        enabled: false
+      link_list_2_columns_:
+        weight: 32
+        enabled: false
+      multi_colu_mn_text_grid:
+        weight: 33
+        enabled: false
+      nested_paragraph:
+        weight: 34
+        enabled: false
+      simple_wysiwyg:
+        weight: 35
+        enabled: false
+      slide:
+        weight: 36
+        enabled: false
+      spacer:
+        weight: 37
+        enabled: false
+      stat_block:
+        weight: 38
+        enabled: false
+      stat_grid:
+        weight: 39
+        enabled: false
+      text:
+        weight: 40
+        enabled: false
+      text_column:
+        enabled: true
+        weight: 41
+      title_text_links_3_columns_:
+        weight: 42
+        enabled: false
+      two_column_one_column_text_one_c:
+        weight: 43
+        enabled: false
+      user:
+        weight: 44
+        enabled: false
+      video:
+        weight: 45
+        enabled: false
+      video_block:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,36 @@
+uuid: a34011b4-1de4-4822-98f8-4eea361b4384
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-health
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilityhealth
+theme: u_pacific
+region: tools
+weight: 0
+provider: null
+plugin: 'menu_block:utility-health'
+settings:
+  id: 'menu_block:utility-health'
+  label: 'Utility Mobile - Health'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-health:'
+  suggestion: utility_health
+visibility:
+  domain:
+    id: domain
+    domains:
+      healthsciences_dev_pacific_edu: healthsciences_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

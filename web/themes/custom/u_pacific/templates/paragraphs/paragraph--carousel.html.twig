@@ -1,0 +1,78 @@
+{{ attach_library('u_pacific/owl') }}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'image-align-' ~ paragraph.field_image_alignment.value,
+    'paragraph-' ~ paragraph.id.value
+  ]
+%}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="owl-carousel owl-theme" id="carousel-{{paragraph.id.value}}">
+    {% for key, slide in content.field_slides if key|first != '#' %}
+        <div class="item">
+
+    
+        <picture>
+        	<source media="(min-width: 992px)" srcset="{{ file_url(slide['#paragraph'].field_image.entity.uri.value | image_style('carousel_image_desktop'))}}">
+            <source media="(max-width: 991px)" srcset="{{ file_url(slide['#paragraph'].field_image.entity.uri.value | image_style('carousel_image_mobile'))}}">
+            <img class="slide-image" src="{{ file_url(slide['#paragraph'].field_image.entity.uri.value | image_style('carousel_image_mobile'))}}" alt="{{ slide['#paragraph'].field_image.alt }}">
+        </picture>
+
+    
+    
+    <div class="container">
+        <div class="row">
+
+        {% if paragraph.field_image_alignment.value == 'left' %}
+            <div class="col-lg-6"> 
+                {# blank #}
+            </div>
+        {% endif %}
+
+            <div class="col-lg-6  blue">
+                <div class="inner">
+                <div class="subtitle">{{ slide['#paragraph'].field_subtitle.value  }}</div>
+                <h3>{{ slide['#paragraph'].field_title.value|raw  }}</h3>
+                <div class="copy">{{ slide['#paragraph'].field_description.value|raw  }}</div>
+                {# if link  #}
+                {% if slide['#paragraph'].field_link.0.value['uri'] %}
+                    {% set path = slide['#paragraph'].field_link.0.value['uri'] %}
+                    {% set target = slide['#paragraph'].field_link.0.value.options.attributes.target %}
+                    {% if 'entity:node/' in path %}
+                        {% set path = path('entity.node.canonical', {'node': path|replace({'entity:node/': ''})}) %}
+                    {% endif %}
+                    <a target="{{ target }}" href="{{ path }}">{{ slide['#paragraph'].field_link.0.value['title'] }}</a>
+                {% endif %}
+                {# only show owls if there is more than one slide  #}
+                {% if content.field_slides['#items']|length > 1 %}
+                    <div class="owl-footer d-flex">
+                        <div class="custom-dots d-flex">
+                        {% set thiskey = key %}
+                        {% for key, slide in content.field_slides if key|first != '#' %}
+                        <span data-carousel="carousel-{{paragraph.id.value}}" data-slide="{{ key }}" class="c-dot {% if thiskey == key %} active {% endif %}"></span>
+                        {% endfor %}
+                        </div>
+                        <div class="custom-owl-arrows">
+                            <img data-carousel="carousel-{{paragraph.id.value}}" class="prev" src="{{ base_path ~ directory }}/images/orange-arrow-thin-min.png" alt="prev" />
+                            <img data-carousel="carousel-{{paragraph.id.value}}" class="next" src="{{ base_path ~ directory }}/images/orange-arrow-thin-min.png" alt="next" />
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+        </div>
+
+        {% if paragraph.field_image_alignment.value == 'right' %}
+            <div class="col-lg-6"> 
+                {# blank #}
+            </div>
+        {% endif %}
+
+
+    </div>
+    {% endfor %}
+  </div>

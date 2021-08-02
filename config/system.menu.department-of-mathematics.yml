@@ -1,0 +1,8 @@
+uuid: 25c452b5-fe37-4a57-83a7-c69eee1887f1
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-mathematics
+label: 'Department of Mathematics'
+description: 'Section Menu for the Department of Mathematics'
+locked: false

@@ -1,0 +1,25 @@
+uuid: abea1028-582b-44e0-a0af-47b3ea3a6bc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_domain_source
+    - node.type.department_landing_pages
+id: node.department_landing_pages.field_domain_source
+field_name: field_domain_source
+entity_type: node
+bundle: department_landing_pages
+label: 'Domain Source'
+description: 'Select the canonical domain for this content.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:domain'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: weight
+      direction: ASC
+field_type: entity_reference

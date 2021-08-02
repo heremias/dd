@@ -1,0 +1,21 @@
+uuid: 7f45e329-a1a2-47e0-a65b-d58255f37c9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_biography
+    - node.type.campus_directory
+  module:
+    - text
+id: node.campus_directory.field_biography
+field_name: field_biography
+entity_type: node
+bundle: campus_directory
+label: Biography
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

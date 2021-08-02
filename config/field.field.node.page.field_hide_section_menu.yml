@@ -1,0 +1,23 @@
+uuid: 397d1de6-04eb-4dfb-827e-d44e7cb8bf00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_section_menu
+    - node.type.page
+id: node.page.field_hide_section_menu
+field_name: field_hide_section_menu
+entity_type: node
+bundle: page
+label: 'Hide Section Menu'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

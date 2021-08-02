@@ -1,0 +1,8 @@
+uuid: 7b4be1f1-2991-468b-bfaf-9a0cb0b9ecb7
+langcode: en
+status: true
+dependencies: {  }
+id: chemistry-test
+label: 'Chemistry TEST'
+description: ''
+locked: false

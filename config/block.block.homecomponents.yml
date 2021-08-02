@@ -1,0 +1,31 @@
+uuid: f11b4f73-48be-4860-b46c-7d421d709101
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:component_block:2b3a087d-8de7-4dce-a7ff-7bb8b496a68a'
+  module:
+    - block_content
+    - system
+  theme:
+    - u_pacific
+id: homecomponents
+theme: u_pacific
+region: content
+weight: -13
+provider: null
+plugin: 'block_content:2b3a087d-8de7-4dce-a7ff-7bb8b496a68a'
+settings:
+  id: 'block_content:2b3a087d-8de7-4dce-a7ff-7bb8b496a68a'
+  label: 'Home Components'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/node/648\r\n/home"
+    negate: false
+    context_mapping: {  }

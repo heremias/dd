@@ -1,0 +1,8 @@
+uuid: 1e79c61b-5b9e-4d33-a826-36bb7e17386a
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-sociology
+label: 'Department of Sociology'
+description: 'Section Menu for Department of Sociology'
+locked: false

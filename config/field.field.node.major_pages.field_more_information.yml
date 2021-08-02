@@ -1,0 +1,21 @@
+uuid: b938c50f-49e2-4409-82b0-2f2ca7fee24b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_more_information
+    - node.type.major_pages
+  module:
+    - text
+id: node.major_pages.field_more_information
+field_name: field_more_information
+entity_type: node
+bundle: major_pages
+label: 'More Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

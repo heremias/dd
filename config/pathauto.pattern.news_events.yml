@@ -1,0 +1,22 @@
+uuid: f6abcb19-bd6a-4dfb-b627-85bb05561fa1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: news_events
+label: 'News & Events'
+type: 'canonical_entities:node'
+pattern: 'pacific-newsroom/[node:title]'
+selection_criteria:
+  b64d2b38-3c0e-4724-a7ca-25c4ae3f3b92:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b64d2b38-3c0e-4724-a7ca-25c4ae3f3b92
+selection_logic: and
+weight: -5
+relationships: {  }

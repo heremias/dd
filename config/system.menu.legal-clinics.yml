@@ -1,0 +1,8 @@
+uuid: b1a665a9-2fb3-408b-82e1-8a58f9f4939b
+langcode: en
+status: true
+dependencies: {  }
+id: legal-clinics
+label: 'McGeorge Legal Clinics'
+description: 'Section Menu for the McGeorge Legal Clinics'
+locked: false

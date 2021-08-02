@@ -1,0 +1,98 @@
+/* ------------- useful links styles  -----------*/
+
+.useful-links {
+  h3 {
+    color:#333;
+    font-size: 33px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+  }
+
+  .useful-links-box {
+    background: #f4f4f4;
+    padding:20px;
+    margin:0 20px 40px;
+
+    .useful-headline {
+      color:#333;
+      font-weight:bold;
+    }
+
+    .button-useful {
+      display: inline-block;
+      text-align: right;
+      padding: 2px 15px;
+      color: white;
+      letter-spacing: 1px;
+      margin-top: 2em;
+      float: right;
+      font-size: 0.8em;
+    }
+
+    &.useful-links-blue {
+      .button-useful {
+        background-color:@blue;
+        
+        &:hover {
+          background-color:@blue-hover;
+        }
+      }
+    }
+
+    &.useful-links-green {
+      .button-useful {
+        background-color:@green;
+        
+        &:hover {
+          background-color:@green-hover;
+        }
+      }
+    }
+
+    &.useful-links-purple {
+      .button-useful {
+        background-color:@purple;
+        
+        &:hover {
+          background-color:@purple-hover;
+        }
+      }
+    }
+  }
+
+  .gsc-icon-box {
+    margin:0;
+    position:absolute;
+
+    &.support-icon-round {
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .highlight_content {
+      display:none;
+    }
+
+    &.icon-image .fa-4x {
+      width: auto;
+    }
+  }
+
+  .column-inner .column-content {
+    padding-left: 86px;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .col-lg-4.useful-links-box {
+    width:calc(33.3333% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .col-xs-12.useful-links-box {
+    width:calc(100% - 40px);
+  }
+}

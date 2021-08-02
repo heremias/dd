@@ -1,0 +1,8 @@
+uuid: 9ddcd8df-61b9-415d-9938-741c13e635d3
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-economics
+label: 'Department of Economics'
+description: 'Section Menu for Department of Economics'
+locked: false

@@ -1,0 +1,23 @@
+uuid: fad33057-b063-4c2c-b675-fbebcecf5679
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.headline_call_to_action
+  module:
+    - options
+id: paragraph.headline_call_to_action.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: headline_call_to_action
+label: 'Background Color'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: gray
+default_value_callback: ''
+settings: {  }
+field_type: list_string

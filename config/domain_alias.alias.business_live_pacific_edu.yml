@@ -1,0 +1,9 @@
+uuid: f8b5ca83-bc5f-4e7a-9fb7-c9cbff4f58ab
+langcode: en
+status: true
+dependencies: {  }
+id: business_live_pacific_edu
+domain_id: business_dev_pacific_edu_
+pattern: business.live.pacific.edu
+redirect: 0
+environment: staging

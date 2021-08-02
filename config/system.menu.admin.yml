@@ -1,0 +1,10 @@
+uuid: 83708920-cc7f-43ae-8633-973e0b4971fe
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sapEi2YDGoI9yQIT_WgIV2vUdQ6DScH0V3fAyTadAL0
+id: admin
+label: 'Drupal Administration'
+description: 'Administrative task links'
+locked: true

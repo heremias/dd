@@ -1,0 +1,35 @@
+<div class="content-accordion">
+{% for key, accordion in content.field_accordions if key|first != '#' %}
+<div class="container">
+<div  id="accordion-{{ accordion['#paragraph'].id.value }}">
+  <div class="card">
+    <div class="card-header card-header--{{ content.field_accordion_bg_color.0['#markup']|default('navy') }}
+" id="heading-{{ accordion['#paragraph'].id.value }}">
+      <h2>
+        <button class="btn btn-link collapsed " type="button" data-toggle="collapse" data-target="#collapse-{{ accordion['#paragraph'].id.value }}"  aria-controls="collapse-{{ accordion['#paragraph'].id.value }}">
+          {{ accordion['#paragraph'].field_title.value}}
+        </button>
+      </h2>
+    </div>
+    <div id="collapse-{{ accordion['#paragraph'].id.value }}" class="collapse" aria-labelledby="heading-{{ accordion['#paragraph'].id.value }}" data-parent="#accordion-{{ accordion['#paragraph'].id.value }}">
+      <div class="card-body">
+        {{ accordion['#paragraph'].field_text_field.value|raw }}
+        {% for link in accordion['#paragraph'].field_link %}
+        {% set title =  link.title %}
+        {% set target =  link.options.attributes.target %}
+        {% set link =  link.uri %}
+          {% if 'entity:node/' in link %}
+          {% set nid =  link|trim('entity:node/') %}
+          {% set link = path('entity.node.canonical', {'node': nid}) %}
+          {% endif %}
+          <div>
+          <a target="{{ target }}" class="button-link" href="{{ link }}">{{ title }}</a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>

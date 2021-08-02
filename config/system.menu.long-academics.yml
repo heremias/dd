@@ -1,0 +1,8 @@
+uuid: 0e9a087a-08f9-4e76-8475-cdc7d76a64b6
+langcode: en
+status: true
+dependencies: {  }
+id: long-academics
+label: 'Long Academics'
+description: ''
+locked: false

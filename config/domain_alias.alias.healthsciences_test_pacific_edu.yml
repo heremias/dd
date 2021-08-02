@@ -1,0 +1,9 @@
+uuid: 07ff2ac3-6619-4da3-ab96-71356b6cdfbb
+langcode: en
+status: true
+dependencies: {  }
+id: healthsciences_test_pacific_edu
+domain_id: healthsciences_dev_pacific_edu
+pattern: healthsciences.test.pacific.edu
+redirect: 0
+environment: testing

@@ -1,0 +1,26 @@
+uuid: 567b72a2-0e19-4d0f-b5a3-d6b0cc99d1b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.square
+  module:
+    - crop
+name: viewbook_profile_
+label: 'Viewbook Profile Image'
+effects:
+  ba35cdf3-1f90-42e4-864f-2919c6784fdb:
+    uuid: ba35cdf3-1f90-42e4-864f-2919c6784fdb
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: square
+  e50359dd-2174-4965-85ef-4474bd712d6f:
+    uuid: e50359dd-2174-4965-85ef-4474bd712d6f
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 858
+      height: 858
+      anchor: center-center
+pipeline: __default__

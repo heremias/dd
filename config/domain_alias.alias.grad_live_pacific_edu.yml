@@ -1,0 +1,9 @@
+uuid: 5bd55423-0a34-4d39-95a2-f125b2d4a627
+langcode: en
+status: true
+dependencies: {  }
+id: grad_live_pacific_edu
+domain_id: grad_dev_pacific_edu
+pattern: grad.live.pacific.edu
+redirect: 0
+environment: staging

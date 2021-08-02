@@ -1,0 +1,19 @@
+uuid: 0aff4702-4076-42f3-92af-5ff8e9423225
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_temp_domain_access
+    - node.type.landing_page
+id: node.landing_page.field_temp_domain_access
+field_name: field_temp_domain_access
+entity_type: node
+bundle: landing_page
+label: temp_domain_access
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

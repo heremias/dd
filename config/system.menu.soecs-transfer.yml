@@ -1,0 +1,8 @@
+uuid: 33d9bb9d-5cbc-46c4-8d00-2e0e8aeb6630
+langcode: en
+status: true
+dependencies: {  }
+id: soecs-transfer
+label: 'SOECS Transfer'
+description: ''
+locked: false

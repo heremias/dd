@@ -1,0 +1,23 @@
+uuid: 2c2c1a98-1c59-404f-a28a-18f09be4f710
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  keywords: '[node:keywords]'
+  shortlink: '[site:url]'
+  description: 'University of the Pacific is a private university devoted to experience-driven education that gives students pathways to the fastest growing sectors.'
+  title: 'University of the Pacific - Experience-driven Education'
+  canonical_url: '[site:url]'
+  og_image_alt: 'homepage screen capture'
+  og_title: 'University of the Pacific - Experience-driven Education'
+  og_image: 'https://www.pacific.edu/sites/default/files/media/homepage/campus-beauty-screenshot-1080x600.jpg'
+  og_url: 'https://www.pacific.edu/'
+  og_image_type: img/jpg
+  og_type: website
+  og_description: 'University of the Pacific is a private university devoted to experience-driven education that gives students pathways to the fastest growing sectors.'
+  twitter_cards_title: 'University of the Pacific - Experience-driven Education'
+  twitter_cards_image: 'https://www.pacific.edu/sites/default/files/media/homepage/campus-beauty-screenshot-1080x600.jpg'

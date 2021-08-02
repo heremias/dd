@@ -1,0 +1,155 @@
+uuid: a8c13427-cf0a-4bc3-82a9-581447a2fc1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_school_college_department
+    - field.field.node.landing_page.field_temp_domain_access
+    - node.type.landing_page
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      ba74fb50-cb2c-454b-a1b3-67869d55cb51:
+        allowed_tags: '<p><u><a><b><strong><ul><li><ol><h1><h2><h3><h4><h5><iframe><em>'
+        plugin: strip_tags
+        source: body
+        weight: 0
+        label: 'Strip tags'
+        uuid: ba74fb50-cb2c-454b-a1b3-67869d55cb51
+      9d68abd1-7bb9-4689-b8ad-402c4e367c64:
+        allowed_tags: '<p><u><a><b><strong><ul><li><ol><h1><h2><h3><h4><h5><iframe><em>'
+        plugin: strip_tags
+        source: description
+        weight: 0
+        label: 'Strip tags'
+        uuid: 9d68abd1-7bb9-4689-b8ad-402c4e367c64
+id: admission_scrape
+label: 'Admission Scrape'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: xml
+parser_configuration:
+  context:
+    value: /scrape/Page
+  sources:
+    title:
+      label: Title
+      value: Title
+    body:
+      label: body
+      value: body
+    description:
+      label: Description
+      value: Description
+    relative_url:
+      label: relative_url
+      value: relative_url
+    tag:
+      label: tag
+      value: tag
+    domain_access:
+      label: domain_access
+      value: domain_access
+  use_tidy: false
+  display_errors: false
+  source_encoding:
+    - auto
+  debug_mode: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: landing_page
+custom_sources:
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  body:
+    label: body
+    value: body
+    machine_name: body
+  url:
+    label: URL
+    value: URL
+    machine_name: url
+  relative_url:
+    label: relative_url
+    value: relative_url
+    machine_name: relative_url
+  tag:
+    label: tag
+    value: tag
+    machine_name: tag
+  description:
+    label: Description
+    value: Description
+    machine_name: description
+  domain_source:
+    label: domain_source1
+    value: domain_source1
+    machine_name: domain_source
+  domain_access:
+    label: domain_access
+    value: domain_access
+    machine_name: domain_access
+  '':
+    label: domain_source
+    value: domain_source
+    machine_name: ''
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: body
+    map:
+      value: body
+      summary: description
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: path
+    map:
+      alias: relative_url
+    settings:
+      language: null
+  -
+    target: field_school_college_department
+    map:
+      target_id: tag
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_temp_domain_access
+    map:
+      value: domain_access
+    unique: {  }
+    settings:
+      language: null

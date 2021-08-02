@@ -1,0 +1,26 @@
+uuid: d239319d-d02c-46fa-a4c3-2e3d74e0954e
+langcode: en
+status: true
+dependencies:
+  module:
+    - domain
+    - masquerade
+  theme:
+    - u_pacific
+id: masquerade
+theme: u_pacific
+region: footer_3
+weight: -15
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  provider: masquerade
+  label_display: visible
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

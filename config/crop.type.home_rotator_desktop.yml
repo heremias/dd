@@ -1,0 +1,12 @@
+uuid: a94d9303-7d04-4bd9-910e-c6d65ddae4e0
+langcode: en
+status: true
+dependencies: {  }
+id: home_rotator_desktop
+label: 'Home Rotator Desktop'
+description: ''
+aspect_ratio: '1920:1080'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

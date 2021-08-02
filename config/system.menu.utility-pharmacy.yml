@@ -1,0 +1,8 @@
+uuid: a5cd0b5d-60d1-414e-8336-95516dde7b7b
+langcode: en
+status: true
+dependencies: {  }
+id: utility-pharmacy
+label: 'Utility - Pharmacy'
+description: ''
+locked: false

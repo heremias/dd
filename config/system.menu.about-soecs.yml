@@ -1,0 +1,8 @@
+uuid: 319c171b-5901-4703-bd84-0aca013db37e
+langcode: en
+status: true
+dependencies: {  }
+id: about-soecs
+label: 'About SOECS'
+description: ''
+locked: false

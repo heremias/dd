@@ -1,0 +1,8 @@
+uuid: f787a56a-a532-45df-856d-026d7427cbb6
+langcode: en
+status: true
+dependencies: {  }
+id: student-life
+label: 'Student Life'
+description: ''
+locked: false

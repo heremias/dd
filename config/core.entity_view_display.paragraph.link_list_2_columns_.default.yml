@@ -1,0 +1,59 @@
+uuid: f62e86cb-3898-470d-b999-48fae8aad976
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.link_list_2_columns_.field_column_2_
+    - field.field.paragraph.link_list_2_columns_.field_column_one_links
+    - field.field.paragraph.link_list_2_columns_.field_column_two_links
+    - field.field.paragraph.link_list_2_columns_.field_title_column_one
+    - paragraphs.paragraphs_type.link_list_2_columns_
+  module:
+    - link
+id: paragraph.link_list_2_columns_.default
+targetEntityType: paragraph
+bundle: link_list_2_columns_
+mode: default
+content:
+  field_column_2_:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_column_one_links:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_column_two_links:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_title_column_one:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

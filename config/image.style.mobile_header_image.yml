@@ -1,0 +1,26 @@
+uuid: 98c9c312-0489-462e-b24c-7cf4120a41c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.mobile_header_image
+  module:
+    - crop
+name: mobile_header_image
+label: 'Mobile Header Image'
+effects:
+  bbf84945-71a3-4c37-94ab-40110bc6a70f:
+    uuid: bbf84945-71a3-4c37-94ab-40110bc6a70f
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 768
+      height: 543
+      anchor: center-center
+  d3d0ad95-34fb-4ee4-9ebe-6f1901a6dcb7:
+    uuid: d3d0ad95-34fb-4ee4-9ebe-6f1901a6dcb7
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: mobile_header_image
+pipeline: __default__

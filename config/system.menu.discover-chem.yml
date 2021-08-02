@@ -1,0 +1,8 @@
+uuid: 1ff1f48d-c77b-4245-b866-762ecbc7ba14
+langcode: en
+status: true
+dependencies: {  }
+id: discover-chem
+label: 'Discover Chem'
+description: ''
+locked: false

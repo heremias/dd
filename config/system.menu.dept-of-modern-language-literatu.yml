@@ -1,0 +1,8 @@
+uuid: 4e6a60f6-e309-4985-90d0-d00a2e0704c2
+langcode: en
+status: true
+dependencies: {  }
+id: dept-of-modern-language-literatu
+label: 'Department of Modern Languages and Literature'
+description: 'Section Menu for Department of Modern Languages and Literature'
+locked: false

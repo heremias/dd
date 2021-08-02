@@ -1,0 +1,26 @@
+uuid: 72fc7d6d-575c-4915-877e-94adf69f19a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.link_button
+  module:
+    - crop
+name: link_button
+label: 'Link Button'
+effects:
+  8cea7036-459d-4b43-81a3-992a3fdb1cec:
+    uuid: 8cea7036-459d-4b43-81a3-992a3fdb1cec
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 235
+      height: 156
+      anchor: center-center
+  1cd03b37-0f08-40f1-a57f-70c0b1ca1e78:
+    uuid: 1cd03b37-0f08-40f1-a57f-70c0b1ca1e78
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: link_button
+pipeline: __default__

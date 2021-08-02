@@ -1,0 +1,29 @@
+uuid: 975d47de-7028-4ca7-bbd5-1315adbc4c1a
+langcode: en
+status: true
+dependencies:
+  module:
+    - domain
+    - search
+  theme:
+    - u_pacific
+_core:
+  default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
+id: u_pacific_search
+theme: u_pacific
+region: search
+weight: -9
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+  page_id: google_cse_search
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

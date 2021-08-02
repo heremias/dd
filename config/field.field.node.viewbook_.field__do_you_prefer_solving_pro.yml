@@ -1,0 +1,21 @@
+uuid: e64794cb-c135-4f0c-bf83-c06d0e754855
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field__do_you_prefer_solving_pro
+    - node.type.viewbook_
+  module:
+    - options
+id: node.viewbook_.field__do_you_prefer_solving_pro
+field_name: field__do_you_prefer_solving_pro
+entity_type: node
+bundle: viewbook_
+label: ' Do you prefer solving problems creatively or solving problems analytically?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

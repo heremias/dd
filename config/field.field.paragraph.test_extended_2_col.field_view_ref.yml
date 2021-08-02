@@ -1,0 +1,23 @@
+uuid: a1d0045a-0fd0-48c2-b9db-fd18417a762f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_ref
+    - paragraphs.paragraphs_type.test_extended_2_col
+id: paragraph.test_extended_2_col.field_view_ref
+field_name: field_view_ref
+entity_type: paragraph
+bundle: test_extended_2_col
+label: view_ref
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

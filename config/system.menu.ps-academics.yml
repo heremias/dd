@@ -1,0 +1,8 @@
+uuid: 5bdbb69d-ed2d-411c-83b0-b65bd228a200
+langcode: en
+status: true
+dependencies: {  }
+id: ps-academics
+label: 'PS Academics'
+description: ''
+locked: false

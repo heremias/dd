@@ -1,0 +1,98 @@
+/* ------------- hero banner styles  -----------*/
+
+// text
+
+.hero-text-right {
+  max-width: 600px;
+  padding: 70px 70px;
+}
+
+@media (max-width: 480px) {
+  .hero-text-right {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.hero-text {
+  margin-top: -25px!important;
+  font-weight: 400!important;
+}
+
+.learn-more-button-container+.gsc-block-drupal {
+  margin-top: 18px;
+}
+
+// image
+
+@media (max-width: 991px) {
+
+  .hero-mobile-center,
+  .hero-mobile-center-shade,
+  .hero-mobile-center-shadeleft,
+  .hero-mobile-center-shaderight,
+  .hero-mobile-left,
+  .hero-mobile-left-shade,
+  .hero-mobile-left-shadeleft,
+  .hero-mobile-left-shaderight,
+  .hero-mobile-right,
+  .hero-mobile-right-shade,
+  .hero-mobile-right-shadeleft,
+  .hero-mobile-right-shaderight {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  .hero-mobile-center,
+  .hero-mobile-center-shade,
+  .hero-mobile-center-shadeleft,
+  .hero-mobile-center-shaderight {
+    background-position: center center !important;
+  }
+
+  .hero-mobile-left,
+  .hero-mobile-left-shade,
+  .hero-mobile-left-shadeleft,
+  .hero-mobile-left-shaderight {
+    background-position: left center !important;
+  }
+
+  .hero-mobile-right,
+  .hero-mobile-right-shade,
+  .hero-mobile-right-shadeleft,
+  .hero-mobile-right-shaderight {
+    background-position: right center !important;
+  }
+
+  .hero-mobile-center-shade,
+  .hero-mobile-left-shade,
+  .hero-mobile-right-shade {
+    &:before {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .hero-mobile-center-shadeleft,
+  .hero-mobile-left-shadeleft,
+  .hero-mobile-right-shadeleft {
+    &:before {
+      background-image: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.5));
+    }
+  }
+
+  .hero-mobile-center-shaderight,
+  .hero-mobile-left-shaderight,
+  .hero-mobile-right-shaderight {
+    &:before {
+      background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5));
+    }
+  }
+}

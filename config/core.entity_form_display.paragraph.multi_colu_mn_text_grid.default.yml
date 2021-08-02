@@ -1,0 +1,29 @@
+uuid: 0b861b24-524c-4004-9909-59f631b488c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.multi_colu_mn_text_grid.field_columns
+    - paragraphs.paragraphs_type.multi_colu_mn_text_grid
+  module:
+    - paragraphs
+id: paragraph.multi_colu_mn_text_grid.default
+targetEntityType: paragraph
+bundle: multi_colu_mn_text_grid
+mode: default
+content:
+  field_columns:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

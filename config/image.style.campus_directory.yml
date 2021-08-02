@@ -1,0 +1,26 @@
+uuid: fa10b5f5-349f-4d93-a318-81853a5e245f
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.campus_directory
+  module:
+    - crop
+name: campus_directory
+label: 'Campus Directory'
+effects:
+  dcd6fad4-854f-40ae-aa41-0627f8f93d44:
+    uuid: dcd6fad4-854f-40ae-aa41-0627f8f93d44
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: campus_directory
+  ed4db984-cd83-4ffc-b470-cd7c66b39735:
+    uuid: ed4db984-cd83-4ffc-b470-cd7c66b39735
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 650
+      height: 730
+      anchor: center-center
+pipeline: __default__

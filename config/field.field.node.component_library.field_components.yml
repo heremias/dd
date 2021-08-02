@@ -1,0 +1,134 @@
+uuid: f07e8f68-ade0-48c5-b047-ba8ba7fb6ba2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_components
+    - node.type.component_library
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.accordion_content
+    - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.content_accordions
+    - paragraphs.paragraphs_type.headline_call_to_action
+    - paragraphs.paragraphs_type.large_image_callout
+    - paragraphs.paragraphs_type.link_list_2_columns_
+    - paragraphs.paragraphs_type.multi_colu_mn_text_grid
+    - paragraphs.paragraphs_type.nested_paragraph
+    - paragraphs.paragraphs_type.simple_wysiwyg
+    - paragraphs.paragraphs_type.spacer
+    - paragraphs.paragraphs_type.stat_grid
+    - paragraphs.paragraphs_type.title_text_links_3_columns_
+    - paragraphs.paragraphs_type.two_column_one_column_text_one_c
+    - paragraphs.paragraphs_type.video_block
+  module:
+    - entity_reference_revisions
+id: node.component_library.field_components
+field_name: field_components
+entity_type: node
+bundle: component_library
+label: Components
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion_content: accordion_content
+      accordion: accordion
+      carousel: carousel
+      headline_call_to_action: headline_call_to_action
+      link_list_2_columns_: link_list_2_columns_
+      nested_paragraph: nested_paragraph
+      simple_wysiwyg: simple_wysiwyg
+      stat_grid: stat_grid
+      large_image_callout: large_image_callout
+      spacer: spacer
+      content_accordions: content_accordions
+      two_column_one_column_text_one_c: two_column_one_column_text_one_c
+      video_block: video_block
+      multi_colu_mn_text_grid: multi_colu_mn_text_grid
+      title_text_links_3_columns_: title_text_links_3_columns_
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: -52
+      accordion_content:
+        enabled: true
+        weight: -53
+      carousel:
+        enabled: true
+        weight: -51
+      content_accordions:
+        enabled: true
+        weight: -36
+      from_library:
+        weight: -50
+        enabled: false
+      headline_call_to_action:
+        enabled: true
+        weight: -49
+      image_button:
+        weight: -48
+        enabled: false
+      images:
+        weight: -47
+        enabled: false
+      large_image_callout:
+        enabled: true
+        weight: -38
+      link:
+        weight: -46
+        enabled: false
+      link_list_2_columns_:
+        enabled: true
+        weight: -45
+      multi_colu_mn_text_grid:
+        enabled: true
+        weight: -32
+      nested_paragraph:
+        enabled: true
+        weight: -44
+      simple_wysiwyg:
+        enabled: true
+        weight: -41
+      slide:
+        weight: -43
+        enabled: false
+      spacer:
+        enabled: true
+        weight: -37
+      stat_block:
+        weight: -42
+        enabled: false
+      stat_grid:
+        enabled: true
+        weight: -40
+      text:
+        weight: -39
+        enabled: false
+      text_column:
+        weight: -30
+        enabled: false
+      title_text_links_3_columns_:
+        enabled: true
+        weight: -29
+      two_column_one_column_text_one_c:
+        enabled: true
+        weight: -35
+      user:
+        weight: -34
+        enabled: false
+      video:
+        weight: -31
+        enabled: false
+      video_block:
+        enabled: true
+        weight: -33
+      yellow_links:
+        weight: -28
+        enabled: false
+field_type: entity_reference_revisions

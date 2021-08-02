@@ -1,0 +1,19 @@
+uuid: 24a4a02e-d03a-4634-b6e8-cdbce683984f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alternative_title
+    - node.type.major_pages
+id: node.major_pages.field_alternative_title
+field_name: field_alternative_title
+entity_type: node
+bundle: major_pages
+label: 'Friendly Program Title'
+description: 'Use a title that can be easily indexed, such as "Biology, BS" for Bachelors of Science in Biology.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

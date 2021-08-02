@@ -1,0 +1,40 @@
+uuid: 6dec52f5-185c-4092-b104-cfd4c27c0c69
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news_blocks
+  module:
+    - ctools
+    - domain
+    - views
+  theme:
+    - u_pacific
+id: views_block__news_blocks_block_3
+theme: u_pacific
+region: below_content
+weight: -13
+provider: null
+plugin: 'views_block:news_blocks-block_3'
+settings:
+  id: 'views_block:news_blocks-block_3'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      college_school_landing_page: college_school_landing_page
+      department_landing_pages: department_landing_pages
+      library: library
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }

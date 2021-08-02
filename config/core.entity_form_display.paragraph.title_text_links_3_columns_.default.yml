@@ -1,0 +1,53 @@
+uuid: 92f741c1-ba32-4fbe-85f7-7f5712641af9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.title_text_links_3_columns_.field_link_list
+    - field.field.paragraph.title_text_links_3_columns_.field_text_field
+    - field.field.paragraph.title_text_links_3_columns_.field_title
+    - paragraphs.paragraphs_type.title_text_links_3_columns_
+  module:
+    - link_attributes
+    - text
+id: paragraph.title_text_links_3_columns_.default
+targetEntityType: paragraph
+bundle: title_text_links_3_columns_
+mode: default
+content:
+  field_link_list:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_text_field:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

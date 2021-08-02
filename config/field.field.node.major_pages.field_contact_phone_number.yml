@@ -1,0 +1,21 @@
+uuid: 4b887945-e77f-467a-ae62-338ad53978b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_phone_number
+    - node.type.major_pages
+  module:
+    - telephone
+id: node.major_pages.field_contact_phone_number
+field_name: field_contact_phone_number
+entity_type: node
+bundle: major_pages
+label: 'Contact Phone Number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

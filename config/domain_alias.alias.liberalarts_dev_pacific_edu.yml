@@ -1,0 +1,9 @@
+uuid: 44c448db-205e-48fb-9c01-3eb662e3a119
+langcode: en
+status: true
+dependencies: {  }
+id: liberalarts_dev_pacific_edu
+domain_id: liberalarts_dev_pacific_edu
+pattern: liberalarts.dev.pacific.edu
+redirect: 0
+environment: development

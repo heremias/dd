@@ -1,0 +1,1680 @@
+determine_menu: true
+disable_admin_page: true
+append_current_page: true
+current_page_as_link: false
+stop_on_first_match: true
+append_member_page: false
+member_page_as_link: false
+remove_home: false
+add_home: true
+front_title: 0
+exclude_empty_url: false
+derived_active_trail: false
+menu_breadcrumb_menus:
+  main:
+    enabled: 1
+    weight: -10
+    taxattach: 0
+    langhandle: 0
+  about-pacific:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  bias-policies:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cm-admission:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cm-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cm-about:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cir:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  bio-undergrad-degrees:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  bio-graduate-program:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  benerd-international:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cm-current-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  benerd-degree-programs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  articulation-agreements:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  art-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  accounting:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  about-soecs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  student-accounts:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  special-care-hospital-dentistry:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  residential-life-and-housing:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cm-community:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cop-academic-advising:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  registrar-ferpa:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  code-of-conduct:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  discover-art-and-graphic-design:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  contact-us:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  contact-admission:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  conferences:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  comm-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  comm-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  collaboration:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  chem-undergrad-degrees:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cop-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  chem-grad-program:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  chem-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  celebrating-research:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  career-resources-247:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  caps-staff:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cop-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cop-faculty:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cop-community:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  research-and-scholarship:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  registrar-dental:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  discover-communication:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  llm-cost:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-business-office:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-audit:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-alumni:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-admission:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  llm-water:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  llm-program:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  llm-international:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  ll-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-community:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  ll-career-paths:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  ll-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  john-muir-center:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  jacoby-center:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  jd-degree:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  internship-program:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  institutional-research:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  in-the-community:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-business-and-community:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-exam-and-assessments:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  rlh-campus-facilities:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  life-at-mcgeorge:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  rha:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  public-safety-services:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-academic-support:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  long-pharm-chem:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  long-fellowship:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  long-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  long-about:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  life-long-learning:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-executive-training:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  library-about:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-review:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-media:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-mag:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-international-study:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-hr:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-future-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  law-experiential-learning:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  discover-chem:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  discover-ethnic-studies:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  humanities-center:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  registrar-class-registration:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  soecs-prospective-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  soecs-community:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  soecs-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  sc-title-ix:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  research-help:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  renovation:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  registrar-path-to-graduation:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  registrar-calendar:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  soecs-transfer:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  psych-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  psych-career-paths:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  psych-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  places-of-worship:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  physics-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  physics-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  physician-assistant:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  soecs-research:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  safe-trick-or-treat:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  phil-career-paths:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  sport-science-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  university-college:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  under-grad-research:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  tools:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  tiger-training:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  summer-sessions:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  start-research:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  sport-science-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  sport-clubs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  secondary-navigation:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  spiritual-life:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  speech-and-language:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  social-work:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  soc-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  soc-career-paths:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  soc-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  services:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  self-help:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  phil-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  phil-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  discover-geological-and-environm:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  econ-other:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  gender-studies-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  gender-studies-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  footer:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  first-year-orientation:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  find:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  english-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  econ-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  econ-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  geo-career-paths:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  eb-undergraduate-programs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  eb-graduate-programs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  eb-centers-and-institutes:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  eb-admission:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  division-of-student-life-vp:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  discover-psych:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  discover-physics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  discover-ll:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  geo-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  geo-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  pacific-technology-about:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  media-x-featured-projects:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  ps-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  ps-career-paths:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  ps-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  online-learning:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  occupational-therapy:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  nursing:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  network-access:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  media-x-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  hist-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  math-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  math-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  master-of-science-in-law:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  making-an-appointment:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  ms-athletic-training:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  long-student-affairs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  honor-societies:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  hist-our-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  it-security-office:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  housing-selection:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  academic-and-career-services:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  doctor-physical-therapy:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-alumni:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-academic-programs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-academic-affairs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-about:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  admin:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  doctor-of-pharmacy:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  doctor-of-audiology:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  doctor-dental-surgery:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-continuing-education:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  division-of-student-life:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  disabilities-and-accommodations:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dining-and-retail:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  devel:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dept-of-modern-language-literatu:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-sports-sciences:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-sociology:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-clinics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-department-chairs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-psychology:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-professional-services:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-at-a-glance:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  support-the-school:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-school-of-dentistry:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-school-initiatives:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-residency-graduate:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-research-spotlight:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-research-facilities:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-news-and-events:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-departments-and-groups:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-locations:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-international-studies:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-international-scholars:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-impact:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-hygiene:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-housing:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-fin-aid:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dugoni-faculty-and-research:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-religious-and-clas:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-political-science:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  educational-equity:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  benerd-college:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  center-for-dental-cranio:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  center-for-business-and-policy:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  care-managers:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  capital-center-for-law-and-polic:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  campus-recreation:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  campus-facilities:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  business-finance:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  athletic-recreational-activities:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  community-involvement-program:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  advocacy-and-dispute:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  admitted-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  admission-events:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  admission-aid:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  admin-offices:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  '-actuarial-sciences-menu':
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  activities-and-programs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  college-of-the-pacific-menu:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  conservatory-of-music:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-physics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-english:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-philosophy:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-media-x:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-mathematics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-history:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dept-of-geological-environmen-sc:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-gender-studies:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-ethnic-studies:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-economics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  cost-of-attendance:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-communication:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-chemistry:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-biological-science:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-art-and-graphic-de:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  dental-services:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  counseling-services-stockton:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  counseling-services-sacramento:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  counseling-services:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  eberhardt-school-of-business:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  emergency-management:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  housing-options:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  pac-communi:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  registrar:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  provost:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  programs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  professional-development:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  practice-area-pathways:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  pacific-technology:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  pacific-humanities-scholars:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  pac-community:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-library:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  orientation:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  ombudsperson:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  president:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  compliance:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  morris-chapel:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  medicare-part-d-clinics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcl3-faculty:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcl-access:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  sacramento-campus:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  safety-wellness:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-student-life:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  sustainability:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  work-study:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  visit:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  utility-menu:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  account:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  university-development:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  undergraduate-admission:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  thomas-j-long-school-of-pharmacy:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  student-services:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  safety-and-conduct:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  student-life:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  student-leadership-development:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  student-conduct:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  school-of-international-study:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  school-of-health-sciences:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  school-of-engineering-and-comput:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  scholarships:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  sample-menu:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-stats:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  english:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  honors-program:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mg-giving-priorities:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  loans:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  library:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  llm-in-transnational-business-pr:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  international-programs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  human-resources:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  housing-and-dining:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  helpdesk-support:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-accelerated-honors-jd-p:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  department-of-health-studies:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  grants:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  graduate-school:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  global-journal:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  global-business:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  general-education:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  financial-aid:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  equity-and-inclusion:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-academics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-applicants:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-services:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-doctor-of-judicial-scie:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-registrar:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-publications:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-public-safety:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-master-of-science-in-la:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mpa-and-mpp:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  legal-clinics:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  jd-programs:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-areas-of-specialty:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-interviews:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-giving:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-fin-aid:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-faculty:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-diversity:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-continuing-students:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-centers:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  mcgeorge-career-development:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+  victim-advocacy:
+    weight: 0
+    enabled: 0
+    taxattach: 0
+    langhandle: 0
+_core:
+  default_config_hash: dp50LLB10ui-pYgDqHSZdREslQ7DqY71aF20tyaas6I

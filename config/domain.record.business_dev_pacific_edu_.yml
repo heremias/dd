@@ -1,0 +1,11 @@
+uuid: cd2c5c9c-913f-48b8-8f30-a409a7aa97a5
+langcode: en
+status: true
+dependencies: {  }
+id: business_dev_pacific_edu_
+domain_id: 11557166
+hostname: business.pacific.edu
+name: 'business.pacific.edu '
+scheme: https
+weight: -3
+is_default: false

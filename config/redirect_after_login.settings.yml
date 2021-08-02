@@ -1,0 +1,9 @@
+login_redirection:
+  anonymous: null
+  authenticated: /admin/content
+  administrator: /admin/content
+  section_producers: /admin/dashboard
+  section_editor: /admin/dashboard
+  training_role: /admin/content
+  website_publishers: /admin/content
+exclude_urls: ''

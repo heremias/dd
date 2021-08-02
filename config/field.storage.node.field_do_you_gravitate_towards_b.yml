@@ -1,0 +1,27 @@
+uuid: 98f5ffc4-4f79-406d-8843-5393f29bfff2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_do_you_gravitate_towards_b
+field_name: field_do_you_gravitate_towards_b
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: local_community
+      label: 'local community'
+    -
+      value: hanging_out
+      label: 'hanging out'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

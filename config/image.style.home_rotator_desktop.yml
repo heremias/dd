@@ -1,0 +1,26 @@
+uuid: 58f7b44b-9ac1-44b4-ad08-2594c55fc3a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.home_rotator_desktop
+  module:
+    - crop
+name: home_rotator_desktop
+label: 'Home Rotator Desktop'
+effects:
+  be018459-fb5b-4341-8ef2-77a97081b3a9:
+    uuid: be018459-fb5b-4341-8ef2-77a97081b3a9
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1920
+      height: 1080
+      anchor: center-center
+  cb05be0b-8f76-44db-8324-14fa081dc406:
+    uuid: cb05be0b-8f76-44db-8324-14fa081dc406
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: home_rotator_desktop
+pipeline: __default__

@@ -1,0 +1,8 @@
+uuid: f95cdb1a-e664-4477-8dbe-a52b07716870
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-health-exercise-an
+label: 'Department of Health Exercise and Sport Science'
+description: 'Section Menu for Department of Health Exercise and Sport Science'
+locked: false

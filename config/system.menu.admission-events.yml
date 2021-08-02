@@ -1,0 +1,8 @@
+uuid: 6f22ffa0-95dc-4c4f-a254-425a7b233f2e
+langcode: en
+status: true
+dependencies: {  }
+id: admission-events
+label: 'Admission Events'
+description: ''
+locked: false

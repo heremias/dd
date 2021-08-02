@@ -1,0 +1,36 @@
+uuid: dcb9c7d7-ec68-4b93-89cf-59a4000d9e87
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-benerd
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitybenerd
+theme: u_pacific
+region: tools
+weight: 0
+provider: null
+plugin: 'menu_block:utility-benerd'
+settings:
+  id: 'menu_block:utility-benerd'
+  label: 'Utility Mobile - Benerd'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-benerd:'
+  suggestion: utility_benerd
+visibility:
+  domain:
+    id: domain
+    domains:
+      education_dev_pacific_edu: education_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

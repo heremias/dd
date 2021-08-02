@@ -1,0 +1,8 @@
+uuid: bdc8d393-577f-4e27-9044-c860893036f5
+langcode: en
+status: true
+dependencies: {  }
+id: soc-career-paths
+label: 'Soc Career Paths'
+description: ''
+locked: false

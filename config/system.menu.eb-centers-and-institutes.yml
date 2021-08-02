@@ -1,0 +1,8 @@
+uuid: 7d2bc1da-4abb-4fe0-b0a2-b6401c7d01c0
+langcode: en
+status: true
+dependencies: {  }
+id: eb-centers-and-institutes
+label: 'ESB Centers and Institutes'
+description: ''
+locked: false

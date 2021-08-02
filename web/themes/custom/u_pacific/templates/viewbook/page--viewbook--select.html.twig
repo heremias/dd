@@ -1,0 +1,13 @@
+{{ attach_library('u_pacific/viewbook') }}
+<div class="d-none" id="maincontent"></div>
+<div class="d-none" aria-hidden="true">
+	{{ page.custom_scripts }}
+</div>
+<div class="viewbook-header">
+<a class="start-over d-none d-lg-block" href="{{ base_path }}viewbook" id="start-over-link">Start Over</a>
+	<img src="{{ base_path ~ directory }}/images/viewbook-logo-min.png" alt="viewbook logo">
+</div>
+<div class="container">
+	{{ page.content }}
+</div>
+{% include directory ~ '/inc/footer.html.twig' %}

@@ -1,0 +1,8 @@
+uuid: 3fbfc4b1-f764-414f-8d14-1993c153212c
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-international-studies
+label: 'Dugoni International Studies'
+description: ''
+locked: false

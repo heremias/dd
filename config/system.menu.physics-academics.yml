@@ -1,0 +1,8 @@
+uuid: e59872ff-4b99-4f82-aa59-995a75f142f8
+langcode: en
+status: true
+dependencies: {  }
+id: physics-academics
+label: 'Physics Academics'
+description: ''
+locked: false

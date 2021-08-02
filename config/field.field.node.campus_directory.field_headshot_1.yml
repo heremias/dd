@@ -1,0 +1,38 @@
+uuid: 32f1bcff-8e47-4e23-a333-9ffbc40044f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_headshot_1
+    - node.type.campus_directory
+  module:
+    - image
+id: node.campus_directory.field_headshot_1
+field_name: field_headshot_1
+entity_type: node
+bundle: campus_directory
+label: 'Headshot 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: 00a1ff1c-810b-4fa1-82bf-8118863dfa80
+    alt: 'default directory image'
+    title: ''
+    width: 650
+    height: 730
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

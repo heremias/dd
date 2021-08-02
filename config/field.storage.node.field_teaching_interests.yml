@@ -1,0 +1,19 @@
+uuid: 08535090-0cf6-49d7-98a6-222e513accc1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_teaching_interests
+field_name: field_teaching_interests
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,365 @@
+/* ------------- branding guide -----------*/
+
+#block-gaviasblockbuiderbrandingguide {
+  p, h1, h2, h3, h4, td {
+    color:@black;
+    font-family: @font-family;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight:bold;
+    line-height:1em;
+    padding-bottom:0.8em;
+  }
+
+  h2 {
+    font-size:50px;
+  }
+
+  h3 {
+    font-size:45px;
+  }
+
+  h4 {
+    font-size:25px;
+  }
+
+  p {
+    font-size:20px;
+    line-height:1.5em;
+  }
+
+  a {
+    color:@primary-light;
+  }
+
+  .large-text {
+    font-size:25px;
+  }
+
+  .white-text {
+    color:white;
+  }
+
+  .jumbo-text {
+    font-size:90px;
+  }
+
+  .cta-button {
+    text-transform: uppercase;
+    font-size:20px;
+    background-color:@secondary-three;
+    padding:20px 40px;
+    font-family: @font-family !important;
+    display:inline-block;
+    margin-top:3em;
+
+    &:hover {
+      background-color:darken(@secondary-three, 20%) !important;
+    }
+  }
+
+  @media (max-width: 331px) {
+    .cta-button-wrap {
+      text-align:center;
+
+      .cta-button {
+        font-size:18px
+      }
+    }
+  }
+
+  .gbb-row .bb-inner {
+    padding-top:80px;
+    padding-bottom:80px;
+  }
+
+  .panel-wide {
+    &.gbb-row {
+      .bb-inner {
+        padding-top:200px;
+        padding-bottom:200px;
+      }
+    }
+  }
+
+  .panel-divider {
+    border-bottom:1px solid;
+  }
+
+  .panel-label {
+    p {
+      font-size:18px;
+    }
+  }
+
+  .branding-logo .gsc-image {
+    padding-top:58px;
+    padding-bottom:50px;
+  }
+
+  .branding-logo-icon .widget-content {
+    position:relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 80px;
+      right: -14px;
+      width: 52px;
+      height: 52px;
+      background-image:url('/sites/default/files/img/branding-logo-plus.png');
+    }
+
+  }
+
+  .panel-grid-item {
+    margin-bottom:3em;
+  }
+
+  .panel-grid-item-large {
+    margin-bottom:100px;
+  }
+
+  .clear-first {
+    clear:both;
+  }
+
+  /* ----------- specific element stying -------------*/
+  .branding-outlined-icon {
+    border: 1px solid white;
+    margin: 0 auto 4em;
+    width: 380px;
+    height: 380px;
+    background: transparent center center no-repeat;
+  }
+
+  .branding-outlined-icon-text {
+    color:white;
+    width:380px;
+    margin:0 auto;
+  }
+
+  .branding-alternate-logos-title {
+    padding-left:20px;
+  }
+
+  .branding-alternate-logos {
+    width: 44%;
+    margin-left:20px;
+    margin-bottom:2em;
+
+    img {
+      border:1px solid @black;
+    }
+  }
+
+  .branding-alternate-logos, .branding-image-grid {
+    p {
+      font-size:14px !important;
+      line-height: 1.2em !important;
+      margin-top:1.5em;
+    }
+  }
+
+  .branding-grid {
+    width: 25%;
+    margin-bottom:3em;
+    float:left;
+
+    &.branding-image-grid {
+      p {
+        max-width:280px;
+      }
+    }
+  }
+
+  .branding-color-grid-wrap {
+    padding:25px;
+
+    &.branding-color-grid-secondary {
+      padding-top:0;
+      padding-bottom:0;
+    }
+
+    &.branding-color-grid-wrap-grey {
+      background-color:#f8f8f8;
+    }
+  }
+
+  .branding-color-grid {
+    width:45.4%;
+
+    &:nth-child(1) {
+      margin-right:50px;
+    }
+
+    .branding-color-text, .branding-color-color {
+      border-style: solid;
+      border-color: #000;
+    }
+
+    .branding-color-color {
+      height:150px;
+      background-color:#fff;
+      border-width:1px 1px 0;
+
+      &.branding-color-secondary {
+        height:75px;
+      }
+    }
+
+    .branding-color-text {
+      padding:1.5em 2em;
+      border-width:0 1px 1px ;
+      background-color: white;
+
+      table {
+        margin-bottom:0;
+      }
+
+      td {
+        padding:0 5px 0 0;
+
+        &:nth-child(-n+2) {
+          font-weight:bold;
+        }
+
+        &:nth-child(1) {
+          padding-right:0;
+        }
+      }
+    }
+  }
+
+  .visual-logo-identity .gsc-image .widget-content {
+    text-align: center;
+    padding: 100px 80px;
+    border: 1px solid @black;
+    margin-bottom:5em;
+  }
+
+  .visual-logo-icon .gsc-image .widget-content {
+    padding: 125px 60px;
+    text-align: center;
+    border: 1px solid @black;
+  }
+
+  @media (max-width: 1199px) {
+    .branding-color-grid-wrap {
+      width:100%;
+      padding-left: 18% !important;
+      padding-right: 18% !important;
+    }
+
+    .branding-grid {
+
+      &.branding-image-grid {
+        width: 33.333%;
+
+        &:nth-child(3n+1) {
+          clear:both;
+        }
+      }
+
+      &.branding-color-grid {
+        width: 45.4%
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    .branding-logo-icon .widget-content:after {
+      display: none;
+    }
+
+    .branding-logo-icon:after {
+      content: "";
+      position: absolute;
+      bottom: -122px;
+      left: calc(50% - 26px);
+      width: 52px;
+      height: 52px;
+      background-image:url('/sites/default/files/img/branding-logo-plus.png');
+    }
+
+    .branding-alternate-logos-title {
+      padding-left:0;
+    }
+
+    .branding-alternate-logos {
+      margin-left:0;
+      width:50%;
+      padding-right:5%;
+    }
+
+    .branding-color-grid-wrap {
+      padding-left:10% !important;
+      padding-right:10% !important;
+    }
+
+    .branding-grid {
+      &.branding-image-grid {
+        width: 50%;
+        padding-right:5%;
+
+        &:nth-child(3n+1) {
+          clear:none;
+        }
+
+        &:nth-child(2n+1) {
+          clear:both;
+        }
+      }
+
+      &.branding-color-grid {
+        width:45.4%;
+        padding-right:0;
+        padding-left:0;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .branding-color-grid-wrap {
+      padding-left:20px !important;
+      padding-right:20px !important;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    .jumbo-text {
+      font-size:60px;
+    }
+
+    .branding-grid {
+      &.branding-color-grid {
+        width:100%;
+        padding:0 10%;
+      }
+    }
+
+    .branding-color-grid-label {
+      margin-bottom:1em;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .branding-color {
+      &.branding-color-grid {
+        padding:0 20px;
+      }
+    }
+
+    .branding-outlined-icon {
+      width:300px;
+      height:300px;
+      background-size:70%;
+    }
+
+    .branding-outlined-icon-text {
+      width:300px;
+    }
+  }
+}

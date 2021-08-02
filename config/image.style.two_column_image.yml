@@ -1,0 +1,26 @@
+uuid: 3516b032-dee9-4dfd-914f-c2120f26df60
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.two_column_block_image
+  module:
+    - crop
+name: two_column_image
+label: 'Two Column Image'
+effects:
+  18f86603-e671-41ca-aa81-38c3cd1c440d:
+    uuid: 18f86603-e671-41ca-aa81-38c3cd1c440d
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 579
+      height: 472
+      anchor: center-center
+  e81a073d-e5c6-47c1-94f8-987efc00a151:
+    uuid: e81a073d-e5c6-47c1-94f8-987efc00a151
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: two_column_block_image
+pipeline: __default__

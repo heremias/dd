@@ -1,0 +1,8 @@
+uuid: ce2bc9fc-11d2-467b-8990-df0cec7f6786
+langcode: en
+status: true
+dependencies: {  }
+id: soc-academics
+label: 'Soc Academics'
+description: ''
+locked: false

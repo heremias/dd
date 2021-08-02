@@ -1,0 +1,39 @@
+<footer id="footer">
+  <div class="footer">
+    <div class="footer_logo">        
+      <a href="{{ default_domain }}">
+        <img id="footer-logo" src="{{ base_path ~ directory }}/images/footer-logo-min.png" alt="Footer Logo">
+      </a>     
+    </div>
+    <div class="locations">
+      {{ page.footer_1}}         
+    </div>
+    <div class="interests">{{ page.footer_2}}</div>
+    <div class="footer_col">
+      {{ page.footer_3}}
+    </div>
+    <div class="copyright">&copy; {{ 'now' | date('Y') }} University of the Pacific</div>   
+  </div>
+</footer>
+
+{% if page.footer_tower %}
+  <div id="footer-tower">
+    {{ page.footer_tower }}
+  </div>
+{% endif %}
+
+<div id="full-screen-search">
+  <div class="container">
+    <img id="search-accent" src="{{ base_path ~ directory }}/images/large-white-accent.png" alt="University of the Pacific">
+    <div class="inner">
+      <div class="logo">
+        <img src="{{ base_path ~ directory }}/images/logo.png" alt="University of the Pacific">
+      </div>
+      {{ page.full_screen_search }}
+      <a href="#" id="close-search" title="close search" aria-label="close-search">
+        <span class="fa fa-times"></span>
+        <span style="display:none" aria-hidden="true">Close Search</span>
+      </a>
+    </div>
+  </div>
+</div>

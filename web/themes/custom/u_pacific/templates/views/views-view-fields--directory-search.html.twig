@@ -1,0 +1,104 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set grid = '' %}
+{% if row._entity.field_headshot_1 %}
+{% set grid = 'col-md-6' %}
+{% endif %}
+<div class="card campus-directory">
+  <div class="row no-gutters">
+  {% if row._entity.field_headshot_1 %}
+    <div class="{{ grid }}">
+      {{fields.field_headshot_1.content}}
+    </div>
+    {% endif %}
+    <div class="{{grid}}">
+      <div class="card-body">
+        {% set link = path('entity.node.canonical', {'node': row.nid}) %}
+
+        {% if row._entity.type.target_id == "campus_directory" %}
+        <h3 class="card-title"><a href="{{ link }}">{{row._entity.field_firstname.value }} {{row._entity.field_last_name.value }}</a></h3>
+        {% else %}
+        <h3 class="card-title"><a href="{{ link }}">{{row._entity.title.value }}</a></h3>
+        {% endif %}
+
+        <div class="card-text">
+        {% if row._entity.field_professional_title.0.value is not empty %}
+        <div class="field">{{fields.field_professional_title.content}}</div>
+        {% endif %}
+
+        {% if row._entity.field_school.0.value is not empty %}
+        <div class="field">{{fields.field_school.content}}</div>
+        {% endif %}
+
+        {# Phone Overrides  #}
+        {% set phone = fields.field_phone_number.content %}
+        {% if row._entity.field_phone_number_override.value is not empty %}
+        {% set phone = fields.field_phone_number_override.content %}
+        {% endif %}
+        {% if phone|striptags is not empty %}
+        <div class="field phone">{{ phone }}</div>
+        {% endif %}
+
+        {# Email overrides  #}
+        {% set email = fields.field_email.content %}
+        {% if row._entity.field_email_override.value is not empty %}
+        {% set email = fields.field_email_override.content %}
+        {% endif %}
+        {% if email|striptags is not empty %}
+        <div class="field email">{{ email }}</div>
+        {% endif %}
+
+
+        {% if row._entity.field_campus.0.value is not empty %}
+        <div class="field">{{fields.field_campus.content}}</div>
+        {% endif %}
+
+          {% if row._entity.field_contact_phone_number.0.value is not empty %}
+         <div class="field">{{fields.field_contact_phone_number.content }}</div>
+          {% endif %}
+
+         {% if row._entity.field_contact_email.0.value is not empty %}
+         <div class="field">{{fields.field_contact_email.content }}</div>
+          {% endif %}
+
+         {% if row._entity.field_contact_location.0.value is not empty %}
+         <div class="field">{{fields.field_contact_location.content }}</div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

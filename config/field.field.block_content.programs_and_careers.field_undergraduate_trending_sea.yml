@@ -1,0 +1,28 @@
+uuid: 2d378d31-6514-4916-a85d-1f8794cb57f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.programs_and_careers
+    - field.storage.block_content.field_undergraduate_trending_sea
+    - node.type.major_pages
+id: block_content.programs_and_careers.field_undergraduate_trending_sea
+field_name: field_undergraduate_trending_sea
+entity_type: block_content
+bundle: programs_and_careers
+label: 'Undergraduate Trending Searches'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      major_pages: major_pages
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

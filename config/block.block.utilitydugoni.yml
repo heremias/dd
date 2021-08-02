@@ -1,0 +1,36 @@
+uuid: d445e4da-8f12-4bd5-95ec-073defe63890
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-dugoni
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitydugoni
+theme: u_pacific
+region: tools
+weight: 0
+provider: null
+plugin: 'menu_block:utility-dugoni'
+settings:
+  id: 'menu_block:utility-dugoni'
+  label: 'Utility Mobile - Dugoni'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-dugoni:'
+  suggestion: utility_dugoni
+visibility:
+  domain:
+    id: domain
+    domains:
+      dev_dental_pacific_edu: dev_dental_pacific_edu
+    negate: null
+    context_mapping: {  }

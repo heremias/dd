@@ -1,0 +1,11 @@
+uuid: 4309c483-5fe6-4038-a16f-3ef8372bfadb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.college_school_landing_page
+id: node.college_school_landing_page
+target_entity_type_id: node
+target_bundle: college_school_landing_page
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,19 @@
+uuid: 35d2b5c1-5b66-4d00-b9f8-4b247f1249e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_override
+    - node.type.campus_directory
+id: node.campus_directory.field_email_override
+field_name: field_email_override
+entity_type: node
+bundle: campus_directory
+label: 'Email Override'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

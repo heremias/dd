@@ -1,0 +1,23 @@
+uuid: aed2106e-a26e-4c0a-af54-534a7b5b286f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.major_pages
+  module:
+    - text
+id: node.major_pages.body
+field_name: body
+entity_type: node
+bundle: major_pages
+label: 'Major Overview'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

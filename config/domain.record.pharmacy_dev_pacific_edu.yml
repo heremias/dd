@@ -1,0 +1,11 @@
+uuid: 4aff681d-20f6-473f-af4f-458db3f465f6
+langcode: en
+status: true
+dependencies: {  }
+id: pharmacy_dev_pacific_edu
+domain_id: 6273477
+hostname: pharmacy.pacific.edu
+name: pharmacy.pacific.edu
+scheme: https
+weight: 11
+is_default: false

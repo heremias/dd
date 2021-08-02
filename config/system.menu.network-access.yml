@@ -1,0 +1,8 @@
+uuid: b2a30585-2e4b-40c1-831e-5d03bc60f289
+langcode: en
+status: true
+dependencies: {  }
+id: network-access
+label: 'Network Access'
+description: ''
+locked: false

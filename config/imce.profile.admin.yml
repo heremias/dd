@@ -1,0 +1,27 @@
+uuid: a49e69cd-f0a5-4f97-8f4a-f8a1e31cb300
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3NOiSBMBGHe1kVq0fScDAOZPOvZKcoLIezF5_ORAWsw
+id: admin
+label: 'Admin profile'
+description: 'Configuration for site administrators'
+conf:
+  extensions: '*'
+  maxsize: !!float 25
+  quota: !!float 0
+  maxwidth: 0
+  maxheight: 0
+  replace: 0
+  thumbnail_style: ''
+  thumbnail_grid_style: false
+  folders:
+    -
+      path: media/inline
+      permissions:
+        all: true
+    -
+      path: media
+      permissions:
+        all: true

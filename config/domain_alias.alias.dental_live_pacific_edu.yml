@@ -1,0 +1,9 @@
+uuid: a6f1aab3-c35e-488e-8411-9921177d50d7
+langcode: en
+status: true
+dependencies: {  }
+id: dental_live_pacific_edu
+domain_id: dev_dental_pacific_edu
+pattern: dental.live.pacific.edu
+redirect: 0
+environment: staging

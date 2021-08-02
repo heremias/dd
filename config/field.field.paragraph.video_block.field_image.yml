@@ -1,0 +1,38 @@
+uuid: 079d0e69-974b-41b1-b573-f1e0c0901735
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - paragraphs.paragraphs_type.video_block
+  module:
+    - image
+id: paragraph.video_block.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: video_block
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: 'Campus seal'
+    title: ''
+    width: 1600
+    height: 900
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,0 +1,36 @@
+uuid: b2f2701a-2876-454d-a25e-4ce6b69f60ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-soecs
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitysoecs_2
+theme: u_pacific
+region: tools_desktop
+weight: 0
+provider: null
+plugin: 'menu_block:utility-soecs'
+settings:
+  id: 'menu_block:utility-soecs'
+  label: 'Utility Desktop - SOECS'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-soecs:'
+  suggestion: utility_soecs
+visibility:
+  domain:
+    id: domain
+    domains:
+      engineering_dev_pacific_edu: engineering_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

@@ -1,0 +1,23 @@
+uuid: ca3fc192-350e-4e9d-a931-cc42fddf7489
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linkedin
+    - node.type.campus_directory
+  module:
+    - link
+id: node.campus_directory.field_linkedin
+field_name: field_linkedin
+entity_type: node
+bundle: campus_directory
+label: LinkedIn
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

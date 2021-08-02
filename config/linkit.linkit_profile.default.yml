@@ -1,0 +1,30 @@
+uuid: 829f231c-a724-4f49-b347-717ad9e20884
+langcode: en
+status: true
+dependencies:
+  module:
+    - imce
+    - node
+third_party_settings: {  }
+id: default
+label: Default
+description: ''
+matchers:
+  285997b0-db21-4cd5-bd12-bb221633d1c7:
+    uuid: 285997b0-db21-4cd5-bd12-bb221633d1c7
+    id: 'entity:node'
+    weight: 0
+    settings:
+      bundles:
+        article: article
+        campus_directory: campus_directory
+        college_school_landing_page: college_school_landing_page
+        department_landing_pages: department_landing_pages
+        landing_page: landing_page
+        library: library
+        major_pages: major_pages
+        page: page
+      group_by_bundle: false
+      include_unpublished: false
+      substitution_type: canonical
+      metadata: ''

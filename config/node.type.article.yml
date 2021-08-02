@@ -1,0 +1,19 @@
+uuid: b98cdb3d-3979-414d-9a0e-dc6987a42bcd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
+name: 'News Article'
+type: article
+description: 'This content type is used for campus news and announcements. It can be syndicated to the homepage, college/school homepages, and departments.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

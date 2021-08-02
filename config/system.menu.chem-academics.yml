@@ -1,0 +1,8 @@
+uuid: 56c2d888-dd4c-423b-8c4d-a837d6a08ea5
+langcode: en
+status: true
+dependencies: {  }
+id: chem-academics
+label: 'Chem Academics'
+description: ''
+locked: false

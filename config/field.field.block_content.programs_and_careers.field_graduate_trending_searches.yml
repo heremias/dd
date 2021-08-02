@@ -1,0 +1,28 @@
+uuid: f8bfaa18-164d-4bf1-b425-f96499d01c4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.programs_and_careers
+    - field.storage.block_content.field_graduate_trending_searches
+    - node.type.major_pages
+id: block_content.programs_and_careers.field_graduate_trending_searches
+field_name: field_graduate_trending_searches
+entity_type: block_content
+bundle: programs_and_careers
+label: 'Graduate Trending Searches'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      major_pages: major_pages
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

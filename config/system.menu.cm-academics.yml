@@ -1,0 +1,8 @@
+uuid: 80a168aa-b6e9-43a7-803e-80cea988d9d6
+langcode: en
+status: true
+dependencies: {  }
+id: cm-academics
+label: 'CM Academics'
+description: ''
+locked: false

@@ -1,0 +1,21 @@
+uuid: 03979c0e-59bc-422a-b040-775487ac2d31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_description
+    - node.type.viewbook_
+  module:
+    - text
+id: node.viewbook_.field_stat_description
+field_name: field_stat_description
+entity_type: node
+bundle: viewbook_
+label: 'Stat Description'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

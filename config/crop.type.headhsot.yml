@@ -1,0 +1,12 @@
+uuid: 4857615e-879d-4ca8-b822-036827c6d327
+langcode: en
+status: true
+dependencies: {  }
+id: headhsot
+label: Headhsot
+description: ''
+aspect_ratio: '235:222'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

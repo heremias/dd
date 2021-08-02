@@ -1,0 +1,21 @@
+uuid: 09754c3e-13b0-4cad-ad10-dc8790d313f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field__would_you_rather_travel_t
+    - node.type.viewbook_
+  module:
+    - options
+id: node.viewbook_.field__would_you_rather_travel_t
+field_name: field__would_you_rather_travel_t
+entity_type: node
+bundle: viewbook_
+label: '  Would you rather travel to a new place or try a new restaurant?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

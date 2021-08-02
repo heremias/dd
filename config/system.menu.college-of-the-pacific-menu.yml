@@ -1,0 +1,8 @@
+uuid: 2c8bf4a9-af3c-4274-8e14-381145e17e31
+langcode: en
+status: true
+dependencies: {  }
+id: college-of-the-pacific-menu
+label: 'College of the Pacific'
+description: 'Section Menu for College of the Pacific'
+locked: false

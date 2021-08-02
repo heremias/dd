@@ -1,0 +1,37 @@
+uuid: 2d4d4664-4376-48ad-acfd-3488590bafec
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:12336816-55f1-4a97-9df6-e2a2183cb8f9'
+  module:
+    - block_content
+    - domain
+    - system
+  theme:
+    - u_pacific
+id: localisthomeevents
+theme: u_pacific
+region: content
+weight: -8
+provider: null
+plugin: 'block_content:12336816-55f1-4a97-9df6-e2a2183cb8f9'
+settings:
+  id: 'block_content:12336816-55f1-4a97-9df6-e2a2183cb8f9'
+  label: 'Localist Home Events'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

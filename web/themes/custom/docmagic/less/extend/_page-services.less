@@ -1,0 +1,178 @@
+/* ------------- services page icon list styles  -----------*/
+
+.services-icon {
+  background-color: none;
+  border-radius: 50%;
+  width: auto;
+  height: 60px;
+
+  /* nested flexbox to align center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.workflow-step-services {
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  /* nested flexbox to horizontally align center */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.workflow-step-services:hover {
+  box-shadow: 0 0 8px 0px #dadada;
+}
+
+.workflow-step-services h4 {
+  color: #000000!important;
+  text-align: center;
+}
+
+/* mobile */
+@media (max-width: 991px) {
+  .workflow-step-services {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 33.33%;
+    margin-bottom: 30px;
+    color: #000;
+  }
+  .workflow-step-services:nth-last-of-type(1),
+  .workflow-step-services:nth-last-of-type(2) {
+    margin-bottom: 0;
+  }
+}
+
+// for IE11 bug
+@media all and (max-width: 991px) and (-ms-high-contrast: none), (max-width: 991px) and (-ms-high-contrast: active) {
+  .workflow-step-services {
+    flex-basis: 27%;
+
+    a,
+    h4 {
+      align-self: stretch;
+    }
+  }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .workflow-step-services {
+    display: inline-block;
+    
+    .workflow-text,
+    p {
+      width: 100%;
+    }
+  }
+}
+
+/* very small mobile */
+@media (max-width: 480px) {
+  .workflow-step-services {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    margin-bottom: 30px;
+    color: #000;
+  }
+  .workflow-step-services:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+/* desktop */
+@media (min-width: 992px) {
+  .workflow-step-services {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 26%;
+  }
+}
+
+.workflow-step-services-two {
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  /* nested flexbox to horizontally align center */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.workflow-step-services-two:hover {
+  box-shadow: 0 0 8px 0px #dadada;
+}
+
+.workflow-step-services-two h4 {
+  color: #000000!important;
+  text-align: center;
+}
+
+// for IE11 bug
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .workflow-step-services-two {
+    .workflow-text,
+    p {
+      width: 100%;
+    }
+  }
+}
+
+/* mobile */
+@media (max-width: 991px) {
+  .workflow-step-services-two {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 33.33%;
+    margin-bottom: 30px;
+    color: #000;
+  }
+  .workflow-step-services-two:nth-last-of-type(1),
+  .workflow-step-services-two:nth-last-of-type(2) {
+    margin-bottom: 0;
+  }
+}
+
+// for IE11 bug
+@media all and (max-width: 991px) and (-ms-high-contrast: none), (max-width: 991px) and (-ms-high-contrast: active) {
+  .workflow-step-services-two {
+    flex-basis: 42%;
+  }
+}
+
+/* very small mobile */
+@media (max-width: 480px) {
+  .workflow-step-services-two {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    margin-bottom: 30px;
+    color: #000;
+  }
+  .workflow-step-services-two:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+/* desktop */
+@media (min-width: 992px) {
+  .workflow-step-services-two {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 25%;
+  }
+}
+
+// for IE11 bug
+@media all and (min-width: 992px) and (-ms-high-contrast: none), (min-width: 992px) and (-ms-high-contrast: active) {
+  .workflow-step-services-two {
+    flex-basis: 20%;
+  }
+}

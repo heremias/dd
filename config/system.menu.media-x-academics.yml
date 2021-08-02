@@ -1,0 +1,8 @@
+uuid: 4112c727-4bb3-41c9-9096-6127d0ec8e62
+langcode: en
+status: true
+dependencies: {  }
+id: media-x-academics
+label: 'Media X Academics'
+description: ''
+locked: false

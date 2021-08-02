@@ -1,0 +1,123 @@
+
+
+{# parent #}
+{% if node.field_school_college_department.entity.parent.entity.field_image.entity.uri.value %}
+	{% set bg = node.field_school_college_department.entity.parent.entity.field_image.entity.uri.value %}
+	{% set alt = node.field_school_college_department.entity.parent.entity.field_image.alt %} 
+{% endif  %}
+
+{# term  #}
+{% if  node.field_school_college_department.entity.field_image.entity.uri.value %}
+{% set bg = node.field_school_college_department.entity.field_image.entity.uri.value %}
+{% set alt = node.field_school_college_department.entity.field_image.alt %} 
+{% endif %}
+
+{# node  #}
+{% if node.field_image.entity.uri.value %}
+	{% set bg = node.field_image.entity.uri.value %}
+	{% set alt = node.field_image.alt %}
+{% endif %}
+
+<div {{attributes.addClass(header_type)}}>
+
+{# end basic -------------------------------- #}
+{% if header_type == 'basic' %}
+
+
+
+
+	{% if bg %}
+		<div class="header-image">
+			<div class="header-image-wrap">
+			<picture>
+				<source media="(min-width: 1200px)" srcset="{{ bg|image_style('large_header_image') }}">
+				<source media="(-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)" srcset="{{ bg|image_style('large_header_image_2x') }}">
+				<img src="{{ bg|image_style('mobile_header_image') }}" alt="{{ alt }}">
+				</picture>
+			</div>
+		</div>
+	{% endif %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				{{ drupal_block('system_breadcrumb_block') }}
+				<h1>
+					{{ node_title }}
+				</h1>
+			</div>
+		</div>
+		</div>	
+
+	{# News room tabs  #}
+	{% set current = url('<current>') %}
+	{% if '/pacific-newsroom' in current['#markup'] %}
+		<div id="news-tabs">
+		<div class="container">
+		<ul>
+		<li><a href="../pacific-newsroom">News</a></li>
+		<li><a class="events" href="https://calendar.pacific.edu/">Events</a></li>
+		</ul>
+		</div>
+		</div>
+	{% endif %}
+
+{% endif %}
+{# end basic -------------------------------- #}
+
+{# college -------------------------------- #}
+
+{% if header_type == 'two_column' %}
+
+
+
+
+<div {% if bg %} class="two-column-bg" {% endif %}>
+{% if bg %}
+<div class="faux-bg">
+	<picture>
+	<source media="(min-width: 1200px)" srcset="{{ bg|image_style('two_column_header_image_desktop') }}">
+	<source media="(-webkit-min-device-pixel-ratio: 2)" srcset="{{ bg|image_style('two_column_header_image_desktop_2x') }}">
+	<source media="(min-resolution: 192dpi)" srcset="{{ bg|image_style('two_column_header_image_desktop_2x') }}">
+	<img src="{{ bg|image_style('two_column_header_image') }}" alt="{{ alt }}">
+	</picture>
+</div>
+{% endif %}
+</div>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5 accent {% if header_link is not empty %} small {% endif %}">
+			<div class="title-wrap">
+			{# {% if header_link is not empty %} #}
+			{{ drupal_block('system_breadcrumb_block') }}
+			{# {% endif %} #}
+
+					<h1>
+					{% if 'College of the ' in node_title %}
+					<span class="small">College of the</span>
+					<span class="underline">{{ node_title|replace({"College of the ": ""}) }}</span>
+				
+					{% elseif node_title|split(" ")|last == 'Campus' %}
+				
+
+					{{ node_title|replace({" Campus": ""}) }}
+					<span class="underline"> Campus</span>
+			
+					{% else %}
+					{{ node_title }}
+					{% endif %}
+				</h1>
+                   {{ header_link }}
+				</div>
+			</div>
+		</div>
+
+	
+	</div>
+
+{% endif %}
+{# end college -------------------------------- #}
+
+</div>

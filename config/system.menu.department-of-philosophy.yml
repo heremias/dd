@@ -1,0 +1,8 @@
+uuid: 0037f0b0-7850-44ed-8299-c329f973c299
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-philosophy
+label: 'Department of Philosophy'
+description: 'Section Menu for the Department of Philosophy'
+locked: false

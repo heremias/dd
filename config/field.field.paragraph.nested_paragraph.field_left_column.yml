@@ -1,0 +1,128 @@
+uuid: e721de3d-b823-4b4f-8f18-8dafb28dd251
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_left_column
+    - paragraphs.paragraphs_type.image_button
+    - paragraphs.paragraphs_type.images
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.nested_paragraph
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.yellow_links
+  module:
+    - entity_reference_revisions
+id: paragraph.nested_paragraph.field_left_column
+field_name: field_left_column
+entity_type: paragraph
+bundle: nested_paragraph
+label: 'Left Column'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      images: images
+      text: text
+      link: link
+      image_button: image_button
+      yellow_links: yellow_links
+      video: video
+    target_bundles_drag_drop:
+      accordion:
+        weight: -61
+        enabled: false
+      accordion_content:
+        weight: -40
+        enabled: false
+      burning_glass_panel:
+        weight: -39
+        enabled: false
+      carousel:
+        weight: -60
+        enabled: false
+      content_accordions:
+        weight: -37
+        enabled: false
+      from_library:
+        weight: -59
+        enabled: false
+      headline_call_to_action:
+        weight: -58
+        enabled: false
+      image_button:
+        enabled: true
+        weight: -54
+      image_with_caption:
+        weight: -36
+        enabled: false
+      images:
+        enabled: true
+        weight: -57
+      large_image_callout:
+        weight: -42
+        enabled: false
+      link:
+        enabled: true
+        weight: -55
+      link_list_2_columns_:
+        weight: -51
+        enabled: false
+      multi_colu_mn_text_grid:
+        weight: -38
+        enabled: false
+      nested_paragraph:
+        weight: -50
+        enabled: false
+      pulled_quote:
+        weight: -33
+        enabled: false
+      rotator:
+        weight: -32
+        enabled: false
+      simple_wysiwyg:
+        weight: -46
+        enabled: false
+      slide:
+        weight: -49
+        enabled: false
+      spacer:
+        weight: -44
+        enabled: false
+      stat_block:
+        weight: -48
+        enabled: false
+      stat_grid:
+        weight: -47
+        enabled: false
+      text:
+        enabled: true
+        weight: -56
+      text_column:
+        weight: -35
+        enabled: false
+      title_text_links_3_columns_:
+        weight: -34
+        enabled: false
+      two_column_one_column_text_one_c:
+        weight: -45
+        enabled: false
+      user:
+        weight: -43
+        enabled: false
+      video:
+        enabled: true
+        weight: -52
+      video_block:
+        weight: -41
+        enabled: false
+      yellow_links:
+        enabled: true
+        weight: -53
+field_type: entity_reference_revisions

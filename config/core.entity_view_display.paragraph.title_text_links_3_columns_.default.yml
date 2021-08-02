@@ -1,0 +1,46 @@
+uuid: 1d602192-5840-48e9-b661-5bd37af6761e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.title_text_links_3_columns_.field_link_list
+    - field.field.paragraph.title_text_links_3_columns_.field_text_field
+    - field.field.paragraph.title_text_links_3_columns_.field_title
+    - paragraphs.paragraphs_type.title_text_links_3_columns_
+  module:
+    - link
+    - text
+id: paragraph.title_text_links_3_columns_.default
+targetEntityType: paragraph
+bundle: title_text_links_3_columns_
+mode: default
+content:
+  field_link_list:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_text_field:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,8 @@
+uuid: 21f605dc-8363-45f7-b0f3-1495515accbf
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-physics
+label: 'Department of Physics'
+description: ''
+locked: false

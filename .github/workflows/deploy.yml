@@ -1,0 +1,38 @@
+on:
+  push:
+    branches: ['release']
+    
+name: Deploy
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+          
+      - name: publish
+        uses: pennsignals/publish_docker-compose@v0.1.0
+        with:
+          version: '0.2.6-rc.1' # optional
+          docker_compose: 'docker-compose.yml' # required
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Save cluster configuration
+        run: doctl kubernetes cluster kubeconfig save drupster
+
+      - name: Deploy to DigitalOcean
+        run: |
+          sed -i 's|<IMAGE>|docker.pkg.github.com/heremias/dd/app:'${GITHUB_SHA}'|' $GITHUB_WORKSPACE/definitions/drupal-deployment.yaml
+          kubectl apply -k definitions
+          kubectl rollout status deployment/drupal
+      - name: Update database
+        run: |
+          POD_NAME=$(kubectl get pods -l tier=frontend -o=jsonpath='{.items[0].metadata.name}')
+          kubectl exec $POD_NAME -c drupal -- vendor/bin/robo project:files-configure
+          kubectl exec $POD_NAME -c drupal -- vendor/bin/robo project:database-update

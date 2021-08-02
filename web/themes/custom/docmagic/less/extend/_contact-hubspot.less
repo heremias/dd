@@ -1,0 +1,351 @@
+/* ------------- docmagic contact form styles  -----------*/
+
+
+#block-getstartedform {
+  &.block {
+    background-color: #fff;
+    margin-top: 20px;
+  }
+
+  form {
+    width: 50%;
+    margin: auto;
+
+    textarea[id^="message"] {
+      height: 340px !important;
+      padding-top: 15px;
+    }
+
+    input[type="submit"] {
+      margin-right:12px !important;
+    }
+
+    select {
+      width: 98% !important;
+    }
+  }
+}
+
+.hbspt-form form {
+  background-color: #fff!important;
+  color: #777777;
+
+  input, textarea {
+    &:focus {
+      box-shadow:none !important;
+    }
+  }
+  
+  .hs-form-field label {
+    display:none;
+  }
+  
+  .hs-error-msgs label {
+    display:block;
+  }
+  
+  input.hs-input, textarea {
+    background-color: #f7f7f7!important;
+    border: 1px solid #a8cddc!important;
+    border-radius: 0 !important;
+    height: 42px !important;
+    padding-left:15px !important;
+    width: 94% !important;
+    box-shadow: none !important;
+    max-width: none !important;
+  }
+
+  select {
+    background-color: #00ade7;
+    width: 98% !important;
+    height: 49px;
+    border-radius: 0px!important;
+    color: white;
+    border: none;
+    max-width: none !important;
+  }
+}
+
+#contact-message-schedule-demo-form-form {
+  overflow: auto;
+}
+
+#block-scheduledemoform {
+  .hbspt-form form {
+
+    input.hs-input, textarea {
+      width: 96% !important;
+    }
+
+    select {
+      width: 100% !important;
+    }
+  }
+}
+
+.contact-message-form .form-item label {
+  display: none!important;
+}
+
+.hs_submit .actions {
+  margin-top:0 !important;
+  padding: 0 8px !important;
+}
+input[type="submit"] {
+  background-image: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  
+  background-color: @orange !important;
+  padding: 15px 35px !important;
+  border: 1px solid @orange !important;
+  border-radius: 3px !important;
+  color: #fff !important;
+  font-family: 'Catamaran', sans-serif !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+  letter-spacing: 0.09em !important;
+  float: right !important;
+  font-weight: normal !important;
+  
+  &:hover {
+    background-color:@orange-hover !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+
+  #block-getstartedform form {
+    display: -ms-grid;
+    -ms-grid-columns: 50% 50%;
+    -ms-grid-rows: 75px 75px 75px 75px 75px;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(5, 75px);
+    grid-column-gap: 18px;
+    justify-content: center;
+
+    // HubSpot form layout fix after 8/31/2018
+    div[data-reactid^=".hbspt-forms-"] {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+    div[data-reactid^=".hbspt-forms-"][data-reactid$=":$0"] {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+    }
+    div[data-reactid^=".hbspt-forms-"][data-reactid$=":$1"] {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 1;
+    }
+    div[data-reactid^=".hbspt-forms-"][data-reactid$=":$2"] {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 3;
+      -ms-grid-row-span: 1;
+    }
+    div[data-reactid^=".hbspt-forms-"][data-reactid$=":$3"] {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 4;
+      -ms-grid-row-span: 1;
+    }
+    div[data-reactid^=".hbspt-forms-"][data-reactid$=":$4"] {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 5;
+      -ms-grid-row-span: 1;
+    }
+    div[data-reactid^=".hbspt-forms-"][data-reactid$=":$5"] {
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 5;
+
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 6;
+    }
+    div[data-reactid^=".hbspt-forms-"][data-reactid$=":$6"],
+    div[data-reactid^=".hbspt-forms-"][data-reactid$=":$7"],
+    div[data-reactid^=".hbspt-forms-"][data-reactid$=":$8"] {
+      display: none;
+    }
+
+    div.hs_submit {
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 1;
+      -ms-grid-row: 6;
+      -ms-grid-row-span: 1;
+
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 6;
+      grid-row-end: 7;
+    }
+
+    select {
+      width:100% !important;
+    }
+
+    input[type="submit"] {
+      margin-right:0px !important;
+    }
+  }
+}
+
+// implement grid-column-gap for IE11
+@media all and (min-width: 992px) and (-ms-high-contrast: none), (min-width: 992px) and (-ms-high-contrast: active) {
+
+  .hs_firstname,
+  .hs_lastname,
+  .hs_email,
+  .hs_phone,
+  .hs_c_productinterest {
+    margin-right: 9px;
+  }
+
+  div.hs-form-field.hs_message,
+  div.hs_submit {
+    margin-left: 9px;
+  }
+}
+
+// fix input field width on Schedule Demo form for IE11
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #block-scheduledemoform {
+
+    .hs_firstname,
+    .hs_lastname,
+    .hs_email,
+    .hs_phone,
+    .hs_c_productinterest {
+      margin-right: 0;
+    }
+
+    div.hs-form-field.hs_message,
+    div.hs_submit {
+      margin-left: 0;
+    }
+  }
+}
+
+#block-getstartedform form {
+  width: 70%;
+}
+
+.messages--error, .form-item--error-message {
+  color: #f4784d;
+}
+
+.contact-message-form {
+  .messages__wrapper {
+    padding-left:0;
+    width: 100%;
+  }
+
+  .messages--error {
+    text-align: left;
+//    width: 838px;
+    margin: 0 auto;
+    background-color: #f4784d;
+    padding: 20px;
+    border-radius: 3px;
+  }
+
+  .messages--error, .messages--error li a {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  input[id^="edit-preview"] {
+    display: none;
+  }
+}
+
+.contact-form-submitted-message {
+  font-weight: bold;
+  padding: 20px;
+  background-color: #4aca85;
+  color: white;
+  margin: 0 auto;
+  width:838px;
+  border-radius: 3px;
+
+  p {
+    color: white;
+  }
+}
+
+/* --------- success message -------*/
+
+#contact_ajax_contact_message_docmagic_contact_form h2 {
+  text-align: center;
+  color: @purple;
+}
+
+#contact_ajax_contact_message_docmagic_contact_form p {
+  text-align: center;
+}
+
+
+/* ------------- modal style  -----------*/
+
+#dcModal .modal-header {
+  border-bottom: none!important;
+}
+
+#dcModal .modal-title {
+  padding-top: 30px;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #7e90da;
+}
+
+#dcModal .modal-footer {
+  margin-top: 31px;
+  border-top: none!important;
+}
+
+#dcModal .modal-body {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#dcModal {
+  *::-webkit-input-placeholder {
+    font-size: 15px;
+  }
+
+  *:-moz-placeholder {
+    font-size: 15px;
+  }
+  *::-moz-placeholder {
+    font-size: 15px;
+  }
+  *:-ms-input-placeholder {
+    font-size: 15px;
+  }
+}
+
+/* ------------- HubSpot form layout fix after 8/31/2018 -----------*/
+
+@media all and (max-width: 991px) {
+  #block-getstartedform form textarea[id^="message"] {
+    width: 95% !important;
+  }
+}
+
+@media all and (min-width: 992px) {
+  #block-getstartedform form textarea[id^="message"] {
+    width: 95.5% !important;
+  }
+}

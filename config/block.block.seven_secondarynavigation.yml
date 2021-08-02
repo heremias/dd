@@ -1,0 +1,25 @@
+uuid: 8eb5c984-ad8d-4788-944b-940735e46bca
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.secondary-navigation
+  module:
+    - system
+  theme:
+    - seven
+id: seven_secondarynavigation
+theme: seven
+region: header
+weight: -9
+provider: null
+plugin: 'system_menu_block:secondary-navigation'
+settings:
+  id: 'system_menu_block:secondary-navigation'
+  label: 'Secondary Navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

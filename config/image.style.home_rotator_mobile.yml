@@ -1,0 +1,26 @@
+uuid: 2d6644c3-e658-4912-a69a-c798e9e67a5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.home_rotator_mobile
+  module:
+    - crop
+name: home_rotator_mobile
+label: 'Home Rotator Mobile'
+effects:
+  2a7c2fbf-3c74-4fe8-8cb9-e70c08249f73:
+    uuid: 2a7c2fbf-3c74-4fe8-8cb9-e70c08249f73
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 900
+      height: 860
+      anchor: center-center
+  c957bc8c-21e0-4c8e-ad4d-0c0bf73b1ef4:
+    uuid: c957bc8c-21e0-4c8e-ad4d-0c0bf73b1ef4
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: home_rotator_mobile
+pipeline: __default__

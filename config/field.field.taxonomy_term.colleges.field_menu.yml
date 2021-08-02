@@ -1,0 +1,23 @@
+uuid: bebb0017-e496-43ca-ba24-0a430181a3ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_menu
+    - taxonomy.vocabulary.colleges
+id: taxonomy_term.colleges.field_menu
+field_name: field_menu
+entity_type: taxonomy_term
+bundle: colleges
+label: Menu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

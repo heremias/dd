@@ -1,0 +1,111 @@
+domain_redirects:
+  'liberalarts:pacific:edu':
+    -
+      sub_path: /
+      destination: liberalarts.pacific.edu/liberalarts
+  'law:pacific:edu':
+    -
+      sub_path: /
+      destination: law.pacific.edu/law
+  'www:mcgeorge:edu':
+    -
+      sub_path: /
+      destination: law.pacific.edu/law
+  'dental:pacific:edu':
+    -
+      sub_path: /
+      destination: dental.pacific.edu/dental
+  'business:pacific:edu':
+    -
+      sub_path: /
+      destination: business.pacific.edu/business
+  'education:pacific:edu':
+    -
+      sub_path: /
+      destination: education.pacific.edu/education
+  'engineering:pacific:edu':
+    -
+      sub_path: /
+      destination: engineering.pacific.edu/engineering
+  'grad:pacific:edu':
+    -
+      sub_path: /
+      destination: grad.pacific.edu/grad
+  'healthsciences:pacific:edu':
+    -
+      sub_path: /
+      destination: healthsciences.pacific.edu/healthsciences
+  'music:pacific:edu':
+    -
+      sub_path: /
+      destination: music.pacific.edu/music
+  'pharmacy:pacific:edu':
+    -
+      sub_path: /
+      destination: pharmacy.pacific.edu/pharmacy
+  'www:dental:pacific:edu':
+    -
+      sub_path: /
+      destination: dental.pacific.edu/dental
+  'admission:pacific:edu':
+    -
+      sub_path: '/*'
+      destination: www.pacific.edu/admission
+  'mcgeorge:edu':
+    -
+      sub_path: /
+      destination: law.pacific.edu/law
+  'admissions:pacific:edu':
+    -
+      sub_path: /
+      destination: www.pacific.edu/admission
+  'www:admissions:pacific:edu':
+    -
+      sub_path: /
+      destination: www.pacific.edu/admission
+  'www:business:pacific:edu':
+    -
+      sub_path: /
+      destination: business.pacific.edu/business
+  'www:education:pacific:edu':
+    -
+      sub_path: /
+      destination: education.pacific.edu/education
+  'www:engineering:pacific:edu':
+    -
+      sub_path: /
+      destination: engineering.pacific.edu/engineering
+  'www:grad:pacific:edu':
+    -
+      sub_path: /
+      destination: grad.pacific.edu/grad
+  'www:healthsciences:pacific:edu':
+    -
+      sub_path: /
+      destination: healthsciences.pacific.edu/healthsciences
+  'www:music:pacific:edu':
+    -
+      sub_path: /
+      destination: music.pacific.edu/music
+  'www:pharmacy:pacific:edu':
+    -
+      sub_path: /
+      destination: pharmacy.pacific.edu/pharmacy
+  'pacifician:pacific:edu':
+    -
+      sub_path: /
+      destination: pacifician.pacific.edu/pacifician
+  'www:pacifician:pacific:edu':
+    -
+      sub_path: /
+      destination: pacifician.pacific.edu/pacifician
+  'olli:pacific:edu':
+    -
+      sub_path: /
+      destination: education.pacific.edu/education/osher-lifelong-institute
+  'www:olli:pacific:edu':
+    -
+      sub_path: /
+      destination: education.pacific.edu/education/osher-lifelong-institute
+_core:
+  default_config_hash: CgXLPQkHCGerCdDtMO8wK9Er4j6iy1iMOyalk8iRgrE

@@ -1,0 +1,21 @@
+uuid: 53975ec6-791a-410c-96ca-78dd74125da8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yoast_seo
+    - node.type.campus_directory
+  module:
+    - yoast_seo
+id: node.campus_directory.field_yoast_seo
+field_name: field_yoast_seo
+entity_type: node
+bundle: campus_directory
+label: 'Real-time SEO'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

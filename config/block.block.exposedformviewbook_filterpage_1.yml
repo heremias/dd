@@ -1,0 +1,35 @@
+uuid: 3251d9db-0b21-4639-bffb-a9761cbd5b0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.viewbook_filter
+  module:
+    - domain
+    - system
+    - views
+  theme:
+    - u_pacific
+id: exposedformviewbook_filterpage_1
+theme: u_pacific
+region: content
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:viewbook_filter-page_1'
+settings:
+  id: 'views_exposed_filter_block:viewbook_filter-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /viewbook
+    negate: false
+    context_mapping: {  }

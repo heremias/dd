@@ -1,0 +1,8 @@
+uuid: a3670231-3517-4fc8-8581-c1f92a07c851
+langcode: en
+status: true
+dependencies: {  }
+id: pacific-humanities-scholars
+label: 'Pacific Humanities Scholars'
+description: 'Section Menu for Pacific Humanities Scholars'
+locked: false

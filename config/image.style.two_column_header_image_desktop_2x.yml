@@ -1,0 +1,26 @@
+uuid: f4c1a87a-a20e-4d45-b293-789af93f218c
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.mobile_header_image
+  module:
+    - crop
+name: two_column_header_image_desktop_2x
+label: 'Two Column Header Image Desktop 2x'
+effects:
+  02cccea0-35cf-43fa-aa8f-cd3c43d79728:
+    uuid: 02cccea0-35cf-43fa-aa8f-cd3c43d79728
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1908
+      height: 1312
+      anchor: center-center
+  63f21a4e-8ef8-40a5-9b15-bb9482a7a592:
+    uuid: 63f21a4e-8ef8-40a5-9b15-bb9482a7a592
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: mobile_header_image
+pipeline: __default__

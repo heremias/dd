@@ -1,0 +1,23 @@
+uuid: 6d927ccf-c6c6-49b2-a020-921bdbb95db2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_link
+    - node.type.major_pages
+  module:
+    - link
+id: node.major_pages.field_contact_link
+field_name: field_contact_link
+entity_type: node
+bundle: major_pages
+label: 'Contact Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

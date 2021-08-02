@@ -1,0 +1,12 @@
+uuid: cd467149-5c68-4e14-a001-11113ff349ff
+langcode: en
+status: true
+dependencies: {  }
+id: small_header_image
+label: 'Header Image'
+description: ''
+aspect_ratio: '615:710'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

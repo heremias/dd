@@ -1,0 +1,26 @@
+uuid: 9d7d1ad4-2771-4eb9-8a7b-468f7b97d7c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.link_button
+  module:
+    - crop
+name: contact_image
+label: 'Contact Image'
+effects:
+  7d71e3f5-90cd-4bf0-9bbf-1f994d4aae00:
+    uuid: 7d71e3f5-90cd-4bf0-9bbf-1f994d4aae00
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: link_button
+  636076db-25d7-46ff-8334-ef08074eff64:
+    uuid: 636076db-25d7-46ff-8334-ef08074eff64
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 690
+      height: 458
+      anchor: center-center
+pipeline: __default__

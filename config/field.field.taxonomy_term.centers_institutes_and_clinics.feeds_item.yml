@@ -1,0 +1,23 @@
+uuid: c48117c7-4a2f-4e15-874d-6ac9e0814bcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.feeds_item
+    - taxonomy.vocabulary.centers_institutes_and_clinics
+  module:
+    - feeds
+id: taxonomy_term.centers_institutes_and_clinics.feeds_item
+field_name: feeds_item
+entity_type: taxonomy_term
+bundle: centers_institutes_and_clinics
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

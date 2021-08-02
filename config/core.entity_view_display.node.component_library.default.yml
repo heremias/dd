@@ -1,0 +1,46 @@
+uuid: 6eed5720-ac07-4cd8-81ad-5b1366a5deee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.component_library.body
+    - field.field.node.component_library.field_components
+    - field.field.node.component_library.field_domain_source
+    - field.field.node.component_library.field_taxonomy
+    - node.type.component_library
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.component_library.default
+targetEntityType: node
+bundle: component_library
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_components:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_domain_source: true
+  field_taxonomy: true
+  langcode: true
+  search_api_excerpt: true

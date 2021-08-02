@@ -1,0 +1,8 @@
+uuid: d88355f5-823e-4456-ac36-cc03e0e6799f
+langcode: en
+status: true
+dependencies: {  }
+id: code-of-conduct
+label: 'Code of Conduct'
+description: ''
+locked: false

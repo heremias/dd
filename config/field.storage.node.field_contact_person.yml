@@ -1,0 +1,19 @@
+uuid: b1e81521-a36b-4c49-b825-0c89de048ff0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_contact_person
+field_name: field_contact_person
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

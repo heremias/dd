@@ -1,0 +1,8 @@
+uuid: 1e3a185f-d81a-480d-92e1-7ae92f6551b8
+langcode: en
+status: true
+dependencies: {  }
+id: residential-life-and-housing
+label: 'Residential Life and Housing'
+description: ''
+locked: false

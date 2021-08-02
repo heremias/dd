@@ -1,0 +1,14 @@
+uuid: 74fd8c6e-227a-4d65-89a5-6c15b730cfb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.section_producers
+  module:
+    - user
+id: user_add_role_action.section_producers
+label: 'Add the Section Producers role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: section_producers

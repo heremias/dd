@@ -1,0 +1,8 @@
+uuid: 8f6824e4-56a9-45c5-b7f7-b0cc26c6f3e3
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-departments-and-groups
+label: 'Dugoni Departments and Groups'
+description: ''
+locked: false

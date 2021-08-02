@@ -1,0 +1,16 @@
+uuid: 3d2da86f-a133-4f7f-a655-487290cedf45
+langcode: en
+status: true
+dependencies: {  }
+id: page_ready_for_publishing
+workflow: editorial
+transitions:
+  request_publication: request_publication
+roles: {  }
+author: false
+emails: 'jharris2@PACIFIC.EDU,jludwig@PACIFIC.EDU,sholst@PACIFIC.EDU'
+subject: 'There is a draft ready for your review.'
+body:
+  value: "<h3><strong>Website Publisher:&nbsp;</strong></h3>\r\n\r\n<p>There is a draft ready for your review.</p>\r\n\r\n<p>You can view and approve the draft by visiting the following:&nbsp;[current-page:url]</p>\r\n\r\n<p>This update was submitted by [current-user:display-name]. Please send any comments to&nbsp;[current-user:mail].</p>\r\n\r\n<h3><strong>Log Message:</strong></h3>\r\n\r\n<p>[node:log]</p>\r\n"
+  format: full_html
+label: 'Page ready for Publishing'

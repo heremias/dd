@@ -1,0 +1,18 @@
+uuid: cb95ea42-e779-4cca-9621-7b63b44812f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Campus Directory'
+type: campus_directory
+description: 'Individual pages used for directory search and faculty/staff department and office listings.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

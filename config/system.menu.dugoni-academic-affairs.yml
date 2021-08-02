@@ -1,0 +1,8 @@
+uuid: a3675888-1351-45f5-8c49-56587767ccf9
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-academic-affairs
+label: 'Dugoni Academic Affairs'
+description: ''
+locked: false

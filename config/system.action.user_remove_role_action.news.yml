@@ -1,0 +1,14 @@
+uuid: aad7a5f8-d705-4d23-b42a-a5fed3e45a45
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.news
+  module:
+    - user
+id: user_remove_role_action.news
+label: 'Remove the News role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: news

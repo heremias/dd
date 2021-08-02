@@ -1,0 +1,8 @@
+uuid: 8de97113-fc01-4666-abb2-fb3114240ae4
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-gender-studies
+label: 'Department of Gender Studies'
+description: ''
+locked: false

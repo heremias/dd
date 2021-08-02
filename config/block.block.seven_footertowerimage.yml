@@ -1,0 +1,25 @@
+uuid: 42709367-6ea7-492a-a1a2-2d91e7020956
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4060ed98-4067-42b6-8f21-fe7eb6011a8c'
+  module:
+    - block_content
+  theme:
+    - seven
+id: seven_footertowerimage
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:4060ed98-4067-42b6-8f21-fe7eb6011a8c'
+settings:
+  id: 'block_content:4060ed98-4067-42b6-8f21-fe7eb6011a8c'
+  label: 'Footer Tower Image'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

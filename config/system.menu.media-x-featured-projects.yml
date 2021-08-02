@@ -1,0 +1,8 @@
+uuid: 3e4ba4ec-43bf-4f24-b7ef-06bc9c5cbc9c
+langcode: en
+status: true
+dependencies: {  }
+id: media-x-featured-projects
+label: 'Media X Featured Projects'
+description: ''
+locked: false

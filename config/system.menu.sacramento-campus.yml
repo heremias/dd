@@ -1,0 +1,8 @@
+uuid: 649a09b5-b6d0-427f-8182-0f92a3fc29fa
+langcode: en
+status: true
+dependencies: {  }
+id: sacramento-campus
+label: 'Sacramento Campus'
+description: 'Section Menu for the Sacramento Campus'
+locked: false

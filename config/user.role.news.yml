@@ -1,0 +1,15 @@
+uuid: c1fe76ce-cecb-4fc5-93e4-1fe48cc703ac
+langcode: en
+status: true
+dependencies: {  }
+id: news
+label: 'News Editor'
+weight: 7
+is_admin: null
+permissions:
+  - 'create article content'
+  - 'delete any article content'
+  - 'delete own article content'
+  - 'edit any article content'
+  - 'edit own article content'
+  - 'view article revisions'

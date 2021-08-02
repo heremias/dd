@@ -1,0 +1,8 @@
+uuid: 22b471f5-6587-4015-b3c5-5c4d24e0f6f0
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-continuing-students
+label: 'McGeorge Continuing Students'
+description: ''
+locked: false

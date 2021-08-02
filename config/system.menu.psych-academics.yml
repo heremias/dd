@@ -1,0 +1,8 @@
+uuid: d40891d5-15e6-4f3d-b079-a0173b926eec
+langcode: en
+status: true
+dependencies: {  }
+id: psych-academics
+label: 'Psych Academics'
+description: ''
+locked: false

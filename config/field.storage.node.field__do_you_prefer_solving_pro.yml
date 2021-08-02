@@ -1,0 +1,27 @@
+uuid: 9ec638a6-3764-40fd-80ce-c2154f370836
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field__do_you_prefer_solving_pro
+field_name: field__do_you_prefer_solving_pro
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: creatively
+      label: creatively
+    -
+      value: analytically
+      label: analytically
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

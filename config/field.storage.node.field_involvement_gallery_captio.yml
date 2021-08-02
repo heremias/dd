@@ -1,0 +1,19 @@
+uuid: 81848384-8e36-4be3-b7c2-8e219da34058
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_involvement_gallery_captio
+field_name: field_involvement_gallery_captio
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

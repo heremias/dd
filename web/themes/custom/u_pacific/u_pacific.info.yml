@@ -1,0 +1,32 @@
+name: U Pacific
+type: theme
+description: 'Custom Drupal 8 Theme'
+package: Core
+version: VERSION
+core_version_requirement: ^8.8 || ^9
+base theme: false
+libraries:
+- u_pacific/global-styling
+# Regions
+regions:
+  header_scripts: 'Custom Scripts & Pixels Header'
+  custom_scripts: 'Custom Scripts & Pixels Body'
+  emergency: 'Emergency'
+  header: 'Header'
+  subnav: 'Subnav'
+  search: 'Search'
+  navigation: 'Main Navigation'
+  sub_menu: 'Sub Menu'
+  tools: 'Tools'
+  tools_desktop: 'Tools Desktop'
+  mobile_navigation: 'Mobile Navigation'
+  tabs: 'Tabs'
+  sidebar_left: 'Sidebar Left'
+  content: 'Content'
+  below_content: 'Below Content'
+  mobile_submenu: 'Mobile Submenu'
+  footer_1: 'Footer 1'
+  footer_2: 'Footer 2'
+  footer_3: 'Footer 3'
+  footer_tower: 'Footer Tower'
+  full_screen_search: 'Full Screen Search'

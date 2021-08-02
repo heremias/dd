@@ -1,0 +1,8 @@
+uuid: 010bc881-9974-4249-90d9-4590caa87eb1
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-registrar
+label: 'McGeorge Registrar'
+description: ''
+locked: false

@@ -1,0 +1,70 @@
+uuid: 6431ae58-5734-4e9d-a054-5629872d82c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.link_list_2_columns_.field_column_2_
+    - field.field.paragraph.link_list_2_columns_.field_column_one_links
+    - field.field.paragraph.link_list_2_columns_.field_column_two_links
+    - field.field.paragraph.link_list_2_columns_.field_title_column_one
+    - paragraphs.paragraphs_type.link_list_2_columns_
+  module:
+    - link_attributes
+id: paragraph.link_list_2_columns_.default
+targetEntityType: paragraph
+bundle: link_list_2_columns_
+mode: default
+content:
+  field_column_2_:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_column_one_links:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_column_two_links:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_title_column_one:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

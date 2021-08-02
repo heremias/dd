@@ -1,0 +1,18 @@
+uuid: 971465af-3bba-4292-8f20-63d46b6bf95d
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.video_background
+  module:
+    - crop
+name: video_background
+label: 'Video Background Desktop'
+effects:
+  b77a7097-efaa-4543-b44f-2d1c602625f4:
+    uuid: b77a7097-efaa-4543-b44f-2d1c602625f4
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: video_background
+pipeline: __default__

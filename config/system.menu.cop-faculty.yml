@@ -1,0 +1,8 @@
+uuid: ca095b02-1f41-4554-8742-bebf9db8516d
+langcode: en
+status: true
+dependencies: {  }
+id: cop-faculty
+label: 'COP Faculty'
+description: ''
+locked: false

@@ -1,0 +1,37 @@
+uuid: 26edc256-5e93-4ac8-8dfe-b0e0fd405697
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.campus_directory
+  module:
+    - domain
+    - system
+    - views
+  theme:
+    - u_pacific
+id: views_block__campus_directory_block_2
+theme: u_pacific
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:campus_directory-block_2'
+settings:
+  id: 'views_block:campus_directory-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  domain:
+    id: domain
+    domains: {  }
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '/*/directory'
+    negate: false
+    context_mapping: {  }

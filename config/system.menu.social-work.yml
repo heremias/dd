@@ -1,0 +1,8 @@
+uuid: 6e238bc2-720b-4dc4-bc87-ee5812f27d5c
+langcode: en
+status: true
+dependencies: {  }
+id: social-work
+label: 'Social Work'
+description: ''
+locked: false

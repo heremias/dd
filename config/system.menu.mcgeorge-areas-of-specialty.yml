@@ -1,0 +1,8 @@
+uuid: fd83947f-8019-4b51-ba30-3a55e4742681
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-areas-of-specialty
+label: 'McGeorge Areas of Specialty'
+description: ''
+locked: false

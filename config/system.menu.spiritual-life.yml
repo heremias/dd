@@ -1,0 +1,8 @@
+uuid: 5ca10cc4-7aff-449e-b322-01e4b1e98082
+langcode: en
+status: true
+dependencies: {  }
+id: spiritual-life
+label: 'Spiritual Life'
+description: ''
+locked: false

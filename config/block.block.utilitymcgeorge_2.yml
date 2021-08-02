@@ -1,0 +1,36 @@
+uuid: db507e79-e200-4286-afe1-8ed711892509
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-mcgeorge
+  module:
+    - domain
+    - menu_block
+  theme:
+    - u_pacific
+id: utilitymcgeorge_2
+theme: u_pacific
+region: tools_desktop
+weight: 0
+provider: null
+plugin: 'menu_block:utility-mcgeorge'
+settings:
+  id: 'menu_block:utility-mcgeorge'
+  label: 'Utility Desktop - McGeorge'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'utility-mcgeorge:'
+  suggestion: utility_mcgeorge
+visibility:
+  domain:
+    id: domain
+    domains:
+      law_dev_pacific_edu: law_dev_pacific_edu
+    negate: null
+    context_mapping: {  }

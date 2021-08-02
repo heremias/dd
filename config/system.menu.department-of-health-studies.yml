@@ -1,0 +1,8 @@
+uuid: 10aa541e-4165-40f6-b604-be054634f8b4
+langcode: en
+status: true
+dependencies: {  }
+id: department-of-health-studies
+label: 'Health Studies Program'
+description: ''
+locked: false

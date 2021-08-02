@@ -1,0 +1,27 @@
+uuid: 72a438e2-03c1-4d15-898e-05beedf9f28c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activities_sound_clip
+    - node.type.viewbook_
+  module:
+    - file
+id: node.viewbook_.field_activities_sound_clip
+field_name: field_activities_sound_clip
+entity_type: node
+bundle: viewbook_
+label: 'Activities Sound Clip'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'wav mp3'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

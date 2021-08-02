@@ -1,0 +1,8 @@
+uuid: 4447cf87-bdf5-4333-9342-a618cb068db4
+langcode: en
+status: true
+dependencies: {  }
+id: dugoni-department-chairs
+label: 'Dugoni Department Chairs'
+description: ''
+locked: false

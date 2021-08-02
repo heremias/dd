@@ -1,0 +1,19 @@
+uuid: 319a6593-fd2f-4507-9ca6-b9e3ed9b8765
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_program_code
+    - paragraphs.paragraphs_type.burning_glass_panel
+id: paragraph.burning_glass_panel.field_program_code
+field_name: field_program_code
+entity_type: paragraph
+bundle: burning_glass_panel
+label: 'Program Code'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,215 @@
+<header id="header" class="header-v1">
+  
+  {#{% if page.topbar %}#}
+    <div class="topbar">
+      <div class="topbar-inner" style="margin-top: -8px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-sm-12">
+              <div class="topbar-content">
+
+                {#{{ page.topbar }}#}
+
+                <div>
+                  <div id="block-topbar" class="block block-block-content no-title">
+                    <div class="content block-content">
+                      <div class="field">
+                        <div class="topbar-contact">
+                          <ul class="inline">
+                            <li class="topbar-links"><a href="mailto:info@docmagic.com"><i class="fa fa-envelope"></i> <span class="topbar-link-text">INFO@DOCMAGIC.COM</span></a></li>
+                            <li class="grey-pipe">|</li>
+                            <li class="topbar-links"><a href="tel:+18006491362"><i class="fa fa-phone"></i> <span class="topbar-link-text">PHONE (800) 649-1362</span></a></li>
+                          </ul></div>
+
+                        <div class="topbar-social">
+                          <ul class="inline">
+                            <li><a href="https://www.facebook.com/docmagicinc" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/docmagic?lang=en" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/docmagic/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.youtube.com/user/docmagicinc" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="mailto:info@docmagic.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                          </ul></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="topbar-login-box">
+                <a href="/webservices/cas/login" class="login-link">Log In</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {#{% endif %}#}
+
+  {% set class_sticky = '' %}
+  {% if sticky_menu == 1 %}
+    {% set class_sticky = 'gv-sticky-menu' %}
+  {% endif %}
+
+   <div class="header-main {{ class_sticky }}">
+      <div class="container header-content-layout">
+         <div class="header-main-inner p-relative">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-8 branding">
+                {% if page.branding %}
+                  {{ page.branding }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-9 col-sm-6 col-xs-4 p-static">
+                <div class="header-inner clearfix">
+                  <div class="main-menu">
+                    <div class="area-main-menu">
+                      <div class="area-inner">
+                          <div class="gva-offcanvas-mobile">
+                            <div class="top-control-offcanvas">
+                              <div class="home-link-offcanvas hidden">
+                                {% if page.branding %}
+                                  {{ page.branding }}
+                                {% endif %}
+                              </div>
+                              <div class="close-offcanvas hidden">
+                                <div class="close-button hidden-lg hidden-md">
+                                  <span class="one"></span>
+                                  <span class="two"></span>
+                                </div>
+                              </div>
+                            </div>
+                            {% if page.main_menu %}
+                              {{ page.main_menu }}
+                            {% endif %}  
+                            {% if page.offcanvas %}
+                              <div class="after-offcanvas hidden">
+                                {{ page.offcanvas }}
+                              </div>
+                           {% endif %}
+                           <div class="docmagic-offcanvas">
+                             <div class="docmagic-offcanvas-login-box">
+                                <a href="/webservices/cas/login" class="login-link">Log in</a>
+                             </div>
+                             <div class="docmagic-offcanvas-content">
+                               <div class="contact">
+                                 <ul>
+                                   <li><a href="mailto:info@docmagic.com"><i class="fa fa-envelope"></i> INFO@DOCMAGIC.COM</a></li>
+                                   <li><a href="tel:+18006491362"><i class="fa fa-phone"></i> PHONE (800) 649-1362</a></li>
+                                 </ul>
+                               </div>
+
+                               <div class="social">
+                                 <ul>
+                                   <li><a href="https://www.facebook.com/docmagicinc" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                   <li><a href="https://twitter.com/docmagic?lang=en" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                   <li><a href="https://www.linkedin.com/company/docmagic/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                   <li><a href="https://www.youtube.com/user/docmagicinc" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                   <li><a href="mailto:info@docmagic.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                                 </ul>
+                               </div>
+                             </div>
+                           </div>
+                          </div>
+                          
+                          <div id="menu-bar" class="menu-bar hidden-lg hidden-md">
+                            <span class="one"></span>
+                            <span class="two"></span>
+                            <span class="three"></span>
+                          </div>
+                        
+                        {% if page.search %}
+                          <div class="gva-search-region search-region">
+                            <span class="icon"><i class="fa fa-search"></i></span>
+                            <div class="search-content">  
+                              {{ page.search }}
+                            </div>  
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>  
+                </div> 
+              </div>
+
+            </div>
+         </div>
+      </div>
+       <style type="text/css">
+           .search-bar input::-webkit-input-placeholder {
+               color: #ccc !important;
+           }
+           .search-bar input:-ms-input-placeholder {
+               color: #ccc !important;
+           }
+           .search-bar input:-moz-placeholder {
+               color: #ccc !important;
+           }
+       </style>
+       <script type="text/javascript">
+           jQuery(document).ready(function() {
+                jQuery('.menu-item-search').click(function(e) {
+                    e.preventDefault();
+                    searchBar =  jQuery('.search-bar');
+                    if (searchBar.is(':visible')) {
+                        searchBar.hide();
+                    } else {
+                        searchBar.show();
+                        searchBar.find('input.form-search').focus();
+                    }
+                });
+           });
+       </script>
+     <div class="search-bar" style="display:block;background-color:#202020;padding:20px 0;display:none">
+     <div class="search-bar-form" style="
+            text-align: center;
+            width: 60%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow:0px 4px 4px 1px rgba(0,0,0,0.2);
+            -webkit-box-shadow: 0px 4px 4px 1px rgba(0,0,0,0.2);
+            -webkit-transition: all 0.2s ease-out;
+            -o-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            -ms-transition: all 0.2s ease-out;
+        ">
+         <form class="search-form" data-drupal-selector="search-form" action="/search/node" method="get" id="search-form" accept-charset="UTF-8" style="height:50px">
+             <input placeholder="What are you looking for?" type="search" id="edit-keys" name="keys" value="" size="30" maxlength="255" class="form-search" style="
+                border: none;
+                padding: 15px;
+                width: calc(100% - 160px);
+                height:100%;
+                ">
+             <button type="submit" class="btn btn-success" style="
+    background-image: none !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    background-color: #ff9d70 !important;
+    padding: 15px 35px 13px !important;
+    border: 1px solid #ff9d70 !important;
+    border-radius: 0px !important;
+    color: #fff !important;
+    font-family: 'Catamaran',sans-serif !important;
+    text-transform: uppercase !important;
+    font-size: 12px !important;
+    letter-spacing: 0.09em !important;
+    font-weight: normal !important;
+    margin-left:-4px;
+    height:100%;
+">
+                <i class="fa fa-search"></i> Search
+            </button>
+
+        {#<input class="search-form__submit button js-form-submit form-submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Search">#}
+         </form>
+     </div>
+       {#<form action="#">#}
+         {#<input type="text"/>#}
+         {#<input type="submit" value="Search"/>#}
+       {#</form>#}
+     </div>
+   </div>
+
+</header>

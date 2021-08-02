@@ -1,0 +1,36 @@
+uuid: d8dfc482-8da8-4b9a-ae3c-d0c5191cbb4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_accordions.field_accordions
+    - paragraphs.paragraphs_type.content_accordions
+  module:
+    - paragraphs
+id: paragraph.content_accordions.default
+targetEntityType: paragraph
+bundle: content_accordions
+mode: default
+content:
+  field_accordions:
+    type: paragraphs
+    weight: 0
+    settings:
+      title: Accordion
+      title_plural: Accordions
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: accordion_content
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

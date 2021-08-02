@@ -1,0 +1,21 @@
+uuid: f1c1b7d5-d435-4efa-b683-49bdf2d5d574
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaching_interests
+    - node.type.campus_directory
+  module:
+    - text
+id: node.campus_directory.field_teaching_interests
+field_name: field_teaching_interests
+entity_type: node
+bundle: campus_directory
+label: 'Teaching Interests'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,18 @@
+uuid: 11c195b1-a778-412b-bea2-5773d83eb29e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Component Library'
+type: component_library
+description: 'This content type is used to illustrate all of the available components on pacific.edu. There should only be one page created using this content type. If new components are created, they should be added to this content type.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

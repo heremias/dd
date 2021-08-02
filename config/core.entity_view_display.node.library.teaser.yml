@@ -1,0 +1,54 @@
+uuid: 71ea8a82-b85c-4143-a66b-cc1057a46762
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.library.body
+    - field.field.node.library.feeds_item
+    - field.field.node.library.field_components
+    - field.field.node.library.field_domain_source
+    - field.field.node.library.field_header_type
+    - field.field.node.library.field_image
+    - field.field.node.library.field_school_college_department
+    - field.field.node.library.field_temp_domain_access
+    - field.field.node.library.field_temp_domain_source
+    - node.type.library
+  module:
+    - text
+    - user
+id: node.library.teaser
+targetEntityType: node
+bundle: library
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  feeds_item: true
+  field_components: true
+  field_domain_source: true
+  field_header_type: true
+  field_image: true
+  field_school_college_department: true
+  field_temp_domain_access: true
+  field_temp_domain_source: true
+  langcode: true
+  search_api_excerpt: true

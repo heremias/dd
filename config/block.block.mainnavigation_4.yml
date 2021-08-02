@@ -1,0 +1,29 @@
+uuid: 81cc365d-6e03-47b5-8479-7127256ab72c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - u_pacific
+id: mainnavigation_4
+theme: u_pacific
+region: mobile_navigation
+weight: -15
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Mobile Main Navigation - Campus Life'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'main:menu_link_content:3894b265-d867-4e1d-92cc-d75bfed98144'
+  suggestion: main
+visibility: {  }

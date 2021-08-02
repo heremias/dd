@@ -1,0 +1,219 @@
+// .disclosure
+
+table.disclosure {
+  width: 100%;
+  border-color: transparent;
+  border-collapse: collapse;
+
+  // table cells
+  td {
+    border: 1px solid #dadada;
+    line-height: 27px;
+
+    p {
+      line-height: 27px !important;
+    }
+  }
+
+  // header row
+
+  .disclosureheader {
+    font-size: 15px;
+    background-color: #0C94C8;
+    height: 45px;
+    border: #ffffff 1px solid;
+    border-top-color: #0C94C8;
+    color: #ffffff;
+
+    &:first-of-type {
+      border-left-color: #0C94C8;
+    }
+
+    &:last-of-type {
+      border-right-color: #0C94C8;
+    }
+  }
+
+  // alternate row colors
+
+  > tbody tr.disclosureentry1,
+  > tbody tr.disclosureentry2 {
+    background-color: transparent;
+  }
+
+  > tbody > tr:nth-of-type(odd) {
+    background-color: #ffffff;
+  }
+
+  > tbody > tr:nth-of-type(even) {
+    background-color: #faf9f9;
+  }
+}
+
+// .disclosure_table
+
+.disclosure_table_block table,
+.disclosure_table_cu table,  // compliance updates
+table.disclosure_table {
+
+  // reset d6 backgrounds and borders
+
+  border-collapse: collapse;
+  border: 1px solid transparent;
+
+  > thead {
+    text-align: center;
+    background-color: #0C94C8;
+
+    > td {
+      color: #ffffff!important;
+    }
+  }
+
+  tr,
+  tr.odd,
+  tr.even {
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+
+  // header row
+
+  > thead > tr > td {
+    border-top: 1px solid #dadada;
+    border-left: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    height: 45px;
+    vertical-align: middle;
+    color: #ffffff;
+  }
+
+  > tbody > tr > th,
+  > thead > tr > th {
+    border-top: 1px solid #dadada;
+    border-left: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    height: 45px;
+    vertical-align: middle;
+    background-color: #0C94C8;
+    color: #ffffff;
+  }
+
+  // table cells
+
+  > tbody > tr > td {
+    border: 1px solid #dadada;
+    line-height: 27px;
+
+    p {
+      line-height: 27px;
+    }
+  }
+
+  // year row
+
+  > tbody > tr.even > td {
+    padding: 0;
+
+    > strong {
+      width: 100%;
+      background-color: #0C94C8;
+      color: #ffffff;
+      height: 45px;
+
+      // use flexbox to center content
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+// .table-compact
+
+table.table-compact {
+  > tbody > tr > td {
+    padding: 0 !important;
+  }
+}
+
+
+
+// .common_table
+
+.common_table_block table,
+table.common_table {
+
+  // reset d6 backgrounds and borders
+
+  border-collapse: collapse;
+  border: 1px solid transparent;
+
+  > thead {
+    text-align: center;
+    background-color: #0C94C8;
+
+    > td {
+      color: #ffffff!important;
+    }
+  }
+
+  tr,
+  tr.odd,
+  tr.even {
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+
+  // header row
+
+  > thead > tr > td {
+    border-top: 1px solid #dadada;
+    border-left: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    height: 45px;
+    vertical-align: middle;
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  > tbody > tr > th,
+  > thead > tr > th {
+    border-top: 1px solid #dadada;
+    border-left: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    height: 45px;
+    vertical-align: middle;
+    background-color: #0C94C8;
+    color: #ffffff;
+  }
+
+  // table cells
+
+  > tbody > tr > td {
+    border: 1px solid #dadada;
+    line-height: 27px;
+
+    p {
+      line-height: 27px;
+    }
+  }
+
+  // year row
+
+  > tbody > tr.even > td {
+    padding: 0;
+
+    > strong {
+      width: 100%;
+      background-color: #0C94C8;
+      color: #ffffff;
+      height: 45px;
+
+      // use flexbox to center content
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

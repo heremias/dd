@@ -1,0 +1,21 @@
+uuid: 0c16ff68-b66a-4100-b506-be3433e1cd0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_involvement_gallery_captio
+    - node.type.viewbook_
+  module:
+    - text
+id: node.viewbook_.field_involvement_gallery_captio
+field_name: field_involvement_gallery_captio
+entity_type: node
+bundle: viewbook_
+label: 'Community Involvement Gallery Caption'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

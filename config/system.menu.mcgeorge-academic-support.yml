@@ -1,0 +1,8 @@
+uuid: 9251ab65-d1dc-42d8-bb46-18edab437f84
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-academic-support
+label: 'McGeorge Academic Support'
+description: ''
+locked: false

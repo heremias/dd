@@ -1,0 +1,36 @@
+variants:
+  pacific:
+    label: pacific
+    weight: 0
+  dental:
+    label: dental
+    weight: 1
+  business:
+    label: business
+    weight: 2
+  education:
+    label: education
+    weight: 3
+  engineering:
+    label: engineering
+    weight: 4
+  grad:
+    label: grad
+    weight: 5
+  healthsciences:
+    label: healthsciences
+    weight: 6
+  law:
+    label: law
+    weight: 7
+  liberalarts:
+    label: liberalarts
+    weight: 8
+  music:
+    label: music
+    weight: 9
+  pharmacy:
+    label: pharmacy
+    weight: 10
+_core:
+  default_config_hash: nQAXscP-SDpsmqHlQ6u0iBvcuJPrAikb09c3cP2_n0k

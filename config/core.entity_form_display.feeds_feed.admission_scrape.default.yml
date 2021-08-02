@@ -1,0 +1,47 @@
+uuid: ff8fe1ef-708c-447d-a669-90706330ef00
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.admission_scrape
+    - field.field.feeds_feed.admission_scrape.field_description
+id: feeds_feed.admission_scrape.default
+targetEntityType: feeds_feed
+bundle: admission_scrape
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    weight: 14
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

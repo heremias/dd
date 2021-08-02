@@ -1,0 +1,8 @@
+uuid: 045b3faf-be0a-4508-a1b6-0fe66e6bbbf5
+langcode: en
+status: true
+dependencies: {  }
+id: mcgeorge-master-of-science-in-la
+label: 'McGeorge Master of Science in Law'
+description: 'Section Menu for McGeorge Master of Science in Law'
+locked: false

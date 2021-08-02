@@ -1,0 +1,29 @@
+uuid: c9ce1243-d671-4317-a4f6-d149177f47a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - seven
+id: seven_mainnavigation_5
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Mobile Main Navigation - About Pacific'
+  provider: menu_block
+  label_display: '0'
+  follow: false
+  follow_parent: child
+  level: 1
+  depth: 0
+  expand: false
+  parent: 'main:menu_link_content:715d2279-abc5-42df-bf3c-d2544ec85d20'
+  suggestion: main
+visibility: {  }

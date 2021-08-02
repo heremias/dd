@@ -1,0 +1,26 @@
+uuid: ff910e1a-ed1a-4a8b-aaab-c45d78363c29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_listing
+    - paragraphs.paragraphs_type.directory_listing
+    - views.view.campus_directory
+id: paragraph.directory_listing.field_listing
+field_name: field_listing
+entity_type: paragraph
+bundle: directory_listing
+label: Listing
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 8626a464-3bbd-4f4a-b4b0-45dc165381ec
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

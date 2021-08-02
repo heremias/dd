@@ -1,0 +1,8 @@
+uuid: 48e54756-320d-41cf-9429-04928eb84122
+langcode: en
+status: true
+dependencies: {  }
+id: humanities-center
+label: 'Humanities Center'
+description: ''
+locked: false

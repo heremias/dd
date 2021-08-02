@@ -1,0 +1,62 @@
+uuid: 349bde9c-06dc-467f-a29b-55c5195152cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.college_school_landing_page.body
+    - field.field.node.college_school_landing_page.field_attachement
+    - field.field.node.college_school_landing_page.field_contact_email
+    - field.field.node.college_school_landing_page.field_contact_link
+    - field.field.node.college_school_landing_page.field_contact_location
+    - field.field.node.college_school_landing_page.field_contact_person
+    - field.field.node.college_school_landing_page.field_contact_phone_number
+    - field.field.node.college_school_landing_page.field_domain_source
+    - field.field.node.college_school_landing_page.field_hide_section_menu
+    - field.field.node.college_school_landing_page.field_image
+    - field.field.node.college_school_landing_page.field_menu_below_intro_field
+    - field.field.node.college_school_landing_page.field_page_builder_components_
+    - field.field.node.college_school_landing_page.field_school_college_department
+    - node.type.college_school_landing_page
+  module:
+    - text
+    - user
+id: node.college_school_landing_page.teaser
+targetEntityType: node
+bundle: college_school_landing_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_attachement: true
+  field_contact_email: true
+  field_contact_link: true
+  field_contact_location: true
+  field_contact_person: true
+  field_contact_phone_number: true
+  field_domain_source: true
+  field_hide_section_menu: true
+  field_image: true
+  field_menu_below_intro_field: true
+  field_page_builder_components_: true
+  field_school_college_department: true
+  langcode: true
+  search_api_excerpt: true

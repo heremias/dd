@@ -1,0 +1,47 @@
+uuid: 812757a2-2e9d-4810-9058-d1ef2ab0246e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.centers_institutes_and_clinics
+  module:
+    - taxonomy
+id: taxonomy_centers_institutes_and_
+label: 'Taxonomy: Centers, Institutes and Clinics'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:taxonomy_term'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  skip_hash_check: false
+  values:
+    vid: centers_institutes_and_clinics
+  owner_id: 0
+  authorize: false
+  owner_feed_author: false
+custom_sources:
+  centers:
+    label: Centers
+    value: Centers
+    machine_name: centers
+mappings:
+  -
+    target: name
+    map:
+      value: centers
+    unique: {  }
+    settings:
+      language: null

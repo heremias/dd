@@ -1,0 +1,55 @@
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in' : 'logged-out',
+    not root_path ? 'home' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+  ]
+%}
+<!DOCTYPE html>
+<html{{html_attributes}}>
+	<head>
+		<meta charset="utf-8">
+		<head-placeholder token="{{ placeholder_token|raw }}">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+			<title>{{ head_title|safe_join(' | ') }}</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" >
+			<link rel="stylesheet" href="https://use.typekit.net/hzp4diu.css">
+			<css-placeholder token="{{ placeholder_token|raw }}">
+				<js-placeholder token="{{ placeholder_token|raw }}">
+					<script type="application/ld+json">
+						{
+						          "@context": "http://schema.org",
+						          "@type": "WebSite",
+						          "url": "https://www.pacific.edu",
+						          "potentialAction": {
+						            "@type": "SearchAction",
+						            "target": "https://www.pacific.edu/search/node?keys={search_term_string}",
+						            "query-input": "required name=search_term_string"
+						          }
+						        }
+					</script>
+                    
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177464687-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+ 
+
+  gtag('config', 'UA-177464687-1');
+</script>
+ 
+                    
+					{{ page.header_scripts }}
+			</head>
+			<body{{attributes.addClass(body_classes,'no-transitions-while-loading')}}>
+			<a href="#maincontent" class="sr-only sr-only-focusable" id="skiptomain" tabindex="0">Skip to main content</a>
+				{{ page_top }}
+				{{ page }}
+				{{ page_bottom }}
+				<js-bottom-placeholder token="{{ placeholder_token|raw }}">
+				</body>
+			</html>

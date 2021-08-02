@@ -1,0 +1,139 @@
+uuid: 08e86d1d-62ea-4582-b32c-c446147cd6ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.department_landing_pages.body
+    - field.field.node.department_landing_pages.field_additional_text
+    - field.field.node.department_landing_pages.field_contact_location
+    - field.field.node.department_landing_pages.field_contact_phone_number
+    - field.field.node.department_landing_pages.field_school_college_department
+    - field.field.node.department_landing_pages.field_temp_domain_source
+    - node.type.department_landing_pages
+  module:
+    - node
+id: department_landing_page
+label: 'Department Landing page'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: department_landing_pages
+custom_sources:
+  overview_text:
+    label: 'Overview Text'
+    value: 'Overview Text'
+    machine_name: overview_text
+  description:
+    label: Description
+    value: Description
+    machine_name: description
+  tag:
+    label: tag
+    value: tag
+    machine_name: tag
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  additional:
+    label: Additional
+    value: Additional
+    machine_name: additional
+  new_url:
+    label: 'New URL'
+    value: 'New URL'
+    machine_name: new_url
+  address:
+    label: Address
+    value: Address
+    machine_name: address
+  phone_number:
+    label: 'Phone Number'
+    value: 'Phone Number'
+    machine_name: phone_number
+  phone:
+    label: Phone
+    value: Phone
+    machine_name: phone
+  domain_source:
+    label: 'Domain Source'
+    value: 'Domain Source'
+    machine_name: domain_source
+mappings:
+  -
+    target: body
+    map:
+      value: overview_text
+      summary: description
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_school_college_department
+    map:
+      target_id: tag
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      feeds_item: false
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_additional_text
+    map:
+      value: additional
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: path
+    map:
+      alias: new_url
+    settings:
+      language: null
+  -
+    target: field_contact_location
+    map:
+      value: address
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_contact_phone_number
+    map:
+      value: phone
+    settings:
+      language: null
+  -
+    target: field_temp_domain_source
+    map:
+      value: domain_source
+    unique: {  }
+    settings:
+      language: null

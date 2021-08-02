@@ -1,0 +1,93 @@
+uuid: 125a9972-27d9-4aa8-8ebd-9e7ec2268516
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.campus_directory.feeds_item
+    - field.field.node.campus_directory.field_administrative_department
+    - field.field.node.campus_directory.field_biography
+    - field.field.node.campus_directory.field_campus
+    - field.field.node.campus_directory.field_curriculum_vitae
+    - field.field.node.campus_directory.field_domain_source
+    - field.field.node.campus_directory.field_education
+    - field.field.node.campus_directory.field_email
+    - field.field.node.campus_directory.field_email_override
+    - field.field.node.campus_directory.field_firstname
+    - field.field.node.campus_directory.field_headshot_1
+    - field.field.node.campus_directory.field_last_name
+    - field.field.node.campus_directory.field_linkedin
+    - field.field.node.campus_directory.field_meta_tags
+    - field.field.node.campus_directory.field_office_location
+    - field.field.node.campus_directory.field_office_location_2
+    - field.field.node.campus_directory.field_phone_number
+    - field.field.node.campus_directory.field_phone_number_override
+    - field.field.node.campus_directory.field_professional_title
+    - field.field.node.campus_directory.field_professional_title_2
+    - field.field.node.campus_directory.field_professional_title_3
+    - field.field.node.campus_directory.field_research_focus
+    - field.field.node.campus_directory.field_school
+    - field.field.node.campus_directory.field_teaching_interests
+    - field.field.node.campus_directory.field_website
+    - field.field.node.campus_directory.field_yoast_seo
+    - node.type.campus_directory
+  module:
+    - user
+id: node.campus_directory.search_index
+targetEntityType: node
+bundle: campus_directory
+mode: search_index
+content:
+  field_firstname:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_last_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_school:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  feeds_item: true
+  field_administrative_department: true
+  field_biography: true
+  field_campus: true
+  field_curriculum_vitae: true
+  field_domain_source: true
+  field_education: true
+  field_email: true
+  field_email_override: true
+  field_headshot_1: true
+  field_linkedin: true
+  field_meta_tags: true
+  field_office_location: true
+  field_office_location_2: true
+  field_phone_number: true
+  field_phone_number_override: true
+  field_professional_title: true
+  field_professional_title_2: true
+  field_professional_title_3: true
+  field_research_focus: true
+  field_teaching_interests: true
+  field_website: true
+  field_yoast_seo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

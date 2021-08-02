@@ -1,0 +1,14 @@
+uuid: 74d0d2d7-1013-41b1-a691-a1180faa1fae
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: k3aUaZXGDuhkek2TZIee0PApOPTvYZLadziekdyHA5A
+id: user_search
+label: Users
+path: user
+weight: -8
+plugin: user_search
+configuration: {  }

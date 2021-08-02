@@ -1,0 +1,17 @@
+uuid: 4820b352-e476-4e68-b867-86a56691cdef
+langcode: en
+status: true
+dependencies: {  }
+id: page_is_ready_to_review
+workflow: editorial
+transitions:
+  request_review: request_review
+roles:
+  section_editor: section_editor
+author: false
+emails: ''
+subject: 'A page is ready to be reviewed'
+body:
+  value: "<h3><strong>Website Editor:&nbsp;</strong></h3>\r\n\r\n<p>There is a draft ready for your review.</p>\r\n\r\n<p>You can view and approve the draft by visiting the following:&nbsp;[current-page:url]</p>\r\n\r\n<p>This update was submitted by [current-user:display-name]. Please send any comments to&nbsp;[current-user:mail].</p>\r\n\r\n<h3><strong>Log Message:</strong></h3>\r\n\r\n<p>[node:log]</p>\r\n"
+  format: full_html
+label: 'Page is ready to review'
