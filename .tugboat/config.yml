@@ -94,17 +94,21 @@ services:
         
         
         
-        - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql
+        - wget https://tulepond.sfo3.digitaloceanspaces.com/drupal.sql.old2
         #- drush pm:enable --yes workspaces
         
         - drush -y sql-drop
-        - drush sql-cli < drupal.sql
+        - drush sql-cli < drupal.sql.old2
         #- echo "$config['system.logging']['error_level'] = 'verbose';" >> /var/lib/tugboat/web/sites/default/settings.php
         - drush config-delete field.storage.node.field_block_builder
         - drush config-delete field.field.node.page.field_block_builder
+        - drush config-delete field.storage.node.simplenews_issue
+        - drush config-delete field.storage.simplenews_subscriber.subscriptions
+        - drush config-delete field.field.node.simplenews_issue.simplenews_issue
+        - drush config-set system.theme admin seven
                                    
         #- composer require drupal/zurb_foundation:^6.0@alpha
-        - drush pm:uninstall cas
+        #- drush pm:uninstall cas
         #- drush dl -y zurb_foundation
         #- drush en -y zurb_foundation
         - drush config-set system.theme default bartik -y
@@ -127,22 +131,25 @@ services:
         - drush cdel core.extension module.pathologic
         #- drush cdel core.extension module.views_data
         - drush cdel core.extension module.gavias_blockbuilder
-        #- drush cdel core.extension module.comment
+        - drush cdel core.extension module.cas
+        - drush cdel core.extension module.cas_attributes
         - drush cdel core.extension module.gavias_hook_themer
         - drush cdel core.extension module.gavias_sliderlayer
         - drush cdel core.extension module.gavias_view
         - drush cdel core.extension module.gaviasthemer
         - drush cdel core.extension module.gva_render_shortcode
-        #- drush cdel core.extension module.aggregator_feed
+        - drush cdel core.extension module.seo_checklist
+        - drush cdel core.extension module.checklistapi
         - drush cdel core.extension module.docmagic_cas
         - drush cdel core.extension module.simplenews
         - drush cdel core.extension module.entityqueue
         - drush cdel core.extension module.externalauth
-        - drush cdel core.extension module.checklistapi
+        #- drush cdel core.extension module.checklistapi
         - drush cdel core.extension module.docmagic_site
         - drush cdel core.extension module.premium_basic
         - drush cdel core.extension module.premium_download
         - drush cdel core.extension module.replication
+        - drush cdel core.extension module.workflow
         - drush cdel core.extension module.redirect
         - drush cdel core.extension module.authorization
         - drush cdel core.extension module.ldap

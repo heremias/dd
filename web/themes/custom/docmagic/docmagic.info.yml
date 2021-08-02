@@ -2,6 +2,7 @@ name: docmagic
 type: theme
 description: Custom theme for DocMagic
 core: 8.x
+core_version_requirement: ^8 || ^9
 base theme: gavias_kiamo
 libraries:
   - gavias_kiamo/gavias_kiamo.skin.default
